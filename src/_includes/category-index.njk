@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+{{ content | safe }}
+{%- if category -%}
+    <ul>
+        {%- for post in collections[category] -%}
+            <li>{{ post.data.title }}</li>
+        {%- endfor -%}
+    </ul>
+{%- else -%}
+    Error: please add a category to the page data
+{%- endif -%}

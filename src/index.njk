@@ -1,0 +1,5 @@
+Hello
+
+{%- for post in collections.categories -%}
+  <li>{{ post.data.title }}: {{ post.data.subtitle }}, {{post.url}}</li>
+{%- endfor -%}

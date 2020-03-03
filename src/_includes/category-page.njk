@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+{{ content | safe }}
+{%- if tags.length -%}
+    <hr />
+    <h2>Related issues</h2>
+    <ul>
+        {%- for tag in tags -%}
+            {%- for post in collections[tags] -%}
+                {%- if post.url !== page.url -%}
+                    <li>{{post.data.title}}</li>
+                {%- endif -%}
+            {%- endfor -%}
+        {%- endfor-%}
+    </ul>
+{%- endif -%}
