@@ -1,6 +1,7 @@
 ---
 title: What does NHS login do?
 tags: whatisnhslogin
+layout: category-page.njk
 ---
 
 NHS login makes it easier and quicker for you to securely access digital health and care websites and apps with just 1 username and password.

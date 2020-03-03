@@ -1,6 +1,7 @@
 ---
 title: Where you can use NHS login
 tags: whatisnhslogin
+layout: category-page.njk
 ---
 
 NHS login can be used on any website or app that shows the NHS login button.

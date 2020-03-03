@@ -1,6 +1,4 @@
 module.exports = function(config) {
-  // Layout aliases can make templates more portable
-  config.addLayoutAlias("default", "category-page.njk");
   // pass some assets right through
   config.addPassthroughCopy("./src/images");
   config.addPassthroughCopy("./src/css");
