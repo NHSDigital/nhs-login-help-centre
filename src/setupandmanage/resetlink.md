@@ -1,7 +1,7 @@
 ---
 title: The reset password link in your email does not work
 tags: setupandmanage
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 You can reset your NHS login password if you forget what it is. We will send a reset password link to your email address. If the reset password link in your email does not work, there are a number of possible reasons why.
 

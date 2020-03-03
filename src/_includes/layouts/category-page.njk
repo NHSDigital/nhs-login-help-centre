@@ -1,7 +1,10 @@
+---
+layout: default
+---
 <h1>{{title}}</h1>
 {{ content | safe }}
 {%- if tags.length -%}
-    <hr />
+    <hr/>
     <h2>Related issues</h2>
     <ul>
         {%- for tag in tags -%}

@@ -1,7 +1,7 @@
 ---
 title: How to log in with NHS login
 tags: whatisnhslogin
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 
 Click the NHS login button on the website or app you are visiting. Enter the email address and password to your NHS login. If you haven’t already created an NHS login you can do so first.

@@ -1,7 +1,7 @@
 ---
 title: How to change your NHS login password
 tags: setupandmanage
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 You can change your password by visiting your NHS login settings. Under the heading ‘your personal information’ select ‘change password’.
 

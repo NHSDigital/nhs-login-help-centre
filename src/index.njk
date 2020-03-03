@@ -1,5 +1,46 @@
-Hello
-
-{%- for post in collections.categories -%}
-  <li>{{ post.data.title }}: {{ post.data.subtitle }}, {{post.url}}</li>
-{%- endfor -%}
+---
+layout: layouts/base.njk
+title: NHS login Help Centre
+---
+<section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">NHS login Help Centre</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Rapidly create HTML prototypes of NHS.UK services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-row nhsuk-panel-group">
+          {%- for post in collections.categories -%}
+            <div class="nhsuk-grid-column-one-half nhsuk-panel-group__item">
+              <div class="nhsuk-promo">
+                <a class="nhsuk-promo__link-wrapper" href="{{ post.url | url }}">
+                  <div class="nhsuk-promo__content">
+                    <h2 class="nhsuk-promo__heading">{{post.data.title}}</h2>
+                    <p class="nhsuk-promo__description">
+                      {{ post.data.subtitle }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {%- endfor -%}
+          <div class="nhsuk-u-reading-width">
+            <p class="nhsuk-u-margin-bottom-0">
+              Visit the
+              <a href="https://service-manual.nhs.uk">NHS digital service manual</a>
+              for guidance and examples.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

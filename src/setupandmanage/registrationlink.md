@@ -1,7 +1,7 @@
 ---
 title: The registration confirmation link in your email does not work
 tags: setupandmanage
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 You need to confirm your email address when setting up an NHS login. To do this, you must follow the registration confirmation link we email you. If the registration confirmation link in your email does not work, there are a number of possible reasons why.
 

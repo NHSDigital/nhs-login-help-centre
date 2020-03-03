@@ -1,7 +1,7 @@
 ---
 title: What you need to set up an NHS login
 tags: setupandmanage
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 You will be asked to:
 

@@ -1,4 +1,5 @@
 module.exports = function(config) {
+  config.addLayoutAlias('default', 'layouts/base.njk');
   // pass some assets right through
   config.addPassthroughCopy("./src/images");
   config.addPassthroughCopy("./src/css");

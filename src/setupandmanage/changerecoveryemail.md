@@ -1,7 +1,7 @@
 ---
 title: How to change your recovery email address
 tags: setupandmanage
-layout: category-page.njk
+layout: layouts/category-page.njk
 ---
 A recovery email address is a second email address that you own, which will help to secure your NHS login. It will allow you to get back into your account if you cannot log in. We can also use your recovery email to contact you if there is suspicious activity on your NHS login.
 

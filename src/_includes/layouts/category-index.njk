@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% include "layouts/header.njk" %}
+<div class="nhsuk-width-container">
+    <div class="nhsuk-main-wrapper">
+        <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="{{ "/" | url }}">Help centre home</a>
+                </li>
+            </ol>
+        </nav>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h1>
+                    {{title}}
+                    <span class="nhsuk-caption-xl nhsuk-caption--bottom"></span>
+                </h1>
+                <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+                    <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+                    {%- if category -%}
+                        <ol class="nhsuk-contents-list__list">
+                            {%- for page in collections[category] -%}
+                                <li class="nhsuk-contents-list__item">
+                                    <a class="nhsuk-contents-list__link" href="{{ page.url | url }}">
+                                        {{ page.data.title }}
+                                    </a>
+                                </li>
+                            {%- endfor -%}
+                        </ol>
+                    {%- else -%}
+                        Error: please add a category to the page data
+                    {%- endif -%}
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
