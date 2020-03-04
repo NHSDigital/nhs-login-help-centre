@@ -1,18 +1,53 @@
 ---
 layout: default
 ---
-<h1>{{title}}</h1>
-{{ content | safe }}
-{%- if tags.length -%}
-    <hr/>
-    <h2>Related issues</h2>
-    <ul>
-        {%- for tag in tags -%}
-            {%- for post in collections[tags] -%}
-                {%- if post.url !== page.url -%}
-                    <li>{{post.data.title}}</li>
+{% include "layouts/header.njk" %}
+<div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+        <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="{{ "/" | url }}">Help centre home</a>
+                </li>
+                {%- for page in collections.categories -%}
+                    {%- if page.data.category == tags -%}
+                        <li class="nhsuk-breadcrumb__item">
+                            <a class="nhsuk-breadcrumb__link" href="{{ page.url | url}}">{{ page.data.title }}</a>
+                        </li>
+                    {%- endif -%}
+                {%- endfor -%}
+            </ol>
+            {%- for page in collections.categories -%}
+                {%- if page.data.category == tags -%}
+                    <p class="nhsuk-breadcrumb__back">
+                        <a class="nhsuk-breadcrumb__backlink" href="{{ page.url | url}}">Back to {{ page.data.title }}</a>
+                    </p>
                 {%- endif -%}
             {%- endfor -%}
-        {%- endfor -%}
-    </ul>
-{%- endif -%}
+        </nav>
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h1>
+                    {{ title }}
+                    <span class="nhsuk-caption-xl nhsuk-caption--bottom"></span>
+                </h1>
+                {{ content | safe }}
+                <hr/>
+                <h2>Related issues</h2>
+                <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+                    <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+                    <ol class="nhsuk-contents-list__list">
+                        {%- for post in collections[tags] -%}
+                            {%- if post.url !== page.url -%}
+                                <li class="nhsuk-contents-list__item">
+                                    <a class="nhsuk-contents-list__link" href="{{ post.url | url }}">{{ post.data.title }}</a>
+                                </li>
+                            {%- endif-%}
+                        {%- endfor -%}
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </main>
+</div>

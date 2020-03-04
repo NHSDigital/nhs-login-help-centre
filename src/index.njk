@@ -18,9 +18,9 @@ title: NHS login Help Centre
   <main class="nhsuk-main-wrapper" id="maincontent" role="main">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-grid-row nhsuk-panel-group">
+        <div class="nhsuk-grid-row nhsuk-panel-group nhsuk-u-margin-bottom-0">
           {%- for post in collections.categories -%}
-            <div class="nhsuk-grid-column-one-half nhsuk-panel-group__item">
+            <div class="nhsuk-grid-column-one-half nhsuk-panel-group__item nhsuk-u-margin-0">
               <div class="nhsuk-promo">
                 <a class="nhsuk-promo__link-wrapper" href="{{ post.url | url }}">
                   <div class="nhsuk-promo__content">
@@ -32,13 +32,13 @@ title: NHS login Help Centre
               </div>
             </div>
           {%- endfor -%}
-          <div class="nhsuk-u-reading-width">
-            <p class="nhsuk-u-margin-bottom-0">
+        </div>
+        <div class="nhsuk-u-reading-width">
+          <p class="nhsuk-u-margin-bottom-0">
               Visit the
               <a href="https://service-manual.nhs.uk">NHS digital service manual</a>
               for guidance and examples.
             </p>
-          </div>
         </div>
       </div>
     </div>
