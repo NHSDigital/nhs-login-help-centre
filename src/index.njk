@@ -19,7 +19,7 @@ title: NHS login Help Centre
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <div class="nhsuk-grid-row nhsuk-panel-group nhsuk-u-margin-bottom-0">
-          {%- for post in collections.categories -%}
+          {%- for post in collections.sortedCategories -%}
             <div class="nhsuk-grid-column-one-half nhsuk-panel-group__item nhsuk-u-margin-0">
               <div class="nhsuk-promo">
                 <a class="nhsuk-promo__link-wrapper" href="{{ post.url | url }}">

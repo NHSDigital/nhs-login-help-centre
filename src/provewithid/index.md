@@ -4,4 +4,5 @@ tags: "categories"
 subtitle: Steps on how to take and upload a good photo of your I.D.
 category: provewithid
 layout: layouts/category-index.njk
+position: 3
 ---
