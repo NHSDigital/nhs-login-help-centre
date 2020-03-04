@@ -1,6 +1,6 @@
 ---
 title: How to change your NHS login email address
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 You can change your email address by visiting your NHS login settings. Under the heading ‘your personal information’ select ‘change email address’.

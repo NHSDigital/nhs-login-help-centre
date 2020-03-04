@@ -1,6 +1,6 @@
 ---
 title: Managing NHS login from the NHS App
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 At present there is no option to manage your NHS login details within the NHS App. This is something we are currently working towards.

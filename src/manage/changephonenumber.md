@@ -1,6 +1,6 @@
 ---
 title: How to change your registered phone number
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 You can change your phone number by visiting your NHS login settings. Under the heading ‘your personal information’ select ‘change phone number’.

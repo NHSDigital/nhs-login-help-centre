@@ -1,6 +1,6 @@
 ---
 title: How to remove remembered devices
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 
