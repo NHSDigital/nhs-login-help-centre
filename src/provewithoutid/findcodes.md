@@ -1,6 +1,6 @@
 ---
 title: What to do if your photo file is damaged
-tags: provewithid
+tags: provewithoutid
 layout: layouts/category-page.njk
 ---
 

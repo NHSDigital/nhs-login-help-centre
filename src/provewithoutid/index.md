@@ -1,7 +1,7 @@
 ---
-title: What is NHS Login?
+title: How to prove who you are without photo I.D.
 tags: "categories"
-subtitle: What NHS login is, where you can use it and how it can benefit you.
-category: whatisnhslogin
+subtitle: How to get registration details from your GP surgery’s online services.
+category: provewithoutid
 layout: layouts/category-index.njk
 ---
