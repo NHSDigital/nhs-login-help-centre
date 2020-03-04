@@ -1,20 +1,19 @@
 ---
-title: What to do if your photo file is damaged
-tags: provewithid
+title: What to do if your Linkage Key, O.D.S. Code and Account I.D. have already been used
+tags: provewithoutid
 layout: layouts/category-page.njk
 ---
 
-We run a virus check on the photo of your I.D. before it is verified. If the file you upload is infected or damaged, you can try and upload another one. 
+If you see error code reference CID7004, this means your details have already been used to prove who you are on a different NHS login.
 
-If this keeps happening, there might be a problem with your device. You can try taking a photo using a different device and upload it from there. For example, you could borrow a family member’s device to take and upload a photo instead. Once verified, you can then use NHS login on your usual device as normal.
+This can happen if you are trying to set up a new NHS login with a different email address. You can use the 3 registration details from your GP surgery’s online services just once to prove who you are on one NHS login only. Once you have used them to prove who you are, you cannot use them again on a different NHS login using a different email address. 
 
-You can also prove who you are without using photo I.D. by using the registration details from your GP surgery’s online services.
+If you want to change the email address on your NHS login you can do so in your account settings. 
 
-If you do not know or remember your registration details, you can ask your GP to give you them.
+If you think that someone else may have used your 3 registration details to set up an NHS login, you should contact the National Service Desk for help.
 
-The 3 details you need are:
-* Linkage Key (could be called Passphrase)
-* O.D.S. Code (could be called Organisation Code or Practice I.D.)
-* Account I.D.
+Email: nationalservicedesk@nhs.net
 
-If you are not registered for your GP surgery’s online services, tell your GP surgery that you want to register, and they will ask you to fill in a form. Your surgery will then give you the 3 registration details.
+Phone: 0300 303 5035
+
+Include this reference in your email or phone call: **CID7004**
