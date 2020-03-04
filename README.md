@@ -21,20 +21,20 @@ File structure is as follows:
 These pages generate a list of articles for the value given in `category` key.
 They require the following keys and no content: 
 
-- title: Page title
-- tags:  must be "categories" for it to appear on the hub page
-- subtitle: description used on the hub page
-- category: tag to search for when listing articles
-- layout: must be "layouts/category-index.njk" for the page to have the correct styles
-- position: determines the position on the hub page
+- `title`: Page title
+- `tags`:  must be `categories` for it to appear on the hub page
+- `subtitle`: description used on the hub page
+- `category`: tag to search for when listing articles
+- `layout`: must be `layouts/category-index.njk` for the page to have the correct styles
+- `position`: determines the position on the hub page
 
 ### Article pages
 These pages place their content in a artcle page template that generates related content and breadcrumbs
 They require the following keys:
 
-- title: Page title, also appears on the category list page
-- tags: allows it to appear on the category list page
-- layout: must be "layouts/category-page.njk" for the page to have the correct styles
+- `title`: Page title, also appears on the category list page
+- `tags`: allows it to appear on the category list page
+- `layout`: must be `layouts/category-page.njk` for the page to have the correct styles
 
 ## Useful links
 The 11ty is as of writing fairly poor, heres some links to help:
