@@ -1,0 +1,19 @@
+---
+layout: false
+permalink: /js/search_data.js
+eleventyExcludeFromCollections: true
+---
+var tipuesearch = {
+	"pages": [
+	{%- for entry in collections.all %}
+	{%- if entry.data.excludeFromSearch %}{% else %}
+		{
+			"url": "{{ entry.url | url }}",
+			"title": "{{ entry.data.title }}",
+            "text": "",
+			"tags": "{{ entry.data.keywords or [] | join(",") }}"
+		}{% if loop.revindex0 != 0 %},{% endif %}
+	{%- endif %}
+	{%- endfor %}
+	]
+}
