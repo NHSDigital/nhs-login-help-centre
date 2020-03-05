@@ -1,6 +1,6 @@
 ---
 title: What does error reference CID3001 mean?
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 If you see error reference code CID3001, this is because you no longer have the phone number used to set up your NHS login. This means you need to change the phone number on your NHS login to your new phone number, if you have one.

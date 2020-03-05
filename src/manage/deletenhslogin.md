@@ -1,6 +1,6 @@
 ---
 title: How to delete NHS login
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 You can delete your NHS login by visiting your NHS login settings. Scroll down to the bottom and select ‘delete NHS login’.

@@ -1,6 +1,6 @@
 ---
 title: How to add a recovery email address
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 When you first set up an NHS login you are given the option to add a recovery email address. This is a second email address that you own, which will help to secure your NHS login. It will allow you to get back into your account if you cannot log in. We can also use your recovery email to contact you if there is suspicious activity on your NHS login.

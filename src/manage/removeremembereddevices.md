@@ -1,6 +1,6 @@
 ---
 title: Remember my device and stop sending security codes
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 You can remove any of your remembered devices by visiting your NHS login settings. Under the heading ‘remembered devices’ select ‘remove device’ next to the device you wish to remove from your NHS login.

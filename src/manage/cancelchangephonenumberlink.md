@@ -1,6 +1,6 @@
 ---
 title: The link in your email to cancel changing your phone number does not work
-tags: setupandmanage
+tags: manage
 layout: layouts/category-page.njk
 ---
 To cancel changing your phone number on NHS login, you must follow the confirmation link we email you. If the link does not work, there are a number of possible reasons why.
