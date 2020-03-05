@@ -2,6 +2,7 @@
 title: How to turn up your phone’s brightness
 tags: video
 layout: layouts/category-page.njk
+searchExcerpt: example search excerpt
 ---
 ## Android phones
 

@@ -6,11 +6,11 @@ eleventyExcludeFromCollections: true
 var tipuesearch = {
 	"pages": [
 	{%- for entry in collections.all %}
-	{%- if entry.data.excludeFromSearch %}{% else %}
+	{%- if entry.data.excludeFromSearch or entry.data.tags == "categories" %}{% else %}
 		{
 			"url": "{{ entry.url | url }}",
 			"title": "{{ entry.data.title }}",
-            "text": "{{ entry.templateContent | replace("\n", " ") | striptags(true) | safe }}",
+            "text": "{{ entry.data.searchExcerpt or entry.templateContent | replace("\n", " ") | striptags(true) | safe }}",
 			"tags": "{{ entry.data.keywords or [] | join(",") }}"
 		}{% if loop.revindex0 != 0 %},{% endif %}
 	{%- endif %}

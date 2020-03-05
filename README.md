@@ -27,6 +27,7 @@ They require the following keys and no content:
 - `category`: tag to search for when listing articles
 - `layout`: must be `layouts/category-index.njk` for the page to have the correct styles
 - `position`: determines the position on the hub page
+- `searchExcerpt`: Optional: the text that will appear for this page when searched
 
 ### Article pages
 These pages place their content in a artcle page template that generates related content and breadcrumbs
