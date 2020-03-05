@@ -10,7 +10,7 @@ var tipuesearch = {
 		{
 			"url": "{{ entry.url | url }}",
 			"title": "{{ entry.data.title }}",
-            "text": "",
+            "text": "{{ entry.templateContent | replace("\n", " ") | striptags(true) | safe }}",
 			"tags": "{{ entry.data.keywords or [] | join(",") }}"
 		}{% if loop.revindex0 != 0 %},{% endif %}
 	{%- endif %}
