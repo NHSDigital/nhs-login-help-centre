@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ "/css/nhs-toolkit.min.css" | url }}">
+        <link rel="stylesheet" href="{{ "/css/search.css" | url }}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -13,19 +14,54 @@
         <title>Search</title>
     </head>
     <body>
-        <form>
-            <div class="tipue_search_group">
-                <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required>
-                <button type="submit" class="tipue_search_button">
-                  search
-                </button>
-            </div>
-        </form>
+        {% include "layouts/header.njk" %}
+        <div class="nhsuk-width-container">
+            <main class="nhsuk-main-wrapper" role="main">
+                <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
+                    <ol class="nhsuk-breadcrumb__list">
+                        <li class="nhsuk-breadcrumb__item">
+                            <a class="nhsuk-breadcrumb__link" href="{{ "/" | url }}">Help centre home</a>
+                        </li>
+                    </ol>
+                    <p class="nhsuk-breadcrumb__back">
+                        <a class="nhsuk-breadcrumb__backlink" href="{{ collections.categoryData[tags].url | url }}">Back to {{ collections.categoryData[tags].title }}</a>
+                    </p>
+                </nav>
 
-        <div id="tipue_search_content"></div>
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+                        <h1 id="title">Search</h1>
+                        <form id="search" action="{{ "/search" | url }}" method="get" role="search">
+                            <div class="app-search__contents">
+                                <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS login help centre again</label>
+                                <div id="autocomplete-container"></div>
+                                <input class="app-search__input" name="q" type="search" autocomplete="off" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters">
+                                <button type="submit" class="app-search__submit">
+                                    <svg class="icon icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                        <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
+                                    </svg>
+                                    <span class="nhsuk-u-visually-hidden">Search</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="tipue_search_content"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
         <script>
+            const url = new URL(location.href);
+            const query = url
+                .searchParams
+                .get('q');
+
+            if (query) {
+                $('#title').html('Search results for ' + query);
+            }
+
             $(document).ready(function () {
-                $('#tipue_search_input').tipuesearch({ showURL: false, imageZoom: false });
+                $('#tipue_search_input').tipuesearch({showURL: false, imageZoom: false});
             });
         </script>
     </body>
