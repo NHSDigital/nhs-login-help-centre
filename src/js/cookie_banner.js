@@ -1,5 +1,6 @@
 const COOKIE_NAME = "nhsuk-cookie-consent";
 const COOKIE_VERSION = 1;
+const COOKIE_LIVE_DAYS = 90;
 
 const cookieBanner = document.getElementById("cookiebanner");
 const cookieBannerWrapper = document.getElementById("nhsuk-cookie-banner");
@@ -15,7 +16,7 @@ function getConsent() {
     .map(cookie => cookie[1]);
 
   try {
-    return JSON.parse(cookieJSON).version >= COOKIE_VERSION; 
+    return JSON.parse(cookieJSON).version >= COOKIE_VERSION;
   } catch {
     return false;
   }
@@ -25,7 +26,7 @@ function setConsentCookie(consent) {
   const cookieJSON = JSON.stringify({ consent, version: COOKIE_VERSION });
 
   const date = new Date();
-  date.setTime(date.getTime() + 7776000000);
+  date.setTime(date.getTime() + COOKIE_LIVE_DAYS * 86400000);
   const expires = date.toUTCString();
 
   document.cookie = `${COOKIE_NAME}=${cookieJSON};expires=${expires}; path=/`;
