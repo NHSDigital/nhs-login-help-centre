@@ -1,18 +1,23 @@
 const COOKIE_NAME = "nhsuk-cookie-consent";
 const COOKIE_VERSION = 1;
 
-function getConsentCookie() {
-  const cookieJSON = document.cookie
+const cookieBanner = document.getElementById("cookiebanner");
+const cookieBannerWrapper = document.getElementById("nhsuk-cookie-banner");
+const cookieAcceptButton = document.getElementById("nhsuk-cookie-banner__link_accept");
+const cookieConfirmationBanner = document.getElementById("nhsuk-cookie-confirmation-banner");
+const cookieRejectButton = document.getElementById("nhsuk-cookie-banner__link_accept_analytics");
+
+function getConsent() {
+  const [cookieJSON] = document.cookie
     .split("; ")
     .map(s => s.split("="))
     .filter(cookie => cookie[0] === COOKIE_NAME)
     .map(cookie => cookie[1]);
 
   try {
-    const cookie = JSON.parse(cookieJSON[0]);
-    return cookie.version >= COOKIE_VERSION ? cookie : {};
+    return JSON.parse(cookieJSON).version >= COOKIE_VERSION; 
   } catch {
-    return {};
+    return false;
   }
 }
 
@@ -27,26 +32,13 @@ function setConsentCookie(consent) {
 }
 
 function handleLinkClick(consent) {
-    setConsentCookie(consent);
-    document.querySelector('#cookiebanner').style.display = 'none';
-    document.querySelector('#nhsuk-cookie-confirmation-banner').style.display = 'block';
+  setConsentCookie(consent);
+  cookieBanner.style.display = "none";
+  cookieConfirmationBanner.style.display = "block";
 }
 
-function initaliseBanner() {
-  const { consent = null } = getConsentCookie();
-
-  if (consent !== null) return;
-
-  document.querySelector("#nhsuk-cookie-banner").style.display = "block";
-
-  document
-    .getElementById("nhsuk-cookie-banner__link_accept")
-    .addEventListener("click", () => handleLinkClick(true));
-
-  document
-    .getElementById("nhsuk-cookie-banner__link_accept_analytics")
-    .addEventListener("click", () => handleLinkClick(false));
+if (!getConsent()) {
+  cookieBannerWrapper.style.display = "block";
+  cookieAcceptButton.addEventListener("click", () => handleLinkClick(true));
+  cookieRejectButton.addEventListener("click", () => handleLinkClick(false));
 }
-
-
-initaliseBanner();
