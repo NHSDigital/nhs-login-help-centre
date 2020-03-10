@@ -29,7 +29,7 @@ function setConsentCookie(consent) {
   date.setTime(date.getTime() + COOKIE_LIVE_DAYS * 86400000);
   const expires = date.toUTCString();
 
-  document.cookie = `${COOKIE_NAME}=${cookieJSON};expires=${expires}; path=/`;
+  document.cookie = `${COOKIE_NAME}=${cookieJSON}; expires=${expires}; path=/`;
 }
 
 function handleLinkClick(consent) {
