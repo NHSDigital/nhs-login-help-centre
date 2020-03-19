@@ -1,35 +1,32 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
-
-const ARTICLE_HEADING_REGEX = /^#+([^#)]+)$/gm;
+const ARTICLE_SECTION_REGEX = /^#+([^#)]+)$/gm;
+const TRAILING_SLASH_REGEX = /\/$/;
 const RULER_REGEX = /^(-{3,}|\*{3,}|_{3,})$/;
 
-const sortByPosition = (a, b) => a.data.position - b.data.position || -1;
-
-const isArticle = post => post.data.type === 'article';
-
-const getHeadingData = (article) => (
+const getHeadingData = article =>
   article.template.inputContent
-    .match(ARTICLE_HEADING_REGEX)
-    .map(s => {
-      const heading = s.replace(ARTICLE_HEADING_REGEX, '$1').trim();
-      const [title, ...content] = heading.split('\n');
+    .match(ARTICLE_SECTION_REGEX)
+    .map(section => {
+      const [title, ...content] = section
+        .replace(ARTICLE_SECTION_REGEX, '$1')
+        .trim()
+        .split('\n');
 
-      const url = article.url.replace(/\/$/, '');
-      const fragment = title.replace(' ', '-').toLowerCase();
+      const fragment = title
+        .replace(' ', '-')
+        .toLowerCase();
+
       const text = content
         .filter(t => t.replace(RULER_REGEX, ''))
         .join(' ');
 
-      return {
-        title,
-        text,
-        fragment,
-        url: url + '#' + fragment,
-      }
-    })
-);
+      const url = article.url
+        .replace(TRAILING_SLASH_REGEX, '#' + fragment);
+
+      return { title, text, url, fragment };
+    });
 
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
@@ -37,9 +34,8 @@ const markdownLibrary = markdownIt({
   breaks: true,
   linkify: true
 }).use(markdownItAnchor, {
-  permalink: false,
+  permalink: false
 });
-
 
 module.exports = function(config) {
   config.addLayoutAlias('default', 'layouts/base.njk');
@@ -48,20 +44,23 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/js');
 
-  config.addCollection('articles', collections => (
+  config.addCollection('articles', collections =>
     collections
       .getAll()
-      .filter(isArticle)
-      .sort(sortByPosition)
+      .filter(
+        post => post.data.type === 'article'
+      )
+      .sort(
+        (a, b) => a.data.position - b.data.position
+      )
       .map(article => {
         // trying to clone article via ... throws an error
         article.headings = getHeadingData(article);
         return article;
       })
-  ));
+  );
 
-
-  config.setLibrary("md", markdownLibrary);
+  config.setLibrary('md', markdownLibrary);
 
   return {
     dir: {
