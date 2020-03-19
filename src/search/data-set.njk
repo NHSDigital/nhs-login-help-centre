@@ -5,16 +5,26 @@ eleventyExcludeFromCollections: true
 ---
 var tipuesearch = {
 	"pages": [
-	{%- for entry in collections.all %}
-	{%- if entry.data.excludeFromSearch or entry.data.tags == "categories" %}{% else %}
+	{%- for entry in collections.articles %}
 		{
 			"url": "{{ entry.url | url }}",
 			"title": "{{ entry.data.title }}",
             "text": "{{ entry.data.searchExcerpt or entry.templateContent | replace("\n", " ") | striptags(true) | safe }}",
 			"tags": "{{ entry.data.keywords or [] | join(",") }}",
 			"hasSearchExcerpt": {{ entry.data.searchExcerpt | length > 0 }}
-		}{% if loop.revindex0 != 0 %},{% endif %}
-	{%- endif %}
+		}
+		{% if entry.headings.length != 0 %},{% endif %}
+		{%- for heading in entry.headings %}
+			{
+				"url": "{{ heading.url | url }}",
+				"title": "{{ heading.title }}",
+				"text": "{{ heading.text | striptags(true) | safe }}",
+				"tags": "",
+				"hasSearchExcerpt": false
+			}
+			{% if loop.revindex0 != 0 %},{% endif %}
+		{%- endfor -%}
+		{% if loop.revindex0 != 0 %},{% endif %}
 	{%- endfor %}
 	]
 }

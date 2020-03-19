@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{% include "layouts/header.njk" %}
+<div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+        <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="{{ "/" | url }}">Help centre home</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="{{ collections.categoryData[tags].url | url}}">
+                        {{ collections.categoryData[tags].title }}
+                    </a>
+                </li>
+            </ol>
+            {# <p class="nhsuk-breadcrumb__back">
+                <a class="nhsuk-breadcrumb__backlink" href="{{ collections.categoryData[tags].url | url }}">Back to {{ collections.categoryData[tags].title }}</a>
+            </p> #}
+        </nav>
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h1>
+                    {{ title }}
+                    <span class="nhsuk-caption-xl nhsuk-caption--bottom"></span>
+                </h1>
+                {{ content | safe }}
+                </div>
+            </div>
+        </main>
+    </div>
