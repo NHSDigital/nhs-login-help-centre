@@ -1,3 +1,7 @@
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+
+
 const ARTICLE_HEADING_REGEX = /^#+([^#)]+)$/gm;
 const RULER_REGEX = /^(-{3,}|\*{3,}|_{3,})$/;
 
@@ -13,7 +17,7 @@ const getHeadingData = (article) => (
       const [title, ...content] = heading.split('\n');
 
       const url = article.url.replace(/\/$/, '');
-      const fragment = title.replace(' ', '').toLowerCase();
+      const fragment = title.replace(' ', '-').toLowerCase();
       const text = content
         .filter(t => t.replace(RULER_REGEX, ''))
         .join(' ');
@@ -26,6 +30,16 @@ const getHeadingData = (article) => (
       }
     })
 );
+
+/* Markdown Overrides */
+const markdownLibrary = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+}).use(markdownItAnchor, {
+  permalink: false,
+});
+
 
 module.exports = function(config) {
   config.addLayoutAlias('default', 'layouts/base.njk');
@@ -45,6 +59,9 @@ module.exports = function(config) {
         return article;
       })
   ));
+
+
+  config.setLibrary("md", markdownLibrary);
 
   return {
     dir: {
