@@ -9,10 +9,7 @@
 (function() {
   'use strict';
   const sections = {};
-
   const level = window.level || 2;
-  const HEADING_PADDING = 150;
-
   let sectionSelector = '.article-content h1';
 
   for (let i = 2; i <= level; i++) {
@@ -21,15 +18,15 @@
 
   const section = document.querySelectorAll(sectionSelector);
 
-
   function getPosition(element) {
-    var distance = HEADING_PADDING * -1;
-    do {
+    let distance = -120;
+    while (element) {
       distance += element.offsetTop;
       element = element.offsetParent;
-    } while (element);
+    };
     return distance;
   }
+
   function calculate() {
     Array.prototype.forEach.call(section, function(e) {
       if (e.id != '') {
@@ -38,17 +35,21 @@
     });
   }
 
-  function markStickyNavElem(navElem) {
-    if (document.querySelector('.active') != null)
-      document.querySelector('.active').setAttribute('class', ' ');
-    var newActive = document.querySelector('a[href="#' + navElem + '"]');
-    var idElement = document.getElementById(navElem);
-    if (
-      newActive != null &&
-      idElement != null &&
-      !idElement.classList.contains('sticky-nav-exclude-active')
-    )
+  function markStickyNavElem(elementId) {
+    const currentActive = document.querySelector('.active');
+    const newActive = document.querySelector('a[href="#' + elementId + '"]');
+
+    if (currentActive === newActive) {
+      return;
+    };
+
+    if (currentActive) {
+      currentActive.setAttribute('class', ' ');
+    }
+
+    if (newActive) {
       newActive.setAttribute('class', 'active');
+    }
   }
 
   function getBottomStickyNavElement(sections) {
@@ -73,23 +74,43 @@
     return sectionsArray[0][0];
   }
 
-  function marker() {
-    var scrollPosition =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    for (var navElem in sections) {
-      if (
-        navElem != null &&
-        navElem != '' &&
-        sections[navElem] <= scrollPosition
-      ) {
-        markStickyNavElem(navElem);
+  function getFirstNavElementInView(scrollPosition) {
+    let element;
+    for (let navElem in sections) {
+      if (sections[navElem] <= scrollPosition) {
+        element = navElem;
       }
     }
+    return element;
   }
-  $(window).on('load resize scroll', function(e) {
-    if (e.type == 'resize' || e.type == 'load') {
-      calculate();
+
+  function marker() {
+    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    const documentHeight = document.documentElement.offsetHeight;
+    let newActive = null;
+
+    //if scrolled to the bottom
+    if (scrollPosition + window.innerHeight > documentHeight) {
+      newActive = getBottomStickyNavElement(sections);
+    } else {
+      newActive = getFirstNavElementInView(scrollPosition);
     }
+
+    if (newActive) {
+      markStickyNavElem(newActive);
+    }
+  }
+  window.addEventListener('load', function() {
+    calculate();
+    marker();
+  });
+
+  window.addEventListener('resize', function() {
+    calculate();
+    marker();
+  });
+
+  window.addEventListener('scroll', function() {
     marker();
   });
 })();
