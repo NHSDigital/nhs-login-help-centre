@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 ---
 var tipuesearch = {
 	"pages": [
-	{%- for entry in collections.articles %}
+	{%- for key, entry in collections.articles %}
 		{
 			"url": "{{ entry.url | url }}",
 			"title": "{{ entry.data.title }}",
