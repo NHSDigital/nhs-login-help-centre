@@ -8,17 +8,18 @@ const cookieAcceptButton = document.getElementById("nhsuk-cookie-banner__link_ac
 const cookieConfirmationBanner = document.getElementById("nhsuk-cookie-confirmation-banner");
 const cookieRejectButton = document.getElementById("nhsuk-cookie-banner__link_accept_analytics");
 
-function getConsent() {
+
+function getConsentCookie() {
   const [cookieJSON] = document.cookie
-    .split("; ")
-    .map(s => s.split("="))
-    .filter(cookie => cookie[0] === COOKIE_NAME)
-    .map(cookie => cookie[1]);
+  .split("; ")
+  .map(s => s.split("="))
+  .filter(cookie => cookie[0] === COOKIE_NAME)
+  .map(cookie => cookie[1]);
 
   try {
-    return JSON.parse(cookieJSON).version >= COOKIE_VERSION;
+    return JSON.parse(cookieJSON)
   } catch {
-    return false;
+    return { version: 0 };
   }
 }
 
@@ -38,7 +39,7 @@ function handleLinkClick(consent) {
   cookieConfirmationBanner.style.display = "block";
 }
 
-if (!getConsent()) {
+if (getConsentCookie().version < COOKIE_VERSION) {
   cookieBannerWrapper.style.display = "block";
   cookieAcceptButton.addEventListener("click", () => handleLinkClick(true));
   cookieRejectButton.addEventListener("click", () => handleLinkClick(false));

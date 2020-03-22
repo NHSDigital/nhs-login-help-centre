@@ -20,7 +20,7 @@
 
   function getPosition(element) {
     let distance = -120;
-    while (element) {
+    while (element) {n
       distance += element.offsetTop;
       element = element.offsetParent;
     };

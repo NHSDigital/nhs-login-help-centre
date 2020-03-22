@@ -1,9 +1,9 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 
-const ARTICLE_SECTION_REGEX = /^(#+)([^#)]+)$/gm;
+const ARTICLE_SECTION_REGEX = /^(#+)([^#]+)$/gm;
 const TRAILING_SLASH_REGEX = /\/$/;
-const RULER_REGEX = /^(-{3,}|\*{3,}|_{3,})$/;
+const RULER_REGEX = /^(\-{3,}|\*{3,}|\_{3,})$/;
 
 const getHeadingData = article => (
   article.template.inputContent
