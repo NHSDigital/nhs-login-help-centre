@@ -14006,11 +14006,11 @@ h1 + .nhsuk-lede-text {
 
 .article-section-nav .article-section-nav__title {
   font-weight: 600;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.25;
   color: #4c6272;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   padding-top: 4px;
 }
 
