@@ -8,7 +8,7 @@ position: 5
 layout: layouts/article.njk
 ---
 
-## What does error reference CID2011 mean?
+## What does reference CID2011 mean?
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
 
@@ -16,7 +16,7 @@ If you see reference CID2011, this can mean there is a problem with your NHS num
 
 ***
 
-## What does error reference CID2012 mean?
+## What does reference CID2012 mean?
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
 
@@ -24,13 +24,13 @@ If you see reference CID2012, this can mean you have been incorrectly marked as 
 
 ***
 
-## What does error reference CID2024 mean?
+## What does reference CID2024 mean?
 
 If reference CID2024 is shown, this means we do not know what website or app you are trying to log into. This is a technical issue on our side.
 
 ***
 
-## What does error reference CID7020 mean?
+## What does reference CID7020 mean?
 
 If reference CID7020 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -47,7 +47,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does error reference CID7021 mean?
+## What does reference CID7021 mean?
 
 If reference CID7021 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -57,7 +57,7 @@ You should ask your GP surgery to check if you are able to use their online serv
 
 ***
 
-## What does error reference CID7022 mean?
+## What does reference CID7022 mean?
 
 If reference CID7022 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -75,7 +75,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does error reference CID7023 mean?
+## What does reference CID7023 mean?
 
 If reference CID7023 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -87,7 +87,7 @@ If you need help or do not think you have already set up an NHS login, you shoul
 
 ***
 
-## What does error reference CID7024 mean?
+## What does reference CID7024 mean?
 
 If reference CID7024 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -102,7 +102,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does error reference CID7026 mean?
+## What does reference CID7026 mean?
 
 If reference CID7026 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -117,7 +117,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does error reference CID7027 mean?
+## What does reference CID7027 mean?
 
 If reference CID7027 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -132,7 +132,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does error reference CID7029 mean?
+## What does reference CID7029 mean?
 
 If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details, or with your GP surgery's system.
 
@@ -140,7 +140,7 @@ Contact us so we can find out what is causing the problem.
 
 ***
 
-## What does error reference CID7100 mean?
+## What does reference CID7100 mean?
 
 If reference CID7100 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
