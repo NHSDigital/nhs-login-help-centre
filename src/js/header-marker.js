@@ -8,15 +8,15 @@
 */
 (function() {
   'use strict';
-  const sections = {};
   const level = window.level || 2;
+
+
+  let sections = {};
   let sectionSelector = '.article-content h1';
 
   for (let i = 2; i <= level; i++) {
     sectionSelector += ', .article-content h' + i;
   }
-
-  const section = document.querySelectorAll(sectionSelector);
 
   function getPosition(element) {
     let distance = -120;
@@ -28,11 +28,13 @@
   }
 
   function calculate() {
-    Array.prototype.forEach.call(section, function(e) {
-      if (e.id != '') {
-        sections[e.id] = getPosition(e);
-      }
-    });
+    const elements = document.querySelectorAll(sectionSelector);
+    sections = Array.from(elements)
+      .filter(e => e.id)
+      .map(e => ({ id: e.id, pos: getPosition(e) }))
+      .sort((a, b) => a.pos - b.pos);
+
+    console.log(sections)
   }
 
   function markStickyNavElem(elementId) {
@@ -52,33 +54,11 @@
     }
   }
 
-  function getBottomStickyNavElement(sections) {
-    //if no sections in sticky nav return immediatelly
-    if (sections == null || sections.length == 0) {
-      return null;
-    }
-    //sort sections descending by value / second element
-
-    //create temp array to sort dict by second element
-    var sectionsArray = Object.keys(sections).map(function(key) {
-      return [key, sections[key]];
-    });
-
-    // Sort the array descending based on the second element
-    sectionsArray.sort(function(first, second) {
-      return second[1] - first[1];
-    });
-
-    //return first element after sorting by position / which is bottom
-    // element of the the sticky nav
-    return sectionsArray[0][0];
-  }
-
   function getFirstNavElementInView(scrollPosition) {
-    let element;
-    for (let navElem in sections) {
-      if (sections[navElem] <= scrollPosition) {
-        element = navElem;
+    let element = sections[0];
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].pos <= scrollPosition) {
+        element = sections[i];
       }
     }
     return element;
@@ -90,14 +70,14 @@
     let newActive = null;
 
     //if scrolled to the bottom
-    if (scrollPosition + window.innerHeight > documentHeight) {
-      newActive = getBottomStickyNavElement(sections);
+    if (Math.ceil(scrollPosition + window.innerHeight) >= documentHeight) {
+      newActive = sections[sections.length - 1];
     } else {
       newActive = getFirstNavElementInView(scrollPosition);
     }
 
     if (newActive) {
-      markStickyNavElem(newActive);
+      markStickyNavElem(newActive.id);
     }
   }
   window.addEventListener('load', function() {
