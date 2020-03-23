@@ -14005,36 +14005,21 @@ h1 + .nhsuk-lede-text {
 }
 
 .article-section-nav .article-section-nav__title {
-    margin: 0 0 16px;
-    display: inline-block;
-    padding: 0 10px 10px 0;
-    border-bottom: 4px solid #212B32;
-    width: 100%;
-    font-family: "Frutiger W01",Arial,sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 28px;
-    text-transform: none
+  font-weight: 600;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #4c6272;
+  margin-bottom: 12px;
+  padding-top: 4px;
 }
 
-@media (min-width: 925px) {
-    .article-section-nav .article-section-nav__title {
-        font-size:24px;
-        line-height: 34px
-    }
-}
-
-@media (min-width: 925px) {
-    .article-section-nav .article-section-nav__title {
-        line-height:24px
-    }
-}
-
-@media (max-width: 924px) {
-    .article-section-nav .article-section-nav__title {
-        display:block;
-        padding: 0 0 4px 0
-    }
+@media (min-width: 40.0625em) {
+  .article-section-nav .article-section-nav__title {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.25;
+  }
 }
 
 .article-section-nav .article-section-nav__section {
@@ -14051,20 +14036,11 @@ h1 + .nhsuk-lede-text {
     padding-left: 0;
     font-family: "Frutiger W01",Arial,sans-serif;
     font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
-    text-transform: none
-}
-
-@media (min-width: 925px) {
-    .article-section-nav .article-section-nav__list {
-        font-size:18px;
-        line-height: 30px
-    }
+    text-transform: none;
 }
 
 .article-section-nav .article-section-nav__list li {
-    padding-left: 0
+    padding: 4px 0;
 }
 
 .article-section-nav .article-section-nav__list li:first-child a {
@@ -14072,14 +14048,20 @@ h1 + .nhsuk-lede-text {
 }
 
 .article-section-nav .article-section-nav__list a {
-    margin-top: 10px;
     display: inline-block;
-    text-decoration: underline
+    text-decoration: none;
+    font-weight: normal;
+    color: #005eb8;
 }
 
 .article-section-nav .article-section-nav__list a:hover {
-    text-decoration: none
+    text-decoration: underline;
 }
+
+.article-section-nav .article-section-nav__list a:visited:hover {
+  color: #330072;
+}
+
 
 .article-section-nav .article-section-nav__list .section-numbered {
     margin-left: 20px;
