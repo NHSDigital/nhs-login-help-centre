@@ -5,7 +5,7 @@ subtitle: Technical problems, general advice and known service issues.
 type: article
 hub: home
 position: 5
-layout: layouts/hub.njk
+layout: layouts/article.njk
 ---
 
 ## What does reference CID2011 mean?
