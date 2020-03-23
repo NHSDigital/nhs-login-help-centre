@@ -1,8 +1,9 @@
 ---
 title: How to manage NHS login
-tags: categories
+short_title: Manage
 subtitle: Learn how to manage, edit and delete your NHS login.
-category: manage
-layout: layouts/category-index.njk
+type: hub
+hub: home
 position: 2
+layout: layouts/hub.njk
 ---
