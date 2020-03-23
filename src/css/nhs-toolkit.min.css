@@ -14183,3 +14183,25 @@ h1 + .nhsuk-lede-text {
 .article-section-nav+.article-section-nav {
     margin-top: 48px
 }
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h3,
+.article-content h5,
+.article-content h6 {
+  padding-top: 40px;
+  margin-top: -40px;
+}
+
+@media (max-width: 924px) {
+  .article-content h1,
+  .article-content h2,
+  .article-content h3,
+  .article-content h3,
+  .article-content h5,
+  .article-content h6 {
+    padding-top: 30px;
+    margin-top: -30px;
+  }
+}
