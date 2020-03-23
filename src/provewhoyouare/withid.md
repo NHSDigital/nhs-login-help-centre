@@ -1,16 +1,13 @@
 ---
-title: How to set up NHS login
-short_title: Set up
-subtitle: Find out what NHS login is, how to set one up and where you can use it.
+title: Prove who you are with photo I.D.
+subtitle: Information, advice and known issues around proving who you are with photo I.D..
 type: article
-hub: home
+hub: provewhoyouare
 position: 1
 layout: layouts/article.njk
 ---
 
 ## What you need to provide to prove who you are
-
-
 You will be asked to:
 * take a photo of your I.D. and submit it
 * record a scan or short video of your face
@@ -23,7 +20,6 @@ If you do not know your NHS number, you will be asked to enter your name and the
 
 ## How to take a photo of your I.D.
 ### Passport
-
 To take a good photo of your passport make sure:
 * you have not covered any part of the page
 * all 4 edges of the page are in your photo
@@ -31,14 +27,12 @@ To take a good photo of your passport make sure:
 * there's no shine from a light or window
 
 ### Driving licence
-
 To take a good photo of your driving licence make sure:
 * you do not cover any of the corners
 * you can clearly see your face and all the text
 * there's no shine from a light or window
 
 ### European national identity card
-
 * To take a good photo of your identity card make sure:
 * you do not cover any of the corners
 * you can clearly see your face and all the text
@@ -47,7 +41,6 @@ To take a good photo of your driving licence make sure:
 ***
 
 ## Black screen shows when trying to take a photo
-
 If the camera does not open or shows a black screen when taking a photo, this may be a problem with permissions or a known bug in the operating system.
 
 You should make sure the web browser on your device has camera and microphone permissions. You must also give permission for the NHS login website to access your device’s camera and microphone.
@@ -59,7 +52,6 @@ There is an [https://support.apple.com/en-gb](Apple support article) that descri
 ***
 
 ## Camera is unavailable when trying to take a photo or record a video
-
 If your gallery or file manager opens instead of your camera when trying to take a photo, you may have an issue with permissions.
 
 You must give permission for your web browser to access the camera and microphone. If your web browser does not have permission, you will not be given the option to use the camera. Instead, your device's photo gallery or file manager app will open instead.
@@ -85,7 +77,6 @@ If this does not work, you can also try taking a photo on another device. For ex
 ***
 
 ## How to give our website permission to access the camera and microphone
-
 Your web browser should tell you any time a site requests access to your camera or microphone. This usually happens when you visit a website for the first time. You will be given the option to select ‘allow’ or ‘block’.
 
 If you select ‘block’ the NHS login website will not be able to access your camera or microphone. You can change this by going to your web browser settings.
@@ -109,7 +100,6 @@ If you are using Safari, select ‘preferences’ to open the preferences window
 ***
 
 ## What to do if your photo file is damaged
-
 We run a virus check on the photo of your I.D. If the file you upload is infected or damaged, you can try and upload another one.
 
 If this keeps happening, there might be a problem with your device. Try taking a photo using a different device. For example, you can use another phone or tablet that belongs to you or a family member.
@@ -121,5 +111,33 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 ***
 
 ## How long does it take to check photo I.D?
-
 After you send your photo I.D. and video, your photo I.D. will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the I.D. check has been successful.
+
+***
+
+## What happens if you do not pass the check?
+If you do not pass the photo I.D. check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
+
+If you keep getting the same problem, you can prove who you are without photo I.D. instead.
+
+[/provewithid/withoutid](How to prove who you are without photo I.D.)
+
+***
+
+## What does error reference CID4002 mean?
+If you see the error reference code CID4002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
+
+You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
+
+If you keep getting this message, contact us so we can try to fix the problem.
+
+***
+
+## What does error reference CID8002 mean?
+If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
+
+You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
+
+If you keep getting this message, contact us so we can try to fix the problem.
+
+How to prove who you are without photo I.D.

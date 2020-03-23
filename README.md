@@ -23,6 +23,7 @@ They require the following keys and no content:
 
 - `title`: Page title
 - `subtitle`: A description of the Hub
+- `name`: the id of the hub
 - `type`: Always `hub`
 - `layout`: Always `layouts/hub.njk`
 - `hub`: the name of the parient hub page (`home` for the home page)
