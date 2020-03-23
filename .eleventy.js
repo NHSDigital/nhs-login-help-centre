@@ -1,32 +1,8 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-
-const ARTICLE_SECTION_REGEX = /^(#+)([^#]+)$/gm;
-const TRAILING_SLASH_REGEX = /\/$/;
-const RULER_REGEX = /^(\-{3,}|\*{3,}|\_{3,})$/;
-
-const getHeadingData = article => (
-  article.template.inputContent
-    .match(ARTICLE_SECTION_REGEX)
-    .map(section => {
-      const [title, ...content] = section
-        .replace(ARTICLE_SECTION_REGEX, '$2')
-        .trim()
-        .split('\n');
-
-      const text = content
-        .filter(t => t.replace(RULER_REGEX, ''))
-        .join(' ');
-
-      const fragment = title.replace(' ', '-').toLowerCase();
-      const url = article.url.replace(TRAILING_SLASH_REGEX, '#' + fragment);
-      const level = section.replace(ARTICLE_SECTION_REGEX, '$1').length;
-
-      return { title, text, url, fragment, level };
-    })
-);
-
-const collectionToKeyedObject = (collection, page) => ({ ...collection, [page.url]: page });
+const { isArticle, addArticleData } = require('./lib/article');
+const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
+const { collectionToKeyedObject, sortByPosition } = require('./lib/utils');
 
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
@@ -47,15 +23,26 @@ module.exports = function(config) {
   config.addCollection('articles', collections =>
     collections
       .getAll()
-      .filter(post => post.data.type === 'article')
-      .sort((a, b) => a.data.position - b.data.position)
-      .map(article => {
-        // trying to clone article via ... throws an error
-        article.headings = getHeadingData(article);
-        return article;
-      })
+      .filter(isArticle)
+      .map(addArticleData)
       .reduce(collectionToKeyedObject, {})
   );
+
+  config.addCollection('hubs', collections => {
+    const allPages = collections.getAll();
+    const hubs = allPages
+      .filter(isHub)
+      .map(hub => addHubData(allPages, hub))
+      .reduce(addHubToCollection, {});
+
+    return {
+      ...hubs,
+      home: addHubData(allPages, {
+        data: { name: 'home' }
+      })
+    };
+  });
+
 
   config.setLibrary('md', markdownLibrary);
 

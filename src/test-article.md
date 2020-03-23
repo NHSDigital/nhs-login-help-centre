@@ -1,7 +1,8 @@
 ---
-title: test article
+title: Test Article
 subtitle: this is a subtitle
 type: article
+hub: test-subhub
 position: 1
 layout: layouts/article.njk
 ---
