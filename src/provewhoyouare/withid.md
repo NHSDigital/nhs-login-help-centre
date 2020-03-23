@@ -1,6 +1,6 @@
 ---
 title: Prove who you are with photo I.D.
-subtitle: Information, advice and known issues around proving who you are with photo I.D..
+subtitle: Information, advice and known issues around proving who you are with photo I.D.
 type: article
 hub: provewhoyouare
 position: 1
@@ -47,7 +47,7 @@ You should make sure the web browser on your device has camera and microphone pe
 
 If you are using an iOS device, updating the iOS operating system software on your device to a newer version may also help. Version 11.2 will always show a black screen when trying to open the camera.
 
-There is an [https://support.apple.com/en-gb](Apple support article) that describes how to check for updates.
+There is an <a href="https://support.apple.com/en-gb">Apple support article</a> that describes how to check for updates.
 
 ***
 
@@ -62,7 +62,7 @@ If this problem keeps happening even with permissions allowed, there might be a 
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-[/provewithid/withoutid](How to prove who you are without photo I.D.)
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
 ***
 
@@ -106,7 +106,7 @@ If this keeps happening, there might be a problem with your device. Try taking a
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-[/provewithid/withoutid](How to prove who you are without photo I.D.)
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
 ***
 
@@ -120,7 +120,7 @@ If you do not pass the photo I.D. check, we will send you an email with some adv
 
 If you keep getting the same problem, you can prove who you are without photo I.D. instead.
 
-[/provewithid/withoutid](How to prove who you are without photo I.D.)
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
 ***
 
