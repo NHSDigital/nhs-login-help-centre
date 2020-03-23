@@ -1,0 +1,56 @@
+---
+layout: default
+level: 2
+---
+{% include "layouts/header.njk" %}
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        {# <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
+            <ol class="nhsuk-breadcrumb__list">
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="/">Help centre home</a>
+                </li>
+                <li class="nhsuk-breadcrumb__item">
+                    <a class="nhsuk-breadcrumb__link" href="/provewhoyouare/hub">How to prove who you are</a>
+                </li>
+            </ol>
+            <p class="nhsuk-breadcrumb__back">
+                <a class="nhsuk-breadcrumb__backlink" href="/provewhoyouare/hub">Back to How to prove who you are</a>
+            </p>
+        </nav> #}
+
+        <div class="nhsuk-width-container">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-third sticky-nav">
+                    <div class="article-section-nav-wrapper">
+                        <div class="article-section-nav">
+                            <h2 class="article-section-nav__title">{{ title }}</h2>
+                            <nav>
+                                <ol class="article-section-nav__list">
+                                    {%- for heading in collections.articles[page.url].headings-%}
+                                        {%- if heading.level <= level -%}
+                                            <li>
+                                                <a href="#{{ heading.fragment }}" aria-label="Scroll to '{{heading.title}}'" title="Scroll to '{{heading.title}}'">
+                                                    {{ heading.title }}
+                                                </a>
+                                            </li>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="nhsuk-grid-column-two-thirds article-content">
+                    {{ content | safe }}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript">
+    window.level = {{ level }}
+</script>
+<script src={{ "/js/header-marker.js" | url }}></script>
+{% include "layouts/footer.njk" %}

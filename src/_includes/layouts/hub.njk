@@ -1,26 +1,17 @@
 ---
-layout: layouts/base.njk
-title: NHS login Help Centre
-excludeFromSearch: true
+layout: default
 ---
-<section class="nhsuk-hero">
-  <div class="nhsuk-width-container nhsuk-hero--border">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <div class="nhsuk-hero__wrapper">
-          <h1 class="nhsuk-u-margin-bottom-3">NHS login Help Centre</h1>
-          {# <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Rapidly create HTML prototypes of NHS.UK services.</p> #}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% include "layouts/header.njk" %}
 <div class="nhsuk-width-container">
   <main class="nhsuk-main-wrapper" id="maincontent" role="main">
     <div class="nhsuk-grid-row">
+      <h1>{{title}}</h1>
+       {%- if  collections.hubs[page.url].pages.length == 0 -%}
+            <h3>Please add items to hub before publishing</h3>
+        {%- endif -%}
       <div class="nhsuk-grid-column-full">
         <div class="nhsuk-grid-row nhsuk-panel-group nhsuk-u-margin-bottom-0">
-          {%- for page in collections.hubs.home.pages -%}
+          {%- for page in collections.hubs[name].pages -%}
             <div class="nhsuk-grid-column-one-half nhsuk-panel-group__item nhsuk-u-margin-0">
               <div class="nhsuk-promo">
                 <a class="nhsuk-promo__link-wrapper" href="{{ page.url | url }}">
@@ -45,3 +36,4 @@ excludeFromSearch: true
     </div>
   </main>
 </div>
+{% include "layouts/footer.njk" %}

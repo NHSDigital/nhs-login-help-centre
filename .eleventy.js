@@ -1,47 +1,61 @@
-const { isFinite } = Number;
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const { isArticle, addArticleData } = require('./lib/article');
+const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
+const { collectionToKeyedObject, sortByPosition } = require('./lib/utils');
 
-const isCategory = post =>
-  Array.isArray(post.data.tags) && post.data.tags.includes("categories");
-
-const sortByPosition = (a, b) => a.data.position - b.data.position || -1;
-
-const convertToObject = (acc, current) => ({
-  ...acc,
-  [current.category]: current
+/* Markdown Overrides */
+const markdownLibrary = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+}).use(markdownItAnchor, {
+  permalink: false
 });
 
 module.exports = function(config) {
-  config.addLayoutAlias("default", "layouts/base.njk");
+  config.addLayoutAlias('default', 'layouts/base.njk');
   // pass some assets right through
-  config.addPassthroughCopy("./src/images");
-  config.addPassthroughCopy("./src/css");
-  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy('./src/images');
+  config.addPassthroughCopy('./src/css');
+  config.addPassthroughCopy('./src/js');
 
-  config.addCollection("sortedCategories", collections =>
+  config.addCollection('articles', collections =>
     collections
       .getAll()
-      .filter(isCategory)
-      .sort(sortByPosition)
+      .filter(isArticle)
+      .map(addArticleData)
+      .reduce(collectionToKeyedObject, {})
   );
 
-  config.addCollection("categoryData", collections =>
-    collections
-      .getAll()
-      .filter(isCategory)
-      .map(post => post.data)
-      .reduce(convertToObject, {})
-  );
+  config.addCollection('hubs', collections => {
+    const allPages = collections.getAll();
+    const hubs = allPages
+      .filter(isHub)
+      .map(hub => addHubData(allPages, hub))
+      .reduce(addHubToCollection, {});
+
+    return {
+      ...hubs,
+      home: addHubData(allPages, {
+        data: { name: 'home' }
+      })
+    };
+  });
+
+
+  config.setLibrary('md', markdownLibrary);
 
   return {
     dir: {
-      input: "src/",
-      output: "_site",
-      data: "_data/"
+      input: 'src/',
+      output: '_site',
+      data: '_data/'
     },
-    templateFormats: ["njk", "md", "11ty.js"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    templateFormats: ['njk', 'md', '11ty.js'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
-    pathPrefix: "/nhs-help-centre/"
+    pathPrefix: '/nhs-help-centre/'
   };
 };
