@@ -1,5 +1,5 @@
 ---
-title: Prove who you are without photo I.D.
+title: Prove who you are with photo I.D.
 subtitle: Information, advice and known issues around proving who you are with photo I.D.
 type: article
 hub: provewhoyouare
