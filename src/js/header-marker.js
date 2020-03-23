@@ -33,8 +33,6 @@
       .filter(e => e.id)
       .map(e => ({ id: e.id, pos: getPosition(e) }))
       .sort((a, b) => a.pos - b.pos);
-
-    console.log(sections)
   }
 
   function markStickyNavElem(elementId) {
