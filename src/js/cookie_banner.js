@@ -39,8 +39,8 @@ function handleLinkClick(consent) {
   cookieConfirmationBanner.style.display = "block";
 }
 
-if (getConsentCookie().version < COOKIE_VERSION) {
-  cookieBannerWrapper.style.display = "block";
-  cookieAcceptButton.addEventListener("click", () => handleLinkClick(true));
-  cookieRejectButton.addEventListener("click", () => handleLinkClick(false));
-}
+// if (getConsentCookie().version < COOKIE_VERSION) {
+//   cookieBannerWrapper.style.display = "block";
+//   cookieAcceptButton.addEventListener("click", () => handleLinkClick(true));
+//   cookieRejectButton.addEventListener("click", () => handleLinkClick(false));
+// }
