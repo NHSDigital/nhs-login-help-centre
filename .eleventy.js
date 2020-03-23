@@ -7,8 +7,7 @@ const { collectionToKeyedObject, sortByPosition } = require('./lib/utils');
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
   html: true,
-  breaks: true,
-  linkify: true
+  breaks: true
 }).use(markdownItAnchor, {
   permalink: false
 });

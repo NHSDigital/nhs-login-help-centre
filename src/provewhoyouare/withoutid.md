@@ -18,7 +18,7 @@ You will then be given 3 registration details:
 
 You can use these 3 registration details to prove who you are instead of sending a photo of your I.D. You cannot use the username and password you use to log into your GP surgery’s online services.
 
-[How to prove who you are with photo I.D.](# "How to prove who you are with photo I.D.")
+<a href="../withid">How to prove who you are with photo I.D.</a>
 
 ***
 
@@ -31,7 +31,7 @@ The 3 details you need are:
 * O.D.S. Code (could be called Organisation Code or Practice I.D.)
 * Account I.D.
 
-[How to prove who you are with photo I.D.](# "How to prove who you are with photo I.D.")
+<a href="../withid">How to prove who you are with photo I.D.</a>
 
 ***
 
@@ -64,7 +64,7 @@ Contact your GP surgery to check you have the right registration details. If you
 Reference CID7006 is shown when we cannot find a GP system using the O.D.S. code your entered. This can happen if you change GP surgery. It can also happen if your GP leaves or joins a GP surgery group.
 Contact your GP surgery to check you have the right registration details, making sure you have the correct O.D.S. code.
 
-[How to prove who you are with photo I.D.](# "How to prove who you are with photo I.D.")
+<a href="../withid">How to prove who you are with photo I.D.</a>
 
 ***
 
@@ -91,5 +91,4 @@ This could be because:
 
 You can ask your GP for new registration details for their online services. You can use these new details to try to prove who you are.
 
-[How to prove who you are with photo I.D.](# "How to prove who you are with photo I.D.")
-
+<a href="../withid">How to prove who you are with photo I.D.</a>

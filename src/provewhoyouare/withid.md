@@ -40,16 +40,16 @@ To take a good photo of your driving licence make sure:
 * you can clearly see your face and all the text
 * there's no shine from a light or window
 
-### European national identity card 
+### European national identity card
 
 To take a good photo of your identity card make sure:
 * you do not cover any of the corners
 * you can clearly see your face and all the text
 * there's no shine from a light or window
- 
- 
+
+
 ***
- 
+
 ## Black screen shows when trying to take a photo
 
 If the camera does not open or shows a black screen when taking a photo, this may be a problem with permissions or a known bug in the operating system.
@@ -73,7 +73,7 @@ If this problem keeps happening even with permissions allowed, there might be a 
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-[How to prove who you are without photo I.D.](# "How to prove who you are without photo I.D.")
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
 ***
 
@@ -125,9 +125,9 @@ If this keeps happening, there might be a problem with your device. Try taking a
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-[How to prove who you are without photo I.D.](# "How to prove who you are without photo I.D.")
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
-*** 
+***
 
 ## How long does it take to check photo I.D?
 
@@ -140,7 +140,7 @@ If you do not pass the photo I.D. check, we will send you an email with some adv
 
 If you keep getting the same problem, you can prove who you are without photo I.D. instead.
 
-[How to prove who you are without photo I.D.](# "How to prove who you are without photo I.D.")
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
 
 ***
 
@@ -161,8 +161,4 @@ You can try uploading a photo of your I.D. another time or use a better internet
 
 If you keep getting this message, contact us so we can try to fix the problem.
 
-[How to prove who you are without photo I.D.](# "How to prove who you are without photo I.D.")
-
-
-
-
+<a href="../withoutid">How to prove who you are without photo I.D.</a>
