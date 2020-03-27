@@ -14205,3 +14205,40 @@ h1 + .nhsuk-lede-text {
     margin-top: -30px;
   }
 }
+
+
+.nhsuk-hub__search {
+  display: flex;
+  justify-content: center;
+}
+
+.nhsuk-hub__search-input {
+  width: 75vw;
+  max-width: 450px;
+}
+
+@media (max-width: 40.0525em) {
+  .nhsuk-hub__search-wrap {
+    display: block;
+  }
+
+  .nhsuk-hub__search-form {
+    background: none;
+  }
+
+  .nhsuk-hub__search-submit {
+    background-color: #f0f4f5;
+    border-bottom: 1px solid #aeb7bd;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-right: 1px solid #aeb7bd;
+    border-left: 0;
+    border-top: 1px solid #aeb7bd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 0;
+  }
+
+  .nhsuk-hub__search-submit  .nhsuk-icon__search {
+    fill: #005eb8;
+  }
+}
