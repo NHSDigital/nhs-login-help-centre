@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Olie440/nhs-help-centre#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "cheerio": "^1.0.0-rc.3",
     "husky": "^4.2.3",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5",
