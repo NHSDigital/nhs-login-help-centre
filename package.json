@@ -1,5 +1,5 @@
 {
-  "name": "nhs-help-centre",
+  "name": "nhs-login-help-centre",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Olie440/nhs-help-centre.git"
+    "url": "git+https://github.com/NHSDigital/nhs-login-help-centre.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Olie440/nhs-help-centre/issues"
+    "url": "https://github.com/NHSDigital/nhs-login-help-centre/issues"
   },
-  "homepage": "https://github.com/Olie440/nhs-help-centre#readme",
+  "homepage": "https://github.com/NHSDigital/nhs-login-help-centre",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "cheerio": "^1.0.0-rc.3",
