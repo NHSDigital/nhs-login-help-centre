@@ -14238,6 +14238,32 @@ h1 + .nhsuk-lede-text {
     border-top-left-radius: 0;
   }
 
+  .nhsuk-hub__search-submit:hover {
+    background-color: #003d78;
+    border-color: #003d78;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nhsuk-hub__search-submit:hover > .nhsuk-icon__search {
+    fill: white;
+  }
+
+  .nhsuk-hub__search-submit:active {
+    background-color: #002f5c;;
+    border-color: #002f5c;;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nhsuk-hub__search-submit:focus {
+    background-color: #ffeb3b;
+    border-color: #ffeb3b;
+    color: white;
+    cursor: pointer;
+  }
+
+
   .nhsuk-hub__search-submit  .nhsuk-icon__search {
     fill: #005eb8;
   }
