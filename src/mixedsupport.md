@@ -8,35 +8,39 @@ position: 5
 layout: layouts/article.njk
 ---
 
-## What does reference CID2011 mean?
+## Reference CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
 
 If you see reference CID2011, this can mean there is a problem with your NHS number.
 
+Contact us so we can try to fix the problem.
+
 ***
 
-## What does reference CID2012 mean?
+## Reference CID2012: Your NHS login may have been disabled
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
 
-If you see reference CID2012, this can mean you have been incorrectly marked as deceased or someone else is using your information. If this happens to you, your NHS login will be disabled.
+If reference CID2012 is shown, this can mean your information has errors or it is being used by someone else. If this happens to you, your NHS login will be disabled.
+
+Contact us so we can try to fix the problem.
 
 ***
 
-## What does reference CID2024 mean?
+## Reference CID2024: There is a technical issue on our side
 
 If reference CID2024 is shown, this means we do not know what website or app you are trying to log into. This is a technical issue on our side.
 
 ***
 
-## What does reference CID7020 mean?
+## Reference CID7020: Unable to connect to your GP surgery’s system
 
 If reference CID7020 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
 There could be a problem with your details, or with your GP surgery's system.
 
-To connect to your GP surgery’s system, you can ask your GP surgery for your registration details to their GP online services.
+To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services.
 
 You will need:
 * Linkage Key (sometimes called passphrase)
@@ -47,7 +51,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does reference CID7021 mean?
+## Reference CID7021: Permission to use your GP surgery’s online services
 
 If reference CID7021 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -57,13 +61,13 @@ You should ask your GP surgery to check if you are able to use their online serv
 
 ***
 
-## What does reference CID7022 mean?
+## Reference CID7022: Unable to connect to your GP surgery’s system
 
 If reference CID7022 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
 There could be a problem with your details, or with your GP surgery's system.
 
-To connect to your GP surgery’s system, you can ask your GP surgery for your registration details to their GP online services
+To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services
 
 You will need:
 * Linkage Key (sometimes called passphrase)
@@ -75,7 +79,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does reference CID7023 mean?
+## Reference CID7023: You have already set up an NHS login
 
 If reference CID7023 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
@@ -87,11 +91,11 @@ If you need help or do not think you have already set up an NHS login, you shoul
 
 ***
 
-## What does reference CID7024 mean?
+## Reference CID7024: Unable to connect to your GP surgery’s system
 
 If reference CID7024 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This is because we are having some technical problems. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details to their GP online services.
+This is because we are having some technical problems. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 * Linkage Key (sometimes called passphrase)
@@ -102,11 +106,11 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does reference CID7026 mean?
+## Reference CID7026: Unable to connect to your GP surgery’s system
 
 If reference CID7026 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details to their GP online services.
+This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 * Linkage Key (sometimes called passphrase)
@@ -117,11 +121,11 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does reference CID7027 mean?
+## Reference CID7027: Unable to connect to your GP surgery’s system
 
 If reference CID7027 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details to their GP online services.
+This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 * Linkage Key (sometimes called passphrase)
@@ -132,7 +136,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 ***
 
-## What does reference CID7029 mean?
+## Reference CID7029: We cannot connect your NHS login to your GP surgery
 
 If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details, or with your GP surgery's system.
 
@@ -140,7 +144,7 @@ Contact us so we can find out what is causing the problem.
 
 ***
 
-## What does reference CID7100 mean?
+## Reference CID7100: Unable to connect to your GP surgery’s system
 
 If reference CID7100 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
