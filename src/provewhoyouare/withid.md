@@ -1,6 +1,6 @@
 ---
-title: Prove who you are with photo I.D.
-subtitle: Information, advice and known issues around proving who you are with photo I.D.
+title: Use photo I.D. to prove who you are
+subtitle: Information and advice on how to prove who you are with photo I.D.
 type: article
 hub: provewhoyouare
 position: 1
@@ -73,7 +73,7 @@ If this problem keeps happening even with permissions allowed, there might be a 
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-<a href="../withoutid">How to prove who you are without photo I.D.</a>
+<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
@@ -125,7 +125,7 @@ If this keeps happening, there might be a problem with your device. Try taking a
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-<a href="../withoutid">How to prove who you are without photo I.D.</a>
+<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
@@ -134,17 +134,18 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 After you send your photo I.D. and video, your photo I.D. will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the I.D. check has been successful.
 
 ***
+
 ## What happens if you do not pass the check?
 
 If you do not pass the photo I.D. check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
 
 If you keep getting the same problem, you can prove who you are without photo I.D. instead.
 
-<a href="../withoutid">How to prove who you are without photo I.D.</a>
+<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
-## What does error reference CID4002 mean?
+## Reference CID4002: Your photo I.D. has failed to upload
 
 If you see the error reference code CID4002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
@@ -152,8 +153,11 @@ You can try uploading a photo of your I.D. another time or use a better internet
 
 If you keep getting this message, contact us so we can try to fix the problem.
 
+<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+
 ***
-## What does error reference CID8002 mean?
+
+## Reference CID8002: Your photo I.D. has failed to upload
 
 If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
@@ -161,4 +165,4 @@ You can try uploading a photo of your I.D. another time or use a better internet
 
 If you keep getting this message, contact us so we can try to fix the problem.
 
-<a href="../withoutid">How to prove who you are without photo I.D.</a>
+<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>

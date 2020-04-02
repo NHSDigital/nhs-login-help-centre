@@ -60,11 +60,11 @@ We run a virus check on your video file before it is verified. If the file you u
 
 If this keeps happening, there might be a problem with your device. You can try recording a video using a different device and upload it from there. For example, you could borrow a family member’s device to record and upload a video instead. Once verified, you can then use NHS login on your usual device as normal.
 
-<a href="#how-to-prove-who-you-are-without-photo-I.D">How to prove who you are without photo I.D</a>
+<a href="../provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
-## Camera unavailable when trying to record a video
+## Camera unavailable when trying to record a video
 
 If your gallery or file manager opens instead of your camera when trying to record a video, you may have an issue with permissions.
 
@@ -86,21 +86,21 @@ If this does not work, you can also try recording a video on another device. For
 
 If you are registered for your GP surgery’s online services, you can use your registration details to prove who you are instead of using photo I.D. and a video.
 
-<a href="#how-to-prove-who-you-are-without-photo-I.D">How to prove who you are without photo I.D</a>
+<a href="../provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
-## What does reference CID4011 mean?
+## Reference CID4011: Your video has failed to upload
 
 If reference CID4011 is shown, this is because your video has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
 You can try uploading your video another time or use a better internet connection. For example, you should make sure you are using a good Wi-Fi connection. Try using a different Wi-Fi connection if the one you are using does not work.
 
-<a href="#how-to-prove-who-you-are-without-photo-I.D">How to prove who you are without photo I.D</a>
+<a href="../provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
 
-## What does reference CID4012 mean?
+## Reference CID4012: We cannot validate your video
 
 If reference CID4012 is shown, this means we are having technical problems on our side or it might be a problem with your internet connection. This is stopping us from validating your short video.
 
