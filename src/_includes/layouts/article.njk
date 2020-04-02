@@ -2,24 +2,11 @@
 layout: default
 level: 2
 ---
-{% include "layouts/header.njk" %}
+{% include "header.njk" %}
 <div class="nhsuk-width-container ">
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
-        {# <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb" style="background-color: #ffffff00">
-            <ol class="nhsuk-breadcrumb__list">
-                <li class="nhsuk-breadcrumb__item">
-                    <a class="nhsuk-breadcrumb__link" href="/">Help centre home</a>
-                </li>
-                <li class="nhsuk-breadcrumb__item">
-                    <a class="nhsuk-breadcrumb__link" href="/provewhoyouare/hub">How to prove who you are</a>
-                </li>
-            </ol>
-            <p class="nhsuk-breadcrumb__back">
-                <a class="nhsuk-breadcrumb__backlink" href="/provewhoyouare/hub">Back to How to prove who you are</a>
-            </p>
-        </nav> #}
-
         <div class="nhsuk-width-container">
+            {% include "breadcrumbs.njk" %}
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-one-third sticky-nav">
                     <div class="article-section-nav-wrapper">
@@ -53,4 +40,4 @@ level: 2
     window.level = {{ level }}
 </script>
 <script src={{ "/js/header-marker.js" | url }}></script>
-{% include "layouts/footer.njk" %}
+{% include "footer.njk" %}

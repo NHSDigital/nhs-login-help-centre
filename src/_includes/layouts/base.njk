@@ -10,5 +10,6 @@
     <body>
         {% include "cookie-banner.njk" %}
         {{ content | safe }}
+        <script src={{ "/js/back-link.js" | url }}></script>
     </body>
 </html>
