@@ -12,10 +12,10 @@
 
   function getConsentCookie() {
     const [cookieJSON] = document.cookie
-    .split("; ")
-    .map(s => s.split("="))
-    .filter(cookie => cookie[0] === COOKIE_NAME)
-    .map(cookie => cookie[1]);
+      .split("; ")
+      .map(s => s.split("="))
+      .filter(cookie => cookie[0] === COOKIE_NAME)
+      .map(cookie => cookie[1]);
 
     try {
       return JSON.parse(cookieJSON)

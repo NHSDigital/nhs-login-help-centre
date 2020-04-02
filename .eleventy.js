@@ -2,7 +2,8 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const { isArticle, addArticleData } = require('./lib/article');
 const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
-const { collectionToKeyedObject, sortByPosition } = require('./lib/utils');
+const { addBreadcrumbs } = require('./lib/breadcrumbs');
+const { collectionToKeyedObject } = require('./lib/utils');
 
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
@@ -19,27 +20,22 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/js');
 
-  config.addCollection('articles', collections =>
-    collections
-      .getAll()
+  config.addCollection('articles', collections => {
+    const allPages = collections.getAll();
+    return allPages
       .filter(isArticle)
       .map(addArticleData)
-      .reduce(collectionToKeyedObject, {})
-  );
+      .map(article => addBreadcrumbs(allPages, article))
+      .reduce(collectionToKeyedObject, {});
+  });
 
   config.addCollection('hubs', collections => {
     const allPages = collections.getAll();
-    const hubs = allPages
+    return allPages
       .filter(isHub)
       .map(hub => addHubData(allPages, hub))
+      .map(hub => addBreadcrumbs(allPages, hub))
       .reduce(addHubToCollection, {});
-
-    return {
-      ...hubs,
-      home: addHubData(allPages, {
-        data: { name: 'home' }
-      })
-    };
   });
 
 
