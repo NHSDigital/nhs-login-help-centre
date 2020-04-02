@@ -8,11 +8,13 @@ position: 5
 layout: layouts/article.njk
 ---
 
-## What does reference CID2011 mean?
+## Reference CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
 
 If you see reference CID2011, this can mean there is a problem with your NHS number.
+
+Contact us so we can try to fix the problem.
 
 ***
 
