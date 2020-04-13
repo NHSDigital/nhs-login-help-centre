@@ -6,11 +6,13 @@
         <meta name="google-site-verification" content="6Qm3LCuWz9g_8OTWyr_QoGJGPhwVWx49ouloSmsMyPk" />
         <link rel="stylesheet" href="{{ "/css/nhs-toolkit.min.css" | url }}">
         <link rel="stylesheet" href="{{ "/css/nhs-cookie-banner.css" | url }}">
+        <script src={{ "/js/consent-cookie.js" | url }}></script>
         <title>{{ title }}</title>
     </head>
     <body>
         {% include "cookie-banner.njk" %}
         {{ content | safe }}
         <script src={{ "/js/back-link.js" | url }}></script>
+        <script src={{ "/js/analytics.js" | url }}></script>
     </body>
 </html>
