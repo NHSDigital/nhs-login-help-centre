@@ -21,7 +21,7 @@
     }
 
     if (consentCookie.statistics) {
-        createScript('/js/hotjar');
+        createScript('/js/hotjar.js');
         // add this for local dev
         // createScript('https://assets.adobedtm.com/launch-EN89caca63ff2c4dae923a38d7d05ec849-development.min.js')
         createScript('https://assets.adobedtm.com/launch-ENef935e55aadd4530a5725efe3624e9e2.min.js')
