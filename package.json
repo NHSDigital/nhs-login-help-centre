@@ -7,7 +7,7 @@
     "lint": "prettier --check \"*/**.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
-    "deploy": "eleventy --pathprefix /nhs-help-centre/",
+    "deploy": "eleventy",
     "watch": "eleventy --watch",
     "start": "eleventy --serve"
   },

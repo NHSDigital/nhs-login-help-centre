@@ -51,6 +51,6 @@ module.exports = function(config) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
-    pathPrefix: '/nhs-login-help-centre/'
+    pathPrefix: ''
   };
 };
