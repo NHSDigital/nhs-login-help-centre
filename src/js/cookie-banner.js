@@ -6,9 +6,15 @@
   const cookieRejectButton = document.getElementById("nhsuk-cookie-banner__link_accept_analytics");
 
   function handleLinkClick(consent) {
-    setConsentCookie(consent);
     cookieBanner.style.display = "none";
     cookieConfirmationBanner.style.display = "block";
+    setConsentCookie({
+      necessary:true,
+      preferences: false,
+      statistics: consent,
+      marketing: false,
+      consented: true
+    });
   }
 
   if (!getConsentCookie()) {

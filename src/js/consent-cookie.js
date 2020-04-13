@@ -1,5 +1,5 @@
 const COOKIE_NAME = "nhsuk-cookie-consent";
-const COOKIE_VERSION = 1;
+const COOKIE_VERSION = 3;
 const COOKIE_LIVE_DAYS = 90;
 
 function getConsentCookie() {
@@ -18,8 +18,8 @@ function getConsentCookie() {
 }
 
 
-function setConsentCookie(consent) {
-  const cookieJSON = JSON.stringify({ consent, version: COOKIE_VERSION });
+function setConsentCookie(props) {
+  const cookieJSON = JSON.stringify({ ...props, version: COOKIE_VERSION });
 
   const date = new Date();
   date.setTime(date.getTime() + COOKIE_LIVE_DAYS * 86400000);

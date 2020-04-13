@@ -38,7 +38,6 @@
         const stack = getHistoryStack();
         const [lastEntry] = stack.slice(-1);
 
-
         if (!lastEntry || lastEntry.url !== entry.url) {
             setHistoryStack(stack.concat(entry));
         }
