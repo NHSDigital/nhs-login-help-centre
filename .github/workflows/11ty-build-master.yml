@@ -19,8 +19,6 @@ jobs:
         run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          pathPrefix: ${{ secrets.pathPrefix }}
         with:
           cname: ${{ secrets.CNAME }}
           publish_dir: _site
