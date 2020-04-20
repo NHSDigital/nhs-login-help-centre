@@ -51,6 +51,6 @@ module.exports = function(config) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
-    pathPrefix: ''
+    pathPrefix: process.env.pathPrefix
   };
 };
