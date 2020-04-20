@@ -7,13 +7,14 @@ function getConsentCookie() {
     .split("; ")
     .map(s => s.split("="))
     .filter(cookie => cookie[0] === COOKIE_NAME)
-    .map(cookie => cookie[1]);
+    .map(cookie => cookie[1])
+    .map(decodeURIComponent);
 
   try {
     const cookie = JSON.parse(cookieJSON);
     return cookie.version < COOKIE_VERSION ? null : cookie;
   } catch {
-    return { version: 0 };
+    return null;
   }
 }
 
@@ -25,5 +26,5 @@ function setConsentCookie(props) {
   date.setTime(date.getTime() + COOKIE_LIVE_DAYS * 86400000);
   const expires = date.toUTCString();
 
-  document.cookie = `${COOKIE_NAME}=${cookieJSON}; expires=${expires}; path=/`;
+  document.cookie = `${COOKIE_NAME}=${encodeURIComponent(cookieJSON)}; expires=${expires}; path=/`;
 }
