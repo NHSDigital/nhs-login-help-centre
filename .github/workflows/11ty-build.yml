@@ -20,7 +20,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          cname: help.login.nhs.uk
+          cname: ${{ secrets.CNAME  }}
           publish_dir: _site
           publish_branch: gh-pages
           personal_token: ${{ secrets.PERSONAL_TOKEN  }}
