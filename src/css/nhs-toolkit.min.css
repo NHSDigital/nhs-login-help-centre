@@ -14268,3 +14268,7 @@ h1 + .nhsuk-lede-text {
     fill: #005eb8;
   }
 }
+
+.article-content hr {
+  border-bottom: 2px solid #0561b9;
+}
