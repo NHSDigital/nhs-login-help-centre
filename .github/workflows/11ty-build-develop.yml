@@ -1,8 +1,8 @@
-name: Eleventy Build
+name: Eleventy Build Develop
 on:
   push:
     branches:
-      - master
+      - develop
 jobs:
   build_deploy:
     runs-on: ubuntu-18.04
@@ -20,7 +20,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          cname: ${{ secrets.CNAME  }}
+          cname:
           publish_dir: _site
           publish_branch: gh-pages
           personal_token: ${{ secrets.PERSONAL_TOKEN  }}
