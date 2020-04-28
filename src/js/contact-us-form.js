@@ -5,11 +5,13 @@
 
         if (!yesChecked && !noChecked) return;
 
-        if (yesChecked) return;
+        if (yesChecked) {
+            document.querySelector('#contact-us-thank-you').style.display = "block";
+            document.querySelector('#contact-us-form').style.display = "none";
+        }
 
         if (noChecked) {
             document.location.assign('/contact');
         }
-
     });
 })();
