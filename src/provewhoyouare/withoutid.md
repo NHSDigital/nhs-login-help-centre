@@ -50,6 +50,10 @@ The 3 details you need are:
 
 ## What to do if your registration details from your GP surgery’s online services do not work
 
+Your registration details from your GP surgery’s online services can be used to prove who you are. If this does not work for you, there are a number of possible reasons why.
+
+If this does not work for you there are a number of possible reasons why.
+
 ### Reference CID7001: Wrong details
 
 Reference CID7001 is shown when 1 or more of the details you enter are wrong. This could be because you have wrongly entered 1 or more of your 3 registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
@@ -75,6 +79,7 @@ Contact your GP surgery to check you have the right registration details. If you
 ### Reference CID7006: We cannot find your GP surgery
 
 Reference CID7006 is shown when we cannot find a GP system using the O.D.S. code your entered. This can happen if you change GP surgery. It can also happen if your GP leaves or joins a GP surgery group.
+
 Contact your GP surgery to check you have the right registration details, making sure you have the correct O.D.S. code.
 
 Find out how you can <a href="../withid">use photo I.D. to prove who you are</a> instead.
@@ -89,7 +94,9 @@ You can use the 3 registration details from your GP surgery’s online services 
 
 If you want to change the email address on your NHS login you can do so by going to your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
 
-If you think that someone else may have used your 3 registration details to set up an NHS login, you should contact us for help.
+If you think this is a mistake and you have not used your 3 registration details to set up an NHS login, you should [contact us](# "contact us") for help.
+
+You will need to tell us the email address you use for your NHS login.
 
 ***
 

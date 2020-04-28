@@ -19,27 +19,21 @@ To visit your NHS login settings, you first need to log in with your NHS login d
 
 If you see reference CID3001, this is because you no longer have access to the phone number on your NHS login. You can change the phone number on your NHS login if you have a backup email address, or by telling us your NHS number.
 
-You must contact us if you do not have a backup email address and you do not know your NHS number.
+[Contact us](# "Contact us") if you do not have a backup email address and you do not know your NHS number.
 
-***
+You will need to tell us:
+* the email address for your NHS login
+* the current phone number for your NHS login
+* your new phone number
 
-## The change phone number link in your backup email does not work
+It will also help if you can tell us about a recent time when you have tried to log into a website or app using your NHS login. Tell us the date and time, if possible.
 
-Your backup email address can be used if you lose access to the mobile phone number on your NHS login. To confirm changing your phone number, you must select the confirmation link we send you. If the link does not work, there are a number of possible reasons why.
+To do this you can:
 
-### Expired link – Reference CID3006
-
-The link to confirm changing your phone number has a time limit of 24 hours. If it has been more than 24 hours since you received the link in your email, it will no longer work.
-
-You will need to try change your phone number again. We will then send you a new confirmation link in your email.
-
-Contact us if you did not mean to change your phone number or you think this is a mistake.
-
-### Used link – Reference CID3007
-
-The link to confirm changing your phone number may not work because you have already used it and have successfully confirmed your change of phone number. You can change your phone number again by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
-
-Contact us if you did not mean to change your phone number, or you do not have access to the new phone number.
+1. visit a website or app that uses NHS login
+2. enter your username and password
+3. press continue
+4. note the date and time
 
 ***
 
@@ -51,12 +45,12 @@ To cancel changing your phone number on NHS login, you must select the confirmat
 
 The link to cancel changing your phone number has a time limit of 24 hours. If it has been more than 24 hours since you received the link in your email, it will no longer work.
 
-As it has been more than 24 hours, it may be too late to cancel as the phone number may have already been changed. You can check or change your phone number by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
+As it has been more than 24 hours, it may be too late to cancel as the phone number may have already been changed. You can check or change your phone number by visiting your NHS login settings.
 
-Contact us if you did not mean to change your phone number, or you do not have access to the phone number on your NHS login.
+[Contact us](# "Contact us") if you did not mean to change your phone number, or you do not have access to the phone number on your NHS login.
 
 ### Used link – Reference CID3003
 
 The link to cancel changing your phone number may not work because you have already used it and have successfully cancelled changing your phone number. You can check or change your phone number by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
 
-Contact us if you do not have access to the phone number on your NHS login.
+[Contact us](# "Contact us") if you do not have access to the phone number on your NHS login.

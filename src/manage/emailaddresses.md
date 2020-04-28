@@ -34,32 +34,7 @@ Try using your NHS login to log in to a website or app.
 ***
 
 ## How to change your NHS login email address
+
 You can change your email address by going to your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings"). Under the heading ‘your personal information’ select ‘change email address’.
 
 You will be asked to enter your new email address and your password. A confirmation email will be sent to your new email address. Select the confirm email address link in the email to finish.
-
-***
-
-## How to add a backup email address
-
-When you first set up an NHS login you are given the option to add a backup email address. This is a second email address that you own, which will help to secure your NHS login.
-
-For example, your backup email address can be used if you lose access to your mobile phone number. We can use it to send you a confirmation link, which will allow you to log in and change the mobile phone number on your NHS login.
-
-We can also use your backup email address to contact you if there is suspicious activity on your NHS login.
-
-If you did not add a backup email address when you set up your NHS login, you can do so by going to your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings"). Go to the heading ‘backup methods’ and select ‘add email’. You can also remove or change an existing backup email address.
-
-***
-
-## How to change your backup email address
-
-You can change your backup email address by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings"). Scroll down to the heading ‘backup methods’ and select ‘change email’.
-
-You will be asked to enter your new backup email address and your password. A confirmation email will be sent to your new backup email address. Select the confirm email address link in the email to finish.
-
-*** 
-
-## How to remove your backup email address
-
-Currently there is no method for users to remove a backup email address. You need to contact us to remove a backup email address.
