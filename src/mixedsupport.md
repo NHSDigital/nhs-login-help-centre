@@ -14,7 +14,7 @@ Every time you log in to a website or app using your NHS login, we check your NH
 
 If you see reference CID2011, this can mean there is a problem with your NHS number.
 
-Contact us so we can try to fix the problem.
+[Contact us](/contact?error=CID2011 "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
 
 ***
 
@@ -24,7 +24,7 @@ Every time you log in to a website or app using your NHS login, we check your NH
 
 If reference CID2012 is shown, this can mean your information has errors or it is being used by someone else. If this happens to you, your NHS login will be disabled.
 
-Contact us so we can try to fix the problem.
+[Contact us](/contact?error=CID2012 "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
 
 ***
 
@@ -87,7 +87,7 @@ This is because you have already set up an NHS login using a different email add
 
 If you want to change the email address on your NHS login you can do so in your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
 
-If you need help or do not think you have already set up an NHS login, you should contact us.
+If you need help or do not think you have already set up an NHS login, you should [contact us](/contact?error=CID7023 "Contact us").
 
 ***
 
@@ -140,7 +140,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details, or with your GP surgery's system.
 
-Contact us so we can find out what is causing the problem.
+[Contact us](/contact?error=CID7029 "Contact us") so we can find out what is causing the problem.
 
 ***
 
@@ -150,4 +150,4 @@ If reference CID7100 is shown, this means the website or app you are trying to v
 
 There could be a problem with your details, or with your GP surgery's system.
 
-Contact us so we can check you have been given the right registration details.
+[Contact us](/contact?error=CID7100 "Contact us") so we can check you have been given the right registration details.

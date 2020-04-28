@@ -60,20 +60,13 @@ excludeFromSearch: true
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="select-1">
+                    <label class="nhsuk-label" for="error-code-select">
                         Problem or issue
                     </label>
-                    <select class="nhsuk-select" id="select-1" name="select-1">
-                        <option value="1" selected="">CID3001: You have lost access to your mobile phone number</option>
-                        <option value="2">CID4002/CID8002: Your photo I.D. has failed to upload</option>
-                        <option value="3">CID7004: Your registration details from your GP surgery’s online services have
-                            already been used</option>
-                        <option value="4">CID2011: There may be a problem with your NHS number</option>
-                        <option value="5">CID2012: Your NHS login may have been disabled</option>
-                        <option value="6">CID7023: You have already set up an NHS login</option>
-                        <option value="7">CID7029: We cannot connect your NHS login to your GP surgery</option>
-                        <option value="8">CID7100: Unable to connect to your GP surgery’s system</option>
-
+                    <select class="nhsuk-select" id="error-code-select" name="error-code-select">
+                        {%- for link in collections.contactUsLinks -%}
+                            <option value="{{link.errorCode}}">{{link.errorCode}}: {{link.linkText}}</option>
+                        {%- endfor -%}
                     </select>
                 </div>
 

@@ -151,7 +151,7 @@ If you see the error reference code CID4002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, contact us so we can try to fix the problem.
+If you keep getting this message, [Contact us](/contact?error=CID4002 "Contact us") so we can try to fix the problem.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
@@ -163,6 +163,6 @@ If you see the error reference code CID8002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, contact us so we can try to fix the problem.
+If you keep getting this message, [Contact us](/contact?error=CID8002 "Contact us") so we can try to fix the problem.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>

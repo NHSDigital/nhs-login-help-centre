@@ -1,14 +1,19 @@
 (function() {
     const idToken = getJSONCookie('id_token');
-    const withoutCookieForm = document.querySelector('#email-without-cookie');
-    const withCookieForm = document.querySelector('#email-with-cookie');
-    const cookieFormContainer = document.querySelector('#email-form');
+    const emailWithoutCookieForm = document.querySelector('#email-without-cookie');
+    const emailWithCookieForm = document.querySelector('#email-with-cookie');
+    const emailForm = document.querySelector('#email-form');
+    const errorCode = getParam('error');
 
     if (idToken) {
-        cookieFormContainer.removeChild(withoutCookieForm);
-        withCookieForm.style.display = '';
+        emailForm.removeChild(emailWithoutCookieForm);
+        emailWithCookieForm.style.display = '';
     } else {
-        cookieFormContainer.removeChild(withCookieForm);
-        withoutCookieForm.style.display = '';
+        emailForm.removeChild(emailWithCookieForm);
+        emailWithoutCookieForm.style.display = '';
+    }
+
+    if (errorCode) {
+        document.querySelector('#error-code-select').value = errorCode;
     }
 })();

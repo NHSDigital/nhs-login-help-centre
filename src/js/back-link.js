@@ -43,16 +43,6 @@
         }
     }
 
-    function getParam(key) {
-        const param = window.location.search
-            .replace('?', '')
-            .split('&')
-            .map(part => part.split('='))
-            .find(param => param[0] === key);
-
-        return param ? param[1] : null;
-    }
-
     function renderBackLink() {
         const [backLink] = getHistoryStack().slice(-2, -1);
         const backLinkElement = document.querySelector('.nhsuk-breadcrumb__backlink');
