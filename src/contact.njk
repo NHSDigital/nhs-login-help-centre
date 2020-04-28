@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+title: Contact Us
+excludeFromSearch: true
+---
+{% include "header.njk" %}
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h2 class="nhsuk-app-contact-panel__heading">Contact us</h2>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="one-half">
+                        Name
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-one-half" id="one-half" name="one-half" type="text">
+                </div>
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="two-thirds">
+                        Email address
+                    </label>
+                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint" id="email-form">
+                        <span class="nhsuk-hint" id="contact-hint">
+                            This is the email address we will contact you on.
+                        </span>
+                        <div id="email-without-cookie" style="display: none">
+                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+                        </div>
+                        <div id="email-with-cookie" style="display: none">
+                            <p>
+                                <b>lydiateebay@gmail.com</b>
+                            </p>
+                            <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+                                <div class="nhsuk-checkboxes__item">
+                                    <input
+                                        class="nhsuk-checkboxes__input"
+                                        id="contact-1"
+                                        name="contact"
+                                        type="checkbox"
+                                        value="email"
+                                        aria-controls="conditional-contact-1"
+                                        aria-expanded="false">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-1">
+                                        Use a different email address
+                                    </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden"
+                                    id="conditional-contact-1">
+                                    <div class="nhsuk-form-group">
+                                        <label class="nhsuk-label" for="email">
+                                            Different email address
+                                        </label>
+                                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="select-1">
+                        Problem or issue
+                    </label>
+                    <select class="nhsuk-select" id="select-1" name="select-1">
+                        <option value="1" selected="">CID3001: You have lost access to your mobile phone number</option>
+                        <option value="2">CID4002/CID8002: Your photo I.D. has failed to upload</option>
+                        <option value="3">CID7004: Your registration details from your GP surgery’s online services have
+                            already been used</option>
+                        <option value="4">CID2011: There may be a problem with your NHS number</option>
+                        <option value="5">CID2012: Your NHS login may have been disabled</option>
+                        <option value="6">CID7023: You have already set up an NHS login</option>
+                        <option value="7">CID7029: We cannot connect your NHS login to your GP surgery</option>
+                        <option value="8">CID7100: Unable to connect to your GP surgery’s system</option>
+
+                    </select>
+                </div>
+
+                <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="example-longer">
+                        Message
+                    </label>
+                    <span class="nhsuk-hint" id="example-longer-hint">
+                        Enter as much detail as you can, including any information we may have asked you to provide.
+                    </span>
+                    <textarea class="nhsuk-textarea" id="example-longer" name="example-longer" rows=" 6 "
+                        aria-describedby="example-longer-hint"></textarea>
+                </div>
+
+                <button class="nhsuk-button" type="submit">
+                    Send message
+                </button>
+                <!-- End of content -->
+            </div>
+        </div>
+    </main>
+</div>
+<script src={{ "/js/contact-page.js" | url }}></script>
+{% include "footer.njk" %}
