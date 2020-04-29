@@ -152,10 +152,6 @@ If you see the error reference code CID4002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, [contact us](# "contact us") so we can try to fix the problem.
-
-You will need to tell us the email address you use for your NHS login.
-
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ***
@@ -165,9 +161,5 @@ You will need to tell us the email address you use for your NHS login.
 If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
-
-If you keep getting this message, [contact us](# "contact us") so we can try to fix the problem.
-
-You will need to tell us the email address you use for your NHS login.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
