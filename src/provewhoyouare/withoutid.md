@@ -94,7 +94,7 @@ You can use the 3 registration details from your GP surgery’s online services 
 
 If you want to change the email address on your NHS login you can do so by going to your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings").
 
-If you think this is a mistake and you have not used your 3 registration details to set up an NHS login, you should [contact us](# "contact us") for help.
+If you think this is a mistake and you have not used your 3 registration details to set up an NHS login, you should [contact us](/contact?error=CID7004 "contact us") for help.
 
 You will need to tell us the email address you use for your NHS login.
 
