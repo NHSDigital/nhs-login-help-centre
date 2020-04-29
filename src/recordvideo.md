@@ -34,9 +34,9 @@ If you have an iOS device, updating the iOS operating system software on your de
 
 If you have an Android device, you should avoid the ‘camera’ option when given a choice of applications to record the video with. You should choose a video option instead, like ‘camcorder’ or ‘capture video’.
 
-<a href="#how-to-give-your-web-browser-permission-to-access-the-camera-and-microphone">How to give your web browser permission to access the camera and microphone</a>
+<a href="/provewhoyouare/withid/#how-to-give-your-web-browser-permission-to-access-the-camera-and-microphone">How to give your web browser permission to access the camera and microphone</a>
 
-<a href="#how-to-give-our-website-permission-to-access-the-camera-and-microphone">How to give our website permission to access the camera and microphone</a>
+<a href="/provewhoyouare/withid/#how-to-give-our-website-permission-to-access-the-camera-and-microphone">How to give our website permission to access the camera and microphone</a>
 
 ***
 
@@ -76,9 +76,9 @@ If this problem keeps happening even with permissions allowed, there might be a 
 
 If this does not work, you can also try recording a video on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-<a href="#how-to-give-your-web-browser-permission-to-access-the-camera-and-microphone">How to give your web browser permission to access the camera and microphone</a>
+<a href="/provewhoyouare/withid/#how-to-give-your-web-browser-permission-to-access-the-camera-and-microphone">How to give your web browser permission to access the camera and microphone</a>
 
-<a href="#how-to-give-our-website-permission-to-access-the-camera-and-microphone">How to give our website permission to access the camera and microphone</a>
+<a href="/provewhoyouare/withid/#how-to-give-our-website-permission-to-access-the-camera-and-microphone">How to give our website permission to access the camera and microphone</a>
 
 ***
 

@@ -69,6 +69,7 @@ If your gallery or file manager opens instead of your camera when trying to take
 You must give permission for your web browser to access the camera and microphone. If your web browser does not have permission, you will not be given the option to use the camera. Instead, your device's photo gallery or file manager app will open instead.
 
 You must also give permission for the NHS login website to access your device’s camera and microphone.
+
 If this problem keeps happening even with permissions allowed, there might be a problem with your device. You can try opening your camera app separately to take a photo of your I.D. When you have taken a photo, you can then start again and prove who you are by selecting ‘upload a photo’.
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
@@ -151,7 +152,9 @@ If you see the error reference code CID4002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, [Contact us](/contact?error=CID4002 "Contact us") so we can try to fix the problem.
+If you keep getting this message, [contact us](# "contact us") so we can try to fix the problem.
+
+You will need to tell us the email address you use for your NHS login.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
@@ -163,6 +166,8 @@ If you see the error reference code CID8002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, [Contact us](/contact?error=CID8002 "Contact us") so we can try to fix the problem.
+If you keep getting this message, [contact us](# "contact us") so we can try to fix the problem.
+
+You will need to tell us the email address you use for your NHS login.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>

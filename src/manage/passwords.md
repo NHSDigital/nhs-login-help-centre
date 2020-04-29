@@ -9,7 +9,6 @@ layout: layouts/article.njk
 
 ## How to change your NHS login password
 
-
 You can change your password by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings"). Under the heading ‘your personal information’ select ‘change password’.
 
 You will be asked to enter your current password, and then your new one to confirm the change.
@@ -17,6 +16,7 @@ You will be asked to enter your current password, and then your new one to confi
 ***
 
 ## The reset password link in your email does not work
+
 You can reset your NHS login password if you forget what it is. We will send a reset password link to your email address. If the reset password link in your email does not work, there are a number of possible reasons why.
 
 ### Expired link – Reference CID2021

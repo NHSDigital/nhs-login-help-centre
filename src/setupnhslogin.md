@@ -9,6 +9,7 @@ layout: layouts/article.njk
 ---
 
 ## What is NHS login?
+
 NHS login lets you access a variety of digital health and care websites and apps with just 1 username and password.
 
 To access some websites and apps, you may need to prove who you are. You only have to do this once. This is so we can connect you to your NHS record and protect your health information.
@@ -25,8 +26,8 @@ Benefits include:
 ***
 
 ## What you need to set up an NHS login
+
 You will need:
- 
 * an email address
 * a UK mobile phone number
 

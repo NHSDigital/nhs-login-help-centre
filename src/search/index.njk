@@ -1,5 +1,6 @@
 ---
 excludeFromSearch: true
+title: Search
 ---
 <!doctype html>
 <html lang="en">
@@ -11,7 +12,6 @@ excludeFromSearch: true
         <script src={{ "/js/search_data.js" | url }}></script>
         <script src={{ "/js/tipuesearch_set.js" | url }}></script>
         <script src={{ "/js/tipuesearch.min.js" | url }}></script>
-        <title>Search</title>
     </head>
     <body>
         {% include "header.njk" %}
@@ -25,7 +25,6 @@ excludeFromSearch: true
                         <form id="search" action="{{ "/search" | url }}" method="get" role="search">
                             <div class="app-search__contents">
                                 <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS login help centre again</label>
-                                <div id="autocomplete-container"></div>
                                 <input class="app-search__input" name="q" type="search" autocomplete="off" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters">
                                 <button type="submit" class="app-search__submit">
                                     <svg class="icon icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
