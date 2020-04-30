@@ -5,7 +5,16 @@ function getCookie(name) {
         .filter(cookie => cookie[0] === name)
         .map(cookie => cookie[1]);
 
-    return param ? param[1] : null;
+    return cookie;
+}
+
+function getJWTCookie(name) {
+    try {
+        const token = getCookie(name);
+        return JSON.parse(atob(token.split('.')[1]));
+    } catch (e) {
+        return null;
+    }
 }
 
 function getJSONCookie(name) {

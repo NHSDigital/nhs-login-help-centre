@@ -1,4 +1,13 @@
 (function() {
+    const API_KEY = 'help_center_test-96856a46-bebf-4032-881a-d7b35262e5c8-369bd82b-644b-46a7-bdc7-fb819ab9c596'
+    const API_URL = 'https://api.notifications.service.gov.uk/v2/notifications/email'
+    const SUPPORT_EMAIL = 'test@example.com';
+    const SUPPORT_TEMPLATE = 'd6dc667b-f8d0-4758-98d0-012fca3eac18';
+    const REQUEST_HEADERS = new Headers({
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-type': 'application/json'
+    });
+
     const errorCode = getParam('error');
     const form = document.getElementById('contact-us-form');
 
@@ -6,9 +15,36 @@
         document.querySelector('#errorcode').value = errorCode;
     }
 
+    function getUserCookieDetails() {
+        const { client_id = '' } = getJSONCookie('nhs-authorization-cookie') || {};
+        const { account_id = '' } = getJWTCookie('id_token') || {};
+        return{ client_id, account_id };
+    }
+
+    function sendSupportEmail(formData) {
+        const { client_id, account_id } = getUserCookieDetails();
+        const body = {
+            email_address: SUPPORT_EMAIL,
+            template_id: SUPPORT_TEMPLATE,
+            personalisation: {
+                name: formData.get('name'),
+                user_email: formData.get('email'),
+                user_id: account_id,
+                client: client_id,
+                errorcode: formData.get('errorcode'),
+                message: formData.get('name')
+            }
+        }
+
+        return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body });
+    }
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const data = new FormData(form).entries();
-        console.log(data)
+        const formData = new FormData(form);
+        const supportEmailRequest = sendSupportEmail(formData)
+            .then(console.log);
+
+        return false;
     });
 })();
