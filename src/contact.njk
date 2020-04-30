@@ -10,30 +10,28 @@ excludeFromSearch: true
             <form id="contact-us-form" class="nhsuk-grid-column-two-thirds">
                 <h2 class="nhsuk-app-contact-panel__heading">Contact us</h2>
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="one-half">
+                    <label class="nhsuk-label" for="name">
                         Name
                     </label>
-                    <input class="nhsuk-input nhsuk-u-width-one-half" id="one-half" name="one-half" type="text">
+                    <input class="nhsuk-input nhsuk-u-width-one-half" id="name" name="name" type="text">
                 </div>
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="two-thirds">
+                    <label class="nhsuk-label" for="email">
                         Email address
                     </label>
-                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint" id="email-form">
-                        <span class="nhsuk-hint" id="contact-hint">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                        <span class="nhsuk-hint">
                             This is the email address we will contact you on.
                         </span>
-                        <div id="email" style="display: none">
-                            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
-                        </div>
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
                     </fieldset>
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="error-code-select">
+                    <label class="nhsuk-label" for="errorcode">
                         Problem or issue
                     </label>
-                    <select class="nhsuk-select" id="error-code-select" name="error-code-select">
+                    <select class="nhsuk-select" id="errorcode" name="errorcode">
                         {%- for link in collections.contactUsLinks -%}
                             <option value="{{link.errorCode}}">{{link.errorCode}}: {{link.linkText}}</option>
                         {%- endfor -%}
@@ -41,17 +39,17 @@ excludeFromSearch: true
                 </div>
 
                 <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="example-longer">
+                    <label class="nhsuk-label" for="message">
                         Message
                     </label>
-                    <span class="nhsuk-hint" id="example-longer-hint">
+                    <span class="nhsuk-hint" id="message-hint">
                         Enter as much detail as you can, including any information we may have asked you to provide.
                     </span>
-                    <textarea class="nhsuk-textarea" id="example-longer" name="example-longer" rows=" 6 "
-                        aria-describedby="example-longer-hint"></textarea>
+                    <textarea class="nhsuk-textarea" id="message" name="message" rows="6"
+                        aria-describedby="message-hint"></textarea>
                 </div>
 
-                <button class="nhsuk-button" type="submit">
+                <button class="nhsuk-button">
                     Send message
                 </button>
                 <!-- End of content -->
