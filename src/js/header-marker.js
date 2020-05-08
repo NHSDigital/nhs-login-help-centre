@@ -22,20 +22,20 @@
       .sort((a, b) => a.pos - b.pos);
   }
 
-  function markStickyNavElem(elementId) {
+  function markStickyNavElem(section) {
     const currentActive = document.querySelector('.active');
-    const newActive = document.querySelector(`a[href="#${elementId}"]`);
+    const newActive = document.querySelector(`a[href="#${section.id}"]`);
 
     if (currentActive === newActive) {
       return;
     }
 
     if (currentActive) {
-      currentActive.setAttribute('class', ' ');
+      currentActive.classList.remove('active');
     }
 
     if (newActive) {
-      newActive.setAttribute('class', 'active');
+      newActive.classList.add('active');
     }
   }
 
@@ -48,7 +48,7 @@
   }
 
   function marker() {
-    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollPosition = document.documentElement.scrollTop;
     const documentHeight = document.documentElement.offsetHeight;
     let newActive = null;
 
@@ -60,13 +60,13 @@
     }
 
     if (newActive) {
-      markStickyNavElem(newActive.id);
+      markStickyNavElem(newActive);
     }
   }
 
   window.addEventListener('load', function() {
     calculate();
-    markStickyNavElem(sections[0].id);
+    markStickyNavElem(sections[0]);
     marker();
   });
 
