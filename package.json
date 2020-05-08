@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "prettier --check \"*/**.js\"",
+    "lint": "pretty-quick",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
     "deploy": "eleventy",
@@ -31,6 +31,8 @@
     "pretty-quick": "^2.0.1"
   },
   "husky": {
-    "pre-commit": "pretty-quick --staged"
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
