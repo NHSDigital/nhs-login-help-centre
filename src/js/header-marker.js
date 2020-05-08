@@ -1,5 +1,4 @@
 (function() {
-  'use strict';
   let sections = [];
   const level = window.level || 2;
   const sectionSelector = range(1, level)
