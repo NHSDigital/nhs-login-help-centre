@@ -3,7 +3,6 @@
     const closeMenuButton = document.getElementById('close-menu');
     const menuElement = document.getElementById('header-navigation');
 
-
     const toggleSearchButton = document.getElementById('toggle-search');
     const closeSearchButton = document.getElementById('close-search');
     const searchElement = document.getElementById('wrap-search');

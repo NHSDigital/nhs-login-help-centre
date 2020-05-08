@@ -1,5 +1,5 @@
 (function() {
-    const API_KEY = 'help_center_test-96856a46-bebf-4032-881a-d7b35262e5c8-369bd82b-644b-46a7-bdc7-fb819ab9c596'
+    const API_KEY = 'todo'
     const API_URL = 'https://api.notifications.service.gov.uk/v2/notifications/email'
     const SUPPORT_EMAIL = 'test@example.com';
     const SUPPORT_TEMPLATE = 'd6dc667b-f8d0-4758-98d0-012fca3eac18';
@@ -43,8 +43,6 @@
         e.preventDefault();
         const formData = new FormData(form);
         const supportEmailRequest = sendSupportEmail(formData)
-            .then(console.log);
-
         return false;
     });
 })();

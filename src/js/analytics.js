@@ -7,16 +7,6 @@ function trackLinkClick(element) {
     _satellite.track('tracklink');
 };
 
-function createScript(href) {
-    return new Promise((resolve, reject) => {
-        const  script = document.createElement('script');
-        script.src = href;
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-    });
-}
-
 function startAnalytics() {
     const consentCookie = getConsentCookie();
 

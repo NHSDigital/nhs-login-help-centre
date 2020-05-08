@@ -1,22 +1,9 @@
-/* Simple-ish implementation of a scroll spy for NHS Digital's Sticky Nav's section tracking status.
-* @author Geoff Hayward
-* @author Oliver Rushworth
-*
-* Attributions
-*  - The solution is based on https://codepen.io/zchee/pen/ogzvZZ.
-*  - The method getPosition() came from https://stackoverflow.com/a/53351648.
-*/
 (function() {
   'use strict';
   const level = window.level || 2;
+  const sectionSelector = range(1, level).map(i => `.article-content h${i}`).join(', ');
 
-
-  let sections = {};
-  let sectionSelector = '.article-content h1';
-
-  for (let i = 2; i <= level; i++) {
-    sectionSelector += ', .article-content h' + i;
-  }
+  let sections = [];
 
   function getPosition(element) {
     let distance = -120;
@@ -53,13 +40,10 @@
   }
 
   function getFirstNavElementInView(scrollPosition) {
-    let element = sections[0];
-    for (let i = 0; i < sections.length; i++) {
-      if (sections[i].pos <= scrollPosition) {
-        element = sections[i];
-      }
-    }
-    return element;
+    // find the last element that is before the scrollPosition
+    return sections.reduce((result, current) => (
+      current.pos <= scrollPosition ? current : result
+    ), null);
   }
 
   function marker() {
@@ -78,6 +62,7 @@
       markStickyNavElem(newActive.id);
     }
   }
+  
   window.addEventListener('load', function() {
     calculate();
     marker();

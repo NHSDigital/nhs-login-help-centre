@@ -26,7 +26,7 @@ function getJSONCookie(name) {
     }
 }
 
-  function getParam(key) {
+function getParam(key) {
     const [param] = window.location.search
         .replace('?', '')
         .split('&')
@@ -35,4 +35,18 @@ function getJSONCookie(name) {
         .map(param => param[1])
 
     return param;
+}
+
+function createScript(href) {
+    return new Promise((resolve, reject) => {
+        const  script = document.createElement('script');
+        script.src = href;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+}
+
+function range(from, to) {
+    return Array.from(Array(to - from + 1), (_, i) => i + from);
 }
