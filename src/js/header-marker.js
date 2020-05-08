@@ -2,7 +2,6 @@
   'use strict';
   const level = window.level || 2;
   const sectionSelector = range(1, level).map(i => `.article-content h${i}`).join(', ');
-
   let sections = [];
 
   function getPosition(element) {
@@ -65,6 +64,7 @@
   
   window.addEventListener('load', function() {
     calculate();
+    markStickyNavElem(sections[0].id);
     marker();
   });
 
