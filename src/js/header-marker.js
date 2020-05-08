@@ -1,15 +1,17 @@
 (function() {
   'use strict';
-  const level = window.level || 2;
-  const sectionSelector = range(1, level).map(i => `.article-content h${i}`).join(', ');
   let sections = [];
+  const level = window.level || 2;
+  const sectionSelector = range(1, level)
+    .map(i => `.article-content h${i}`)
+    .join(', ');
 
   function getPosition(element) {
     let distance = -120;
     while (element) {
       distance += element.offsetTop;
       element = element.offsetParent;
-    };
+    }
     return distance;
   }
 
@@ -23,11 +25,11 @@
 
   function markStickyNavElem(elementId) {
     const currentActive = document.querySelector('.active');
-    const newActive = document.querySelector('a[href="#' + elementId + '"]');
+    const newActive = document.querySelector(`a[href="#${elementId}"]`);
 
     if (currentActive === newActive) {
       return;
-    };
+    }
 
     if (currentActive) {
       currentActive.setAttribute('class', ' ');
@@ -40,9 +42,10 @@
 
   function getFirstNavElementInView(scrollPosition) {
     // find the last element that is before the scrollPosition
-    return sections.reduce((result, current) => (
-      current.pos <= scrollPosition ? current : result
-    ), null);
+    return sections.reduce(
+      (result, current) => (current.pos <= scrollPosition ? current : result),
+      null
+    );
   }
 
   function marker() {
@@ -61,7 +64,7 @@
       markStickyNavElem(newActive.id);
     }
   }
-  
+
   window.addEventListener('load', function() {
     calculate();
     markStickyNavElem(sections[0].id);
