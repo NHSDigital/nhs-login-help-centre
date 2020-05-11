@@ -6,49 +6,54 @@ hub: provewhoyouare
 position: 1
 layout: layouts/article.njk
 ---
+
 ## What you need to prove who you are
 
 You will be asked to:
+
 1. take a photo of your I.D.
 2. record your face using your device
 3. enter your NHS number if you know it
 
 Your photo I.D. can be a:
-* passport
-* UK driving licence (full or provisional)
-* European driving licence (full)
-* European national identity card
+
+- passport
+- UK driving licence (full or provisional)
+- European driving licence (full)
+- European national identity card
 
 We ask you to record your face so that we can compare it to your photo I.D. and prove who you are. We may ask you for more details to help find your NHS record, like your date of birth or postcode.
 
-***
+---
 
 ## How to take a photo of your I.D.
 
 ### Passport
 
 To take a good photo of your passport make sure:
-* you have not covered any part of the page
-* all 4 edges of the page are in your photo
-* you can clearly see your face and all the text
-* there's no shine from a light or window
+
+- you have not covered any part of the page
+- all 4 edges of the page are in your photo
+- you can clearly see your face and all the text
+- there's no shine from a light or window
 
 ### Driving licence
 
 To take a good photo of your driving licence make sure:
-* you do not cover any of the corners
-* you can clearly see your face and all the text
-* there's no shine from a light or window
+
+- you do not cover any of the corners
+- you can clearly see your face and all the text
+- there's no shine from a light or window
 
 ### European national identity card
 
 To take a good photo of your identity card make sure:
-* you do not cover any of the corners
-* you can clearly see your face and all the text
-* there's no shine from a light or window
 
+- you do not cover any of the corners
+- you can clearly see your face and all the text
+- there's no shine from a light or window
 
-***
+---
 
 ## Black screen shows when trying to take a photo
 
@@ -58,9 +63,9 @@ You should make sure the web browser on your device has camera and microphone pe
 
 If you are using an iOS device, updating the iOS operating system software on your device to a newer version may also help. Version 11.2 will always show a black screen when trying to open the camera.
 
-There is an [Apple support article](https://support.apple.com/en-gb "Apple support article") that describes how to check for updates.
+There is an [Apple support article](https://support.apple.com/en-gb 'Apple support article') that describes how to check for updates.
 
-***
+---
 
 ## Camera unavailable when trying to take a photo
 
@@ -76,19 +81,19 @@ If this does not work, you can also try taking a photo on another device. For ex
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
-***
+---
 
 ## How to give your web browser permission to access the camera and microphone
 
 ### Android devices
 
-[Change permissions for apps on your Android device.](https://support.google.com/android/answer/9431959?hl=en-GB "Change permissions for apps on your Android device.")
+[Change permissions for apps on your Android device.](https://support.google.com/android/answer/9431959?hl=en-GB 'Change permissions for apps on your Android device.')
 
 ### iOS devices
 
-[Change permissions for apps on your iOS device.](https://support.apple.com/en-gb/HT203033 "Change permissions for apps on your iOS device.")
+[Change permissions for apps on your iOS device.](https://support.apple.com/en-gb/HT203033 'Change permissions for apps on your iOS device.')
 
-***
+---
 
 ## How to give our website permission to access the camera and microphone
 
@@ -116,7 +121,7 @@ Firefox also has a permissions manager that lets you see which permissions you h
 
 If you are using Safari, select ‘preferences’ to open the preferences window. You can then select the ‘security’ tab and ‘manage website settings’ to view and change permissions for your camera and microphone.
 
-***
+---
 
 ## What to do if your photo file is damaged
 
@@ -128,13 +133,13 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
-***
+---
 
 ## How long does it take to check photo I.D?
 
 After you send your photo I.D. and video, your photo I.D. will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the I.D. check has been successful.
 
-***
+---
 
 ## What happens if you do not pass the check?
 
@@ -144,7 +149,7 @@ If you keep getting the same problem, you can prove who you are without photo I.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
-***
+---
 
 ## Reference CID4002: Your photo I.D. has failed to upload
 
@@ -152,22 +157,14 @@ If you see the error reference code CID4002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-If you keep getting this message, [contact us](/contact?error=CID4002 "contact us") so we can try to fix the problem.
-
-You will need to tell us the email address you use for your NHS login.
-
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
 
-***
+---
 
 ## Reference CID8002: Your photo I.D. has failed to upload
 
 If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
-
-If you keep getting this message, [contact us](/contact?error=CID8002 "contact us") so we can try to fix the problem.
-
-You will need to tell us the email address you use for your NHS login.
 
 <a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
