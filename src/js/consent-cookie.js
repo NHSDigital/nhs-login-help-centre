@@ -1,5 +1,5 @@
 const COOKIE_NAME = 'cookiePreference';
-const COOKIE_DOMAIN = 'localhost'; // '.login.nhs.uk';
+const COOKIE_DOMAIN = '.login.nhs.uk';
 const COOKIE_LIVE_DAYS = 365;
 
 const MILLISECONDS_IN_ONE_DAY = 86400000;
@@ -19,7 +19,7 @@ function getCookiePreferences() {
   return preferenceCookie;
 }
 
-function setCookiePreferences(hasSeenBanner = null, hasAcceptedOptionalCookies = null) {
+function setCookiePreferences({ hasSeenBanner = null, hasAcceptedOptionalCookies = null } = {}) {
   const cookiePreferences = getCookiePreferences();
   if (hasSeenBanner) cookiePreferences.hasSeenBanner = hasSeenBanner;
   if (hasAcceptedOptionalCookies)

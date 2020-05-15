@@ -8,13 +8,13 @@
   function handleAcceptButtonClick() {
     cookieBanner.style.display = 'none';
     cookieConfirmationBanner.style.display = 'block';
-    setCookiePreferences((hasSeenBanner = true), (hasAcceptedOptionalCookies = true));
+    setCookiePreferences({ hasSeenBanner: true, hasAcceptedOptionalCookies: true });
     startAnalytics();
   }
 
   function handleChooseButtonClick() {
     cookieBanner.style.display = 'none';
-    setCookiePreferences((hasSeenBanner = true));
+    setCookiePreferences({ hasSeenBanner: true });
     window.location.assign('https://access.login.nhs.uk/cookies/cookie-settings');
   }
 
