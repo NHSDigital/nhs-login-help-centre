@@ -296,7 +296,7 @@
   outline: 1px dotted #212b32;
 }
 #nhsuk-cookie-banner .nhsuk-cookie-banner {
-  background: white;
+  background: #f0f4f5;
   position: relative;
   box-shadow: 0 0 4px 0 #212b32;
   padding: 24px 0 19px;
@@ -376,21 +376,17 @@
   }
 }
 #nhsuk-cookie-banner .nhsuk-success-banner {
-  background-color: #007f3b;
-  color: #fff;
-  padding: 8px 0 8px 0;
+  background-color: #f0f4f5;
+  color: #212b32;
+  padding: 24px 0 0 0;
   position: relative;
-}
-#nhsuk-cookie-banner .nhsuk-success-banner p {
-  margin: 0;
-}
-#nhsuk-cookie-banner .nhsuk-success-banner a,
-#nhsuk-cookie-banner .nhsuk-success-banner a:visited {
-  color: #fff;
 }
 #nhsuk-cookie-banner .nhsuk-success-banner a:hover,
 #nhsuk-cookie-banner .nhsuk-success-banner a:focus {
+  background-color: #ffcd60;
+  box-shadow: 0 0 0 4px #ffcd60;
   color: #212b32;
+  text-decoration: none;
 }
 #nhsuk-cookie-banner p {
   padding: 0px;
@@ -398,7 +394,7 @@
 }
 @media (min-width: 40.0625em) {
   #nhsuk-cookie-banner p {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 #nhsuk-cookie-banner a {
@@ -421,4 +417,11 @@
   #nhsuk-cookie-banner .nhsuk-button.full-width {
     width: auto;
   }
+}
+#nhsuk-cookie-banner__link_accept,
+#nhsuk-cookie-banner__link {
+  margin: 0px 0px 24px 0px;
+}
+#nhsuk-cookie-banner__link_accept {
+  margin-right: 16px !important;
 }
