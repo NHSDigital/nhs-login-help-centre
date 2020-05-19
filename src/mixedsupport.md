@@ -14,7 +14,7 @@ Every time you log in to a website or app using your NHS login, we check your NH
 
 If you see reference CID2011, this can mean there is a problem with your NHS number.
 
-[Contact us](# "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
+[Contact us](/contact?error=CID2011 "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
 
 ***
 
@@ -24,7 +24,7 @@ Every time you log in to a website or app using your NHS login, we check your NH
 
 If reference CID2012 is shown, this can mean your information has errors or it is being used by someone else. If this happens to you, your NHS login will be disabled.
 
-[Contact us](# "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
+[Contact us](/contact?error=CID2012 "Contact us") so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
 
 ***
 
@@ -101,7 +101,7 @@ This can happen if:
 
 You can ask your GP for new registration details for their online services.
 
-[Contact us](# "Contact us") if you need help or if you still have problems.
+[Contact us](/contact?error=CID7023 "Contact us") if you need help or if you still have problems.
 
 ***
 
@@ -154,7 +154,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details, or with your GP surgery's system.
 
-[Contact us](# "Contact us") so we can find out what is causing the problem. You will need to tell us the email address you use for your NHS login.
+[Contact us](/contact?error=CID7029 "Contact us") so we can find out what is causing the problem. You will need to tell us the email address you use for your NHS login.
 
 ***
 
@@ -164,4 +164,4 @@ If reference CID7100 is shown, this means the website or app you are trying to v
 
 There could be a problem with your details, or with your GP surgery's system.
 
-[Contact us](# "Contact us") so we can check you have been given the right registration details. You will need to tell us the email address you use for your NHS login.
+[Contact us](/contact?error=CID7029 "Contact us") so we can check you have been given the right registration details. You will need to tell us the email address you use for your NHS login.

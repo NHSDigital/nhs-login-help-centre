@@ -4,6 +4,9 @@
         {% include "head.njk" %}
     </head>
     <body>
+        <script type="text/javascript">
+            document.body.classList.add('js-enabled');
+        </script>
         {% include "cookie-banner.njk" %}
         {{ content | safe }}
         <script src={{ "/js/back-link.js" | url }}></script>

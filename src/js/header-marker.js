@@ -1,29 +1,16 @@
-/* Simple-ish implementation of a scroll spy for NHS Digital's Sticky Nav's section tracking status.
-* @author Geoff Hayward
-* @author Oliver Rushworth
-*
-* Attributions
-*  - The solution is based on https://codepen.io/zchee/pen/ogzvZZ.
-*  - The method getPosition() came from https://stackoverflow.com/a/53351648.
-*/
 (function() {
-  'use strict';
+  let sections = [];
   const level = window.level || 2;
-
-
-  let sections = {};
-  let sectionSelector = '.article-content h1';
-
-  for (let i = 2; i <= level; i++) {
-    sectionSelector += ', .article-content h' + i;
-  }
+  const sectionSelector = range(1, level)
+    .map(i => `.article-content h${i}`)
+    .join(', ');
 
   function getPosition(element) {
     let distance = -120;
     while (element) {
       distance += element.offsetTop;
       element = element.offsetParent;
-    };
+    }
     return distance;
   }
 
@@ -35,35 +22,33 @@
       .sort((a, b) => a.pos - b.pos);
   }
 
-  function markStickyNavElem(elementId) {
+  function markStickyNavElem(section) {
     const currentActive = document.querySelector('.active');
-    const newActive = document.querySelector('a[href="#' + elementId + '"]');
+    const newActive = document.querySelector(`a[href="#${section.id}"]`);
 
     if (currentActive === newActive) {
       return;
-    };
+    }
 
     if (currentActive) {
-      currentActive.setAttribute('class', ' ');
+      currentActive.classList.remove('active');
     }
 
     if (newActive) {
-      newActive.setAttribute('class', 'active');
+      newActive.classList.add('active');
     }
   }
 
   function getFirstNavElementInView(scrollPosition) {
-    let element = sections[0];
-    for (let i = 0; i < sections.length; i++) {
-      if (sections[i].pos <= scrollPosition) {
-        element = sections[i];
-      }
-    }
-    return element;
+    // find the last element that is before the scrollPosition
+    return sections.reduce(
+      (result, current) => (current.pos <= scrollPosition ? current : result),
+      null
+    );
   }
 
   function marker() {
-    const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollPosition = document.documentElement.scrollTop;
     const documentHeight = document.documentElement.offsetHeight;
     let newActive = null;
 
@@ -75,11 +60,13 @@
     }
 
     if (newActive) {
-      markStickyNavElem(newActive.id);
+      markStickyNavElem(newActive);
     }
   }
+
   window.addEventListener('load', function() {
     calculate();
+    markStickyNavElem(sections[0]);
     marker();
   });
 

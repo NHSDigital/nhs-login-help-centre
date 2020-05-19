@@ -1,6 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const { isArticle, addArticleData } = require('./lib/article');
+const { isArticle, addArticleData, getContactUsLinks } = require('./lib/article');
 const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
 const { addBreadcrumbs } = require('./lib/breadcrumbs');
 const { collectionToKeyedObject } = require('./lib/utils');
@@ -37,6 +37,14 @@ module.exports = function(config) {
       .map(hub => addBreadcrumbs(allPages, hub))
       .reduce(addHubToCollection, {});
   });
+
+  config.addCollection('contactUsLinks', collections => (
+    collections
+      .getAll()
+      .filter(isArticle)
+      .map(getContactUsLinks)
+      .reduce((collection, links) => collection.concat(links), [])
+));
 
 
   config.setLibrary('md', markdownLibrary);
