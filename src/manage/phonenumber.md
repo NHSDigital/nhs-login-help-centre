@@ -11,15 +11,15 @@ layout: layouts/article.njk
 
 You can change your phone number by visiting your [NHS login settings](https://settings.login.nhs.uk/ "NHS login settings"). Under the heading ‘your personal information’ select ‘change phone number’.
 
-To visit your NHS login settings, you first need to log in with your NHS login details. To do this, you need access to your previous mobile phone or phone number that is currently on your NHS login.
+To visit your NHS login settings, you first need to log in with your NHS login details. To do this, you need access to your previous phone number that is currently on your NHS login.
 
 ***
 
 ## You have lost access to your mobile phone number
 
-If you see reference CID3001, this is because you no longer have access to the phone number on your NHS login. You can change the phone number on your NHS login if you have a backup email address, or by telling us your NHS number.
+You can change the phone number on your NHS login by following the instruction on the screen where you would have entered the SMS code. You will need your NHS number to complete the process.
 
-[Contact us](# "Contact us") if you do not have a backup email address and you do not know your NHS number.
+[Contact us](# "Contact us") if you cannot find your NHS number.
 
 You will need to tell us:
 * the email address for your NHS login
@@ -27,13 +27,6 @@ You will need to tell us:
 * your new phone number
 
 It will also help if you can tell us about a recent time when you have tried to log into a website or app using your NHS login. Tell us the date and time, if possible.
-
-To do this you can:
-
-1. visit a website or app that uses NHS login
-2. enter your username and password
-3. press continue
-4. note the date and time
 
 ***
 
