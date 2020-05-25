@@ -8,7 +8,7 @@
     'Content-type': 'application/json',
   });
 
-  const errorCode = getParam('error');
+  const errorCode = Utils.getParam('error');
   const form = document.getElementById('contact-us-form');
 
   if (errorCode) {
@@ -16,8 +16,8 @@
   }
 
   function getUserCookieDetails() {
-    const { client_id = '' } = getJSONCookie('nhs-authorization-cookie') || {};
-    const { account_id = '' } = getJWTCookie('id_token') || {};
+    const { client_id = '' } = Utils.getJSONCookie('nhs-authorization-cookie') || {};
+    const { account_id = '' } = Utils.getJWTCookie('id_token') || {};
     return { client_id, account_id };
   }
 
