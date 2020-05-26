@@ -54,7 +54,7 @@
   }
 
   window.addEventListener('load', () => {
-    const returnLink = getParam(RETURN_LINK_KEY);
+    const returnLink = Utils.getParam(RETURN_LINK_KEY);
     const stack = getHistoryStack();
     const [secondToLastPage = {}] = stack.slice(-2, -1);
 
