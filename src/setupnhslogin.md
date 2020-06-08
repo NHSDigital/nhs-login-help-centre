@@ -32,6 +32,7 @@ Right now, you cannot set up NHS login without a mobile phone. We are working on
 ### Additional information
 
 To access some websites and apps, you may need to provide some additional information to prove who you are. This is so we can connect you to your NHS record and protect your health information.
+
 This may include your:
 
 - date of birth
