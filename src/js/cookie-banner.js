@@ -8,17 +8,17 @@
   function handleAcceptButtonClick() {
     cookieBanner.style.display = 'none';
     cookieConfirmationBanner.style.display = 'block';
-    setAcceptAllCookies();
-    startAnalytics();
+    Consent.setAcceptAllCookies();
+    Analytics.start();
   }
 
   function handleChooseButtonClick() {
     cookieBanner.style.display = 'none';
-    setHasSeenCookieBanner();
+    Consent.setHasSeenCookieBanner();
     window.location.assign('https://access.login.nhs.uk/cookies/cookie-settings');
   }
 
-  const cookiePreferences = getCookiePreferences();
+  const cookiePreferences = Consent.getCookiePreferences();
 
   if (!cookiePreferences.hasSeenBanner) {
     cookieBannerWrapper.style.display = 'block';
@@ -29,6 +29,6 @@
       cookieBannerWrapper.focus();
     }, 500); // scroll the banner into view - shorter timeouts didn't work
   } else {
-    startAnalytics();
+    Analytics.start();
   }
 })();

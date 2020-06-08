@@ -1,7 +1,7 @@
 (function() {
   let sections = [];
   const level = window.level || 2;
-  const sectionSelector = range(1, level)
+  const sectionSelector = Utils.range(1, level)
     .map(i => `.article-content h${i}`)
     .join(', ');
 
