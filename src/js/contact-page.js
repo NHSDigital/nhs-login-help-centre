@@ -46,7 +46,10 @@
     e.preventDefault();
     const formData = new FormData(form);
     sendSupportEmail(formData)
-      .then(() => window.location.assign('/contact-sent'))
+      .then(res => {
+        const nextPage = res.ok ? '/contact-sent' : '/contact-error';
+        window.location.assign(nextPage);
+      })
       .catch(() => window.location.assign('/contact-error'));
   });
 })();
