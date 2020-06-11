@@ -1,4 +1,4 @@
-{# ---
+---
 layout: layouts/base.njk
 title: Contact Us
 excludeFromSearch: true
@@ -13,7 +13,7 @@ excludeFromSearch: true
                     <label class="nhsuk-label" for="name">
                         Name
                     </label>
-                    <input class="nhsuk-input nhsuk-u-width-one-half" id="name" name="name" type="text">
+                    <input class="nhsuk-input nhsuk-u-width-one-half" id="name" name="name" type="text" required>
                 </div>
                 <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="email">
@@ -23,7 +23,7 @@ excludeFromSearch: true
                         <span class="nhsuk-hint">
                             This is the email address we will contact you on.
                         </span>
-                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="email" required>
                     </fieldset>
                 </div>
 
@@ -46,7 +46,7 @@ excludeFromSearch: true
                         Enter as much detail as you can, including any information we may have asked you to provide.
                     </span>
                     <textarea class="nhsuk-textarea" id="message" name="message" rows="6"
-                        aria-describedby="message-hint"></textarea>
+                        aria-describedby="message-hint" required></textarea>
                 </div>
 
                 <button class="nhsuk-button">
@@ -58,7 +58,4 @@ excludeFromSearch: true
     </main>
 </div>
 <script src={{ "/js/contact-page.js" | url }}></script>
-{% include "footer.njk" %} #}
-<script type="text/javascript">
-    window.location.replace('/');
-</script>
+{% include "footer.njk" %}
