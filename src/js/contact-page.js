@@ -1,5 +1,5 @@
 (function() {
-  const API_URL = 'https://api.dev21.signin.nhs.uk/nhs-login-support/send-email';
+  const API_URL = 'https://api.dev.signin.nhs.uk/nhs-login-support/send-email';
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
