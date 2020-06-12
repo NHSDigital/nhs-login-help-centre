@@ -1,4 +1,17 @@
-// Builds a form object that can be used for validation and that will update the dom of the main element
+/*
+  Builds a form object that can be used for validation and that will update the dom of the main element
+  It expects a form in the following format:
+
+  form.nhs-help-centre__form#[mainFormElementID]
+    [just one of]
+    div.nhsuk-error-summary
+      ul.nhsuk-error-summary__list
+
+    [any amount of]
+    div.nhsuk-form-group#[formControlId]
+      span.nhs-help-centre__form-control-error
+      input.nhs-help-centre__form-control-input#[inputId]
+*/
 const FormBuilder = function(mainFormElementID) {
   let errors = [];
   let formControls = [];
