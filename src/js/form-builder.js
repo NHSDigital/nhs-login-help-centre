@@ -43,7 +43,6 @@ const FormBuilder = function(mainFormElementID) {
     const error = formControl.validator(formData);
     if (error) {
       addErrorToErrorSummary(error, formControl);
-      document.title = 'Error: ' + originalTitle;
       formControl.errorElement.innerHTML = error;
       formControl.containerElement.classList.add('nhsuk-form-group--error');
     }
@@ -58,6 +57,11 @@ const FormBuilder = function(mainFormElementID) {
 
     if (!errors.length && typeof onSuccessHandler === 'function') {
       onSuccessHandler(formData);
+    }
+
+    if (errors.length) {
+      errorSummaryElement.focus();
+      document.title = 'Error: ' + originalTitle;
     }
   });
 
