@@ -74,5 +74,9 @@ const Utils = (function() {
     range(from, to) {
       return Array.from(Array(to - from + 1), (_, i) => i + from);
     },
+
+    noop() {
+      return null;
+    },
   };
 })();

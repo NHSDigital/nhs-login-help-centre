@@ -15,12 +15,44 @@
 const FormBuilder = function(mainFormElementID) {
   let errors = [];
   let formControls = [];
-  let onSuccessHandler = null;
+  let onSuccessHandler = Utils.noop;
 
   const mainFormElement = document.querySelector('#' + mainFormElementID);
   const errorSummaryElement = mainFormElement.querySelector('.nhsuk-error-summary');
   const errorSummaryList = errorSummaryElement.querySelector('.nhsuk-error-summary__list');
   const originalTitle = document.title;
+
+  mainFormElement.addEventListener('submit', e => {
+    e.preventDefault();
+    resetForm();
+    validateForm();
+  });
+
+  const Form = {
+    addFormControl(id, validator) {
+      const containerElement = document.querySelector('#' + id);
+
+      if (!containerElement) {
+        console.error('No element with id:', '"' + id + '"', 'in', mainFormElement);
+      } else {
+        formControls.push({
+          validator,
+          containerElement,
+          errorElement: containerElement.querySelector('.nhs-help-centre__form-control-error'),
+          inputElement: containerElement.querySelector('.nhs-help-centre__form-control-input'),
+        });
+      }
+
+      return Form;
+    },
+
+    addSuccessHandler(handler) {
+      if (typeof handler === 'function') {
+        onSuccessHandler = handler;
+      }
+      return Form;
+    },
+  };
 
   function resetForm() {
     resetErrorSummary();
@@ -40,7 +72,7 @@ const FormBuilder = function(mainFormElementID) {
   }
 
   function addErrorToErrorSummary(error, formControl) {
-    errors = errors.concat(error);
+    errors.push(error);
     errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
 
     const listItemElement = document.createElement('li');
@@ -61,41 +93,17 @@ const FormBuilder = function(mainFormElementID) {
     }
   }
 
-  mainFormElement.addEventListener('submit', e => {
-    e.preventDefault();
-    resetForm();
-
+  function validateForm() {
     const formData = new FormData(mainFormElement);
     formControls.forEach(formControl => validateFormControl(formControl, formData));
-
-    if (!errors.length && typeof onSuccessHandler === 'function') {
-      onSuccessHandler(formData);
-    }
 
     if (errors.length) {
       errorSummaryElement.focus();
       document.title = 'Error: ' + originalTitle;
+    } else {
+      onSuccessHandler(formData);
     }
-  });
-
-  const Form = {
-    addFormControl(id, validator) {
-      formControls = formControls.concat({
-        validator,
-        containerElement: document.querySelector('#' + id),
-        errorElement: document.querySelector('#' + id + ' .nhs-help-centre__form-control-error'),
-        inputElement: document.querySelector('#' + id + ' .nhs-help-centre__form-control-input'),
-      });
-      return Form;
-    },
-
-    addSuccessHandler(handler) {
-      if (typeof handler === 'function') {
-        onSuccessHandler = handler;
-      }
-      return Form;
-    },
-  };
+  }
 
   return Form;
 };
