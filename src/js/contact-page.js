@@ -4,8 +4,12 @@
     'Content-type': 'application/json',
   });
 
+  const EMAIL_REGEX = /[^@]+@[^@]+\.[^@]+/;
+  const MISSING_NAME_ERROR = 'Enter your full name';
+  const INVALID_EMAIL_ERROR = 'Enter your email address';
+  const MISSING_MESSAGE_ERROR = 'Enter your message';
+
   const errorCode = Utils.getParam('error');
-  const form = document.getElementById('contact-us-form');
 
   if (errorCode) {
     document.querySelector('#errorcode').value = errorCode;
@@ -17,7 +21,7 @@
     return { client_id, account_id };
   }
 
-  function getErrorValues(formData) {
+  function getErrorCodeValues(formData) {
     const error = formData.get('errorcode');
     const errorText = document.querySelector(`option[value=${error}`).text;
     const [errorCode, errorTitle] = errorText.split(': ');
@@ -26,7 +30,7 @@
 
   function sendSupportEmail(formData) {
     const { client_id, account_id } = getUserCookieDetails();
-    const { errorCode, errorTitle } = getErrorValues(formData);
+    const { errorCode, errorTitle } = getErrorCodeValues(formData);
     const body = {
       user_name: formData.get('name'),
       user_email: formData.get('email'),
@@ -42,14 +46,22 @@
     return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body: JSON.stringify(body) });
   }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    sendSupportEmail(formData)
-      .then(res => {
-        const nextPage = res.ok ? '/contact-sent' : '/contact-error';
-        window.location.assign(nextPage);
-      })
-      .catch(() => window.location.assign('/contact-error'));
-  });
+  FormBuilder('contact-us-form')
+    .addFormControl('name-form-control', formData =>
+      formData.get('name').length ? null : MISSING_NAME_ERROR
+    )
+    .addFormControl('email-form-control', formData =>
+      EMAIL_REGEX.test(formData.get('email')) ? null : INVALID_EMAIL_ERROR
+    )
+    .addFormControl('message-form-control', formData =>
+      formData.get('message').length ? null : MISSING_MESSAGE_ERROR
+    )
+    .addSuccessHandler(formData => {
+      sendSupportEmail(formData)
+        .then(res => {
+          const nextPage = res.ok ? '/contact-sent' : '/contact-error';
+          window.location.assign(nextPage);
+        })
+        .catch(() => window.location.assign('/contact-error'));
+    });
 })();
