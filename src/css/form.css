@@ -1,0 +1,11 @@
+.nhs-help-centre__form .nhsuk-form-group .nhsuk-error-message {
+  display: none;
+}
+
+.nhs-help-centre__form .nhsuk-form-group--error .nhsuk-error-message {
+  display: block;
+}
+
+.nhs-help-centre__form .nhsuk-error-summary--hidden {
+  display: none;
+}
