@@ -52,7 +52,7 @@
     const documentHeight = document.documentElement.offsetHeight;
     let newActive = null;
 
-    //if scrolled to the bottom
+    // if scrolled to the bottom
     if (Math.ceil(scrollPosition + window.innerHeight) >= documentHeight) {
       newActive = sections[sections.length - 1];
     } else {

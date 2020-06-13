@@ -1,19 +1,19 @@
 (function() {
+  const MISSING_NAME_ERROR = 'Enter your full name';
+  const INVALID_EMAIL_ERROR = 'Enter your email address';
+  const MISSING_MESSAGE_ERROR = 'Enter your message';
   const API_URL = 'https://api.dev.signin.nhs.uk/nhs-login-support/send-email';
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
 
-  const EMAIL_REGEX = /[^@]+@[^@]+\.[^@]+/;
-  const MISSING_NAME_ERROR = 'Enter your full name';
-  const INVALID_EMAIL_ERROR = 'Enter your email address';
-  const MISSING_MESSAGE_ERROR = 'Enter your message';
+  document.querySelector('#errorcode').value = Utils.getParam('error');
 
-  const errorCode = Utils.getParam('error');
-
-  if (errorCode) {
-    document.querySelector('#errorcode').value = errorCode;
-  }
+  FormBuilder('contact-us-form')
+    .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
+    .addFormControl('email-form-control', Validators.validEmail('email', INVALID_EMAIL_ERROR))
+    .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
+    .addSuccessHandler(onSubmit);
 
   function getUserCookieDetails() {
     const { client_id = '' } = Utils.getJSONCookie('nhs-authorization-cookie') || {};
@@ -46,22 +46,12 @@
     return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body: JSON.stringify(body) });
   }
 
-  FormBuilder('contact-us-form')
-    .addFormControl('name-form-control', formData =>
-      formData.get('name').length ? null : MISSING_NAME_ERROR
-    )
-    .addFormControl('email-form-control', formData =>
-      EMAIL_REGEX.test(formData.get('email')) ? null : INVALID_EMAIL_ERROR
-    )
-    .addFormControl('message-form-control', formData =>
-      formData.get('message').length ? null : MISSING_MESSAGE_ERROR
-    )
-    .addSuccessHandler(formData => {
-      sendSupportEmail(formData)
-        .then(res => {
-          const nextPage = res.ok ? '/contact-sent' : '/contact-error';
-          window.location.assign(nextPage);
-        })
-        .catch(() => window.location.assign('/contact-error'));
-    });
+  function onSubmit(formData) {
+    sendSupportEmail(formData)
+      .then(res => {
+        const nextPage = res.ok ? '/contact-sent' : '/contact-error';
+        window.location.assign(nextPage);
+      })
+      .catch(() => window.location.assign('/contact-error'));
+  }
 })();
