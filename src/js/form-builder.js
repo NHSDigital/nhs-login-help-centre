@@ -17,7 +17,7 @@ const FormBuilder = function(mainFormElementID) {
   let formControls = [];
   let onSuccessHandler = Utils.noop;
 
-  const mainFormElement = document.querySelector('#' + mainFormElementID);
+  const mainFormElement = document.querySelector(`#${mainFormElementID}`);
   const errorSummaryElement = mainFormElement.querySelector('.nhsuk-error-summary');
   const errorSummaryList = errorSummaryElement.querySelector('.nhsuk-error-summary__list');
   const originalTitle = document.title;
@@ -30,10 +30,10 @@ const FormBuilder = function(mainFormElementID) {
 
   const Form = {
     addFormControl(id, validator) {
-      const containerElement = document.querySelector('#' + id);
+      const containerElement = mainFormElement.querySelector(`#${id}`);
 
       if (!containerElement) {
-        console.error('No element with id:', '"' + id + '"', 'in', mainFormElement);
+        console.error(`No element with id: "${id}" in`, mainFormElement);
       } else {
         formControls.push({
           validator,
@@ -79,7 +79,7 @@ const FormBuilder = function(mainFormElementID) {
     const errorMessageLinkElement = document.createElement('a');
 
     errorMessageLinkElement.innerHTML = error;
-    errorMessageLinkElement.href = '#' + formControl.inputElement.id;
+    errorMessageLinkElement.href = `#${formControl.inputElement.id}`;
     listItemElement.appendChild(errorMessageLinkElement);
     errorSummaryList.appendChild(listItemElement);
   }
@@ -99,7 +99,7 @@ const FormBuilder = function(mainFormElementID) {
 
     if (errors.length) {
       errorSummaryElement.focus();
-      document.title = 'Error: ' + originalTitle;
+      document.title = `Error: ${originalTitle}`;
     } else {
       onSuccessHandler(formData);
     }
