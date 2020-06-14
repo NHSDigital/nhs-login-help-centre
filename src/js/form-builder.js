@@ -18,7 +18,7 @@ const FormBuilder = function(mainFormElementID) {
 
   const mainFormElement = document.querySelector(`#${mainFormElementID}`);
   const errorSummaryElement = mainFormElement.querySelector('.nhsuk-error-summary');
-  const errorSummaryList = errorSummaryElement.querySelector('.nhsuk-error-summary__list');
+  const errorSummaryListElement = errorSummaryElement.querySelector('.nhsuk-error-summary__list');
   const originalTitle = document.title;
 
   mainFormElement.addEventListener('submit', e => {
@@ -81,7 +81,7 @@ const FormBuilder = function(mainFormElementID) {
   }
 
   function resetErrorSummary() {
-    errorSummaryList.innerHTML = '';
+    errorSummaryListElement.innerHTML = '';
     errorSummaryElement.classList.add('nhsuk-error-summary--hidden');
   }
 
@@ -92,7 +92,7 @@ const FormBuilder = function(mainFormElementID) {
     errorMessageLinkElement.innerHTML = error;
     errorMessageLinkElement.href = `#${formControl.inputElement.id}`;
     listItemElement.appendChild(errorMessageLinkElement);
-    errorSummaryList.appendChild(listItemElement);
+    errorSummaryListElement.appendChild(listItemElement);
     errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
   }
 
