@@ -13,7 +13,7 @@
       input.nhs-help-centre__form-control-input#[inputId]
 */
 const FormBuilder = function(mainFormElementID) {
-  let errors = [];
+  let valid = true;
   let formControls = [];
   let onSuccessHandler = Utils.noop;
 
@@ -55,13 +55,25 @@ const FormBuilder = function(mainFormElementID) {
   };
 
   function resetForm() {
-    resetErrorSummary();
-    formControls.forEach(resetFormControl);
+    valid = true;
     document.title = originalTitle;
+    formControls.forEach(resetFormControl);
+    resetErrorSummary();
+  }
+
+  function validateForm() {
+    const formData = new FormData(mainFormElement);
+    formControls.forEach(formControl => validateFormControl(formControl, formData));
+
+    if (!valid) {
+      errorSummaryElement.focus();
+      document.title = `Error: ${originalTitle}`;
+    } else {
+      onSuccessHandler(formData);
+    }
   }
 
   function resetErrorSummary() {
-    errors = [];
     errorSummaryList.innerHTML = '';
     errorSummaryElement.classList.add('nhsuk-error-summary--hidden');
   }
@@ -72,9 +84,6 @@ const FormBuilder = function(mainFormElementID) {
   }
 
   function addErrorToErrorSummary(error, formControl) {
-    errors.push(error);
-    errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
-
     const listItemElement = document.createElement('li');
     const errorMessageLinkElement = document.createElement('a');
 
@@ -82,26 +91,16 @@ const FormBuilder = function(mainFormElementID) {
     errorMessageLinkElement.href = `#${formControl.inputElement.id}`;
     listItemElement.appendChild(errorMessageLinkElement);
     errorSummaryList.appendChild(listItemElement);
+    errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
   }
 
   function validateFormControl(formControl, formData) {
     const error = formControl.validator(formData);
     if (error) {
-      addErrorToErrorSummary(error, formControl);
+      valid = false;
       formControl.errorElement.innerHTML = error;
       formControl.containerElement.classList.add('nhsuk-form-group--error');
-    }
-  }
-
-  function validateForm() {
-    const formData = new FormData(mainFormElement);
-    formControls.forEach(formControl => validateFormControl(formControl, formData));
-
-    if (errors.length) {
-      errorSummaryElement.focus();
-      document.title = `Error: ${originalTitle}`;
-    } else {
-      onSuccessHandler(formData);
+      addErrorToErrorSummary(error, formControl);
     }
   }
 
