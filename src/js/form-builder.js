@@ -13,7 +13,6 @@
       input.nhs-help-centre__form-control-input#[inputId]
 */
 const FormBuilder = function(mainFormElementID) {
-  let valid = true;
   let formControls = [];
   let onSuccessHandler = Utils.noop;
 
@@ -32,15 +31,15 @@ const FormBuilder = function(mainFormElementID) {
     addFormControl(id, validator) {
       const containerElement = mainFormElement.querySelector(`#${id}`);
 
-      if (!containerElement) {
-        console.error(`No element with id: "${id}" in`, mainFormElement);
-      } else {
+      if (containerElement) {
         formControls.push({
           validator,
           containerElement,
           errorElement: containerElement.querySelector('.nhs-help-centre__form-control-error'),
           inputElement: containerElement.querySelector('.nhs-help-centre__form-control-input'),
         });
+      } else {
+        console.error(`No element with id: "${id}" in`, mainFormElement);
       }
 
       return Form;
@@ -55,7 +54,6 @@ const FormBuilder = function(mainFormElementID) {
   };
 
   function resetForm() {
-    valid = true;
     document.title = originalTitle;
     formControls.forEach(resetFormControl);
     resetErrorSummary();
@@ -63,13 +61,22 @@ const FormBuilder = function(mainFormElementID) {
 
   function validateForm() {
     const formData = new FormData(mainFormElement);
-    formControls.forEach(formControl => validateFormControl(formControl, formData));
 
-    if (!valid) {
+    let valid = true;
+    formControls.forEach(formControl => {
+      const error = formControl.validator(formData);
+      if (error) {
+        valid = false;
+        addErrorToFormControl(formControl, error);
+        addErrorToErrorSummary(formControl, error);
+      }
+    });
+
+    if (valid) {
+      onSuccessHandler(formData);
+    } else {
       errorSummaryElement.focus();
       document.title = `Error: ${originalTitle}`;
-    } else {
-      onSuccessHandler(formData);
     }
   }
 
@@ -78,12 +85,7 @@ const FormBuilder = function(mainFormElementID) {
     errorSummaryElement.classList.add('nhsuk-error-summary--hidden');
   }
 
-  function resetFormControl(formControl) {
-    formControl.errorElement.innerHtml = '';
-    formControl.containerElement.classList.remove('nhsuk-form-group--error');
-  }
-
-  function addErrorToErrorSummary(error, formControl) {
+  function addErrorToErrorSummary(formControl, error) {
     const listItemElement = document.createElement('li');
     const errorMessageLinkElement = document.createElement('a');
 
@@ -94,14 +96,14 @@ const FormBuilder = function(mainFormElementID) {
     errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
   }
 
-  function validateFormControl(formControl, formData) {
-    const error = formControl.validator(formData);
-    if (error) {
-      valid = false;
-      formControl.errorElement.innerHTML = error;
-      formControl.containerElement.classList.add('nhsuk-form-group--error');
-      addErrorToErrorSummary(error, formControl);
-    }
+  function resetFormControl(formControl) {
+    formControl.errorElement.innerHtml = '';
+    formControl.containerElement.classList.remove('nhsuk-form-group--error');
+  }
+
+  function addErrorToFormControl(formControl, error) {
+    formControl.errorElement.innerHTML = error;
+    formControl.containerElement.classList.add('nhsuk-form-group--error');
   }
 
   return Form;
