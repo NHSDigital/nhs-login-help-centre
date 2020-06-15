@@ -16,10 +16,10 @@ const FormBuilder = function(mainFormElementID) {
   let formControls = [];
   let onSuccessHandler = Utils.noop;
 
+  const originalTitle = document.title;
   const mainFormElement = document.querySelector(`#${mainFormElementID}`);
   const errorSummaryElement = mainFormElement.querySelector('.nhsuk-error-summary');
   const errorSummaryListElement = errorSummaryElement.querySelector('.nhsuk-error-summary__list');
-  const originalTitle = document.title;
 
   mainFormElement.addEventListener('submit', e => {
     e.preventDefault();
@@ -89,20 +89,21 @@ const FormBuilder = function(mainFormElementID) {
     const listItemElement = document.createElement('li');
     const errorMessageLinkElement = document.createElement('a');
 
-    errorMessageLinkElement.innerHTML = error;
+    errorMessageLinkElement.innerText = error;
     errorMessageLinkElement.href = `#${formControl.inputElement.id}`;
+
     listItemElement.appendChild(errorMessageLinkElement);
     errorSummaryListElement.appendChild(listItemElement);
     errorSummaryElement.classList.remove('nhsuk-error-summary--hidden');
   }
 
   function resetFormControl(formControl) {
-    formControl.errorElement.innerHtml = '';
+    formControl.errorElement.innerText = '';
     formControl.containerElement.classList.remove('nhsuk-form-group--error');
   }
 
   function addErrorToFormControl(formControl, error) {
-    formControl.errorElement.innerHTML = error;
+    formControl.errorElement.innerText = error;
     formControl.containerElement.classList.add('nhsuk-form-group--error');
   }
 
