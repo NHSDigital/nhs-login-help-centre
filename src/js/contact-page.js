@@ -1,19 +1,25 @@
 (function() {
   const MISSING_NAME_ERROR = 'Enter your full name';
-  const INVALID_EMAIL_ERROR = 'Enter your email address';
+  const MISSING_EMAIL_MESSAGE = 'Enter your email address';
+  const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
   const MISSING_MESSAGE_ERROR = 'Enter your message';
   const API_URL = 'https://api.dev.signin.nhs.uk/nhs-login-support/send-email';
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
 
-  document.querySelector('#errorcode').value = Utils.getParam('error');
+  const validateEmailField = Validators.combineValidators([
+    Validators.hasValue('email', MISSING_EMAIL_MESSAGE),
+    Validators.validEmail('email', INVALID_EMAIL_ERROR),
+  ]);
 
   FormBuilder('contact-us-form')
     .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
-    .addFormControl('email-form-control', Validators.validEmail('email', INVALID_EMAIL_ERROR))
+    .addFormControl('email-form-control', validateEmailField)
     .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
+
+  document.querySelector('#errorcode').value = Utils.getParam('error');
 
   function getUserCookieDetails() {
     const { client_id = '' } = Utils.getJSONCookie('nhs-authorization-cookie') || {};
