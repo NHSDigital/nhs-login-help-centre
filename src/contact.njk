@@ -5,14 +5,9 @@ excludeFromSearch: true
 ---
 <script src="https://cdn.polyfill.io/v3/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign,Object.is,Intl.~locale.en-GB"></script>
 <script src="https://cdn.jsdelivr.net/npm/luxon@1.24.1/build/global/luxon.min.js"></script>
+<script src={{ "/js/time.js" | url }}></script>
 <script>
-    const { local, fromObject } = luxon.DateTime;
-    const now = local().setZone('Europe/London');
-    const opening = fromObject({ hour: 9, minute: 30, zone: 'Europe/London' })
-    const closing = fromObject({ hour: 16 , minute: 30, zone: 'Europe/London' })
-    const isWeekend = now.weekday === 6 || now.weekday === 7;
-
-    if (now < opening || now > closing || isWeekend) {
+    if (!Time.isContactFormAvailable()) {
         window.location.replace('/contact-unavailable');
     }
 </script>
