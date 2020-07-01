@@ -1,30 +1,83 @@
-{# ---
+---
 layout: layouts/base.njk
 title: Contact Us
 excludeFromSearch: true
 ---
+<script src="https://cdn.polyfill.io/v3/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign,Object.is,Intl.~locale.en-GB"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.24.1/build/global/luxon.min.js"></script>
+<script src={{ "/js/time.js" | url }}></script>
+<script>
+    if (!Time.isContactFormAvailable()) {
+        window.location.replace('/contact-unavailable');
+    }
+</script>
+
 {% include "header.njk" %}
 <div class="nhsuk-width-container ">
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         <div class="nhsuk-grid-row">
-            <form id="contact-us-form" class="nhsuk-grid-column-two-thirds">
+            <form id="contact-us-form" class="nhsuk-grid-column-two-thirds nhs-help-centre__form">
                 <h2 class="nhsuk-app-contact-panel__heading">Contact us</h2>
-                <div class="nhsuk-form-group">
+            
+                <div class="nhsuk-error-summary nhsuk-error-summary--hidden" aria-labelledby="error-summary-title"
+                    role="alert" tabindex="-1">
+                    <h2 class="nhsuk-error-summary__title">
+                        There is a problem
+                    </h2>
+                    <div class="nhsuk-error-summary__body">
+                        <ul class="nhsuk-list nhsuk-error-summary__list"></ul>
+                    </div>
+                </div>
+
+                <p>Use this form to get help or advice for a problem or issue with NHS login. The NHS login team cannot
+                    help with medical problems.
+                </p>
+
+                <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="-1">
+                        <span class="nhsuk-details__summary-text">
+                            What to do if you need medical help
+                        </span>
+                    </summary>
+                    <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                        <span class="nhsuk-u-visually-hidden">Urgent advice: </span>
+                        <p>If you think it's a life-threatening emergency:</p>
+                        <ul>
+                            <li>
+                                <a href="tel: 999">call 999</a>
+                            </li>
+                        </ul>
+                        <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+                        <p>If you do not think it's an emergency:</p>
+                        <ul>
+                            <li><a href="tel:111">call 111</a> or go to <a href="https://111.nhs.uk">111 online</a></li>
+                            <li>speak to a <a href="https://www.nhs.uk/service-search">pharmacist, GP or dentist</a>
+                            </li>
+                            <li>search the <a href="https://www.nhs.uk/conditions/"> NHS website health A-Z</a> for more
+                                advice about your condition</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="nhsuk-form-group" id="name-form-control">
                     <label class="nhsuk-label" for="name">
                         Name
                     </label>
-                    <input class="nhsuk-input nhsuk-u-width-one-half" id="name" name="name" type="text">
+                    <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+                    <input class="nhsuk-input nhsuk-u-width-one-half nhs-help-centre__form-control-input" id="name"
+                        name="name" type="text">
                 </div>
-                <div class="nhsuk-form-group">
+
+                <div class="nhsuk-form-group" id="email-form-control">
                     <label class="nhsuk-label" for="email">
                         Email address
                     </label>
-                    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-                        <span class="nhsuk-hint">
-                            This is the email address we will contact you on.
-                        </span>
-                        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
-                    </fieldset>
+                    <span class="nhsuk-hint">
+                        This is the email address we will contact you on.
+                    </span>
+                    <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input" id="email"
+                        name="email" type="text">
                 </div>
 
                 <div class="nhsuk-form-group">
@@ -33,32 +86,29 @@ excludeFromSearch: true
                     </label>
                     <select class="nhsuk-select" id="errorcode" name="errorcode">
                         {%- for link in collections.contactUsLinks -%}
-                            <option value="{{link.errorCode}}">{{link.errorCode}}: {{link.linkText}}</option>
+                        <option value="{{link.errorCode}}">{{link.errorCode}}: {{link.linkText}}</option>
                         {%- endfor -%}
                     </select>
                 </div>
 
-                <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group" id="message-form-control">
                     <label class="nhsuk-label" for="message">
                         Message
                     </label>
-                    <span class="nhsuk-hint" id="message-hint">
+                    <span class="nhsuk-hint">
                         Enter as much detail as you can, including any information we may have asked you to provide.
                     </span>
-                    <textarea class="nhsuk-textarea" id="message" name="message" rows="6"
-                        aria-describedby="message-hint"></textarea>
+                    <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+                    <textarea class="nhsuk-textarea nhs-help-centre__form-control-input" id="message" name="message"
+                        rows="6" aria-describedby="message-hint"></textarea>
                 </div>
 
                 <button class="nhsuk-button">
                     Send message
                 </button>
-                <!-- End of content -->
-            </div>
         </div>
-    </main>
+</div>
+</main>
 </div>
 <script src={{ "/js/contact-page.js" | url }}></script>
-{% include "footer.njk" %} #}
-<script type="text/javascript">
-    window.location.replace('/');
-</script>
+{% include "footer.njk" %}

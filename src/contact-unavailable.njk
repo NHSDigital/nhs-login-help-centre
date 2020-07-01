@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: Contact Us
+excludeFromSearch: true
+---
+<script src="https://cdn.polyfill.io/v3/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign,Object.is,Intl.~locale.en-GB"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.24.1/build/global/luxon.min.js"></script>
+<script src={{ "/js/time.js" | url }}></script>
+<script>
+    if (Time.isContactFormAvailable()) {
+        window.location.replace('/contact');
+    }
+</script>
+
+{% include "header.njk" %}
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+                <h2>Sorry, we are unable to take messages at this time</h2>
+                <p>You can contact us Monday to Friday, 9:30am to 4:30pm.</p>
+                <p>Please come back and try again during these times.</p>
+
+                 <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="-1">
+                        <span class="nhsuk-details__summary-text">
+                            What to do if you need medical help
+                        </span>
+                    </summary>
+                    <div class="nhsuk-details__text" id="nhsuk-details__text0">
+                        <span class="nhsuk-u-visually-hidden">Urgent advice: </span>
+                        <p>If you think it's a life-threatening emergency:</p>
+                        <ul>
+                            <li>
+                                <a href="tel: 999">call 999</a>
+                            </li>
+                        </ul>
+                        <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+                        <p>If you do not think it's an emergency:</p>
+                        <ul>
+                            <li><a href="tel:111">call 111</a> or go to <a href="https://111.nhs.uk">111 online</a></li>
+                            <li>speak to a <a href="https://www.nhs.uk/service-search">pharmacist, GP or dentist</a>
+                            </li>
+                            <li>search the <a href="https://www.nhs.uk/conditions/"> NHS website health A-Z</a> for more
+                                advice about your condition</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+</div>
+{% include "footer.njk" %}

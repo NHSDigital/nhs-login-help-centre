@@ -1,7 +1,11 @@
 const Utils = (function() {
-  const COOKIE_DOMAIN = '.login.nhs.uk';
   const COOKIE_LIVE_DAYS = 365;
   const MILLISECONDS_IN_ONE_DAY = 86400000;
+  // if we are on a .login.nhs.uk subdomain share cookies with rest of login,
+  // otherwise set the cookies on the current domain
+  const COOKIE_DOMAIN = window.location.hostname.includes('.login.nhs.uk')
+    ? '.login.nhs.uk'
+    : window.location.hostname;
 
   return {
     getCookie(name) {
@@ -69,6 +73,10 @@ const Utils = (function() {
 
     range(from, to) {
       return Array.from(Array(to - from + 1), (_, i) => i + from);
+    },
+
+    noop() {
+      return null;
     },
   };
 })();

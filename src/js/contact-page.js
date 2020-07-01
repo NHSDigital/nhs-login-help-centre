@@ -1,19 +1,25 @@
 (function() {
-  const API_KEY = 'todo';
-  const API_URL = 'https://api.notifications.service.gov.uk/v2/notifications/email';
-  const SUPPORT_EMAIL = 'test@example.com';
-  const SUPPORT_TEMPLATE = 'd6dc667b-f8d0-4758-98d0-012fca3eac18';
+  const MISSING_NAME_ERROR = 'Enter your full name';
+  const MISSING_EMAIL_ERROR = 'Enter your email address';
+  const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
+  const MISSING_MESSAGE_ERROR = 'Enter your message';
+  const API_URL = 'https://api.dev.signin.nhs.uk/nhs-login-support/send-email';
   const REQUEST_HEADERS = new Headers({
-    Authorization: `Bearer ${API_KEY}`,
     'Content-type': 'application/json',
   });
 
-  const errorCode = Utils.getParam('error');
-  const form = document.getElementById('contact-us-form');
+  const validateEmailField = Validators.combineValidators([
+    Validators.hasValue('email', MISSING_EMAIL_ERROR),
+    Validators.validEmail('email', INVALID_EMAIL_ERROR),
+  ]);
 
-  if (errorCode) {
-    document.querySelector('#errorcode').value = errorCode;
-  }
+  FormBuilder('contact-us-form')
+    .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
+    .addFormControl('email-form-control', validateEmailField)
+    .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
+    .addSuccessHandler(onSubmit);
+
+  document.querySelector('#errorcode').value = Utils.getParam('error');
 
   function getUserCookieDetails() {
     const { client_id = '' } = Utils.getJSONCookie('nhs-authorization-cookie') || {};
@@ -21,28 +27,37 @@
     return { client_id, account_id };
   }
 
-  function sendSupportEmail(formData) {
-    const { client_id, account_id } = getUserCookieDetails();
-    const body = {
-      email_address: SUPPORT_EMAIL,
-      template_id: SUPPORT_TEMPLATE,
-      personalisation: {
-        name: formData.get('name'),
-        user_email: formData.get('email'),
-        user_id: account_id,
-        client: client_id,
-        errorcode: formData.get('errorcode'),
-        message: formData.get('name'),
-      },
-    };
-
-    return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body });
+  function getErrorCodeValues(formData) {
+    const error = formData.get('errorcode');
+    const errorText = document.querySelector(`option[value=${error}`).text;
+    const [errorCode, errorTitle] = errorText.split(': ');
+    return { errorCode, errorTitle };
   }
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const supportEmailRequest = sendSupportEmail(formData);
-    return false;
-  });
+  function sendSupportEmail(formData) {
+    const { client_id, account_id } = getUserCookieDetails();
+    const { errorCode, errorTitle } = getErrorCodeValues(formData);
+    const body = {
+      user_name: formData.get('name'),
+      user_email: formData.get('email'),
+      user_id: account_id,
+      client: client_id,
+      error_code: errorCode,
+      error_title: errorTitle,
+      error_description: errorTitle,
+      message: formData.get('message'),
+      browser: navigator.userAgent,
+    };
+
+    return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body: JSON.stringify(body) });
+  }
+
+  function onSubmit(formData) {
+    sendSupportEmail(formData)
+      .then(res => {
+        const nextPage = res.ok ? '/contact-sent' : '/contact-error';
+        window.location.assign(nextPage);
+      })
+      .catch(() => window.location.assign('/contact-error'));
+  }
 })();
