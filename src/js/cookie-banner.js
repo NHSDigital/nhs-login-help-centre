@@ -15,7 +15,7 @@
   function handleChooseButtonClick() {
     cookieBanner.style.display = 'none';
     Consent.setHasSeenCookieBanner();
-    window.location.assign('https://access.login.nhs.uk/cookies/cookie-settings');
+    window.location.assign(`${Environment.ACCESS_FRONTEND_URL}/cookies/cookie-settings`);
   }
 
   const cookiePreferences = Consent.getCookiePreferences();

@@ -3,7 +3,6 @@
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
   const MISSING_MESSAGE_ERROR = 'Enter your message';
-  const API_URL = 'https://api.dev.signin.nhs.uk/nhs-login-support/send-email';
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
@@ -49,7 +48,11 @@
       browser: navigator.userAgent,
     };
 
-    return fetch(API_URL, { method: 'POST', headers: REQUEST_HEADERS, body: JSON.stringify(body) });
+    return fetch(Environment.EMAIL_API_URL, {
+      method: 'POST',
+      headers: REQUEST_HEADERS,
+      body: JSON.stringify(body),
+    });
   }
 
   function onSubmit(formData) {

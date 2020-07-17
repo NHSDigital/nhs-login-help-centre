@@ -79,7 +79,7 @@ If this problem keeps happening even with permissions allowed, there might be a 
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ---
 
@@ -131,7 +131,7 @@ If this keeps happening, there might be a problem with your device. Try taking a
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ---
 
@@ -147,7 +147,7 @@ If you do not pass the photo I.D. check, we will send you an email with some adv
 
 If you keep getting the same problem, you can prove who you are without photo I.D. instead.
 
-<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ---
 
@@ -157,7 +157,7 @@ If you see the error reference code CID4002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
 
 ---
 
@@ -167,4 +167,4 @@ If you see the error reference code CID8002, this is because the picture of your
 
 You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-<a href="../withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
