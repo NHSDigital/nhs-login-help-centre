@@ -2,6 +2,7 @@
 title: How to set up NHS login
 short_title: Set up
 subtitle: Find out what NHS login is, how to set one up and where you can use it.
+pageName: setup-nhs-login
 type: article
 hub: home
 position: 1

@@ -15,7 +15,8 @@ const Analytics = (function() {
   function trackPageView() {
     window.digitalData.page = {
       pageInfo: {
-        pageName: document.title,
+        // find this in /src/_includes/head.njk
+        pageName: PageInfo.pageName,
       },
     };
     _satellite.track('page_view');
