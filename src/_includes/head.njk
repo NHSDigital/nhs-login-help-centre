@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="{{ "/css/form.css" | url }}">
 <script type="text/javascript">
 const Environment = {{ environment | dump | safe }}
+const PageInfo = {
+    pageName: 'nhs:cid:help-centre:' + '{{ pageName | safe }}'.toLowerCase()
+}
 </script>
 <script src={{ "/js/utils.js" | url }}></script>
 <script src={{ "/js/consent.js" | url }}></script>
