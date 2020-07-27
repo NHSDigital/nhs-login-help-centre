@@ -29,17 +29,6 @@ const Analytics = (function() {
   }
 
   return {
-    start() {
-      const { hasAcceptedOptionalCookies } = Consent.getCookiePreferences();
-
-      if (hasAcceptedOptionalCookies) {
-        Utils.createScript(HOTJAR_URL);
-        Utils.createScript(ADOBE_URL).then(() => {
-          window.digitalData = {};
-          trackPageView();
-          createHandlers();
-        });
-      }
-    },
+    start() {},
   };
 })();
