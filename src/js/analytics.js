@@ -34,11 +34,6 @@ const Analytics = (function() {
 
       if (hasAcceptedOptionalCookies) {
         Utils.createScript(HOTJAR_URL);
-        Utils.createScript(ADOBE_URL).then(() => {
-          window.digitalData = {};
-          trackPageView();
-          createHandlers();
-        });
       }
     },
   };
