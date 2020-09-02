@@ -9,6 +9,16 @@ position: 5
 layout: layouts/article.njk
 ---
 
+## Reference CID1004: We do not know which website or app you are trying to access
+
+If reference CID1004 is shown, this means we do not know which website or app you are trying to access. This can happen if you try to log in directly from a web search engine, bookmark or your browser history.
+
+To try again, you should go to the website or app you want to access and select **Continue with NHS login**.
+
+Make sure you go to the main website or app of the service you want to access. Avoid using bookmarks or links from your browser history.
+
+---
+
 ## Reference CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
