@@ -181,4 +181,4 @@ If reference CID7100 is shown, this means the website or app you are trying to v
 
 There could be a problem with your details, or with your GP surgery's system.
 
-[Contact us](/contact?error=CID7029 'Contact us') so we can check you have been given the right registration details. You will need to tell us the email address you use for your NHS login.
+[Contact us](/contact?error=CID7100 'Contact us') so we can check you have been given the right registration details. You will need to tell us the email address you use for your NHS login.
