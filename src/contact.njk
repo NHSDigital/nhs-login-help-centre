@@ -83,6 +83,21 @@ excludeFromSearch: true
                     </select>
                 </div>
 
+                <div class="nhsuk-form-group" id="client-form-control">
+                    <label class="nhsuk-label" for="client">
+                        Please select the website or app you are trying to visit
+                    </label>
+                    <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+                    <select class="nhsuk-select nhs-help-centre__form-control-input" id="client" name="client">
+                        <option selected value="">Select an option</option>
+                        <option value="none">I am not trying to visit a website or app</option>
+                        {%- for client in clients.clients -%}
+                        <option value="{{client}}">{{client}}</option>
+                        {%- endfor -%}
+                        <option value="not-in-list">The website or app I am trying to visit is not on this list</option>
+                    </select>
+                </div>
+
                 <div class="nhsuk-form-group" id="message-form-control">
                     <label class="nhsuk-label" for="message">
                         Message
