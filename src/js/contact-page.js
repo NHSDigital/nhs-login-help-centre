@@ -1,4 +1,5 @@
 (function() {
+  const errorCodeRegex = /^CID\d{4}$/;
   const MISSING_NAME_ERROR = 'Enter your full name';
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
@@ -20,7 +21,19 @@
     .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 
-  document.querySelector('#errorcode').value = Utils.getParam('error');
+  const errorCode = Utils.getParam('error');
+  const errorDesc = Utils.getParam('desc');
+
+  if(errorCodeRegex.test(errorCode)) {
+    const isNewError = !document.querySelector(`#errorcode option[value=${errorCode}]`);
+    if(isNewError) {
+      const firstOption = document.querySelector('#errorcode option');
+      firstOption.value = errorCode;
+      firstOption.hidden = false;
+      firstOption.innerText = errorDesc ? `${errorCode}: ${decodeURIComponent(errorDesc)}` : errorCode;
+    }
+    document.querySelector('#errorcode').value = errorCode;
+  }
 
   function getAccountId() {
     const { account_id = '' } = Utils.getJWTCookie('id_token') || {};
