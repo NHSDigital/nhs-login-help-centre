@@ -109,8 +109,6 @@ The details we use to make the connection have already been used to connect you 
 
 This can happen if you already have an NHS login with a different email address. We may have connected that NHS login to your GP surgery’s system. We can only connect one NHS login to your GP surgery’s system.
 
-If you think you may already have an NHS login, go back to the website or app you were trying to visit and log in with those details.
-
 If you want to change the email address on your NHS login you can do so in your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings').
 
 ### The details we use are invalid
