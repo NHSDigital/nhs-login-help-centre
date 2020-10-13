@@ -9,6 +9,14 @@ position: 5
 layout: layouts/article.njk
 ---
 
+## Reference CID0003: Our website has accessibility issues
+
+We have designed the NHS login website to be accessible and as simple as possible to understand for all users. Some content on our website does not meet the standard and we are working to fix this as soon as we can.
+
+[Contact us](/contact?error=CID0003 'Contact us') if you want to report any accessibility problems that are not listed on our [accessibility statement]({{environment.ACCESS_FRONTEND_URL}}/accessibility), or to give us feedback on any issues you have seen.
+
+---
+
 ## Reference CID1004: We do not know which website or app you are trying to access
 
 If reference CID1004 is shown, this means we do not know which website or app you are trying to access. This can happen if you try to log in directly from a web search engine, bookmark or your browser history.
