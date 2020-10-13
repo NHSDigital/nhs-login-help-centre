@@ -76,7 +76,7 @@ If you are trying to use the NHS App you should speak to your GP surgery about u
 
 ### Reference CID7003: We cannot find you on our system
 
-Reference CID7003 is shown when we cannot not find a match on our system for the details you entered. This could mean that you have wrongly entered the registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
+Reference CID7003 is shown when we cannot find a match on our system for the details you entered. This could mean that you have wrongly entered the registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
 
 Contact your GP surgery to check you have the right registration details. If you have the right details, ask your GP surgery to check your name and date of birth is correct and up to date on your NHS record.
 

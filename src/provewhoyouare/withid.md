@@ -16,14 +16,46 @@ You will be asked to:
 2. record your face using your device
 3. enter your NHS number if you know it
 
-Your photo I.D. can be a:
+We ask you to record your face so that we can compare it to your photo I.D. and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
 
-- passport
+---
+
+## Photo I.D. we can accept
+
+The image you send needs to be of your original photo I.D. You cannot send an image of a printout or screen showing your photo I.D.
+
+We can accept an expired photo I.D. if it expired less than 6 months ago.
+
+You can send:
+
+- passport (except Syrian passport)
 - UK driving licence (full or provisional)
 - European driving licence (full)
-- European national identity card
+- European national identity card (except paper Italian I.D. card or Greek I.D. card)
+- UK residence card or biometric residence permit (BRP)
 
-We ask you to record your face so that we can compare it to your photo I.D. and prove who you are. We may ask you for more details to help find your NHS record, like your date of birth or postcode.
+If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the I.D. you want to use. You will need to send 2 photos, one of the front and one of the back.
+
+---
+
+## Photo I.D. we do not accept
+
+We do not accept photo I.D. with any handwritten information other than a signature.
+
+You cannot send:
+
+- travel cards
+- bus passes
+- NHS I.D. cards
+- visa stickers
+- UK citizen I.D. cards
+- proof of age cards
+- university or school I.D. cards
+- Syrian passports
+- paper Italian I.D. cards
+- Greek I.D. cards
+- UK driver qualification cards
+- an image of a printout or screen showing your photo I.D.
 
 ---
 
