@@ -105,9 +105,9 @@ If reference CID7023 is shown, this means the website or app you are trying to v
 
 ### You have already set up an NHS login
 
-The details we use to make the connection have already been used to connect you to the website or app you are trying to visit.
+The details we use to make the connection have already been used to connect you to the website or app you were trying to visit.
 
-This can happen if you have already set up an NHS login using a different email address. We will have connected that NHS login to your GP surgery’s system. You can only connect 1 NHS login to your GP surgery’s system.
+This can happen if you already have an NHS login with a different email address. We may have connected that NHS login to your GP surgery’s system. We can only connect one NHS login to your GP surgery’s system.
 
 If you want to change the email address on your NHS login you can do so in your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings').
 
