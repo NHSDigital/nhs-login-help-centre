@@ -31,7 +31,7 @@ If you write the numbers, make sure they are clear and the paper is not held in 
 
 It may be easier to show the numbers before or after you look directly at the camera. We cannot approve you if we cannot see your face clearly in the video.
 
-### Sign the numbers using British Sign Language
+### Sign the numbers using British Sign Language (BSL)
 
 If you sign the numbers, make sure your whole hand is visible and facing the camera. It may be easier to sign the numbers before or after you look directly at the camera.
 
