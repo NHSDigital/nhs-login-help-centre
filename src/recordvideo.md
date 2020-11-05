@@ -13,13 +13,29 @@ layout: layouts/article.njk
 
 To record a good short video, make sure:
 
-- your entire face is visible
 - you face the camera directly
-- your face is not covered by a hat or glasses
+- your face is clear and not covered, for example by a hat or glasses
+- the video is not too light or dark
 
-You will be asked to repeat 4 randomly generated numbers. You can say the numbers out loud or write them down and show them.
+Before you record your video, we will show you 4 numbers. You will be asked to tell us what the 4 numbers are. To do this you can say the 4 numbers, sign the numbers using British Sign Language, or write the numbers down and show them instead.
 
-If you say the numbers, make sure your voice is loud and clear. If you write the numbers down, make sure they are clear and the paper is not held in front of your face.
+If you ask someone to help you, make sure only your face is in the video. Only you can tell us what the numbers are.
+
+### Say the numbers
+
+If you say the numbers, make sure your voice is loud and clear. It may help to write the numbers down first in case you forget them.
+
+### Write the numbers and show them
+
+If you write the numbers, make sure they are clear and the paper is not held in front of your face. You should use a thick pen to write down the numbers.
+
+It may be easier to show the numbers before or after you look directly at the camera. We cannot approve you if we cannot see your face clearly in the video.
+
+### Sign the numbers using British Sign Language
+
+If you sign the numbers, make sure your whole hand is visible and facing the camera. It may be easier to sign the numbers before or after you look directly at the camera.
+
+This is so we can get a clear view of both your face and hands. We cannot approve you if we cannot see your face clearly in the video.
 
 ---
 
