@@ -1,21 +1,29 @@
 {
   "clients": [
     "Airmid",
+    "Amity",
+    "Ask HR",
     "Chain SMS",
     "Co-Op Health App",
+    "COVID-19 National Testing Service",
     "Digital Redbook",
     "Doctorlink App",
     "Echo",
+    "Engage Consult",
     "eRedbook",
     "eRS",
     "Evergreen Life PHR",
     "GM Patient Portal",
     "HELM",
+    "Low Carb Program",
+    "My Operose Health",
     "myCareCentric PHR",
+    "myGP",
     "NHS App",
     "Patient Pack",
     "Patients Know Best",
     "Push Doctor Website and App",
+    "Shielded Vulnerable People's Service",
     "Web-GP"
   ]
 }
