@@ -47,6 +47,18 @@ If reference CID2012 is shown, this can mean your information has errors or it i
 
 ---
 
+## Reference CID2014: You cannot use your NHS login
+
+There is a problem that we are looking at. You will not be able to use your NHS login until we have fixed the problem. This is to keep your health information secure.
+
+What happens next:
+
+We will update you by email. This usually takes 2 working days.
+
+If it has been longer than 2 working days you can [contact us](/contact?error=CID2014 'Contact us').
+
+---
+
 ## Reference CID2024: There is a technical issue on our side
 
 If reference CID2024 is shown, this means we do not know what website or app you are trying to log into. This is a technical issue on our side.
