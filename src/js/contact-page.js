@@ -24,13 +24,15 @@
   const errorCode = Utils.getParam('error');
   const errorDesc = Utils.getParam('desc');
 
-  if(errorCodeRegex.test(errorCode)) {
+  if (errorCodeRegex.test(errorCode)) {
     const isNewError = !document.querySelector(`#errorcode option[value=${errorCode}]`);
-    if(isNewError) {
+    if (isNewError) {
       const firstOption = document.querySelector('#errorcode option');
       firstOption.value = errorCode;
       firstOption.hidden = false;
-      firstOption.innerText = errorDesc ? `${errorCode}: ${decodeURIComponent(errorDesc)}` : errorCode;
+      firstOption.innerText = errorDesc
+        ? `${errorCode}: ${decodeURIComponent(errorDesc)}`
+        : errorCode;
     }
     document.querySelector('#errorcode').value = errorCode;
   }
