@@ -72,18 +72,6 @@ excludeFromSearch: true
                         name="email" type="text">
                 </div>
 
-                <div class="nhsuk-form-group">
-                    <label class="nhsuk-label" for="errorcode">
-                        Problem or issue
-                    </label>
-                    <select class="nhsuk-select" id="errorcode" name="errorcode">
-                        <option hidden="true" value=""></option>
-                        {%- for link in collections.contactUsLinks -%}
-                        <option value="{{link.errorCode}}">{{link.errorCode}}: {{link.linkText}}</option>
-                        {%- endfor -%}
-                    </select>
-                </div>
-
                 <div class="nhsuk-form-group" id="client-form-control">
                     <label class="nhsuk-label" for="client">
                         Please select the website or app you are trying to visit
@@ -118,5 +106,8 @@ excludeFromSearch: true
         </div>
     </main>
 </div>
+<script type="text/javascript">
+const ContactUsLinks = {{ collections.contactUsLinks | dump | safe }}
+</script>
 <script src={{ "/js/contact-page.js" | url }}></script>
 {% include "footer.njk" %}
