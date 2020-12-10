@@ -39,9 +39,9 @@ This is so we can get a clear view of both your face and hands. We cannot approv
 
 ---
 
-## Camera does not work when recording a video
+## Camera or sound does not work when recording a video
 
-If the camera does not open or shows a black screen when recording a video, this may be a problem with permissions.
+If the camera does not open or record sound when recording a video, this may be a problem with permissions. This may also cause a black screen to show when trying to record a video.
 
 You should make sure the web browser on your device has camera and microphone permissions. You must also give permission for the NHS login website to access your device’s camera and microphone.
 
