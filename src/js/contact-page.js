@@ -28,14 +28,20 @@
 
   function getErrorCode() {
     const errorCode = Utils.getParam('error');
+    const errorDesc = Utils.getParam('desc');
     if (errorCodeRegex.test(errorCode)) {
-      const isNewError = !ContactUsLinks.find(x => x.code == errorCode);
-      if (isNewError) {
-        return { code: errorCode, description: 'UNKNOWN' };
+      const errorMatch = ContactUsLinks.find(x => x.code == errorCode);
+      if (errorMatch) {
+        return errorMatch;
       }
+      if (!errorMatch) {
+        return (
+          { code: errorCode, description: errorDesc } || { code: 'UNKNOWN', description: 'UNKNOWN' }
+        );
+      }
+    } else {
+      return { code: 'UNKNOWN', description: 'UNKNOWN' };
     }
-    const selectedError = ContactUsLinks.find(x => x.code == errorCode);
-    return selectedError || { code: 'UNKNOWN', description: 'UNKNOWN' };
   }
 
   function sendSupportEmail(formData) {
