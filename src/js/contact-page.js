@@ -1,4 +1,5 @@
 (function() {
+  const errorCodeRegex = /^CID\d{4}$/;
   const MISSING_NAME_ERROR = 'Enter your full name';
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
@@ -20,29 +21,35 @@
     .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 
-  const errorCode = Utils.getParam('error') || 'Unknown';
+  const errorCode = Utils.getParam('error');
 
   function getAccountId() {
     const { account_id = '' } = Utils.getJWTCookie('id_token') || {};
     return account_id;
   }
 
-  function getLinks() {
-    const selectedError = ContactUsLinks.find(x => x.errorCode == errorCode);
-    return selectedError || { errorCode: 'UNKNOWN', linkText: 'UNKNOWN' };
+  function getErrorCode() {
+    if (errorCodeRegex.test(errorCode)) {
+      const isNewError = !ContactUsLinks.find(x => x.code == errorCode);
+      if (isNewError) {
+        return { code: errorCode, description: 'UNKNOWN' };
+      }
+    }
+    const selectedError = ContactUsLinks.find(x => x.code == errorCode);
+    return selectedError || { code: 'UNKNOWN', description: 'UNKNOWN' };
   }
 
   function sendSupportEmail(formData) {
     const account_id = getAccountId();
-    const { errorCode, linkText } = getLinks();
+    const { code, description } = getErrorCode();
     const body = {
       user_name: formData.get('name'),
       user_email: formData.get('email'),
       user_id: account_id,
       client: formData.get('client'),
-      error_code: errorCode,
-      error_title: linkText,
-      error_description: linkText,
+      error_code: code,
+      error_title: description,
+      error_description: description,
       message: formData.get('message'),
       browser: navigator.userAgent,
     };
