@@ -34,9 +34,8 @@
       return { code: 'UNKNOWN', description: 'UNKNOWN' };
     }
     if (errorMatch) {
-      return errorMatch || { code: errorCode, description: errorDesc };
-    }
-    if (!errorMatch) {
+      return errorMatch;
+    } else {
       return { code: errorCode, description: errorDesc };
     }
   }
