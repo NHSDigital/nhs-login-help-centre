@@ -21,14 +21,13 @@
     .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 
-  const errorCode = Utils.getParam('error');
-
   function getAccountId() {
     const { account_id = '' } = Utils.getJWTCookie('id_token') || {};
     return account_id;
   }
 
   function getErrorCode() {
+    const errorCode = Utils.getParam('error');
     if (errorCodeRegex.test(errorCode)) {
       const isNewError = !ContactUsLinks.find(x => x.code == errorCode);
       if (isNewError) {
