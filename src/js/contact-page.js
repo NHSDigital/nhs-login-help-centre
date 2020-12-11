@@ -28,19 +28,16 @@
 
   function getErrorCode() {
     const errorCode = Utils.getParam('error');
-    const errorDesc = Utils.getParam('desc');
-    if (errorCodeRegex.test(errorCode)) {
-      const errorMatch = ContactUsLinks.find(x => x.code == errorCode);
-      if (errorMatch) {
-        return errorMatch;
-      }
-      if (!errorMatch) {
-        return (
-          { code: errorCode, description: errorDesc } || { code: 'UNKNOWN', description: 'UNKNOWN' }
-        );
-      }
-    } else {
+    const errorDesc = Utils.getParam('desc') || 'UNKNOWN';
+    const errorMatch = ContactUsLinks.find(x => x.code == errorCode);
+    if (!errorCodeRegex.test(errorCode)) {
       return { code: 'UNKNOWN', description: 'UNKNOWN' };
+    }
+    if (errorMatch) {
+      return errorMatch || { code: errorCode, description: errorDesc };
+    }
+    if (!errorMatch) {
+      return { code: errorCode, description: errorDesc };
     }
   }
 
