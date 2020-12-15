@@ -28,7 +28,7 @@
 
   function getErrorCode() {
     const errorCode = Utils.getParam('error');
-    const errorDesc = Utils.getParam('desc') || 'UNKNOWN';
+    const errorDesc = decodeURIComponent(Utils.getParam('desc') || 'UNKNOWN');
     const errorMatch = ContactUsLinks.find(x => x.code == errorCode);
     if (!errorCodeRegex.test(errorCode)) {
       return { code: 'UNKNOWN', description: 'UNKNOWN' };
