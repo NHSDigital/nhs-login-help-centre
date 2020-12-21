@@ -8,7 +8,10 @@
  * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  * http://paulirish.com/2012/box-sizing-border-box-ftw
  */
-@import 'components/contents-list' html;
+ /*
+  * removed a broken import here 
+  * todo: get rid of this entire file: https://nhsd-jira.digital.nhs.uk/browse/CID-9145
+  */
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
