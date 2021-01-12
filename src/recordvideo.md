@@ -59,6 +59,18 @@ If you have an Android device, you should avoid the ‘camera’ option when giv
 
 ---
 
+## Unable to record a video on your device or browser
+
+If reference CID4017 is shown, this means your device or browser does not allow you to record a video. This may be because you are using a laptop or desktop computer that does not have a camera. You will need to switch to a device that does have a camera, like a smartphone or tablet.
+
+If your device does have a camera, there may be a problem with your browser. Go back to the website or app you want to access and try using another browser. If this still does not work try another device, like a smartphone or tablet.
+
+You only need to do this to prove who you are. Once this is done, you can use your NHS login to access websites and apps on any device.
+
+[Find out how to prove who you are without using photo I.D. and a video](/provewhoyouare/withoutid 'Find out how to prove who you are without using photo I.D. and a video')
+
+---
+
 ## Unable to replay or upload your video
 
 If you cannot replay your video, this could be because the video format captured by your device camera is not supported by your browser.
