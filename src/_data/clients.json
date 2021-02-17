@@ -2,7 +2,7 @@
   "clients": [
     "Airmid",
     "Amity",
-    "Ask HR",
+    "Ask NHS",
     "Chain SMS",
     "Chemist 4 U API Services",
     "Co-Op Health App",
@@ -10,6 +10,7 @@
     "COVID-19 National Testing Service",
     "Digital Redbook",
     "Doctorlink App",
+    "Doctrin platform",
     "Echo",
     "Engage Consult",
     "eRedbook",
@@ -26,6 +27,7 @@
     "Patients Know Best",
     "Push Doctor Website and App",
     "Shielded Vulnerable People's Service",
+    "UHS My medical record",
     "Web-GP"
   ]
 }
