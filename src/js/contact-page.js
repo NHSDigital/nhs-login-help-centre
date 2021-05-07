@@ -55,7 +55,7 @@
       browser: navigator.userAgent,
     };
 
-    return fetch(Environment.EMAIL_API_URL, {
+    return fetch(Environment.API_URL + '/raise-ticket', {
       method: 'POST',
       headers: REQUEST_HEADERS,
       body: JSON.stringify(body),
