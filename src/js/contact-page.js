@@ -63,6 +63,7 @@
   }
 
   function onSubmit(formData) {
+    document.querySelector('.submit-button').classList.add('nhsuk-button--disabled');
     sendSupportEmail(formData)
       .then(res => {
         const nextPage = res.ok ? '/contact-sent' : '/contact-error';
