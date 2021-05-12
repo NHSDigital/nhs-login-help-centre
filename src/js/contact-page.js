@@ -66,8 +66,11 @@
     document.querySelector('.submit-button').classList.add('nhsuk-button--disabled');
     sendSupportEmail(formData)
       .then(res => {
-        const nextPage = res.ok ? '/contact-sent' : '/contact-error';
-        window.location.assign(nextPage);
+        if(res.ok) {
+          window.location.replace('/contact-sent');
+        } else {
+          window.location.assign('/contact-error');
+        }
       })
       .catch(() => window.location.assign('/contact-error'));
   }
