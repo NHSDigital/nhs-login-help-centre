@@ -20,7 +20,7 @@ NHS login lets you access a variety of digital health and care websites and apps
 You will need:
 
 - an email address
-- a UK mobile phone number
+- a mobile phone number
 
 ### What you need to do
 
