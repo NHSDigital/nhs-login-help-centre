@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/NHSDigital/nhs-login-help-centre",
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "cheerio": "^1.0.0-rc.3",
-    "husky": "^4.2.5",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "@11ty/eleventy": "^0.12.1",
+    "cheerio": "^1.0.0-rc.9",
+    "husky": "^6.0.0",
+    "markdown-it": "^12.0.6",
+    "markdown-it-anchor": "^7.1.0",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0"
   },
   "husky": {
     "hooks": {
