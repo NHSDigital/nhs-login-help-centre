@@ -20,13 +20,13 @@ NHS login lets you access a variety of digital health and care websites and apps
 You will need:
 
 - an email address
-- a UK mobile phone number
+- a mobile phone number
 
 ### What you need to do
 
-We will send you an email containing a link. Select this link to confirm your email address. Then return to the website or app you want to access and enter your NHS login email address and password. Here, you will be asked to give your mobile phone number.
+A 6-digit security code will be sent to your email. You will be asked to enter this code to verify your email address and continue.
 
-A 6-digit security code will be sent by text message to your mobile phone. You will be asked to enter this code to continue. A security code will be needed to log in every time, unless you select ‘remember this device and stop sending security codes’.
+Next, you will be asked to give your mobile phone number. Another 6-digit security code will be sent by text message to your mobile phone. A security code will be sent to your mobile phone every time you log in, unless you select ‘remember this device and stop sending security codes’.
 
 Right now, you cannot set up NHS login without a mobile phone. We are working on this and hope to offer a solution to users who do not own a mobile phone in the future.
 
