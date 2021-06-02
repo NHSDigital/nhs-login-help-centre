@@ -194,6 +194,24 @@ You can try uploading a photo of your I.D. another time or use a better internet
 
 ---
 
+## Reference CID5001: We need more information to prove who you are
+
+We were unable to verify your photo ID and need some more information to prove who you are. You need to contact your GP surgery and ask them for your registration details for their GP online services.
+
+You will need:
+
+- Linkage Key (sometimes called passphrase)
+- O.D.S. code (sometimes called organisation code or practice I.D.)
+- Account I.D.
+
+You will not be able to use your NHS login until you get these details. You should not create a new NHS login as this will not fix the issue.
+
+[Contact us when you have these details](/contact?error=CID5001 'Contact us'). In your message, tell us that you have the details but do not tell us what they are. Please also include the reference number CID5001.
+
+We will then contact you and give you the option to use these details to prove who you are.
+
+---
+
 ## Reference CID8002: Your photo I.D. has failed to upload
 
 If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
