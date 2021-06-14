@@ -10,7 +10,9 @@ pageName: search
         <link rel="stylesheet" href="{{ "/css/search.css" | url }}">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src={{ "/js/lunr.js" | url }}></script>
         <script src={{ "/js/search_data.js" | url }}></script>
+        <script src={{ "/js/search.js" | url }}></script>
         <script src={{ "/js/tipuesearch_set.js" | url }}></script>
         <script src={{ "/js/tipuesearch.min.js" | url }}></script>
     </head>
@@ -36,6 +38,7 @@ pageName: search
                             </div>
                         </form>
                         <div id="tipue_search_content"></div>
+                        <div id="lunr_search_content"></div>
                     </div>
                 </div>
             </main>
@@ -52,8 +55,12 @@ pageName: search
                 $('#title').html('Search results for ' + query);
             }
 
-            $(document).ready(function () {
+            $(document).ready(async function () {
                 $('#tipue_search_input').tipuesearch({showURL: false, imageZoom: false});
+                
+                search = await Search;
+                let results = search.search(query);
+                document.querySelector('#lunr_search_content').innerHTML = search.getResultsHtml(results);
             });
         </script>
         {% include "footer.njk" %}

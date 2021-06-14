@@ -4,6 +4,9 @@ const { isArticle, addArticleData, getContactUsLinks } = require('./lib/article'
 const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
 const { addBreadcrumbs } = require('./lib/breadcrumbs');
 const { collectionToKeyedObject } = require('./lib/utils');
+const outputDir = './_site/';
+const fs = require('fs');
+const lunr = require('lunr');
 
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
@@ -44,10 +47,32 @@ module.exports = function(config) {
       .filter(isArticle)
       .map(getContactUsLinks)
       .reduce((collection, links) => collection.concat(links), [])
-));
+  ));
 
 
   config.setLibrary('md', markdownLibrary);
+  
+  config.addPassthroughCopy({
+    'node_modules/lunr/lunr.min.js': 'js/lunr.js'
+  });
+  
+  config.on('afterBuild', () => {
+    let data = fs.readFileSync(outputDir + 'search/raw.json', 'utf-8');
+    let docs = JSON.parse(data);
+
+    let idx = lunr(function () {
+      this.ref('id');
+      this.field('title');
+      this.field('content');
+
+      docs.forEach(function (doc, idx) {
+        doc.id = idx;
+        this.add(doc);
+      }, this);
+    });
+
+    fs.writeFileSync(outputDir + 'search/index.json', JSON.stringify(idx));
+  });
 
   return {
     dir: {
