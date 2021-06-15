@@ -8,13 +8,9 @@ pageName: search
     <head>
         {% include "head.njk" %}
         <link rel="stylesheet" href="{{ "/css/search.css" | url }}">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src={{ "/js/lunr.js" | url }}></script>
-        <script src={{ "/js/search_data.js" | url }}></script>
+        <script src={{ "/js/purify.js" | url }}></script>
         <script src={{ "/js/search.js" | url }}></script>
-        <script src={{ "/js/tipuesearch_set.js" | url }}></script>
-        <script src={{ "/js/tipuesearch.min.js" | url }}></script>
     </head>
     <body>
         {% include "header.njk" %}
@@ -28,7 +24,7 @@ pageName: search
                         <form id="search" action="{{ "/search" | url }}" method="get" role="search">
                             <div class="app-search__contents">
                                 <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS login help centre again</label>
-                                <input class="app-search__input" name="q" type="search" autocomplete="off" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters">
+                                <input class="app-search__input" name="q" type="search" autocomplete="off" id="search_input" pattern=".{3,}" title="At least 3 characters">
                                 <button type="submit" class="app-search__submit">
                                     <svg class="icon icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
@@ -37,7 +33,6 @@ pageName: search
                                 </button>
                             </div>
                         </form>
-                        <div id="tipue_search_content"></div>
                         <div id="lunr_search_content"></div>
                     </div>
                 </div>
@@ -47,21 +42,22 @@ pageName: search
         <script src={{ "/js/cookie-banner.js" | url }}></script>
         <script>
             const url = new URL(location.href);
-            const query = url
+            const param = url
                 .searchParams
                 .get('q');
+            
+            const query = DOMPurify.sanitize(param);
 
             if (query) {
-                $('#title').html('Search results for ' + query);
+                document.querySelector('#title').innerHTML = 'Search results for ' + query;
+                document.querySelector('#search_input').value = query;
             }
 
-            $(document).ready(async function () {
-                $('#tipue_search_input').tipuesearch({showURL: false, imageZoom: false});
-                
+            (async function () {
                 search = await Search;
                 let results = search.search(query);
-                document.querySelector('#lunr_search_content').innerHTML = search.getResultsHtml(results);
-            });
+                document.querySelector('#lunr_search_content').innerHTML = search.getResultsHtml(query, results);
+            })();
         </script>
         {% include "footer.njk" %}
     </body>

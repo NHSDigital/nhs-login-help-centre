@@ -53,7 +53,8 @@ module.exports = function(config) {
   config.setLibrary('md', markdownLibrary);
   
   config.addPassthroughCopy({
-    'node_modules/lunr/lunr.min.js': 'js/lunr.js'
+    'node_modules/lunr/lunr.min.js': 'js/lunr.js',
+    'node_modules/dompurify/dist/purify.min.js': 'js/purify.js',
   });
   
   config.on('afterBuild', () => {
