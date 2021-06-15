@@ -24,7 +24,7 @@ pageName: search
                         <form id="search" action="{{ "/search" | url }}" method="get" role="search">
                             <div class="app-search__contents">
                                 <label class="nhsuk-u-visually-hidden" for="search-field">Search the NHS login help centre again</label>
-                                <input class="app-search__input" name="q" type="search" autocomplete="off" id="search_input" pattern=".{3,}" title="At least 3 characters">
+                                <input class="app-search__input" name="q" type="search" autocomplete="off" id="search_input" pattern="^[a-zA-Z0-9\s]{3,}$" title="At least 3 characters, no symbols">
                                 <button type="submit" class="app-search__submit">
                                     <svg class="icon icon__search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                                         <path d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"></path>
@@ -46,7 +46,8 @@ pageName: search
                 .searchParams
                 .get('q');
             
-            const query = DOMPurify.sanitize(param);
+            let query = DOMPurify.sanitize(param);
+            query = query.replace(/[^a-zA-Z0-9\s]+/g, ' ').trim();
 
             if (query) {
                 document.querySelector('#title').innerHTML = 'Search results for ' + query;
