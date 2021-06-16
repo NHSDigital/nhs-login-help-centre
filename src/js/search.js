@@ -1,5 +1,5 @@
 const Search = (async function () {
-  const [docsJson, indexJson] = await Promise.all([fetch('./raw.json'), fetch('./index.json')]);
+  const [docsJson, indexJson] = await Promise.all([fetch('/js/search_data.json'), fetch('/js/search_index.json')]);
   const [docs, index] = await Promise.all([docsJson.json(), indexJson.json()]);
   const idx = lunr.Index.load(index);
 
