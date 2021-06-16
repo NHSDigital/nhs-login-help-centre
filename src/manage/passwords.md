@@ -22,7 +22,7 @@ You can reset your NHS login password if you forget what it is. We will send a r
 
 ### Expired link – Reference CID2021
 
-The rest password link we email to you has a time limit of 1 hour. If it has been more than 1 hour since you received the email, the reset password link will no longer work.
+The reset password link we email to you has a time limit of 1 hour. If it has been more than 1 hour since you received the email, the reset password link will no longer work.
 
 You need to go back to the website or app you were trying to access and enter your email address again. Send another request to reset your password. Make sure to select the reset password link in your email within the 1 hour time limit.
 

@@ -24,7 +24,9 @@
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "cheerio": "^1.0.0-rc.9",
+    "dompurify": "^2.2.9",
     "husky": "^6.0.0",
+    "lunr": "^2.3.9",
     "markdown-it": "^12.0.6",
     "markdown-it-anchor": "^7.1.0",
     "prettier": "^2.3.0",
