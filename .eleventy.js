@@ -58,7 +58,7 @@ module.exports = function(config) {
   });
   
   config.on('afterBuild', () => {
-    let data = fs.readFileSync(outputDir + 'search/raw.json', 'utf-8');
+    let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
 
     let idx = lunr(function () {
@@ -72,7 +72,7 @@ module.exports = function(config) {
       }, this);
     });
 
-    fs.writeFileSync(outputDir + 'search/index.json', JSON.stringify(idx));
+    fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(idx));
   });
 
   return {
