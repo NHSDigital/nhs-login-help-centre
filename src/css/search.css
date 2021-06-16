@@ -53,3 +53,8 @@
 .nhsuk-list--border li {
     border-bottom: 1px solid #d8dde0;
 }
+
+#lunr_search_content ul h2 {
+    font-weight: 400;
+    font-size: 19px
+}
