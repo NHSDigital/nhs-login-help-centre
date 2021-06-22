@@ -10,7 +10,7 @@ layout: layouts/article.njk
 
 ## How to prove who you are without photo I.D.
 
-If you are registered for your GP surgery’s online services, you will have been given 3 registration details.
+You can prove who you are without sending photo I.D. if your GP is in England. If you are registered for you GP surgery's online services, you will have been given 3 registration details.
 
 The 3 registration details are:
 
@@ -36,13 +36,13 @@ You will then be given 3 registration details:
 - O.D.S. Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
-You can use these 3 registration details to prove who you are instead of sending a photo of your I.D.
+If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your I.D.
 
 ---
 
 ## How to find your registration details from your GP surgery’s online services
 
-If you do not know or remember your registration details, you can ask your GP to give you them.
+If you do not know or remember your registration details, you can ask your GP to give you them if your GP is in England.
 
 The 3 details you need are:
 
@@ -54,9 +54,9 @@ The 3 details you need are:
 
 ## What to do if your registration details from your GP surgery’s online services do not work
 
-Your registration details from your GP surgery’s online services can be used to prove who you are. If this does not work for you, there are a number of possible reasons why.
+Your registration details from your GP surgery’s online services can be used to prove who you are if your GP is in England.
 
-If this does not work for you there are a number of possible reasons why.
+If this does not work for you, there are a number of possible reasons why.
 
 ### Reference CID7001: Wrong details
 
@@ -78,13 +78,13 @@ If you are trying to use the NHS App you should speak to your GP surgery about u
 
 Reference CID7003 is shown when we cannot find a match on our system for the details you entered. This could mean that you have wrongly entered the registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
 
-Contact your GP surgery to check you have the right registration details. If you have the right details, ask your GP surgery to check your name and date of birth is correct and up to date on your NHS record.
+If your GP surgery is in England contact them to check you have the right registration details. If you have the right details, ask your GP surgery to check your name and date of birth is correct and up to date on your NHS record.
 
 ### Reference CID7006: We cannot find your GP surgery
 
 Reference CID7006 is shown when we cannot find a GP system using the O.D.S. code your entered. This can happen if you change GP surgery. It can also happen if your GP leaves or joins a GP surgery group.
 
-Contact your GP surgery to check you have the right registration details, making sure you have the correct O.D.S. code.
+If your GP surgery is in England contact them to check you have the right registration details, making sure you have the correct O.D.S. code.
 
 Find out how you can <a href="/provewhoyouare/withid">use photo I.D. to prove who you are</a> instead.
 
@@ -114,6 +114,6 @@ This could be because:
 - your GP surgery has changed systems
 - you do not have permission to use your GP surgery’s online services
 
-You can ask your GP for new registration details for their online services. You can use these new details to try to prove who you are.
+You can ask your GP for new registration details for their online services if your GP is in England. You can use these new details to try to prove who you are.
 
 Find out how you can <a href="/provewhoyouare/withid">use photo I.D. to prove who you are</a> instead.
