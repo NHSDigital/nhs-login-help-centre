@@ -73,6 +73,8 @@ There could be a problem with your details, or with your GP surgery's system.
 
 To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services.
 
+This is only available if your GP is in England.
+
 You will need:
 
 - Linkage Key (sometimes called passphrase)
@@ -89,7 +91,7 @@ If reference CID7021 is shown, this means the website or app you are trying to v
 
 This might be because you do not have permission from your GP to use your GP surgery’s online services.
 
-You should ask your GP surgery to check if you are able to use their online services.
+If your GP is in England, you can connect to your GP using your GP surgery's online services. You should ask your GP surgery to check if you are able to use their online services.
 
 ---
 
@@ -100,6 +102,8 @@ If reference CID7022 is shown, this means the website or app you are trying to v
 There could be a problem with your details, or with your GP surgery's system.
 
 To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services.
+
+This is only available if your GP is in England.
 
 You will need:
 
@@ -133,7 +137,7 @@ This can happen if:
 - your GP surgery has changed systems
 - you no longer have permission to use your GP surgery’s online services
 
-You can ask your GP for new registration details for their online services.
+If your GP surgery is in England, you can ask your GP for new registration details for their online services.
 
 [Contact us](/contact?error=CID7023 'Contact us') if you need help or if you still have problems.
 
@@ -143,7 +147,7 @@ You can ask your GP for new registration details for their online services.
 
 If reference CID7024 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This is because we are having some technical problems. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
+This is because we are having some technical problems. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 
@@ -159,7 +163,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 If reference CID7026 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
+This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 
@@ -175,7 +179,7 @@ Once you have these details, log into the website or app you were trying to acce
 
 If reference CID7027 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
 
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later, or you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
+This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
 
 You will need:
 
