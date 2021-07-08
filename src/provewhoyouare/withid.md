@@ -196,7 +196,7 @@ You can try uploading a photo of your I.D. another time or use a better internet
 
 ## Reference CID5001: We need more information to prove who you are
 
-We were unable to verify your photo ID and need some more information to prove who you are. You need to contact your GP surgery and ask them for your registration details for their GP online services.
+We were unable to verify your photo ID and need some more information to prove who you are. If your GP surgery is in England, you should contact them and ask for your registration details for their GP online services.
 
 You will need:
 
