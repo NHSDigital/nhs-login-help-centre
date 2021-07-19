@@ -92,7 +92,7 @@ We run a virus check on your video file before it is verified. If the file you u
 
 If this keeps happening, there might be a problem with your device. You can try recording a video using a different device and upload it from there. For example, you could borrow a family member’s device to record and upload a video instead. Once verified, you can then use NHS login on your usual device as normal.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
@@ -116,9 +116,9 @@ If this does not work, you can also try recording a video on another device. For
 
 ## What to do if you cannot record or upload a video
 
-If you are registered for your GP surgery’s online services, you can use your registration details to prove who you are instead of using photo ID and a video.
+If you are registered for your GP surgery’s online services, you can use your registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span> and a video.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
@@ -128,7 +128,7 @@ If reference CID4011 is shown, this is because your video has failed to upload. 
 
 You can try uploading your video another time or use a better internet connection. For example, you should make sure you are using a good Wi-Fi connection. Try using a different Wi-Fi connection if the one you are using does not work.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 

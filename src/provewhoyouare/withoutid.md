@@ -18,11 +18,11 @@ The 3 registration details are:
 - O.D.S. Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
-You can use these 3 registration details to prove who you are instead of using photo ID
+You can use these 3 registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span>
 
 This is not the same as the username and password you use to log into your GP surgery’s online services.
 
-Find out how you can <a href="/provewhoyouare/withid">use photo ID to prove who you are</a> instead.
+Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span>to prove who you are</a> instead.
 
 ---
 
@@ -36,7 +36,7 @@ You will then be given 3 registration details:
 - O.D.S. Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
-If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your ID.
+If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your <span aria-label="I.D.">ID</span>.
 
 ---
 
@@ -86,7 +86,7 @@ Reference CID7006 is shown when we cannot find a GP system using the O.D.S. code
 
 If your GP surgery is in England contact them to check you have the right registration details, making sure you have the correct O.D.S. code.
 
-Find out how you can <a href="/provewhoyouare/withid">use photo ID to prove who you are</a> instead.
+Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
 
 ---
 
@@ -116,4 +116,4 @@ This could be because:
 
 You can ask your GP for new registration details for their online services if your GP is in England. You can use these new details to try to prove who you are.
 
-Find out how you can <a href="/provewhoyouare/withid">use photo ID to prove who you are</a> instead.
+Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
