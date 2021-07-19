@@ -10,7 +10,7 @@ layout: layouts/article.njk
 
 ## How to prove who you are without photo ID
 
-You can prove who you are without sending photo ID if your GP is in England. If you are registered for your GP surgery's online services, you will have been given 3 registration details.
+You can prove who you are without sending photo <span aria-label="I.D.">ID</span> if your GP is in England. If you are registered for your GP surgery's online services, you will have been given 3 registration details.
 
 The 3 registration details are:
 

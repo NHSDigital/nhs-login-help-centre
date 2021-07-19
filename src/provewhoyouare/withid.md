@@ -16,13 +16,13 @@ You will be asked to:
 2. record your face using your device
 3. enter your NHS number if you know it
 
-We ask you to record your face so that we can compare it to your photo ID and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
+We ask you to record your face so that we can compare it to your photo <span aria-label="I.D.">ID</span> and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
 
 ---
 
 ## Photo ID we can accept
 
-The image you send needs to be of your original photo ID. You cannot send an image of a printout or screen showing your photo ID.
+The image you send needs to be of your original photo <span aria-label="I.D.">ID</span>. You cannot send an image of a printout or screen showing your photo ID.
 
 We can accept an expired photo <span aria-label="I.D.">ID</span> if it expired less than 6 months ago.
 
@@ -170,7 +170,7 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 
 ## How long does it take to check photo ID?
 
-After you send your photo I.D. and video, your photo ID will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the ID check has been successful.
+After you send your photo I.D. and video, your photo <span aria-label="I.D.">ID</span> will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the <span aria-label="I.D.">ID</span> check has been successful.
 
 ---
 
