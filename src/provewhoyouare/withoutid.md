@@ -22,7 +22,7 @@ You can use these 3 registration details to prove who you are instead of using p
 
 This is not the same as the username and password you use to log into your GP surgery’s online services.
 
-Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span>to prove who you are</a> instead.
+Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
 
 ---
 

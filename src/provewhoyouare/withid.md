@@ -34,7 +34,7 @@ You can send:
 - European national identity card (except paper Italian <span aria-label="I.D.">ID</span> card or Greek <span aria-label="I.D.">ID</span> card)
 - UK residence card or biometric residence permit (BRP)
 
-If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the I.D. you want to use. You will need to send 2 photos, one of the front and one of the back.
+If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the <span aria-label="I.D.">ID</span> you want to use. You will need to send 2 photos, one of the front and one of the back.
 
 ---
 
