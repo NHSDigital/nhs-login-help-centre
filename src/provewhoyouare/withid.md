@@ -1,6 +1,6 @@
 ---
-title: Use photo I.D. to prove who you are
-subtitle: Information and advice on how to prove who you are with photo I.D.
+title: Use photo ID to prove who you are
+subtitle: Information and advice on how to prove who you are with photo ID.
 pageName: prove-who-you-are:with-id
 type: article
 hub: provewhoyouare
@@ -12,35 +12,35 @@ layout: layouts/article.njk
 
 You will be asked to:
 
-1. take a photo of your I.D.
+1. take a photo of your <span aria-label="I.D.">ID</span>
 2. record your face using your device
 3. enter your NHS number if you know it
 
-We ask you to record your face so that we can compare it to your photo I.D. and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
+We ask you to record your face so that we can compare it to your photo <span aria-label="I.D.">ID</span> and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
 
 ---
 
-## Photo I.D. we can accept
+## Photo ID we can accept
 
-The image you send needs to be of your original photo I.D. You cannot send an image of a printout or screen showing your photo I.D.
+The image you send needs to be of your original photo <span aria-label="I.D.">ID</span>. You cannot send an image of a printout or screen showing your photo ID.
 
-We can accept an expired photo I.D. if it expired less than 6 months ago.
+We can accept an expired photo <span aria-label="I.D.">ID</span> if it expired less than 6 months ago.
 
 You can send:
 
 - passport (except Syrian passport)
 - UK driving licence (full or provisional)
 - European driving licence (full)
-- European national identity card (except paper Italian I.D. card or Greek I.D. card)
+- European national identity card (except paper Italian <span aria-label="I.D.">ID</span> card or Greek <span aria-label="I.D.">ID</span> card)
 - UK residence card or biometric residence permit (BRP)
 
-If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the I.D. you want to use. You will need to send 2 photos, one of the front and one of the back.
+If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the <span aria-label="I.D.">ID</span> you want to use. You will need to send 2 photos, one of the front and one of the back.
 
 ---
 
-## Photo I.D. we do not accept
+## Photo ID we do not accept
 
-We do not accept photo I.D. with any handwritten information other than a signature.
+We do not accept photo <span aria-label="I.D.">ID</span> with any handwritten information other than a signature.
 
 You cannot send:
 
@@ -48,18 +48,18 @@ You cannot send:
 - bus passes
 - NHS I.D. cards
 - visa stickers
-- UK citizen I.D. cards
+- UK citizen <span aria-label="I.D.">ID</span> cards
 - proof of age cards
-- university or school I.D. cards
+- university or school <span aria-label="I.D.">ID</span> cards
 - Syrian passports
-- paper Italian I.D. cards
-- Greek I.D. cards
+- paper Italian <span aria-label="I.D.">ID</span> cards
+- Greek <span aria-label="I.D.">ID</span> cards
 - UK driver qualification cards
-- an image of a printout or screen showing your photo I.D.
+- an image of a printout or screen showing your photo <span aria-label="I.D.">ID</span>
 
 ---
 
-## How to take a photo of your I.D.
+## How to take a photo of your ID
 
 ### Passport
 
@@ -70,17 +70,10 @@ To take a good photo of your passport make sure:
 - you can clearly see your face and all the text
 - there's no shine from a light or window
 
-### Driving licence
 
-To take a good photo of your driving licence make sure:
+### Other accepted ID
 
-- you do not cover any of the corners
-- you can clearly see your face and all the text
-- there's no shine from a light or window
-
-### European national identity card
-
-To take a good photo of your identity card make sure:
+To take a good photo of your photo ID make sure:
 
 - you do not cover any of the corners
 - you can clearly see your face and all the text
@@ -108,11 +101,11 @@ You must give permission for your web browser to access the camera and microphon
 
 You must also give permission for the NHS login website to access your device’s camera and microphone.
 
-If this problem keeps happening even with permissions allowed, there might be a problem with your device. You can try opening your camera app separately to take a photo of your I.D. When you have taken a photo, you can then start again and prove who you are by selecting ‘upload a photo’.
+If this problem keeps happening even with permissions allowed, there might be a problem with your device. You can try opening your camera app separately to take a photo of your <span aria-label="I.D.">ID</span>. When you have taken a photo, you can then start again and prove who you are by selecting ‘upload a photo’.
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
@@ -158,39 +151,39 @@ If you are using Safari, select ‘preferences’ to open the preferences window
 
 ## What to do if your photo file is damaged
 
-We run a virus check on the photo of your I.D. If the file you upload is infected or damaged, you can try and upload another one.
+We run a virus check on the photo of your <span aria-label="I.D.">ID</span>. If the file you upload is infected or damaged, you can try and upload another one.
 
 If this keeps happening, there might be a problem with your device. Try taking a photo using a different device. For example, you can use another phone or tablet that belongs to you or a family member.
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
-## How long does it take to check photo I.D?
+## How long does it take to check photo ID?
 
-After you send your photo I.D. and video, your photo I.D. will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the I.D. check has been successful.
+After you send your photo I.D. and video, your photo <span aria-label="I.D.">ID</span> will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the <span aria-label="I.D.">ID</span> check has been successful.
 
 ---
 
 ## What happens if you do not pass the check?
 
-If you do not pass the photo I.D. check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
+If you do not pass the photo <span aria-label="I.D.">ID</span> check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
 
-If you keep getting the same problem, you can prove who you are without photo I.D. instead.
+If you keep getting the same problem, you can prove who you are without photo <span aria-label="I.D.">ID</span> instead.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
-## Reference CID4002: Your photo I.D. has failed to upload
+## Reference CID4002: Your photo ID has failed to upload
 
-If you see the error reference code CID4002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
+If you see the error reference code CID4002, this is because the picture of your photo <span aria-label="I.D.">ID</span> has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
-You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
+You can try uploading a photo of your <span aria-label="I.D.">ID</span> another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
 ---
 
@@ -212,10 +205,10 @@ We will then contact you and give you the option to use these details to prove w
 
 ---
 
-## Reference CID8002: Your photo I.D. has failed to upload
+## Reference CID8002: Your photo ID has failed to upload
 
-If you see the error reference code CID8002, this is because the picture of your photo I.D. has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
+If you see the error reference code CID8002, this is because the picture of your photo <span aria-label="I.D.">ID</span> has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
 
-You can try uploading a photo of your I.D. another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
+You can try uploading a photo of your <span aria-label="I.D.">ID</span> another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo I.D.</a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
