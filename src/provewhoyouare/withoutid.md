@@ -18,7 +18,7 @@ The 3 registration details are:
 - O.D.S. Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
-You can use these 3 registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span>
+You can use these 3 registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span>.
 
 This is not the same as the username and password you use to log into your GP surgery’s online services.
 
