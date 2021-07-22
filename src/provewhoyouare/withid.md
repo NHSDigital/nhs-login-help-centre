@@ -70,17 +70,10 @@ To take a good photo of your passport make sure:
 - you can clearly see your face and all the text
 - there's no shine from a light or window
 
-### Driving licence
 
-To take a good photo of your driving licence make sure:
+### Other accepted ID
 
-- you do not cover any of the corners
-- you can clearly see your face and all the text
-- there's no shine from a light or window
-
-### European national identity card
-
-To take a good photo of your identity card make sure:
+To take a good photo of your photo ID make sure:
 
 - you do not cover any of the corners
 - you can clearly see your face and all the text
