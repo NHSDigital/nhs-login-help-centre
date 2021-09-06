@@ -24,7 +24,7 @@ We ask you to record your face so that we can compare it to your photo <span ari
 
 The image you send needs to be of your original photo <span aria-label="I.D.">ID</span>. You cannot send an image of a printout or screen showing your photo ID.
 
-We can accept an expired photo <span aria-label="I.D.">ID</span> if it expired less than 6 months ago.
+We can accept an expired photo <span aria-label="I.D.">ID</span> if it expired less than 12 months ago.
 
 You can send:
 
