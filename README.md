@@ -1,16 +1,20 @@
 # NHS Help Centre
 
-Help pages for lost users
+The NHS login help centre is where you can find helpful information, guidance, and support for issues with NHS login.
 
 ## Setup
 
-- `npm install`
-- `npm start`
+- `npm install` to install dependencies
+- `npm start` to run locally at `localhost:8080`
 - `npm build` to build
 
 ## Deployment
 
-This repo is automatically deployed when code is merged to master. Deployment code is located in `.github/workflows/11ty-build.yml`.
+There are two pipelines in the NHS login AWS account:
+- helpcentre-live-develop runs from develop branch, deploys to https://help.dev.signin.nhs.uk
+- helpcentre-live-master runs from master branch, deploys to https://help.qa.signin.nhs.uk and afterwards to production
+
+No other environments exist so we don't do feature branch testing. Testing can be done locally before merging to develop.
 
 ## Structure
 
@@ -32,12 +36,12 @@ They require the following keys and no content:
 - `name`: the id of the hub
 - `type`: Always `hub`
 - `layout`: Always `layouts/hub.njk`
-- `hub`: the name of the parient hub page (`home` for the home page)
-- `position`: determines the position on the parient hub page
+- `hub`: the name of the parent hub page (`home` for the home page)
+- `position`: determines the position on the parent hub page
 
 ### Article pages
 
-These pages place their content in the artcle page template that generates related the sidemenu and breadcrumbs
+These pages place their content in the article page template that generates related the side menu and breadcrumbs
 They require the following keys:
 
 - `title`: Page title
@@ -50,7 +54,7 @@ They require the following keys:
 
 ## Useful links
 
-The 11ty is as of writing fairly poor, heres some links to help:
+The 11ty documentation is as of writing fairly poor, here are some links to help:
 
 - [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html)
 - [example projects](https://www.11ty.dev/docs/starter/)
