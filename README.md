@@ -52,6 +52,11 @@ They require the following keys:
 - `position`: The position on the hub page
 - `layout`: Always `layouts/article.njk`
 
+###Guide for hub/article keys:
+
+The keys we need to set up the hub pages are in the index files for each hub
+The articles inside the hubs contain their own keys at the top of every article
+
 ## Useful links
 
 The 11ty documentation is as of writing fairly poor, here are some links to help:
