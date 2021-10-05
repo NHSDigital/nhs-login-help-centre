@@ -27,8 +27,8 @@ File structure is as follows:
 
 ### Hub pages
 
-These pages are nested version of the main hub used for navigation
-They require the following keys and no content:
+These pages are nested version of the main hub used for navigation.
+They require the following keys and no content to set up the hub pages, the keys can be found in the index files for each hub:
 
 - `title`: Page title
 - `subtitle`: A description of the Hub
@@ -41,8 +41,8 @@ They require the following keys and no content:
 
 ### Article pages
 
-These pages place their content in the article page template that generates related the side menu and breadcrumbs
-They require the following keys:
+These pages place their content in the article page template that generates related the side menu and breadcrumbs.
+They require the following keys contained at the top of every article:
 
 - `title`: Page title
 - `subtitle`: A description of the page
@@ -51,11 +51,6 @@ They require the following keys:
 - `hub`: The Hub page that the article page will appear on
 - `position`: The position on the hub page
 - `layout`: Always `layouts/article.njk`
-
-###Guide for hub/article keys:
-
-The keys we need to set up the hub pages are in the index files for each hub
-The articles inside the hubs contain their own keys at the top of every article
 
 ## Useful links
 
