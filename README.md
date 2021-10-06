@@ -1,4 +1,4 @@
-# NHS Help Centre
+# NHS login Help Centre
 
 The NHS login help centre is where you can find helpful information, guidance, and support for issues with NHS login.
 
@@ -11,10 +11,10 @@ The NHS login help centre is where you can find helpful information, guidance, a
 ## Deployment
 
 There are two pipelines in the NHS login AWS account:
-- helpcentre-live-develop runs from develop branch, deploys to https://help.dev.signin.nhs.uk
-- helpcentre-live-master runs from master branch, deploys to https://help.qa.signin.nhs.uk and afterwards to production
+- helpcentre-live-develop runs from develop branch, deploys to [dev](https://help.dev.signin.nhs.uk).
+- helpcentre-live-master runs from master branch, deploys to [qa](https://help.qa.signin.nhs.uk) and afterwards to [production](https://help.login.nhs.uk).
 
-No other environments exist so we don't do feature branch testing. Testing can be done locally before merging to develop.
+No other environments exist, so we don't do feature branch testing. Testing can be done locally before merging to develop.
 
 ## Structure
 
