@@ -11,7 +11,25 @@ layout: layouts/article.njk
 
 ## What is NHS login?
 
-NHS login lets you access a variety of digital health and care websites and apps with just one email address and password.
+NHS login allows you to access lots of different health and care websites and apps with just one set of login details. You can securely access many digital health and care services with one email address and password.
+
+---
+
+## How to set up an NHS login
+
+You must access a health and care website or app before you can set up an NHS login. Many of them will show the NHS login button.
+
+<img src="/images/nhs-button.svg" class="nhsuk-u-margin-bottom-4" alt="Picture of the NHS login button. The button has a blue background with white text that says continue with NHS login, next to the NHS logo." width="300px" />
+
+You can select this button on your chosen website or app to log in, or to create an NHS login.
+
+---
+
+## Where you can use NHS login
+
+There are lots of health and care websites and apps that allow you to use NHS login. These include NHS services, online pharmacies, patient access services, and online consultation services.
+
+[List of websites and apps you can access with NHS login.](https://www.nhs.uk/nhs-services/online-services/nhs-log-in/websites-and-apps-you-can-access-with-nhs-login 'List of websites and apps you can access with NHS login')
 
 ---
 
@@ -42,15 +60,3 @@ This may include your:
 - postcode
 
 [More information on how to prove who you are](/provewhoyouare 'More information on how to prove who you are')
-
----
-
-## Where you can use NHS login
-
-NHS login can be used on any website or app that shows the NHS login button.
-
-<img src="/images/nhs-button.svg" class="nhsuk-u-margin-bottom-4" alt="image of a continue with nhs login button" width="300px" />
-
-Clicking this button will let you log into or create an account with the website or app you visit.
-
-Visit the [NHS login webpage](https://www.nhs.uk/using-the-nhs/nhs-services/nhs-login/ 'NHS login webpage') for a full list of websites and apps that allow you to use NHS login.
