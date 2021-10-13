@@ -37,16 +37,6 @@ If you see reference CID2011, this can mean there is a problem with your NHS num
 
 ---
 
-## Reference CID2012: Your NHS login may have been disabled
-
-Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
-
-If reference CID2012 is shown, this can mean your information has errors or it is being used by someone else. If this happens to you, your NHS login will be disabled.
-
-[Contact us](/contact?error=CID2012 'Contact us') so we can try to fix the problem. You will need to tell us the email address you use for your NHS login.
-
----
-
 ## Reference CID2014: You cannot use your NHS login
 
 There is a problem that we are looking at. You will not be able to use your NHS login until we have fixed the problem. This is to keep your health information secure.
