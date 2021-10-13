@@ -120,22 +120,3 @@ If you are registered for your GP surgery’s online services, you can use your 
 
 <a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
----
-
-## Reference CID4011: Your video has failed to upload
-
-If reference CID4011 is shown, this is because your video has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
-
-You can try uploading your video another time or use a better internet connection. For example, you should make sure you are using a good Wi-Fi connection. Try using a different Wi-Fi connection if the one you are using does not work.
-
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
-
----
-
-## Reference CID4012: We cannot validate your video
-
-If reference CID4012 is shown, this means we are having technical problems on our side or it might be a problem with your internet connection. This is stopping us from validating your short video.
-
-You can try uploading your video another time or use a better internet connection. For example, you should make sure you are using a good Wi-Fi connection. Try using a different Wi-Fi connection if the one you are using does not work.
-
-If you keep getting this message, please try again later.
