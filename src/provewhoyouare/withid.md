@@ -175,22 +175,3 @@ If you keep getting the same problem, you can prove who you are without photo <s
 
 <a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
 
----
-
-## Reference CID4002: Your photo ID has failed to upload
-
-If you see the error reference code CID4002, this is because the picture of your photo <span aria-label="I.D.">ID</span> has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
-
-You can try uploading a photo of your <span aria-label="I.D.">ID</span> another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
-
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
-
----
-
-## Reference CID8002: Your photo ID has failed to upload
-
-If you see the error reference code CID8002, this is because the picture of your photo <span aria-label="I.D.">ID</span> has failed to upload. If this keeps happening there may be a problem with your internet connection, or a technical problem on our side.
-
-You can try uploading a photo of your <span aria-label="I.D.">ID</span> another time or use a better internet connection. For example, you should make sure you are using Wi-Fi instead of your phone’s cellular data. Try using a different Wi-Fi connection if the one you are using doesn’t work.
-
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
