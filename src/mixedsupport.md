@@ -17,16 +17,6 @@ We have designed the NHS login website to be accessible and as simple as possibl
 
 ---
 
-## Reference CID1004: We do not know which website or app you are trying to access
-
-If reference CID1004 is shown, this means we do not know which website or app you are trying to access. This can happen if you try to log in directly from a web search engine, bookmark or your browser history.
-
-To try again, you should go to the website or app you want to access and select **Continue with NHS login**.
-
-Make sure you go to the main website or app of the service you want to access. Avoid using bookmarks or links from your browser history.
-
----
-
 ## Reference CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
@@ -46,62 +36,6 @@ What happens next:
 We will update you by email. This usually takes 2 working days.
 
 If it has been longer than 2 working days you can [contact us](/contact?error=CID2014 'Contact us').
-
----
-
-## Reference CID2024: There is a technical issue on our side
-
-If reference CID2024 is shown, this means we do not know what website or app you are trying to log into. This is a technical issue on our side.
-
----
-
-## Reference CID7020: Unable to connect to your GP surgery’s system
-
-If reference CID7020 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-There could be a problem with your details, or with your GP surgery's system.
-
-To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services.
-
-This is only available if your GP is in England.
-
-You will need:
-
-- Linkage Key (sometimes called passphrase)
-- O.D.S. code (sometimes called organisation code or practice I.D.)
-- Account I.D.
-
-Once you have these details, log into the website or app you were trying to access again. You will see the same message with reference CID7020. It will ask you to try another way to connect your NHS login to your GP surgery. Select this and then select ‘Enter your registration details’.
-
----
-
-## Reference CID7021: Permission to use your GP surgery’s online services
-
-If reference CID7021 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-This might be because you do not have permission from your GP to use your GP surgery’s online services.
-
-If your GP is in England, you can connect to your GP using your GP surgery's online services. You should ask your GP surgery to check if you are able to use their online services.
-
----
-
-## Reference CID7022: Unable to connect to your GP surgery’s system
-
-If reference CID7022 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-There could be a problem with your details, or with your GP surgery's system.
-
-To connect to your GP surgery’s system, ask your GP surgery for your registration details for their GP online services.
-
-This is only available if your GP is in England.
-
-You will need:
-
-- Linkage Key (sometimes called passphrase)
-- O.D.S. code (sometimes called organisation code or practice I.D.)
-- Account I.D.
-
-Once you have these details, log into the website or app you were trying to access again. You will see the same message with reference CID7022. It will ask you to try another way to connect your NHS login to your GP surgery. Select this and then select ‘Enter your registration details’.
 
 ---
 
@@ -131,55 +65,7 @@ If your GP surgery is in England, you can ask your GP for new registration detai
 
 [Contact us](/contact?error=CID7023 'Contact us') if you need help or if you still have problems.
 
----
-
-## Reference CID7024: Unable to connect to your GP surgery’s system
-
-If reference CID7024 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-This is because we are having some technical problems. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
-
-You will need:
-
-- Linkage Key (sometimes called passphrase)
-- O.D.S. code (sometimes called organisation code or practice I.D.)
-- Account I.D.
-
-Once you have these details, log into the website or app you were trying to access again. If you see the same message again with reference CID7024, select the option ‘if you keep getting this message’. Then select ‘Enter your registration details’.
-
----
-
-## Reference CID7026: Unable to connect to your GP surgery’s system
-
-If reference CID7026 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
-
-You will need:
-
-- Linkage Key (sometimes called passphrase)
-- O.D.S. code (sometimes called organisation code or practice I.D.)
-- Account I.D.
-
-Once you have these details, log into the website or app you were trying to access again. If you see the same message again with reference CID7026, select the option ‘if you keep getting this message’. Then select ‘Enter your registration details’.
-
----
-
-## Reference CID7027: Unable to connect to your GP surgery’s system
-
-If reference CID7027 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection.
-
-This could be because we are having some technical problems or your GP surgery’s system is currently unavailable. Please try again later or, if your GP surgery is in England, you could try another way to connect by asking your GP surgery for your registration details for their GP online services.
-
-You will need:
-
-- Linkage Key (sometimes called passphrase)
-- O.D.S. code (sometimes called organisation code or practice I.D.)
-- Account I.D.
-
-Once you have these details, log into the website or app you were trying to access again. If you see the same message again with reference CID7027, select the option ‘if you keep getting this message’. Then select ‘Enter your registration details’.
-
----
+------
 
 ## Reference CID7029: We cannot connect your NHS login to your GP surgery
 

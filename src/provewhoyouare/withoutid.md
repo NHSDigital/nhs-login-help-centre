@@ -58,36 +58,6 @@ Your registration details from your GP surgery’s online services can be used t
 
 If this does not work for you, there are a number of possible reasons why.
 
-### Reference CID7001: Wrong details
-
-Reference CID7001 is shown when 1 or more of the details you enter are wrong. This could be because you have wrongly entered 1 or more of your 3 registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
-
-You can try again, making sure you enter the correct details.
-
-If this keeps on happening, contact your GP surgery to check you have the right registration details. If you have the right details, ask your GP surgery to check your name and date of birth is correct and up to date on your NHS record.
-
-### Reference CID7002: You need permission to use your GP surgery’s online services
-
-Speak to your GP as you may need permission to access your GP surgery’s online services.
-
-If you are trying to prove who you are, you can do this using photo I.D. instead. You will not need the registration details from your GP surgery’s online services to do this.
-
-If you are trying to use the NHS App you should speak to your GP surgery about using their online services.
-
-### Reference CID7003: We cannot find you on our system
-
-Reference CID7003 is shown when we cannot find a match on our system for the details you entered. This could mean that you have wrongly entered the registration details from your GP surgery’s online services. Or, it could mean the name and date of birth you entered does not match what is on your NHS record.
-
-If your GP surgery is in England contact them to check you have the right registration details. If you have the right details, ask your GP surgery to check your name and date of birth is correct and up to date on your NHS record.
-
-### Reference CID7006: We cannot find your GP surgery
-
-Reference CID7006 is shown when we cannot find a GP system using the O.D.S. code your entered. This can happen if you change GP surgery. It can also happen if your GP leaves or joins a GP surgery group.
-
-If your GP surgery is in England contact them to check you have the right registration details, making sure you have the correct O.D.S. code.
-
-Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
-
 ---
 
 ## What to do if your registration details from your GP surgery’s online services have already been used
@@ -101,19 +71,3 @@ If you want to change the email address on your NHS login you can do so by going
 If you think this is a mistake and you have not used your 3 registration details to set up an NHS login, you should [contact us](/contact?error=CID7004 'contact us') for help.
 
 You will need to tell us the email address you use for your NHS login.
-
----
-
-## Reference CID2020: Unable to connect to your GP surgery’s online services
-
-Reference CID2020 is shown when the registration details from your GP surgery’s online services are invalid. This means we cannot connect you to your GP surgery’s online services.
-
-This could be because:
-
-- you have changed GP surgery
-- your GP surgery has changed systems
-- you do not have permission to use your GP surgery’s online services
-
-You can ask your GP for new registration details for their online services if your GP is in England. You can use these new details to try to prove who you are.
-
-Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
