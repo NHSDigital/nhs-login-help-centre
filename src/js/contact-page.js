@@ -5,6 +5,12 @@
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
   const MISSING_MESSAGE_ERROR = 'Enter your message';
   const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit';
+
+  const OUR_CLIENT_IDS_TO_ZENDESK_CLIENT_IDS = {
+    "nhs-online": "visit_nhs_app",
+    "covidrecord":"visit_covid_status"
+  }
+  
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
@@ -19,6 +25,8 @@
     .addFormControl('email-form-control', validateEmailField)
     .addFormControl('client-form-control', Validators.hasValue('client', MISSING_CLIENT_ERROR))
     .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
+    .updateFieldValue('email', getEmail())
+    .setSelectedClient('client', getClientDisplayName())
     .addSuccessHandler(onSubmit);
 
   function getAccountId() {
@@ -40,6 +48,14 @@
     }
   }
 
+  function getEmail(){
+    return (window.location.href.indexOf('email') != -1 ? decodeURIComponent(Utils.getParam('email')) : '');
+  }
+
+  function getClientDisplayName(){
+    return (window.location.href.indexOf('clientDisplayName') != -1 ? decodeURIComponent(OUR_CLIENT_IDS_TO_ZENDESK_CLIENT_IDS[Utils.getParam('clientDisplayName')]) : '');
+  }
+
   function sendSupportEmail(formData) {
     const account_id = getAccountId();
     const { code, description } = getErrorCode();
@@ -55,11 +71,13 @@
       browser: navigator.userAgent,
     };
 
-    return fetch(Environment.API_URL + '/raise-ticket', {
-      method: 'POST',
-      headers: REQUEST_HEADERS,
-      body: JSON.stringify(body),
-    });
+    // return fetch(Environment.API_URL + '/raise-ticket', {
+    //   method: 'POST',
+    //   headers: REQUEST_HEADERS,
+    //   body: JSON.stringify(body),
+    // });
+
+    console.log(body)
   }
 
   function onSubmit(formData) {

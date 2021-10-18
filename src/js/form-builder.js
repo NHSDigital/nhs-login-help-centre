@@ -51,6 +51,40 @@ const FormBuilder = function(mainFormElementID) {
       }
       return Form;
     },
+
+    addSuccessHandler(handler) {
+      if (typeof handler === 'function') {
+        onSuccessHandler = handler;
+      }
+      return Form;
+    },
+
+    updateFieldValue(id, valueToInsert){
+
+       const containerElement = mainFormElement.querySelector(`#${id}`);
+       if(containerElement){
+          containerElement.value = valueToInsert
+       } else { 
+         console.error(`No element with id: "${id}" in`, mainFormElement);
+       }
+       
+       return Form
+
+    },
+
+    setSelectedClient(idOfSelect, idOfClient){
+      const containerElement = mainFormElement.querySelector(`#${idOfSelect}`);
+      if(containerElement){
+          for (var i = 0; i < containerElement.options.length; ++i) {
+              if (containerElement.options[i].id === idOfClient) containerElement.options[i].selected = true;
+          }
+       } else { 
+         console.error(`No element with id: "${id}" in`, mainFormElement);
+       }
+
+       return Form
+
+    }
   };
 
   function resetForm() {

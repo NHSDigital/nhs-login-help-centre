@@ -78,10 +78,10 @@ excludeFromSearch: true
                     </label>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                     <select class="nhsuk-select nhs-help-centre__form-control-input" id="client" name="client">
-                        <option selected value="">Select an option</option>
+                        <option value="">Select an option</option>
                         <option value="visit_i_am_not_trying_to_visit_a_website_or_app">I am not trying to visit a website or app</option>
                         {%- for value, name in clients.clients -%}
-                        <option value="{{value}}">{{name}}</option>
+                        <option id="{{value}}" value="{{value}}">{{name}}</option>
                         {%- endfor -%}
                         <option value="visit_the_website_or_app_i_am_trying_to_visit_is_not_on_the_list">
                             The website or app I am trying to visit is not on this list
@@ -112,4 +112,5 @@ excludeFromSearch: true
 const ContactUsLinks = {{ collections.contactUsLinks | dump | safe }}
 </script>
 <script src={{ "/js/contact-page.js" | url }}></script>
+
 {% include "footer.njk" %}
