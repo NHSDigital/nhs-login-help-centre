@@ -2,6 +2,10 @@
 
 The NHS login help centre is where you can find helpful information, guidance, and support for issues with NHS login.
 
+## Notes
+
+Do not change the Zendesk client ID keys in src/_data/clients.json as it would mess up zendesk reporting
+
 ## Setup
 
 - `npm install` to install dependencies
