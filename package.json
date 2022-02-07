@@ -7,7 +7,7 @@
     "lint": "pretty-quick",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "eleventy",
-    "deploy": "eleventy",
+    "deploy": "eleventy && gulp hash",
     "watch": "eleventy --watch",
     "start": "eleventy --serve"
   },
@@ -25,7 +25,9 @@
     "@11ty/eleventy": "^0.12.1",
     "cheerio": "^1.0.0-rc.9",
     "dompurify": "^2.2.9",
+    "gulp": "^4.0.2",
     "husky": "^6.0.0",
+    "inline-csp-hash": "^1.1.15",
     "lunr": "^2.3.9",
     "markdown-it": "^12.0.6",
     "markdown-it-anchor": "^7.1.0",
