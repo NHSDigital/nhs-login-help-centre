@@ -9,14 +9,6 @@ position: 5
 layout: layouts/article.njk
 ---
 
-## Reference CID0003: Our website has accessibility issues
-
-We have designed the NHS login website to be accessible and as simple as possible to understand for all users. Some content on our website does not meet the standard and we are working to fix this as soon as we can.
-
-[Contact us](/contact?error=CID0003 'Contact us') if you want to report any accessibility problems that are not listed on our [accessibility statement]({{environment.ACCESS_FRONTEND_URL}}/accessibility), or to give us feedback on any issues you have seen.
-
----
-
 ## Reference CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
