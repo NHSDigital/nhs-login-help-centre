@@ -15,7 +15,7 @@ You can prove who you are without sending photo <span aria-label="I.D.">ID</span
 The 3 registration details are:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
+- ODS Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
 You can use these 3 registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span>.
@@ -33,7 +33,7 @@ Tell your GP surgery that you want to register for their online services. They w
 You will then be given 3 registration details:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
+- ODS Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
 If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your <span aria-label="I.D.">ID</span>.
@@ -47,7 +47,7 @@ If you do not know or remember your registration details, you can ask your GP to
 The 3 details you need are:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
+- ODS Code (could be called Organisation Code or Practice I.D.)
 - Account I.D.
 
 ---

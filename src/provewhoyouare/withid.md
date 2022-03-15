@@ -12,50 +12,48 @@ layout: layouts/article.njk
 
 You will be asked to:
 
-1. take a photo of your <span aria-label="I.D.">ID</span>
+1. take a photo of your ID
 2. record your face using your device
 3. enter your NHS number if you know it
 
-We ask you to record your face so that we can compare it to your photo <span aria-label="I.D.">ID</span> and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
+We ask you to record your face so that we can compare it to your photo ID and prove who you are. We may also ask you for more details to help find your NHS record, like your date of birth or postcode.
 
 ---
 
 ## Photo ID we can accept
 
-The image you send needs to be of your original photo <span aria-label="I.D.">ID</span>. You cannot send an image of a printout or screen showing your photo ID.
+The image you send needs to be of your original photo ID. You cannot send an image of a printout or screen showing your photo ID.
 
-We can accept an expired photo <span aria-label="I.D.">ID</span> if it expired less than 12 months ago.
+We can accept an expired photo ID if it expired less than 12 months ago.
 
 You can send:
 
 - passport (except Syrian passport)
 - UK driving licence (full or provisional)
 - European driving licence (full)
-- European national identity card (except paper Italian <span aria-label="I.D.">ID</span> card or Greek <span aria-label="I.D.">ID</span> card)
+- European national identity card (except paper Italian ID card or Greek ID card)
 - UK residence card or biometric residence permit (BRP)
-
-If you want to use a UK residence card or BRP, select ‘European national identity card’ on the page that asks you to choose the <span aria-label="I.D.">ID</span> you want to use. You will need to send 2 photos, one of the front and one of the back.
 
 ---
 
 ## Photo ID we do not accept
 
-We do not accept photo <span aria-label="I.D.">ID</span> with any handwritten information other than a signature.
+We do not accept photo ID with any handwritten information other than a signature.
 
 You cannot send:
 
 - travel cards
 - bus passes
-- NHS I.D. cards
+- NHS ID cards
 - visa stickers
-- UK citizen <span aria-label="I.D.">ID</span> cards
+- UK citizen ID cards
 - proof of age cards
-- university or school <span aria-label="I.D.">ID</span> cards
+- university or school ID cards
 - Syrian passports
-- paper Italian <span aria-label="I.D.">ID</span> cards
-- Greek <span aria-label="I.D.">ID</span> cards
+- paper Italian ID cards
+- Greek ID cards
 - UK driver qualification cards
-- an image of a printout or screen showing your photo <span aria-label="I.D.">ID</span>
+- an image of a printout or screen showing your photo ID
 
 ---
 
@@ -69,7 +67,6 @@ To take a good photo of your passport make sure:
 - all 4 edges of the page are in your photo
 - you can clearly see your face and all the text
 - there's no shine from a light or window
-
 
 ### Other accepted ID
 
@@ -101,11 +98,11 @@ You must give permission for your web browser to access the camera and microphon
 
 You must also give permission for the NHS login website to access your device’s camera and microphone.
 
-If this problem keeps happening even with permissions allowed, there might be a problem with your device. You can try opening your camera app separately to take a photo of your <span aria-label="I.D.">ID</span>. When you have taken a photo, you can then start again and prove who you are by selecting ‘upload a photo’.
+If this problem keeps happening even with permissions allowed, there might be a problem with your device. You can try opening your camera app separately to take a photo of your ID. When you have taken a photo, you can then start again and prove who you are by selecting ‘upload a photo’.
 
 If this does not work, you can also try taking a photo on another device. For example, you can use another phone or tablet that belongs to you or a family member.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
 
 ---
 
@@ -151,27 +148,26 @@ If you are using Safari, select ‘preferences’ to open the preferences window
 
 ## What to do if your photo file is damaged
 
-We run a virus check on the photo of your <span aria-label="I.D.">ID</span>. If the file you upload is infected or damaged, you can try and upload another one.
+We run a virus check on the photo of your ID. If the file you upload is infected or damaged, you can try and upload another one.
 
 If this keeps happening, there might be a problem with your device. Try taking a photo using a different device. For example, you can use another phone or tablet that belongs to you or a family member.
 
 Send the photo to your usual device and try uploading it again. Or, you can upload your photo from the other device just to prove who you are. Once you have proven who you are, you can then use NHS login on your usual device as normal.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
 
 ---
 
 ## How long does it take to check photo ID?
 
-After you send your photo I.D. and video, your photo <span aria-label="I.D.">ID</span> will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the <span aria-label="I.D.">ID</span> check has been successful.
+After you send your photo ID and video, your photo ID will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the ID check has been successful.
 
 ---
 
 ## What happens if you do not pass the check?
 
-If you do not pass the photo <span aria-label="I.D.">ID</span> check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
+If you do not pass the photo ID check, we will send you an email with some advice. We will tell you whether you should try again and what you can do to pass.
 
-If you keep getting the same problem, you can prove who you are without photo <span aria-label="I.D.">ID</span> instead.
+If you keep getting the same problem, you can prove who you are without photo ID instead.
 
-<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
-
+<a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo ID</a>
