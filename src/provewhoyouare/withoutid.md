@@ -10,19 +10,19 @@ layout: layouts/article.njk
 
 ## How to prove who you are without photo ID
 
-You can prove who you are without sending photo <span aria-label="I.D.">ID</span> if your GP is in England. If you are registered for your GP surgery's online services, you will have been given 3 registration details.
+You can prove who you are without sending photo ID if your GP is in England. If you are registered for your GP surgery's online services, you will have been given 3 registration details.
 
 The 3 registration details are:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
-- Account I.D.
+- ODS Code (could be called Organisation Code or Practice ID)
+- Account ID
 
-You can use these 3 registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span>.
+You can use these 3 registration details to prove who you are instead of using photo ID.
 
 This is not the same as the username and password you use to log into your GP surgery’s online services.
 
-Find out how you can <a href="/provewhoyouare/withid">use photo <span aria-label="I.D.">ID</span> to prove who you are</a> instead.
+Find out how you can <a href="/provewhoyouare/withid">use photo ID to prove who you are</a> instead.
 
 ---
 
@@ -33,10 +33,10 @@ Tell your GP surgery that you want to register for their online services. They w
 You will then be given 3 registration details:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
-- Account I.D.
+- ODS Code (could be called Organisation Code or Practice ID)
+- Account ID
 
-If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your <span aria-label="I.D.">ID</span>.
+If your GP is in England, you can use these 3 registration details to prove who you are instead of sending a photo of your ID.
 
 ---
 
@@ -47,8 +47,8 @@ If you do not know or remember your registration details, you can ask your GP to
 The 3 details you need are:
 
 - Linkage Key (could be called Passphrase)
-- O.D.S. Code (could be called Organisation Code or Practice I.D.)
-- Account I.D.
+- ODS Code (could be called Organisation Code or Practice ID)
+- Account ID
 
 ---
 

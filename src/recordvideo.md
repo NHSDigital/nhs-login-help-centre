@@ -71,21 +71,6 @@ You only need to do this to prove who you are. Once this is done, you can use yo
 
 ---
 
-## Unable to replay or upload your video
-
-If you cannot replay your video, this could be because the video format captured by your device camera is not supported by your browser.
-
-We are testing ways to support additional video formats. In the meantime, users can change the video format of the device to a supported format.
-
-For example:
-
-- video/mp4
-- video/webm
-
-If this does not work, you can also try recording a video on another device. For example, you can use another phone or tablet that belongs to you or a family member.
-
----
-
 ## What to do if your video file is damaged
 
 We run a virus check on your video file before it is verified. If the file you upload is infected or damaged, you can try and upload another one.
@@ -119,4 +104,3 @@ If this does not work, you can also try recording a video on another device. For
 If you are registered for your GP surgery’s online services, you can use your registration details to prove who you are instead of using photo <span aria-label="I.D.">ID</span> and a video.
 
 <a href="/provewhoyouare/withoutid">Find out how to prove who you are without using photo <span aria-label="I.D.">ID</span></a>
-
