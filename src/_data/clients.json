@@ -34,7 +34,6 @@
     "my_cohens": "myCohens",
     "visit_mygp": "myGP",
     "visit_myway_diabetes": "MyWay Diabetes",
-    "visit_nhs_app": "NHS App",
     "visit_covid_status": "NHS COVID Pass",
     "digital_weight_management_programme_mlcsu": "NHS Midlands and Lancashire CSU",
     "nhs_repeat_prescription_app": "NHS Repeat Prescription App",
@@ -52,6 +51,7 @@
     "virtually_healthcare": "Virtually Healthcare",
     "visba_care": "Visiba Care",
     "wales_vaccine_booking_service": "Wales Vaccine Booking Service",
-    "visit_web-gp": "Web-GP"
+    "visit_web-gp": "Web-GP",
+    "visit_nhs_app": "your NHS account"
   }
 }
