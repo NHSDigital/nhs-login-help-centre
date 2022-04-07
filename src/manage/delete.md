@@ -12,7 +12,7 @@ layout: layouts/article.njk
 
 You should be able to manage your NHS login settings from within the websites and apps that use NHS login. Each website and app you visit may offer a different way for you to access your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings').
 
-For example, in the NHS App you can change your NHS login email address, password and phone number from <b>Manage NHS account</b> in <b>Account and settings</b>.
+For example, in the NHS App you can change your NHS login email address, password and phone number from **Manage NHS account** in **Account and settings**.
 
 Contact the providers of the website or app you are using if you cannot find a way to access your NHS login settings.
 
@@ -24,16 +24,16 @@ Contact the providers of the website or app you are using if you cannot find a w
 
 You can delete your NHS login by visiting your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings').
 
-Scroll down to the bottom and select <b>Delete NHS login</b>. You will be asked to enter your password to confirm.
+Scroll down to the bottom and select **Delete NHS login**. You will be asked to enter your password to confirm.
 
 ### Your NHS account
 
 You can delete your NHS login from your NHS account. 
 
 1. Log in to the NHS App or NHS website. 
-2. Go to <b>More</b>, and select <b>Account and settings</b>.
-3. Go to <b>Manage NHS account</b>, and select <b>Your NHS login details</b>.
-4. Select <b>Delete NHS login</b>.
+2. Go to **More**, and select **Account and settings**.
+3. Go to **Manage NHS account**, and select **Your NHS login details**.
+4. Select **Delete NHS login**.
 
 ### What happens when you delete your NHS login
 
