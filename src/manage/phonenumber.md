@@ -18,7 +18,7 @@ To visit your NHS login settings, you first need to log in with your NHS login d
 
 ## You have lost access to your mobile phone number
 
-If you see reference CID3001, this is because you no longer have access to the phone number on your NHS login. You can change the phone number on your NHS login by telling us your NHS number.
+You no longer have access to the phone number on your NHS login. You can change the phone number on your NHS login by telling us your NHS number.
 
 [Contact us](/contact?error=CID3001 'Contact us') if you do not know your NHS number.
 
