@@ -1,5 +1,6 @@
 {
   "clients": {
+    "accurx": "Accurx",
     "visit_airmid": "Airmid",
     "visit_amity": "Amity",
     "visit_ask_nhs": "Ask First",
@@ -11,6 +12,7 @@
     "visit_chemist_4_u_api_services": "Chemist 4 U API Services",
     "visit_covid-19_app_statutory_isolation_payment_gateway": "COVID-19 App Statutory Isolation Payment gateway",
     "visit_covid-19_national_testing_service": "COVID-19 National Testing Service",
+    "day_lewis_patient_app": "Day Lewis Patient App",
     "digital_gp_reg": "Digital GP Reg",
     "visit_digital_redbook": "Digital Redbook",
     "visit_doctorlink_app": "Doctorlink App",
