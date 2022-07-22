@@ -37,7 +37,7 @@ There are lots of health and care websites and apps that allow you to use NHS lo
 
 You will need:
 
-- an email address
+- an email address (with more than 6 characters)
 - a mobile phone number
 
 ### What you need to do
