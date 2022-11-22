@@ -1,5 +1,5 @@
 const Validators = (function() {
-  const EMAIL_REGEX = /[^@]+@[^@]+\.[^@]+/;
+  const EMAIL_REGEX = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
   return {
     combineValidators(validators) {
@@ -11,7 +11,7 @@ const Validators = (function() {
     },
 
     matchesPattern(key, pattern, errorMessage) {
-      return formData => (pattern.test(formData.get(key)) ? null : errorMessage);
+      return formData => (pattern.test(formData.get(key).trim()) ? null : errorMessage);
     },
 
     validEmail(key, errorMessage) {
