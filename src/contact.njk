@@ -90,7 +90,7 @@ excludeFromSearch: true
                 </div>
                 
                 <div class="nhsuk-form-group" id="message-form-control">
-                    <label class="nhsuk-label" for="message">
+                    <label class="nhsuk-heading-xs nhsuk-label" for="message">
                         Describe the problem
                     </label>
                     <span class="nhsuk-hint">
@@ -111,6 +111,5 @@ excludeFromSearch: true
 <script type="text/javascript">
 const ContactUsLinks = {{ collections.contactUsLinks | dump | safe }}
 </script>
-<script src={{ "/js/character-count.js"}}></script>
 <script src={{ "/js/contact-page.js" | url }}></script>
 {% include "footer.njk" %}
