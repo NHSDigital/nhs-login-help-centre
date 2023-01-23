@@ -74,7 +74,7 @@ excludeFromSearch: true
 
                 <div class="nhsuk-form-group" id="client-form-control">
                     <label class="nhsuk-label" for="client">
-                        Please select the website or app you are trying to visit
+                       Enter the name of the website or app you are having a problem with:
                     </label>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                     <select class="nhsuk-select nhs-help-centre__form-control-input" id="client" name="client">
@@ -88,7 +88,7 @@ excludeFromSearch: true
                         </option>
                     </select>
                 </div>
-
+                
                 <div class="nhsuk-form-group" id="message-form-control">
                     <label class="nhsuk-label" for="message">
                         Describe the problem
@@ -98,9 +98,9 @@ excludeFromSearch: true
                     </span>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                     <textarea class="nhsuk-textarea nhs-help-centre__form-control-input" id="message" name="message"
-                        rows="6" aria-describedby="message-hint" placeholder="You have 1500 characters remaining"></textarea>
+                        rows="6" aria-describedby="message-hint"></textarea>
                 </div>
-
+                
                 <button class="nhsuk-button submit-button">
                     Send message
                 </button>
@@ -111,5 +111,6 @@ excludeFromSearch: true
 <script type="text/javascript">
 const ContactUsLinks = {{ collections.contactUsLinks | dump | safe }}
 </script>
+<script src={{ "/js/character-count.js"}}></script>
 <script src={{ "/js/contact-page.js" | url }}></script>
 {% include "footer.njk" %}
