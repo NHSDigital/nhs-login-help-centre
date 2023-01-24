@@ -2,7 +2,6 @@ const Analytics = (function() {
   // add this for local dev
   // https://assets.adobedtm.com/launch-EN89caca63ff2c4dae923a38d7d05ec849-development.min.js
   const ADOBE_URL = 'https://assets.adobedtm.com/launch-ENef935e55aadd4530a5725efe3624e9e2.min.js';
-  const HOTJAR_URL = '/js/hotjar.js';
 
   function trackLinkClick(element) {
     window.digitalData.link = {
@@ -33,7 +32,6 @@ const Analytics = (function() {
       const { hasAcceptedOptionalCookies } = Consent.getCookiePreferences();
 
       if (hasAcceptedOptionalCookies) {
-        Utils.createScript(HOTJAR_URL);
         Utils.createScript(ADOBE_URL).then(() => {
           window.digitalData = {};
           trackPageView();
