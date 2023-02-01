@@ -18,6 +18,6 @@ To keep your NHS login secure, you should only do this on your own personal or t
 
 ## How to remove a remembered device
 
-You can remove any of your remembered devices by going to your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings'). Under the heading ‘remembered devices’ select ‘remove device’ next to the device you want to remove from your NHS login.
-
-If you use NHS login on that device again, you will need to enter a security code we send to your phone.
+We will remove a remembered device from your NHS login account if you:
+- do not use that device to access NHS login within a 6 month period
+- use that device to log in to [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings') and select ‘Log out’.
