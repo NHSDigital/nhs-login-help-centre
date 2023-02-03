@@ -1,7 +1,5 @@
 ---
 title: There is already an NHS login account linked to the NHS number
-short_title: More than one account
-subtitle: Find out what NHS login is, how to set one up and where you can use it.
 pageName: more-than-one-account
 type: article
 layout: layouts/article.njk
