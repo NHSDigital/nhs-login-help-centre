@@ -35,11 +35,11 @@ Navigate to a service where you need to sign in with your NHS login.
 
 ## If you want to change the email address you use to sign into NHS login
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account
+[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
 
 1. Select ‘Login details’ from the ‘Manage my Account’ page
 2. Select ‘Change email address’
 3. Enter your new email address
-   We will send a link to your new email address. You will need to follow this link to confirm the email change
+   We'll send you a 6 digit security code to use to confirm your new email address.
 
 [Contact us](/contact?error=CID1111 'Contact us') if you need help or if you still have problems.
