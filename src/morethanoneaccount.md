@@ -34,7 +34,7 @@ This will only delete your online NHS account and will not affect your medical r
 
 ## If you want to change the email address you use to sign into NHS login
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address you used to create the account.
+[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
 
 1. Select ‘Login details’ from the ‘Manage my Account’ page
 2. Select ‘Change email address’
