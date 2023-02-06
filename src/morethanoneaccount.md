@@ -11,7 +11,7 @@ An NHS login already exists with your NHS number but uses a different email addr
 
 We cannot create this account as you can only have one NHS login connected to your NHS number.
 
-## What can you do
+## What you can do
 
 Check all your in-boxes for emails from NHS login about logging in with the correct email address. The email you would have received is from: noreply@login.nhs.uk. For security reasons we are unable to disclose any information about an account.
 
@@ -26,7 +26,7 @@ This will only delete your online NHS account and will not affect your medical r
 
 ## If you have forgotten your password
 
-Navigate to a service where you need to sign in with your NHS login.
+[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address you used to create the account.
 
 1. Select 'If you cannot remember your password, you can reset it'
 2. An email will be sent with a link to reset your password
@@ -34,7 +34,7 @@ Navigate to a service where you need to sign in with your NHS login.
 
 ## If you want to change the email address you use to sign into NHS login
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
+[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address you used to create the account.
 
 1. Select ‘Login details’ from the ‘Manage my Account’ page
 2. Select ‘Change email address’
@@ -42,4 +42,4 @@ Navigate to a service where you need to sign in with your NHS login.
 
 We'll send you a 6 digit security code to use to confirm your new email address.
 
-[Contact us](/contact?error=CID1111 'Contact us') if you need help or if you still have problems.
+[Contact us](/contact?error=CID1111 'Contact us') if you need further help.
