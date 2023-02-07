@@ -17,29 +17,26 @@ Check all your in-boxes for emails from NHS login about logging in with the corr
 
 ## If you do not want the NHS login you previously created
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
-
-1. Select 'Login Details' from the 'Manage my Account' page
-2. Select 'Delete my NHS account'
+1. [Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
+2. Select 'Login Details' from the 'Manage my Account' page.
+3. Select 'Delete my NHS account'.
 
 This will only delete your online NHS account and will not affect your medical records.
 
 ## If you have forgotten your password
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address you used to create the account.
-
-1. Select 'If you cannot remember your password, you can reset it'
-2. An email will be sent with a link to reset your password
-3. Enter and confirm your new password
+1. [Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address you used to create the account.
+2. Select 'If you cannot remember your password, you can reset it'.
+3. An email will be sent with a link to reset your password.
+4. Enter and confirm your new password.
 
 ## If you want to change the email address you use to sign into NHS login
 
-[Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
+1. [Sign into NHS login](https://settings.login.nhs.uk/ 'NHS login settings') using the email address and password you used to create the account.
+2. Select ‘Login details’ from the ‘Manage my Account’ page.
+3. Select ‘Change email address’.
+4. Enter your new email address.
 
-1. Select ‘Login details’ from the ‘Manage my Account’ page
-2. Select ‘Change email address’
-3. Enter your new email address
-
-We'll send you a 6 digit security code to use to confirm your new email address.
+We will send you a 6 digit security code to use to confirm your new email address.
 
 [Contact us](/contact?error=CID1111 'Contact us') if you need further help.
