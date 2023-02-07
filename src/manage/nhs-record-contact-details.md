@@ -20,12 +20,11 @@ Your NHS contact details are the details that your GP and other NHS services use
 
 ## How to add or update your NHS contact details
 
-You can add or update the NHS contact details on your NHS record by [logging into your NHS account](https://access.login.nhs.uk/enter-email 'logging into your NHS account') or by [using the NHS App](https://www.nhsapp.service.nhs.uk/login 'by using the NHS App').
+You can add or update the NHS contact details on your NHS record by [logging into your NHS account](https://settings.login.nhs.uk 'logging into your NHS account') or by [using the NHS App](https://www.nhsapp.service.nhs.uk/login 'using the NHS App').
 
 <div class="nhsuk-warning-callout">
-    <h3 class="nhsuk-warning-callout__label">
+    <h3 class="nhsuk-warning-callout__label" style="padding-top: 8px;">
     <span role="text">
-        <span class="nhsuk-u-visually-hidden">Important</span>
         Important
     </span>
     </h3>
