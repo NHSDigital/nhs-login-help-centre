@@ -8,26 +8,27 @@ position: 6
 layout: layouts/article.njk
 ---
 
-## How to change your contact details on your NHS record
+## Your NHS login details and NHS contact details
 
-When you set up an NHS login, the phone number and email address you use are not added to your NHS record.
+When you create an NHS login account, the [phone number](/manage/phonenumber 'phone number') and [email address](/manage/emailaddresses 'email address')
+you use are only stored on this account. These are your NHS login details.
+You use them to log in to your NHS account and other healthcare apps and websites.
 
-However, we may ask you if you would like to update your NHS record if your NHS login contact details are different from those on your NHS record.
-
-This will mean that your GP surgery, and any other NHS services, will be updated with the contact details you use for NHS login.
-
-Before we can ask you this, you must prove who you are to the highest level of verification. You must also log in to a website or app three times with your NHS login.
-
-[More information on what NHS login is and how to set one up](/setupnhslogin 'More information on what NHS login is and how to set one up')
+Your NHS contact details are the details that your GP and other NHS services use to contact you.
 
 ---
 
-## Your NHS login contact details are different to the contact details on your NHS record
+## How to add or update your NHS contact details
 
-The contact details on your NHS login may be different to those on your NHS record. If this is the case, we may ask you if you would like to update them on your NHS record.
+You can add or update the NHS contact details on your NHS record by [logging into your NHS account](https://settings.login.nhs.uk 'logging into your NHS account') or by [using the NHS App](https://www.nhsapp.service.nhs.uk/login 'using the NHS App').
 
-We will show you the contact details we have for you. For example, we will show you the phone number we have from your NHS login and phone numbers on your NHS record. You can then choose which one the NHS should use to contact you. We will update your NHS record with this phone number. After this, the other phone numbers will not be in use on your NHS record.
+<div class="nhsuk-warning-callout">
+    <h3 class="nhsuk-warning-callout__label" style="padding-top: 8px;">
+    <span role="text">
+        Important
+    </span>
+    </h3>
+    <p>Some NHS services, like your GP surgery, may continue to use your previous contact details. This is because there may be a delay before they check your updated NHS record.</p>
+</div>
 
-If some contact details are missing from your NHS record, we will ask if you would like to add the details from your NHS login. For example, if your NHS record does not have an email address, we will ask if you would like to update it with the email address you use for NHS login.
-
-Some NHS services, like your GP surgery, may continue to use your previous contact details. This is because there may be a delay before they check your updated NHS record.
+We may send you a text or email if we find that any of the contact details on your NHS record are missing, or in an incorrect format.
