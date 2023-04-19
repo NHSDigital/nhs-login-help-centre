@@ -1,6 +1,7 @@
 {
   "clients": {
     "accurx": "Accurx",
+    "accurx_patient_portal": "Accurx Patient Portal",
     "visit_airmid": "Airmid",
     "alder_hey__nywhere": "Alder Hey @nywhere",
     "visit_amity": "Amity",
@@ -20,7 +21,6 @@
     "visit_digital_redbook": "Digital Redbook",
     "visit_doctrin_your_digital_healthcare_service": "Doctrin - Your digital healthcare service",
     "drdoctor": "DrDoctor",
-    "visit_echo": "Echo",
     "eclipse_app_": "Eclipse App",
     "ekhuft_patient_id ": "EKHUFT Patient ID",
     "visit_engage_consult": "Engage Consult",
@@ -36,6 +36,7 @@
     "visit_integrated_tracing_service": "Integrated Tracing Service",
     "kent__medway_patient_portal": "Kent & Medway Patient Portal",
     "klinik_access": "Klinik Access",
+    "lloyds_pharmacy_direct": "Lloyds Pharmacy Direct",
     "visit_low_carb_program": "Low Carb Program",
     "medadvisor_uk_app": "MedAdvisor UK App",
     "medloop": "Medloop",
@@ -69,6 +70,7 @@
     "visit_recap_health": "Recap Health",
     "register_with_a_gp_surgery": "Register with a GP Surgery",
     "remora2": "Remora2",
+    "sapphire_clinics": "Sapphire Clinics",
     "stsft_meditech_patient_portal": "STSFT MEDITECH Patient Portal",
     "tameside_and_glossop_integrated_care_nhs_foundation_trust": "Tameside and Glossop Integrated Care NHS Foundation Trust",
     "the_pharmacy_app": "The Pharmacy App",
