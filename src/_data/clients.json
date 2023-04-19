@@ -1,6 +1,7 @@
 {
   "clients": {
     "accurx": "Accurx",
+    "accurx_patient_portal": "Accurx Patient Portal",
     "visit_airmid": "Airmid",
     "alder_hey__nywhere": "Alder Hey @nywhere",
     "visit_amity": "Amity",
