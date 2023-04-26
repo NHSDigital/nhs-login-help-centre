@@ -23,7 +23,7 @@ if [[ $1 == *"codepipeline/helpcentre-live-develop"* || $1 == *"codepipeline/hel
     curl https://nexus.mgmt.signin.nhs.uk/repository/maven-nhsd/NexusIQ/NexusIQCLI/1.80.0-01/NexusIQCLI-1.80.0-01.jar --output /tmp/nexusiq-cli.jar
   fi
 
-  java -jar /tmp/nexusiq-cli.jar -i "$REPORT_ID" -s https://nexus-iq.mgmt.signin.nhs.uk -a "${NEXUS_IQ_USERNAME}:${NEXUS_IQ_PASSWORD}" ./wheels "${@:3}"
+  java -jar /tmp/nexusiq-cli.jar -i "$REPORT_ID" -s https://nexus-iq.mgmt.signin.nhs.uk -a "pipeline:${NEXUS_IQ_PASSWORD}" ./wheels "${@:3}"
 
 else
   echo "Not running Nexus IQ scan as this is not a dev or ptl build."
