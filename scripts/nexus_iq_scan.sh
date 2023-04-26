@@ -6,7 +6,8 @@ for D in ./wheels "${@:3}" ; do
   echo "deps : $D"
 done
 
-if [[ $1 == *"codepipeline/dev-"* || $1 == *"codepipeline/ptl-"* || -n $FORCE_NEXUS_SCAN ]]; then
+echo $1
+if [[ $1 == *"codepipeline/helpcentre-live-develop"* || $1 == *"codepipeline/helpcentre-live-master-"* || -n $FORCE_NEXUS_SCAN ]]; then
   echo "Running Nexus IQ scan, initiator == ${1}, FORCE_NEXUS=${FORCE_NEXUS_SCAN}"
 
   # Copy python wheels into a folder to scan
