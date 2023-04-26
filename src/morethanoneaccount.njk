@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+title: There is already an NHS account linked to the NHS number
+pageName: more-than-one-account
+excludeFromSearch: true
+---
+{% include "header.njk" %}
+<div class="nhsuk-width-container ">
+    <main class="nhsuk-main-wrapper " id="maincontent" role="main">
+        <div class="nhsuk-width-container">
+            {% include "breadcrumbs.njk" %}
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-two-thirds article-content">
+                    <h2>We cannot create this account</h2>
+                    <p>An account already exists with your NHS number but uses a different email address to the one you entered.</p>
+                    <h2>What can you do</h2>
+
+                    <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" close="">
+                        <summary class="nhsuk-details__summary" role="button" aria-expanded="true">
+                            <span class="nhsuk-details__summary-text">If you cannot remember the email linked to this account</span>
+                        </summary>
+                        <div class="nhsuk-details__text" aria-hidden="false">
+                            <p class="nhsuk-body">Check all your email accounts for an email from NHS login.</p>
+                            <p class="nhsuk-body">You would have receieved an email from: noreply@login.nhs.uk.</p>
+                            <p class="nhsuk-body">For security reasons we are unable to disclose any information about an account.</p>
+                        </div>
+                    </details>
+
+                    <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" close="">
+                        <summary class="nhsuk-details__summary" role="button" aria-expanded="true">
+                            <span class="nhsuk-details__summary-text">Delete your existing account</span>
+                        </summary>
+                        <div class="nhsuk-details__text" aria-hidden="false">
+                            <p class="nhsuk-body">To delete your existing account:</p>
+                            <ol>
+                                <li> <a href="https://settings.login.nhs.uk/">Visit NHS login settings</a> and log in using the email address and password you used to create the account.</li>
+                                <li>Select 'login details'.</li>
+                                <li>Select 'Delete my NHS account'.</li>
+                            </ol>
+                            <p class="nhsuk-body">This will only delete your online NHS account and will not affect your medical records. </p>
+                        </div>
+                    </details>
+
+                    <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" close="">
+                        <summary class="nhsuk-details__summary" role="button" aria-expanded="true">
+                            <span class="nhsuk-details__summary-text">If you have forgotten your password</span>
+                        </summary>
+                        <div class="nhsuk-details__text" aria-hidden="false">
+                            <p class="nhsuk-body">To reset your password:</p>
+                            <ol>
+                                <li> <a href="https://settings.login.nhs.uk/">Visit NHS login settings</a> and log in using the email address you used to create the account.</li>
+                                <li>Select to reset your password.</li>
+                                <li>An email will be sent with a link to reset your password.</li>
+                                <li>Select the link in the email to enter and confirm your new password.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details class="nhsuk-details nhsuk-expander" nhsuk-polyfilled="true" close="">
+                        <summary class="nhsuk-details__summary" role="button" aria-expanded="true">
+                            <span class="nhsuk-details__summary-text">If you want to change the email address you use to sign into NHS login</span>
+                        </summary>
+                        <div class="nhsuk-details__text" aria-hidden="false">
+                            <p class="nhsuk-body">To change the email registered to your existing account:</p>
+                            <ol>
+                                <li> <a href="https://settings.login.nhs.uk/">Visit NHS login settings</a> and log in using the email address and password you used to create the account.</li>
+                                <li>Select ‘Login details‘.</li>
+                                <li>Select ‘Change email address‘.</li>
+                                <li>Enter your new email address.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <p><a href="/contact?error=CID1111">Contact us</a> if you need further help.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript">
+    window.level = {{ level }}
+</script>
+<script src={{ "/js/header-marker.js" | url }}></script>
+{% include "footer.njk" %}
