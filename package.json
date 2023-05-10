@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/NHSDigital/nhs-login-help-centre",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.1",
     "cheerio": "^1.0.0-rc.12",
     "dompurify": "^2.4.3",
     "gulp": "^4.0.2",
