@@ -23,7 +23,6 @@ module.exports = function (config) {
   config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/js');
 
-  // data for heading links at sidebars
   config.addCollection('articles', async function (collections) {
     const articles = collections
       .getAll()
@@ -38,7 +37,6 @@ module.exports = function (config) {
       .reduce(collectionToKeyedObject, {});
   });
 
-  // data for nav links and tiles in the home screen
   config.addCollection('hubs', collections => {
     const allPages = collections.getAll();
     return allPages
