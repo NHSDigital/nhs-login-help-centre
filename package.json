@@ -9,7 +9,8 @@
     "build": "eleventy",
     "deploy": "eleventy && gulp hash",
     "watch": "eleventy --watch",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   },
   "homepage": "https://github.com/NHSDigital/nhs-login-help-centre",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.1",
     "cheerio": "^1.0.0-rc.12",
     "dompurify": "^2.4.3",
     "gulp": "^4.0.2",
@@ -31,8 +32,13 @@
     "lunr": "^2.3.9",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.6",
+    "npm-force-resolutions": "^0.0.10",
     "prettier": "^2.8.3",
     "pretty-quick": "^3.1.3"
+  },
+  "resolutions": {
+    "unset-value": "2.0.1",
+    "glob-parent": "5.1.2"
   },
   "husky": {
     "hooks": {

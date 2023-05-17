@@ -16,22 +16,29 @@ const markdownLibrary = markdownIt({
   permalink: false
 });
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.addLayoutAlias('default', 'layouts/base.njk');
   // pass some assets right through
   config.addPassthroughCopy('./src/images');
   config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/js');
 
-  config.addCollection('articles', collections => {
-    const allPages = collections.getAll();
-    return allPages
+  // data for heading links at sidebars
+  config.addCollection('articles', async function (collections) {
+    const articles = collections
+      .getAll()
       .filter(isArticle)
-      .map(addArticleData)
-      .map(article => addBreadcrumbs(allPages, article))
+      .map(article => addArticleData(article))
+
+    // resolve headings - article.template.inputContent is a Promise in eleventy v2
+    articles.forEach(async x => x.headings = await x.headings)
+
+    return articles
+      .map(article => addBreadcrumbs(articles, article))
       .reduce(collectionToKeyedObject, {});
   });
 
+  // data for nav links and tiles in the home screen
   config.addCollection('hubs', collections => {
     const allPages = collections.getAll();
     return allPages
@@ -41,22 +48,29 @@ module.exports = function(config) {
       .reduce(addHubToCollection, {});
   });
 
-  config.addCollection('contactUsLinks', collections => (
-    collections
+  config.addCollection('contactUsLinks', async collections => {
+    const contactUsLinks = collections
       .getAll()
       .filter(isArticle)
-      .map(getContactUsLinks)
+      .map(article => getContactUsLinks(article))
+
+    const resolvedContactUsLinks = [];
+
+    for await (let link of contactUsLinks) {
+      resolvedContactUsLinks.push(link);
+    }
+    return resolvedContactUsLinks
       .reduce((collection, links) => collection.concat(links), [])
-  ));
+  });
 
 
   config.setLibrary('md', markdownLibrary);
-  
+
   config.addPassthroughCopy({
     'node_modules/lunr/lunr.min.js': 'js/lunr.js',
     'node_modules/dompurify/dist/purify.min.js': 'js/purify.js',
   });
-  
+
   config.on('afterBuild', () => {
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
