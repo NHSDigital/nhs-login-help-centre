@@ -37,7 +37,8 @@
   "overrides": {
     "unset-value": "2.0.1",
     "glob-parent": "5.1.2",
-    "es5-ext": "0.10.53"
+    "es5-ext": "0.10.53",
+    "ejs": "1.0.0"
   },
   "husky": {
     "hooks": {
