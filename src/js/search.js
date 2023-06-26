@@ -1,11 +1,14 @@
 const Search = (async function () {
   const [docsJson, indexJson] = await Promise.all([fetch('/js/search_data.json'), fetch('/js/search_index.json')]);
   const [docs, index] = await Promise.all([docsJson.json(), indexJson.json()]);
-  const idx = lunr.Index.load(index);
+  // const idx = lunr.Index.load(index);
+  // const idx = lunr.Index.load(index);
+  const idx = Fuse.parseIndex(index)
+  const fuse = new Fuse(idx)
 
   return {
     search(query) {
-      let results = idx.search(query);
+      let results = fuse.search(query);
       results.forEach(r => {
         r.title = docs[r.ref].title;
         r.url = docs[r.ref].url;
