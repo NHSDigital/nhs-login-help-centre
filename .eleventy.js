@@ -72,29 +72,30 @@ module.exports = function (config) {
   });
 
   config.on('afterBuild', () => {
+    const FUSE_ENABLED = false;
+
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
+    let searchIndex;
 
-    // const fuse = new Fuse(docs, {
-    //   keys: ['id', 'title', 'content']
-    // })
+    if (FUSE_ENABLED) {
+      const fuseIndex = Fuse.createIndex(['id', 'title', 'content'], docs)
+      searchIndex = fuseIndex;
+    } else {
+      let lunrIndex = lunr(function () {
+        this.ref('id');
+        this.field('title');
+        this.field('content');
 
-    const idx = Fuse.createIndex(['id', 'title', 'content'], docs)
-    // Serialize and save it
-    // fs.writeFile('fuse-index.json', JSON.stringify(idx.toJSON()))
+        docs.forEach(function (doc, idx) {
+          doc.id = idx;
+          this.add(doc);
+        }, this);
+      });
+      searchIndex = lunrIndex;
+    }
 
-    // let idx = lunr(function () {
-    //   this.ref('id');
-    //   this.field('title');
-    //   this.field('content');
-
-    //   docs.forEach(function (doc, idx) {
-    //     doc.id = idx;
-    //     this.add(doc);
-    //   }, this);
-    // });
-
-    fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(idx.toJSON()));
+    fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(searchIndex.toJSON()));
   });
 
   return {
