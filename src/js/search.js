@@ -10,7 +10,7 @@ const Search = (async function () {
     search(query) {
       let results = idx.search(query);
       results.forEach(r => {
-        const item = r.item;
+        const { item } = r
         r.title = item.title;
         r.url = item.url;
         r.content = item.content
