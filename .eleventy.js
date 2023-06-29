@@ -6,7 +6,6 @@ const { addBreadcrumbs } = require('./lib/breadcrumbs');
 const { collectionToKeyedObject } = require('./lib/utils');
 const outputDir = './_site/';
 const fs = require('fs');
-const lunr = require('lunr');
 const Fuse = require('fuse.js');
 
 /* Markdown Overrides */
@@ -66,36 +65,15 @@ module.exports = function (config) {
   config.setLibrary('md', markdownLibrary);
 
   config.addPassthroughCopy({
-    'node_modules/lunr/lunr.min.js': 'js/lunr.js',
     'node_modules/fuse.js/dist/fuse.min.js': 'js/fuse.js',
     'node_modules/dompurify/dist/purify.min.js': 'js/purify.js',
   });
 
   config.on('afterBuild', () => {
-    const FUSE_SEARCH_ENABLED = false;
-
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
-    let searchIndex;
-
-    if (FUSE_SEARCH_ENABLED) {
-      const fuseIndex = Fuse.createIndex(['id', 'title', 'content'], docs)
-      searchIndex = fuseIndex;
-    } else {
-      let lunrIndex = lunr(function () {
-        this.ref('id');
-        this.field('title');
-        this.field('content');
-
-        docs.forEach(function (doc, idx) {
-          doc.id = idx;
-          this.add(doc);
-        }, this);
-      });
-      searchIndex = lunrIndex;
-    }
-
-    fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(searchIndex.toJSON()));
+    const idx = Fuse.createIndex(['id', 'title', 'content'], docs)
+    fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(idx.toJSON()));
   });
 
   return {

@@ -2,55 +2,18 @@ const Search = (async function () {
   const [docsJson, indexJson] = await Promise.all([fetch('/js/search_data.json'), fetch('/js/search_index.json')]);
   const [docs, index] = await Promise.all([docsJson.json(), indexJson.json()]);
 
-  const FUSE_SEARCH_ENABLED = false;
-  let idx;
-
-  if (FUSE_SEARCH_ENABLED) {
-    const fuseIdx = Fuse.parseIndex(index)
-    const fuseOptions = {}
-    const fuse = new Fuse(docs, fuseOptions, fuseIdx)
-    idx = fuse;
-  } else {
-    const lunrIdx = lunr.Index.load(index);
-    idx = lunrIdx;
-  }
+  const fuseIdx = Fuse.parseIndex(index)
+  const fuseOptions = {}
+  const idx = new Fuse(docs, fuseOptions, fuseIdx)
 
   return {
     search(query) {
       let results = idx.search(query);
       results.forEach(r => {
-        if (FUSE_SEARCH_ENABLED) {
-          // r looks like:
-          // {
-          //   "item": {
-          //     "url": "/manage/delete#nhs-login-settings",
-          //     "title": "NHS login settings",
-          //     "content": "You can delete your NHS login by visiting your NHS login settings. Scroll down to the bottom and select Delete NHS login. You will be asked to enter your password to confirm."
-          //   },
-          //   "refIndex": 26
-          // }
-          const item = r.item;
-          r.title = item.title;
-          r.url = item.url;
-          r.content = item.content
-        } else {
-          // r looks like:
-          // {
-          //   "ref": "27",
-          //     "score": 0.6839999999999999,
-          //       "matchData": {
-          //     "metadata": {
-          //       "nh": {
-          //         "title": { },
-          //         "content": { }
-          //       }
-          //     }
-          //   }
-          // }
-          r.title = docs[r.ref].title;
-          r.url = docs[r.ref].url;
-          r.content = docs[r.ref].content;
-        }
+        const item = r.item;
+        r.title = item.title;
+        r.url = item.url;
+        r.content = item.content
       });
 
       return results;
