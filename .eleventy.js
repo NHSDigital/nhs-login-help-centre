@@ -72,13 +72,13 @@ module.exports = function (config) {
   });
 
   config.on('afterBuild', () => {
-    const FUSE_ENABLED = true;
+    const FUSE_SEARCH_ENABLED = false;
 
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
     let searchIndex;
 
-    if (FUSE_ENABLED) {
+    if (FUSE_SEARCH_ENABLED) {
       const fuseIndex = Fuse.createIndex(['id', 'title', 'content'], docs)
       searchIndex = fuseIndex;
     } else {

@@ -2,10 +2,10 @@ const Search = (async function () {
   const [docsJson, indexJson] = await Promise.all([fetch('/js/search_data.json'), fetch('/js/search_index.json')]);
   const [docs, index] = await Promise.all([docsJson.json(), indexJson.json()]);
 
-  const FUSE_ENABLED = true;
+  const FUSE_SEARCH_ENABLED = false;
   let idx;
 
-  if (FUSE_ENABLED) {
+  if (FUSE_SEARCH_ENABLED) {
     const fuseIdx = Fuse.parseIndex(index)
     const fuseOptions = {}
     const fuse = new Fuse(docs, fuseOptions, fuseIdx)
@@ -18,11 +18,39 @@ const Search = (async function () {
   return {
     search(query) {
       let results = idx.search(query);
-      debugger;
       results.forEach(r => {
-        r.title = docs[r.ref].title;
-        r.url = docs[r.ref].url;
-        r.content = docs[r.ref].content;
+        if (FUSE_SEARCH_ENABLED) {
+          // r looks like:
+          // {
+          //   "item": {
+          //     "url": "/manage/delete#nhs-login-settings",
+          //     "title": "NHS login settings",
+          //     "content": "You can delete your NHS login by visiting your NHS login settings. Scroll down to the bottom and select Delete NHS login. You will be asked to enter your password to confirm."
+          //   },
+          //   "refIndex": 26
+          // }
+          const item = r.item;
+          r.title = item.title;
+          r.url = item.url;
+          r.content = item.content
+        } else {
+          // r looks like:
+          // {
+          //   "ref": "27",
+          //     "score": 0.6839999999999999,
+          //       "matchData": {
+          //     "metadata": {
+          //       "nh": {
+          //         "title": { },
+          //         "content": { }
+          //       }
+          //     }
+          //   }
+          // }
+          r.title = docs[r.ref].title;
+          r.url = docs[r.ref].url;
+          r.content = docs[r.ref].content;
+        }
       });
 
       return results;
