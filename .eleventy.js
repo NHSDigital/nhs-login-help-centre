@@ -72,7 +72,7 @@ module.exports = function (config) {
   });
 
   config.on('afterBuild', () => {
-    const FUSE_ENABLED = false;
+    const FUSE_ENABLED = true;
 
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
