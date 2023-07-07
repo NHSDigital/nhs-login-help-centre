@@ -39,20 +39,24 @@ To do this you can:
 
 ---
 
-## The link to cancel changing your phone number does not work
+## The link to cancel the update to your phone number does not work
 
-To cancel changing your phone number on NHS login, you must select the confirmation link we send you. If the link does not work, there are a number of possible reasons why.
+To cancel the update to your phone number, you must select the confirmation link we send you. If the link does not work, there are a number of possible reasons why.
 
 ### Expired link – Reference CID3002
 
-The link to cancel changing your phone number has a time limit of 24 hours. If it has been more than 24 hours since you received the link in your email, it will no longer work.
+The link expires 24 hours after we email it to you.
 
-As it has been more than 24 hours, it may be too late to cancel as the phone number may have already been changed. You can check or change your phone number by visiting your NHS login settings.
+We may have already updated the phone number you use to log in. In this case you would have received a confirmation email.
 
-[Contact us](/contact?error=CID3002 'Contact us') if you did not mean to change your phone number, or you do not have access to the phone number on your NHS login.
+You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
+
+[Contact us](/contact?error=CID3002 'Contact us') if you did not mean to change your phone number, or you do not have access to it.
 
 ### Used link – Reference CID3003
 
-The link to cancel changing your phone number may not work because you have already used it and have successfully cancelled changing your phone number. You can check or change your phone number by visiting your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings').
+The link will not work if you have already used it and cancelled the update.
 
-[Contact us](/contact?error=CID3003 'Contact us') if you do not have access to the phone number on your NHS login.
+You can check or change your login and security settings in your [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
+
+[Contact us](/contact?error=CID3003 'Contact us') if you did not mean to change your phone number, or you do not have access to it.
