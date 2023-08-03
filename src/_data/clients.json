@@ -1,5 +1,6 @@
 {
   "clients": {
+    "accurx": "Accurx",
     "accurx_patient_portal": "Accurx Patient Portal",
     "visit_airmid": "Airmid",
     "alder_hey__nywhere": "Alder Hey @nywhere",
@@ -22,7 +23,6 @@
     "visit_digital_redbook": "Digital Redbook",
     "visit_doctrin_your_digital_healthcare_service": "Doctrin - Your digital healthcare service",
     "drdoctor": "DrDoctor",
-    "nhs_connect": "NHS Connect",
     "ekhuft_patient_id ": "EKHUFT Patient ID",
     "visit_engage_consult": "Engage Consult",
     "visit_eredbook": "eRedbook",
@@ -44,6 +44,7 @@
     "my_health_and_wellbeing": "My Health and Wellbeing",
     "visit_mycarecentric_phr": "myCareCentric PHR",
     "my_cohens": "myCohens",
+    "nhs_connect": "NHS Connect",
     "visit_mygp": "myGP",
     "visit_myway_diabetes": "MyWay Diabetes",
     "national_booking_service": "National Booking Service",
