@@ -52,10 +52,13 @@ module.exports = function (config) {
       .filter(isArticle)
       .map(article => getContactUsLinks(article));
 
-    const contactUsLinksNjk = allCollections.filter(isArticleNjk).map(({ data }) => ({
-      description: data.errorDescription,
-      code: data.errorCode,
-    }));
+    const contactUsLinksNjk = allCollections
+      .filter(isArticleNjk)
+      .map(({ data }) => ({
+        description: data.errorDescription || 'UNKNOWN',
+        code: data.errorCode,
+      }))
+      .filter(({ code }) => /^CID\d{4}$/.test(code));
 
     const resolvedContactUsLinks = [];
     for await (const link of [...contactUsLinks, ...contactUsLinksNjk]) {

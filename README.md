@@ -4,9 +4,9 @@ The NHS login help centre is where you can find helpful information, guidance, a
 
 ## Notes
 
-Do not change the Zendesk client ID keys in src/_data/clients.json as it would mess up zendesk reporting.
+Do not change the Zendesk client ID keys in src/data/clients.json as it would mess up zendesk reporting.
 
-If you try to test a contact form request with an error code locally with the dev server e.g. http://localhost:8080/contact?error=CID7023 
+If you try to test a contact form request with an error code locally with the dev server e.g. http://localhost:8080/contact?error=CID7023
 then if it keeps redirecting you to http://localhost:8080/contact then try accessing it through http://localhost:8080/contact/?error=CID7023.
 
 ## Setup
@@ -58,6 +58,17 @@ They require the following keys contained at the top of every article:
 - `hub`: The Hub page that the article page will appear on
 - `position`: The position on the hub page
 - `layout`: Always `layouts/article.njk`
+
+### Article NJK pages
+
+If you're creating new `.njk` article files, the following keys are required at the top of the every article:
+
+- `title`: Page title
+- `pageName`: The page name sent to analytics, same as for regular article pages
+- `type`: Always `article-njk`
+- `errorCode`: Error code sent in contact form request (only needed if you have a contact form link)
+- `errorDescription`: Error description sent in contact form request (only needed if you have a contact form link)
+- `layout`: Always `layouts/base.njk`
 
 ## Useful links
 
