@@ -60,12 +60,12 @@ module.exports = function (config) {
       }))
       .filter(({ code }) => /^CID\d{4}$/.test(code));
 
-    const resolvedContactUsLinks = [];
-    for await (const link of [...contactUsLinks, ...contactUsLinksNjk]) {
-      resolvedContactUsLinks.push(link);
-    }
-
-    return resolvedContactUsLinks.reduce((collection, links) => collection.concat(links), []);
+    const allContactUsLinks = await Promise.all([...contactUsLinks, ...contactUsLinksNjk]);
+    const flattenedLinks = allContactUsLinks.reduce(
+      (collection, links) => collection.concat(links),
+      []
+    );
+    return flattenedLinks;
   });
 
   config.setLibrary('md', markdownLibrary);
