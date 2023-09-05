@@ -66,8 +66,8 @@ If you're creating new `.njk` article files, the following keys are required at 
 - `title`: Page title
 - `pageName`: The page name sent to analytics, same as for regular article pages
 - `type`: Always `article-njk`
-- `errors`: List of objects with a `code` and `description` key. `code` is the error code sent in contact form request,
-  `description` is the error description also sent in the contact form request.
+- `errors`: Optional list of objects with a `code` and `description` key. `code` is the error code sent in contact form
+  request, `description` is the error description also sent in the request.
 - `layout`: Always `layouts/base.njk`
 
 ## Useful links

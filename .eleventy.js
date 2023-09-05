@@ -53,7 +53,7 @@ module.exports = function (config) {
       .map(article => getContactUsLinks(article));
 
     const contactUsLinksNjk = allCollections
-      .filter(isArticleNjk)
+      .filter(post => isArticleNjk(post) && !!post.data.errors)
       .map(({ data }) =>
         data.errors
           .filter(({ code }) => /^CID\d{4}$/.test(code))
