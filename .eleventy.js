@@ -1,6 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const { isArticle, addArticleData, getContactUsLinks } = require('./lib/article');
+const { addArticleData, isArticle, isArticleNjk, getContactUsLinks } = require('./lib/article');
 const { isHub, addHubData, addHubToCollection } = require('./lib/hub');
 const { addBreadcrumbs } = require('./lib/breadcrumbs');
 const { collectionToKeyedObject } = require('./lib/utils');
@@ -47,20 +47,26 @@ module.exports = function (config) {
   });
 
   config.addCollection('contactUsLinks', async collections => {
-    const contactUsLinks = collections
-      .getAll()
+    const allCollections = collections.getAll();
+    const contactUsLinks = allCollections
       .filter(isArticle)
-      .map(article => getContactUsLinks(article))
+      .map(article => getContactUsLinks(article));
 
-    const resolvedContactUsLinks = [];
+    const contactUsLinksNjk = allCollections
+      .filter(post => isArticleNjk(post) && !!post.data.errors)
+      .map(({ data }) =>
+        data.errors
+          .filter(({ code }) => /^CID\d{4}$/.test(code))
+          .map(({ code, description }) => ({ description: description || 'UNKNOWN', code }))
+      );
 
-    for await (let link of contactUsLinks) {
-      resolvedContactUsLinks.push(link);
-    }
-    return resolvedContactUsLinks
-      .reduce((collection, links) => collection.concat(links), [])
+    const allContactUsLinks = await Promise.all([...contactUsLinks, ...contactUsLinksNjk]);
+    const flattenedLinks = allContactUsLinks.reduce(
+      (collection, links) => collection.concat(links),
+      []
+    );
+    return flattenedLinks;
   });
-
 
   config.setLibrary('md', markdownLibrary);
 

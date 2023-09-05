@@ -3,6 +3,10 @@ layout: layouts/base.njk
 title: There is already an NHS account linked to the NHS number
 pageName: more-than-one-account
 excludeFromSearch: true
+type: article-njk
+errors:
+  - code: CID1111
+    description: There is already an NHS account linked to the NHS number
 ---
 {% include "header.njk" %}
 <div class="nhsuk-width-container ">
@@ -71,7 +75,7 @@ excludeFromSearch: true
                         </div>
                     </details>
 
-                    <p><a href="/contact?error=CID1111">Contact us</a> if you need further help.</p>
+                    <p><a href="/contact?error={{ errors[0].code }}">Contact us</a> if you need further help.</p>
                 </div>
             </div>
         </div>
