@@ -54,11 +54,11 @@ module.exports = function (config) {
 
     const contactUsLinksNjk = allCollections
       .filter(isArticleNjk)
-      .map(({ data }) => ({
-        description: data.errorDescription || 'UNKNOWN',
-        code: data.errorCode,
-      }))
-      .filter(({ code }) => /^CID\d{4}$/.test(code));
+      .map(({ data }) =>
+        data.errors
+          .filter(({ code }) => /^CID\d{4}$/.test(code))
+          .map(({ code, description }) => ({ description: description || 'UNKNOWN', code }))
+      );
 
     const allContactUsLinks = await Promise.all([...contactUsLinks, ...contactUsLinksNjk]);
     const flattenedLinks = allContactUsLinks.reduce(
