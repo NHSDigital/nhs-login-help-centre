@@ -20,7 +20,7 @@ The 3 registration details are:
 
 You can use these 3 registration details to prove who you are instead of using photo ID.
 
-This is not the same as the username and password you use to log into your GP surgery’s online services.
+This is not the same as email address and password you use to log into your GP surgery's online services.
 
 Find out how you can <a href="/provewhoyouare/withid">use photo ID to prove who you are</a> instead.
 
