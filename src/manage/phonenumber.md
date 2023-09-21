@@ -33,7 +33,7 @@ It will also help if you can tell us about a recent time when you have tried to 
 To do this you can:
 
 1. visit a website or app that uses NHS login
-2. enter your username and password
+2. enter your email address and password
 3. press continue
 4. note the date and time
 
