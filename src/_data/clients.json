@@ -65,6 +65,7 @@
     "visit_patient_pack": "Patient Pack",
     "patient_portal": "Patient Portal",
     "patient_triage": "Patient Triage",
+    "patient_initiated_request_to_move_hospital_system": "Patient initiated request to move hospital system",
     "visit_patients_know_best": "Patients Know Best",
     "pharmacy_website_and_bewell_app_service": "Pharmacy Website and BeWell App Service",
     "pharmacyx": "PharmacyX",
@@ -90,7 +91,6 @@
     "visba_care": "Visiba Care",
     "wales_vaccine_booking_service": "Wales Vaccine Booking Service",
     "visit_web-gp": "Web-GP",
-    "zesty_patient_portal": "Zesty Patient Portal",
-    "patient_initiated_request_to_move_hospital_system": "Patient initiated request to move hospital system"
+    "zesty_patient_portal": "Zesty Patient Portal"
   }
 }
