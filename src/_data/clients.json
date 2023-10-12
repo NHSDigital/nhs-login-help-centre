@@ -1,6 +1,7 @@
 {
   "clients": {
     "accurx_patient_portal": "Accurx Patient Portal",
+    "add_or_correct_your_contact_details": "Add or correct your contact details",
     "visit_airmid": "Airmid",
     "alder_hey__nywhere": "Alder Hey @nywhere",
     "visit_amity": "Amity",
@@ -62,6 +63,7 @@
     "patchs": "PATCHS",
     "patient_access": "Patient Access",
     "patient_hub": "Patient Hub",
+    "patient_initiated_request_to_move_hospital_system": "Patient initiated request to move hospital system",
     "visit_patient_pack": "Patient Pack",
     "patient_portal": "Patient Portal",
     "patient_triage": "Patient Triage",
@@ -76,7 +78,6 @@
     "register_with_a_gp_surgery": "Register with a GP Surgery",
     "remcare": "REMCARE",
     "remora2": "Remora2",
-    "reverification": "reverification",
     "rosi_and_me_care_planning_service": "ROSI and Me Care Planning Service",
     "sapphire_clinics": "Sapphire Clinics",
     "stsft_meditech_patient_portal": "STSFT MEDITECH Patient Portal",
