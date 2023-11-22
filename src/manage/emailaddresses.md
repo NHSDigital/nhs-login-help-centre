@@ -4,7 +4,7 @@ subtitle: How to change your NHS login email address.
 pageName: manage:email-addresses
 type: article
 hub: manage
-position: 2
+position: 3
 layout: layouts/article.njk
 ---
 

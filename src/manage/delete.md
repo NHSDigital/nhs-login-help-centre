@@ -4,7 +4,7 @@ subtitle: How to delete NHS login and manage it from other services.
 pageName: manage:delete
 type: article
 hub: manage
-position: 6
+position: 7
 layout: layouts/article.njk
 ---
 
