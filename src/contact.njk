@@ -9,8 +9,7 @@ excludeFromSearch: true
     <main class="nhsuk-main-wrapper " id="maincontent" role="main">
         <div class="nhsuk-grid-row">
             <form id="contact-us-form" class="nhsuk-grid-column-two-thirds nhs-help-centre__form">
-                <h2 class="nhsuk-app-contact-panel__heading">Contact us</h2>
-            
+                <h1 class="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
                 <div class="nhsuk-error-summary nhsuk-error-summary--hidden" aria-labelledby="error-summary-title"
                     role="alert" tabindex="-1">
                     <h2 class="nhsuk-error-summary__title">
@@ -20,48 +19,28 @@ excludeFromSearch: true
                         <ul class="nhsuk-list nhsuk-error-summary__list"></ul>
                     </div>
                 </div>
-
-                <p>Use this form to get help or advice for a problem or issue with NHS login. The NHS login team cannot
-                    help with medical problems.
-                </p>
-
-                <details class="nhsuk-details">
-                    <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="-1">
-                        <span class="nhsuk-details__summary-text">
-                            What to do if you need medical help
-                        </span>
-                    </summary>
-                    <div class="nhsuk-details__text" id="nhsuk-details__text0">
-                        <span class="nhsuk-u-visually-hidden">Urgent advice: </span>
-                        <p>If you think it's a life-threatening emergency:</p>
-                        <ul>
-                            <li>
-                                <a href="tel: 999">call 999</a>
-                            </li>
-                        </ul>
-                        <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
-                        <p>If you do not think it's an emergency:</p>
-                        <ul>
-                            <li><a href="tel:111">call 111</a> or go to <a href="https://111.nhs.uk">111 online</a></li>
-                            <li>speak to a <a href="https://www.nhs.uk/service-search">pharmacist, GP or dentist</a>
-                            </li>
-                            <li>search the <a href="https://www.nhs.uk/conditions/"> NHS website health A-Z</a> for more
-                                advice about your condition</li>
-                        </ul>
-                    </div>
-                </details>
-
+                <div class="nhsuk-inset-text">
+                    <h2 class="nhsuk-heading-m">We cannot help with medical problems</h2>
+                    <p>This form is only for help using NHS login</p>
+                    <p class="nhsuk-body">
+                        If you need medical help, go to 
+                        <a href="https://www.nhs.uk/contact-us/get-medical-help/">111.nhs.uk</a>
+                        or call 111 or your GP.
+                    </p>
+                    <p class="nhsuk-body">Call 999 if it's a life-threatening emergency.</p>
+                </div>
+                {# Name input field #}
                 <div class="nhsuk-form-group" id="name-form-control">
-                    <label class="nhsuk-label" for="name">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="name">
                         Full name
                     </label>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                     <input class="nhsuk-input nhsuk-u-width-one-half nhs-help-centre__form-control-input" id="name"
                         name="name" type="text">
                 </div>
-
+                {# Email input field #}
                 <div class="nhsuk-form-group" id="email-form-control">
-                    <label class="nhsuk-label" for="email">
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="email">
                         Email address
                     </label>
                     <span class="nhsuk-hint">
@@ -71,35 +50,96 @@ excludeFromSearch: true
                     <input class="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input" id="email"
                         name="email" type="text">
                 </div>
-
-                <div class="nhsuk-form-group" id="client-form-control">
-                    <label class="nhsuk-label" for="client">
-                        Select the website or app you are having a problem with
-                    </label>
-                    <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
-                    <select class="nhsuk-select nhs-help-centre__form-control-input" id="client" name="client">
-                        <option selected value="">Select an option</option>
-                        <option value="visit_i_am_not_trying_to_visit_a_website_or_app">I am not trying to visit a website or app</option>
-                        {%- for value, name in clients.clients -%}
-                        <option value="{{value}}">{{name}}</option>
-                        {%- endfor -%}
-                        <option value="visit_the_website_or_app_i_am_trying_to_visit_is_not_on_the_list">
-                            The website or app I am trying to visit is not on this list
-                        </option>
-                    </select>
+                {# Client selection field #}
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
+                            Select the website or app you are trying to visit
+                        </legend>
+                        <div class="nhsuk-radios nhsuk-radios--conditional">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="visitNHS" name="visit" type="radio" value="visit_nhs_app">
+                                <label class="nhsuk-label nhsuk-radios__label" for="visitNHS">NHS App</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="visitPatientAccess" name="visit" type="radio" value="patient_access">
+                                <label class="nhsuk-label nhsuk-radios__label" for="visitPatientAccess">Patient Access</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="visitNHSPrescription" name="visit" type="radio" value="nhs_repeat_prescription_app">
+                                <label class="nhsuk-label nhsuk-radios__label" for="visitNHSPrescription">NHS Repeat Prescription App</label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="visitOther" name="visit" type="radio" value="other" required="">
+                                <label class="nhsuk-label nhsuk-radios__label" for="visitOther">Other</label>
+                            </div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="clientsList">
+                                <div class="nhsuk-form-group">
+                                    <select class="nhsuk-select nhsuk-u-width-two-thirds" id="client" name="client">
+                                        <option selected value="">Select an option</option>
+                                        {%- for value, name in clients.clients -%}
+                                        <option value="{{value}}">{{name}}</option>
+                                        {%- endfor -%}
+                                        <option value="visit_the_website_or_app_i_am_trying_to_visit_is_not_on_the_list">The website or app I am trying to visit is not on this list</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
+                {# Message selection field #}
+                <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset">
+                        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
+                            Select the problem you are having
+                        </legend>
+                        <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+                        <div class="nhsuk-radios">
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="dupeAccount" name="message" type="radio" value="dupe_account">
+                                <label class="nhsuk-label nhsuk-radios__label" for="dupeAccount">
+                                    There is already an account linked to my details
+                                </label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="gpConnectionIssue" name="message" type="radio" value="gp_connection_issue">
+                                <label class="nhsuk-label nhsuk-radios__label" for="gpConnectionIssue">
+                                    There is an issue connecting to my GP
+                                </label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="changeEmail" name="message" type="radio" value="change_email">
+                                <label class="nhsuk-label nhsuk-radios__label" for="changeEmail">
+                                    I  need to change the email address linked to my NHS login account
+                                </label>
+                            </div>
+                            <div class="nhsuk-radios__item">
+                                <input class="nhsuk-radios__input" id="notSure" name="message" type="radio" value="not_sure" required="">
+                                <label class="nhsuk-label nhsuk-radios__label" for="notSure">
+                                    Something else
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                {# Message description field #}
                 <div class="nhsuk-form-group" id="message-form-control">
-                    <label class="nhsuk-label" for="message">
-                        Describe the problem
-                    </label>
-                    <span class="nhsuk-hint">
-                        Do not include personal or medical information like your NHS number or medical history.
-                    </span>
+                    <label class="nhsuk-label nhsuk-u-font-weight-bold" for="message-detail">Describe the problem in more detail</label>
+                    <span class="nhsuk-hint">Do not include personal or medical information like your NHS number or medical history.</span>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
-                    <textarea class="nhsuk-textarea nhs-help-centre__form-control-input" id="message" name="message"
-                        rows="6" aria-describedby="message-hint"></textarea>
+                    <textarea class="nhsuk-textarea nhsuk-js-character-count" id="message-detail" name="message-detail" rows="6" aria-describedby="message-detail-hint" maxlength="1500"></textarea>
+                    <div class="nhsuk-hint nhsuk-character-count__message" id="message-detail-count">You have <span id="remaining-characters">1500</span> characters remaining</div>
                 </div>
-                <button class="nhsuk-button submit-button">
+                {# Privacy Policy #}
+                <div class="nhsuk-u-margin-bottom-6 nhsuk-form-group">
+                    <label class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Privacy policy agreement</label>
+                    <p class="nhsuk-body">We will collect and save your information securely.</p>
+                    <p class="nhsuk-body">
+                        By sending this message you confirm that you agree to our <a href="https://access.login.nhs.uk/privacy">privacy notice</a> and
+                        <a href="https://access.login.nhs.uk/terms-and-conditions">terms and conditions</a>.
+                    </p>
+                </div>
+                <button class="nhsuk-button submit-button" id="submit-button">
                     Send message
                 </button>
             </form>

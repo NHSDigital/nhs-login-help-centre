@@ -4,9 +4,76 @@
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
   const MISSING_MESSAGE_ERROR = 'Enter your message';
-  const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit';
+  const MAXIMUM_CHARACTERS = 1500;
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
+  });
+  const SELECTED_MESSAGES_MAPPING = {
+    dupe_account : "There is already an account linked to my details. ",
+    gp_connection_issue : "There is an issue connecting to my GP. ",
+    change_email: "I need to change the email address linked to my NHS login account. ",
+    not_sure: ""
+  };
+
+  const visitNHSAppRadioButton = document.getElementById('visitNHS');
+  const visitPatientAccessRadioButton = document.getElementById('visitPatientAccess');
+  const visitNHSPrescriptionRadioButton = document.getElementById('visitNHSPrescription');
+  const visitOtherRadioButton = document.getElementById('visitOther');
+  const clientListDropdown = document.getElementById('clientsList');
+  const client = document.getElementById('client');
+  const dupeAccountRadioButton = document.getElementById('dupeAccount');
+  const gpConnectionIssueRadioButton = document.getElementById('gpConnectionIssue');
+  const changeEmailRadioButton = document.getElementById('changeEmail');
+  const notSureRadioButton = document.getElementById('notSure');
+  var clientName = "";
+  var selectedMessage = "";
+
+  visitNHSAppRadioButton.addEventListener('change', function(){
+    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
+    clientName = visitNHSAppRadioButton.value;
+  });
+
+  visitPatientAccessRadioButton.addEventListener('change', function(){
+    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
+    clientName = visitPatientAccessRadioButton.value;
+  });
+
+  visitNHSPrescriptionRadioButton.addEventListener('change', function(){
+    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
+    clientName = visitNHSPrescriptionRadioButton.value;
+  });
+
+  visitOtherRadioButton.addEventListener('change', function(){
+    clientListDropdown.classList.remove("nhsuk-radios__conditional--hidden");
+    client.setAttribute("required", "")
+  });
+
+  client.addEventListener('change', function(){
+    clientName = client.value;
+  });
+
+  dupeAccountRadioButton.addEventListener('change', function(){
+    selectedMessage = SELECTED_MESSAGES_MAPPING[dupeAccountRadioButton.value];
+  });
+
+  gpConnectionIssueRadioButton.addEventListener('change', function(){
+    selectedMessage = SELECTED_MESSAGES_MAPPING[gpConnectionIssueRadioButton.value];
+  });
+
+  changeEmailRadioButton.addEventListener('change', function(){
+    selectedMessage = SELECTED_MESSAGES_MAPPING[changeEmailRadioButton.value];
+  });
+
+  notSureRadioButton.addEventListener('change', function(){
+    selectedMessage = SELECTED_MESSAGES_MAPPING[notSureRadioButton.value];
+  });
+
+  const messageLengthElement = document.getElementById('remaining-characters');
+  const messageDetailElement = document.getElementById('message-detail');
+  messageDetailElement.addEventListener('keyup', function(){
+    const typedCharacters = messageDetailElement.value.length;
+    const remainingCharacters = MAXIMUM_CHARACTERS-typedCharacters;
+    messageLengthElement.textContent = remainingCharacters > 0 ? remainingCharacters : 0;
   });
 
   const validateEmailField = Validators.combineValidators([
@@ -17,8 +84,7 @@
   FormBuilder('contact-us-form')
     .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
     .addFormControl('email-form-control', validateEmailField)
-    .addFormControl('client-form-control', Validators.hasValue('client', MISSING_CLIENT_ERROR))
-    .addFormControl('message-form-control', Validators.hasValue('message', MISSING_MESSAGE_ERROR))
+    .addFormControl('message-form-control', Validators.hasValue('message-detail', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 
   function getAccountId() {
@@ -47,11 +113,11 @@
       user_name: formData.get('name'),
       user_email: formData.get('email'),
       user_id: account_id,
-      client: formData.get('client'),
+      client: clientName,
       error_code: code,
       error_title: description,
       error_description: description,
-      message: formData.get('message'),
+      message: formData.get('message-detail'),
       browser: navigator.userAgent,
     };
 
