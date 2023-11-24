@@ -31,21 +31,24 @@
   visitNHSAppRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitNHSAppRadioButton.value;
+    client.removeAttribute("required");
   });
 
   visitPatientAccessRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitPatientAccessRadioButton.value;
+    client.removeAttribute("required");
   });
 
   visitNHSPrescriptionRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitNHSPrescriptionRadioButton.value;
+    client.removeAttribute("required");
   });
 
   visitOtherRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.remove("nhsuk-radios__conditional--hidden");
-    client.setAttribute("required", "")
+    client.setAttribute("required", "");
   });
 
   client.addEventListener('change', function(){
@@ -117,7 +120,7 @@
       error_code: code,
       error_title: description,
       error_description: description,
-      message: formData.get('message-detail'),
+      message: selectedMessage+formData.get('message-detail'),
       browser: navigator.userAgent,
     };
 
