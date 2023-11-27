@@ -17,56 +17,37 @@
     not_sure: ""
   };
 
-  const visitNHSAppRadioButton = document.getElementById('visitNHS');
-  const visitPatientAccessRadioButton = document.getElementById('visitPatientAccess');
-  const visitNHSPrescriptionRadioButton = document.getElementById('visitNHSPrescription');
-  const visitOtherRadioButton = document.getElementById('visitOther');
-  const clientListDropdown = document.getElementById('clientsList');
-  const client = document.getElementById('client');
-  const dupeAccountRadioButton = document.getElementById('dupeAccount');
-  const gpConnectionIssueRadioButton = document.getElementById('gpConnectionIssue');
-  const changeEmailRadioButton = document.getElementById('changeEmail');
-  const notSureRadioButton = document.getElementById('notSure');
+  const commonClients = document.getElementById('common-clients');
+  const commonProblems = document.getElementById('common-problems');
+  const clientLisElement = document.getElementById('clients-list');
+  const clientDropdown = document.getElementById('client');
   var clientName = "";
   var selectedCommonIssue = "";
 
-  visitNHSAppRadioButton.addEventListener('change', function(){
-    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
-    clientName = visitNHSAppRadioButton.value;
+  commonClients.addEventListener('change', function() {
+    const commonClientsList = document.getElementsByName('visit');
+
+    commonClientsList.forEach((client) => {
+      if(client.checked && client.value === 'other')
+        clientLisElement.classList.remove("nhsuk-radios__conditional--hidden");
+      else if (client.checked){
+        clientLisElement.classList.add("nhsuk-radios__conditional--hidden");
+        clientName = client.value;
+      }
+    });
   });
 
-  visitPatientAccessRadioButton.addEventListener('change', function(){
-    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
-    clientName = visitPatientAccessRadioButton.value;
+  clientDropdown.addEventListener('change', function(){
+    clientName = clientDropdown.value;
   });
 
-  visitNHSPrescriptionRadioButton.addEventListener('change', function(){
-    clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
-    clientName = visitNHSPrescriptionRadioButton.value;
-  });
+  commonProblems.addEventListener('change', function(){
+    const commonProblemsList = document.getElementsByName('problem');
 
-  visitOtherRadioButton.addEventListener('change', function(){
-    clientListDropdown.classList.remove("nhsuk-radios__conditional--hidden");
-  });
-
-  client.addEventListener('change', function(){
-    clientName = client.value;
-  });
-
-  dupeAccountRadioButton.addEventListener('change', function(){
-    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[dupeAccountRadioButton.value];
-  });
-
-  gpConnectionIssueRadioButton.addEventListener('change', function(){
-    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[gpConnectionIssueRadioButton.value];
-  });
-
-  changeEmailRadioButton.addEventListener('change', function(){
-    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[changeEmailRadioButton.value];
-  });
-
-  notSureRadioButton.addEventListener('change', function(){
-    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[notSureRadioButton.value];
+    commonProblemsList.forEach((problem) => {
+      if(problem.checked)
+        selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[problem.value];
+    });
   });
 
   const messageLengthElement = document.getElementById('remaining-characters');
@@ -86,7 +67,7 @@
     .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
     .addFormControl('email-form-control', validateEmailField)
     .addFormControl('client-form-control', Validators.validateClient('visit', MISSING_CLIENT_ERROR))
-    .addFormControl('problem-form-control', Validators.isOptionSelected('message', MISSING_PROBLEM_ERROR))
+    .addFormControl('problem-form-control', Validators.isOptionSelected('problem', MISSING_PROBLEM_ERROR))
     .addFormControl('message-form-control', Validators.hasValue('message-detail', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 
