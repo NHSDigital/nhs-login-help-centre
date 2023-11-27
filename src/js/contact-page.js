@@ -3,7 +3,9 @@
   const MISSING_NAME_ERROR = 'Enter your full name';
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
-  const MISSING_MESSAGE_ERROR = 'Enter your message';
+  const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit';
+  const MISSING_PROBLEM_ERROR = 'Select your problem';
+  const MISSING_MESSAGE_ERROR = 'Describe your problem in more detail';
   const MAXIMUM_CHARACTERS = 1500;
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
@@ -31,24 +33,20 @@
   visitNHSAppRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitNHSAppRadioButton.value;
-    client.removeAttribute("required");
   });
 
   visitPatientAccessRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitPatientAccessRadioButton.value;
-    client.removeAttribute("required");
   });
 
   visitNHSPrescriptionRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
     clientName = visitNHSPrescriptionRadioButton.value;
-    client.removeAttribute("required");
   });
 
   visitOtherRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.remove("nhsuk-radios__conditional--hidden");
-    client.setAttribute("required", "");
   });
 
   client.addEventListener('change', function(){
@@ -87,6 +85,8 @@
   FormBuilder('contact-us-form')
     .addFormControl('name-form-control', Validators.hasValue('name', MISSING_NAME_ERROR))
     .addFormControl('email-form-control', validateEmailField)
+    .addFormControl('client-form-control', Validators.validateClient('visit', MISSING_CLIENT_ERROR))
+    .addFormControl('problem-form-control', Validators.isOptionSelected('message', MISSING_PROBLEM_ERROR))
     .addFormControl('message-form-control', Validators.hasValue('message-detail', MISSING_MESSAGE_ERROR))
     .addSuccessHandler(onSubmit);
 

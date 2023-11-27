@@ -42,32 +42,33 @@ excludeFromSearch: true
                         Email address
                     </label>
                     <span class="nhsuk-hint">
-                        This should be the email address you use for NHS login
+                        This should be the email address you use for NHS login.
                     </span>
                     <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                     <input class="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input" id="email"
                         name="email" type="text">
                 </div>
-                <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group" id="client-form-control">
                     <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
                             Select the website or app you are trying to visit
                         </legend>
+                        <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                         <div class="nhsuk-radios nhsuk-radios--conditional">
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="visitNHS" name="visit" type="radio" value="visit_nhs_app">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="visitNHS" name="visit" type="radio" value="visit_nhs_app">
                                 <label class="nhsuk-label nhsuk-radios__label" for="visitNHS">NHS App</label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="visitPatientAccess" name="visit" type="radio" value="patient_access">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="visitPatientAccess" name="visit" type="radio" value="patient_access">
                                 <label class="nhsuk-label nhsuk-radios__label" for="visitPatientAccess">Patient Access</label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="visitNHSPrescription" name="visit" type="radio" value="nhs_repeat_prescription_app">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="visitNHSPrescription" name="visit" type="radio" value="nhs_repeat_prescription_app">
                                 <label class="nhsuk-label nhsuk-radios__label" for="visitNHSPrescription">NHS Repeat Prescription App</label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="visitOther" name="visit" type="radio" value="other" required="">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="visitOther" name="visit" type="radio" value="other">
                                 <label class="nhsuk-label nhsuk-radios__label" for="visitOther">Other</label>
                             </div>
                             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="clientsList">
@@ -84,7 +85,7 @@ excludeFromSearch: true
                         </div>
                     </fieldset>
                 </div>
-                <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group" id="problem-form-control">
                     <fieldset class="nhsuk-fieldset">
                         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
                             Select the problem you are having
@@ -92,25 +93,25 @@ excludeFromSearch: true
                         <span class="nhsuk-error-message nhs-help-centre__form-control-error"></span>
                         <div class="nhsuk-radios">
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="dupeAccount" name="message" type="radio" value="dupe_account">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="dupeAccount" name="message" type="radio" value="dupe_account">
                                 <label class="nhsuk-label nhsuk-radios__label" for="dupeAccount">
                                     There is already an account linked to my details
                                 </label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="gpConnectionIssue" name="message" type="radio" value="gp_connection_issue">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="gpConnectionIssue" name="message" type="radio" value="gp_connection_issue">
                                 <label class="nhsuk-label nhsuk-radios__label" for="gpConnectionIssue">
                                     There is an issue connecting to my GP
                                 </label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="changeEmail" name="message" type="radio" value="change_email">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="changeEmail" name="message" type="radio" value="change_email">
                                 <label class="nhsuk-label nhsuk-radios__label" for="changeEmail">
                                     I  need to change the email address linked to my NHS login account
                                 </label>
                             </div>
                             <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="notSure" name="message" type="radio" value="not_sure" required="">
+                                <input class="nhsuk-radios__input nhs-help-centre__form-control-input" id="notSure" name="message" type="radio" value="not_sure">
                                 <label class="nhsuk-label nhsuk-radios__label" for="notSure">
                                     Something else
                                 </label>
