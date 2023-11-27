@@ -8,7 +8,7 @@
   const REQUEST_HEADERS = new Headers({
     'Content-type': 'application/json',
   });
-  const SELECTED_MESSAGES_MAPPING = {
+  const SELECTED_COMMON_ISSUE_MAPPING = {
     dupe_account : "There is already an account linked to my details. ",
     gp_connection_issue : "There is an issue connecting to my GP. ",
     change_email: "I need to change the email address linked to my NHS login account. ",
@@ -26,7 +26,7 @@
   const changeEmailRadioButton = document.getElementById('changeEmail');
   const notSureRadioButton = document.getElementById('notSure');
   var clientName = "";
-  var selectedMessage = "";
+  var selectedCommonIssue = "";
 
   visitNHSAppRadioButton.addEventListener('change', function(){
     clientListDropdown.classList.add("nhsuk-radios__conditional--hidden");
@@ -56,19 +56,19 @@
   });
 
   dupeAccountRadioButton.addEventListener('change', function(){
-    selectedMessage = SELECTED_MESSAGES_MAPPING[dupeAccountRadioButton.value];
+    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[dupeAccountRadioButton.value];
   });
 
   gpConnectionIssueRadioButton.addEventListener('change', function(){
-    selectedMessage = SELECTED_MESSAGES_MAPPING[gpConnectionIssueRadioButton.value];
+    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[gpConnectionIssueRadioButton.value];
   });
 
   changeEmailRadioButton.addEventListener('change', function(){
-    selectedMessage = SELECTED_MESSAGES_MAPPING[changeEmailRadioButton.value];
+    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[changeEmailRadioButton.value];
   });
 
   notSureRadioButton.addEventListener('change', function(){
-    selectedMessage = SELECTED_MESSAGES_MAPPING[notSureRadioButton.value];
+    selectedCommonIssue = SELECTED_COMMON_ISSUE_MAPPING[notSureRadioButton.value];
   });
 
   const messageLengthElement = document.getElementById('remaining-characters');
@@ -120,7 +120,7 @@
       error_code: code,
       error_title: description,
       error_description: description,
-      message: selectedMessage+formData.get('message-detail'),
+      message: selectedCommonIssue+formData.get('message-detail'),
       browser: navigator.userAgent,
     };
 
