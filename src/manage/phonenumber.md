@@ -8,6 +8,20 @@ position: 3
 layout: layouts/article.njk
 ---
 
+## How to add a mobile phone number
+
+You can use your mobile phone number to receive security codes when logging in.
+
+To add a mobile phone number:
+
+1. Log in to [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
+2. Select **Login and security settings.**
+3. Select **Two-step verification.**
+4. Select **Add a mobile phone number.**
+5. Follow the on-screen instructions to confirm your mobile phone number.
+
+---
+
 ## How to change your mobile phone number
 
 You can change your phone number by visiting your [NHS login settings](https://settings.login.nhs.uk/ 'NHS login settings'). Under the heading ‘your personal information’ select ‘change phone number’.

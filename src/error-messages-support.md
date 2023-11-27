@@ -41,28 +41,6 @@ If it has been longer than 2 working days you can [contact us](/contact?error=CI
 
 ---
 
-## CID3002: The link to cancel the update to your phone number has expired
-
-The link to cancel the update to your phone number expires 24 hours after we email it to you.
-
-We may have already updated the phone number you use to log in. In this case you would have received a confirmation email.
-
-You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
-
-[Contact us](/contact?error=CID3002 'Contact us') if you did not mean to change your phone number, or you do not have access to it.
-
----
-
-## CID3003: The link to cancel the update to your phone number has already been used
-
-The link to cancel the update to your phone number will not work if you have already used it and cancelled the update.
-
-You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
-
-[Contact us](/contact?error=CID3003 'Contact us') us if you did not mean to change your phone number, or you do not have access to it.
-
----
-
 ## CID7023: Unable to connect to your GP surgery’s system
 
 If reference CID7023 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection. If this happens to you, there are a number of possible reasons why.
