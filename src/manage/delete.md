@@ -18,7 +18,7 @@ Contact the providers of the website or app you are using if you cannot find a w
 
 ---
 
-## How to delete NHS login
+## How to delete your NHS login
 
 ### NHS login settings
 
@@ -40,3 +40,17 @@ You can delete your NHS login from your NHS account.
 Once you delete your NHS login, you will not be able to use it to access any websites or apps. If you are trying to delete your account with one website or app in particular, you should contact the provider directly. You may then still use your NHS login to access other websites and apps.
 
 If you delete your NHS login, any websites or apps you have used with NHS login may keep some information about you in line with their terms and conditions and privacy notice. We may also keep some information about you in line with [NHS login's privacy notice](https://access.login.nhs.uk/privacy "NHS login's privacy notice").
+
+---
+
+## Your NHS login has been closed
+
+We may have closed your NHS login account because you have not used it for over 2 years.
+
+We sent you an email to confirm we have closed your NHS login account.
+
+This will not affect your medical records and you can still create a new NHS login account.
+
+[Find out what to do if you want to set up a new NHS login account](/setupnhslogin/#how-to-set-up-an-nhs-login "How to set up an NHS login").
+
+Read more about how we store your personal information on our [data retention policy](https://access.login.nhs.uk/privacy#how-store-personal-info "data retention policy").
