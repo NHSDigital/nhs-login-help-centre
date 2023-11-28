@@ -56,7 +56,7 @@ module.exports = function (config) {
       .filter(post => isArticleNjk(post) && !!post.data.errors)
       .map(({ data }) =>
         data.errors
-          .filter(({ code }) => /^CID\d{4}$/.test(code))
+          .filter(({ code }) => /^CID\d{4,5}$/.test(code))
           .map(({ code, description }) => ({ description: description || 'UNKNOWN', code }))
       );
 
