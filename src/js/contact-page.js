@@ -1,5 +1,5 @@
-(function() {
-  const errorCodeRegex = /^CID\d{4}$/;
+(function () {
+  const errorCodeRegex = /^CID\d{4,5}$/;
   const MISSING_NAME_ERROR = 'Enter your full name';
   const MISSING_EMAIL_ERROR = 'Enter your email address';
   const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
@@ -66,7 +66,7 @@
     document.querySelector('.submit-button').classList.add('nhsuk-button--disabled');
     sendSupportEmail(formData)
       .then(res => {
-        if(res.ok) {
+        if (res.ok) {
           window.location.replace('/contact-sent');
         } else {
           window.location.assign('/contact-error');
