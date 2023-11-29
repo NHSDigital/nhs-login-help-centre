@@ -15,8 +15,8 @@ To change the mobile phone number you use to receive security codes:
 1. Log in to [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
 2. Select **Login and security settings.**
 3. Select **Two-step verification.**
-4. Select **change** for mobile phone number.
-5. Follow the on-screen instructions to confirm your new movile phone number.
+4. Select **Change** for mobile phone number.
+5. Follow the on-screen instructions to confirm your new mobile phone number.
 
 ---
 
@@ -38,7 +38,7 @@ When you are asked to enter your security code to log in:
 
 4. Follow the on-screen instructions to change your mobile phone number.
 
-[Contact us](/contact?error=CID3001 'Contact us') if you need help accessing your account.
+[Contact us](/contact?error=CID3001 'Contact us') if you still need help accessing your account.
 
 ---
 
@@ -50,7 +50,7 @@ To cancel the update to your mobile phone number, you must select the confirmati
 
 The link expires 24 hours after we email it to you.
 
-We may have already updated the phone number you use to log in. In this case you would have received a confirmation email.
+We may have already updated the mobile phone number you use to log in. In this case you would have received a confirmation email.
 
 You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
 
