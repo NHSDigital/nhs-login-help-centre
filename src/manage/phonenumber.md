@@ -10,7 +10,7 @@ layout: layouts/article.njk
 
 ## How to change your mobile phone number
 
-To change the mobile phone nmber you use to recieve security codes:
+To change the mobile phone number you use to receive security codes:
 
 1. Log in to [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
 2. Select **Login and security settings.**
@@ -22,7 +22,7 @@ To change the mobile phone nmber you use to recieve security codes:
 
 ## If you lose access to your mobile phone number
 
-You no longer have access to the phone number and cannot log in another way, you can recover access to your account.
+If you have lost access to your mobile phone number and cannot log in another way, you can recover access to your account.
 
 When you are asked to enter your security code to log in:
 
