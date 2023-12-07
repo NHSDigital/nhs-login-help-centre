@@ -23,6 +23,7 @@ To change the mobile phone number you use to receive security codes:
 ## If you lose access to your mobile phone number
 
 If you have lost access to your mobile phone number and cannot log in another way, you can recover access to your account.
+
 When you are asked to enter your security code to log in:
 <ol>
 <li>
