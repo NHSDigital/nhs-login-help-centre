@@ -10,7 +10,7 @@ layout: layouts/article.njk
 
 ## Your NHS login details and NHS contact details
 
-When you create an NHS login account, the [phone number](/manage/phonenumber 'phone number') and [email address](/manage/emailaddresses 'email address')
+When you create an NHS login account, the [mobile phone number](/manage/mobile-phone 'phone number') and [email address](/manage/emailaddresses 'email address')
 you use are only stored on this account. These are your NHS login details.
 You use them to log in to your NHS account and other healthcare apps and websites.
 
