@@ -4,7 +4,7 @@ subtitle: How to add or remove remembered devices from your NHS login.
 pageName: manage:devices
 type: article
 hub: manage
-position: 5
+position: 6
 layout: layouts/article.njk
 ---
 

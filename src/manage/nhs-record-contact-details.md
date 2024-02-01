@@ -4,7 +4,7 @@ subtitle: How to update your NHS record with your NHS login phone number and ema
 pageName: manage:nhs-record-contact-details
 type: article
 hub: manage
-position: 7
+position: 8
 layout: layouts/article.njk
 ---
 
