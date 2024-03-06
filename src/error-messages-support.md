@@ -9,6 +9,103 @@ position: 5
 layout: layouts/article.njk
 ---
 
+## There is already an account linked to my details
+
+If you try to create an account and get a message that it already exists, it may be because there is already:
+
+- an account with the email address you tried to use
+- an account linked to the NHS number you entered, but with a different email address
+
+You can try signing in with the email linked to this account.
+
+If you cannot remember the email you used, check all your email accounts for an email from: noreply@login.nhs.uk.
+
+If you have forgotten your password, you can reset it:
+
+1. Visit NHS login settings and log in using the email address you used to create the account.
+2. Select **Reset your password**.
+3. We will send you an email with a link to reset your password.
+4. Select the link in the email to enter and confirm your new password.
+
+For security reasons, we are unable to disclose any information about an account.
+
+If you want to change the email address you use to sign into NHS login:
+
+1. Visit NHS login settings and log in using the email address and password you used to create the account.
+2. Select **Login and security settings**.
+3. Select **Change email address**.
+4. Enter your new email address.
+
+If you want to delete your existing account:
+
+1. Visit NHS login settings and log in using the email address and password you used to create the account.
+2. Select **Login and security settings**.
+3. Select **Delete my NHS account**.
+
+This will only delete your online NHS account and will not affect your medical records.
+
+[Contact us](/contact 'Contact us') if you need further help.
+
+---
+
+## There is an issue connecting to my GP
+
+### Unable to connect to your GP surgery’s system - Reference CID7023
+
+If you see reference CID7023, the website or app you are trying to visit cannot connect to your GP surgery’s system. If this happens to you, there are some possible reasons why.
+
+#### You have already set up an NHS login
+
+We have already used your details to connect you to the website or app you were trying to visit. This can happen if you already have an NHS login with a different email address. We can only connect one NHS login to your GP surgery’s system.
+
+You can change the email address on your NHS login in your **Login and security settings**.
+
+#### We have the wrong details for you
+
+The details we use to make the connection are wrong.
+
+This can happen if:
+
+- you have changed GP surgery
+- your GP surgery has changed systems
+- you no longer have permission to use your GP surgery’s online services
+
+If your GP surgery is in England, you can ask your GP for new registration details for their online services.
+
+[Contact us](/contact?error=CID7023 'Contact us') if you need help or if you still have problems.
+
+### We cannot connect your NHS login to your GP surgery - Reference CID7029
+
+If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details or with your GP surgery's system.
+
+[Contact us](/contact?error=CID7029 'Contact us') so we can find out what is causing the problem. You will need to tell us the email address you use for your NHS login.
+
+---
+
+## I have not received an email with a security code
+
+### I did not get the confirmation email
+
+If you did not receive the confirmation email we sent you, check your spam or junk folders. Also, make sure that you entered the correct email address.
+
+### If you are using Gmail (Google mail)
+
+Make sure emails get to your inbox by adding the email address noreply@login.nhs.uk to your contact list.
+
+You can also read this page on [problems sending and receiving emails in Gmail](https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU).
+
+### If you are using Outlook, Hotmail, or Live
+
+Add the email address noreply@login.nhs.uk to your 'Safe Senders' list.
+
+Changes to 'Safe Senders' can take 24 hours to update. You should then receive the confirmation email within the next 24 hours.
+
+You can also read this page on [problems sending and receiving emails in Outlook](https://support.microsoft.com/en-us/office/can-t-send-or-receive-email-in-outlook-com-d39e3341-8d79-4bf1-b3c7-ded602233642?ui=en-us&rs=en-us&ad=us).
+
+If you still have any problems getting emails from us, ask your email provider for help.
+
+---
+
 ## CID2011: There may be a problem with your NHS number
 
 Every time you log in to a website or app using your NHS login, we check your NHS number. This allows us to connect you to your information securely.
@@ -60,41 +157,5 @@ The link to cancel the update to your phone number will not work if you have alr
 You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
 
 [Contact us](/contact?error=CID3003 'Contact us') us if you did not mean to change your phone number, or you do not have access to it.
-
----
-
-## CID7023: Unable to connect to your GP surgery’s system
-
-If reference CID7023 is shown, this means the website or app you are trying to visit needs to connect to your GP surgery’s system and we have not been able to make that connection. If this happens to you, there are a number of possible reasons why.
-
-### You have already set up an NHS login
-
-The details we use to make the connection have already been used to connect you to the website or app you were trying to visit.
-
-This can happen if you already have an NHS login with a different email address. We may have connected that NHS login to your GP surgery’s system. We can only connect one NHS login to your GP surgery’s system.
-
-If you want to change the email address on your NHS login you can do so in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
-
-### The details we use are invalid
-
-The details we use to make the connection are invalid.
-
-This can happen if:
-
-- you have changed GP surgery
-- your GP surgery has changed systems
-- you no longer have permission to use your GP surgery’s online services
-
-If your GP surgery is in England, you can ask your GP for new registration details for their online services.
-
-[Contact us](/contact?error=CID7023 'Contact us') if you need help or if you still have problems.
-
----
-
-## CID7029: We cannot connect your NHS login to your GP surgery
-
-If you see reference CID7029, this means we cannot connect your NHS login to your GP surgery. There could be a problem with your details, or with your GP surgery's system.
-
-[Contact us](/contact?error=CID7029 'Contact us') so we can find out what is causing the problem. You will need to tell us the email address you use for your NHS login.
 
 ---
