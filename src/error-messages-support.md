@@ -74,7 +74,7 @@ If you cannot remember the email you used, check all your email accounts for an 
   </div>
 </details>
 
-[Contact us](/contact 'Contact us') if you need further help.
+[Contact us](/contact?error=CID1111 'Contact us') if you need further help.
 
 ---
 
