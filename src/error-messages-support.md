@@ -20,29 +20,59 @@ You can try signing in with the email linked to this account.
 
 If you cannot remember the email you used, check all your email accounts for an email from: noreply@login.nhs.uk.
 
-If you have forgotten your password, you can reset it:
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Forgotten your password?
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>If you have forgotten your password, you can reset it:</p>
+    <ol>
+      <li>Visit NHS login settings and log in using the email address you used to create the account.</li>
+      <li>Select <strong>Reset your password</strong>.</li>
+      <li>We will send you an email with a link to reset your password.</li>
+      <li>Select the link in the email to enter and confirm your new password.</li>
+    </ol>
+    <p>For security reasons, we are unable to disclose any information about an account.</p>
+  </div>
+</details>
 
-1. Visit NHS login settings and log in using the email address you used to create the account.
-2. Select **Reset your password**.
-3. We will send you an email with a link to reset your password.
-4. Select the link in the email to enter and confirm your new password.
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Change the email address you use to sign into NHS login
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>If you want to change the email address you use to sign into NHS login:</p>
+    <ol>
+      <li>Visit NHS login settings and log in using the email address and password you used to create the account.</li>
+      <li>Select <strong>Login and security settings</strong>.</li>
+      <li>Select <strong>Change email address</strong>.</li>
+      <li>Enter your new email address.</li>
+    </ol>
+  </div>
+</details>
 
-For security reasons, we are unable to disclose any information about an account.
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Delete your existing account
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>If you want to delete your existing account:</p>
+    <ol>
+      <li>Visit NHS login settings and log in using the email address and password you used to create the account.</li>
+      <li>Select <strong>Login and security settings</strong>.</li>
+      <li>Select <strong>Delete my NHS account</strong>.</li>
+    </ol>
 
-If you want to change the email address you use to sign into NHS login:
+    <p>This will only delete your online NHS account and will not affect your medical records.</p>
 
-1. Visit NHS login settings and log in using the email address and password you used to create the account.
-2. Select **Login and security settings**.
-3. Select **Change email address**.
-4. Enter your new email address.
-
-If you want to delete your existing account:
-
-1. Visit NHS login settings and log in using the email address and password you used to create the account.
-2. Select **Login and security settings**.
-3. Select **Delete my NHS account**.
-
-This will only delete your online NHS account and will not affect your medical records.
+  </div>
+</details>
 
 [Contact us](/contact 'Contact us') if you need further help.
 
@@ -54,23 +84,42 @@ This will only delete your online NHS account and will not affect your medical r
 
 If you see reference CID7023, the website or app you are trying to visit cannot connect to your GP surgery’s system. If this happens to you, there are some possible reasons why.
 
-#### You have already set up an NHS login
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      You have already set up an NHS login
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
 
-We have already used your details to connect you to the website or app you were trying to visit. This can happen if you already have an NHS login with a different email address. We can only connect one NHS login to your GP surgery’s system.
+    We have already used your details to connect you to the website or app you were trying to visit. This can happen if you already have an NHS login with a different email address.
 
-You can change the email address on your NHS login in your **Login and security settings**.
+    We can only connect one NHS login to your GP surgery’s system.
 
-#### We have the wrong details for you
+    You can change the email address on your NHS login in your **Login and security settings**.
 
-The details we use to make the connection are wrong.
+  </div>
+</details>
 
-This can happen if:
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      We have the wrong details for you
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
 
-- you have changed GP surgery
-- your GP surgery has changed systems
-- you no longer have permission to use your GP surgery’s online services
+    The details we use to make the connection are wrong.
 
-If your GP surgery is in England, you can ask your GP for new registration details for their online services.
+    This can happen if:
+    - you have changed GP surgery
+    - your GP surgery has changed systems
+    - you no longer have permission to use your GP surgery’s online services
+
+    If your GP surgery is in England, you can ask your GP for new registration details for their online services.
+
+  </div>
+</details>
 
 [Contact us](/contact?error=CID7023 'Contact us') if you need help or if you still have problems.
 
@@ -84,23 +133,41 @@ If you see reference CID7029, this means we cannot connect your NHS login to you
 
 ## I have not received an email with a security code
 
-### I did not get the confirmation email
-
 If you did not receive the confirmation email we sent you, check your spam or junk folders. Also, make sure that you entered the correct email address.
 
-### If you are using Gmail (Google mail)
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you are using Gmail (Google mail)
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
 
-Make sure emails get to your inbox by adding the email address noreply@login.nhs.uk to your contact list.
+    Make sure emails get to your inbox by adding the email address noreply@login.nhs.uk to your contact list.
 
-You can also read this page on [problems sending and receiving emails in Gmail](https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU).
+    You can also read this page on [problems sending and receiving emails in Gmail](https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU).
 
-### If you are using Outlook, Hotmail, or Live
+    This will only delete your online NHS account and will not affect your medical records.
 
-Add the email address noreply@login.nhs.uk to your 'Safe Senders' list.
+  </div>
+</details>
 
-Changes to 'Safe Senders' can take 24 hours to update. You should then receive the confirmation email within the next 24 hours.
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you are using Outlook, Hotmail, or Live
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
 
-You can also read this page on [problems sending and receiving emails in Outlook](https://support.microsoft.com/en-us/office/can-t-send-or-receive-email-in-outlook-com-d39e3341-8d79-4bf1-b3c7-ded602233642?ui=en-us&rs=en-us&ad=us).
+    Add the email address noreply@login.nhs.uk to your 'Safe Senders' list.
+
+    Changes to 'Safe Senders' can take 24 hours to update. You should then receive the confirmation email within the next 24 hours.
+
+    You can also read this page on [problems sending and receiving emails in Outlook](https://support.microsoft.com/en-us/office/can-t-send-or-receive-email-in-outlook-com-d39e3341-8d79-4bf1-b3c7-ded602233642?ui=en-us&rs=en-us&ad=us).
+
+  </div>
+</details>
 
 If you still have any problems getting emails from us, ask your email provider for help.
 
