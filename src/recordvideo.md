@@ -1,5 +1,5 @@
 ---
-title: How to record and upload a video
+title: Record and upload a video
 short_title: Record a video
 subtitle: Steps on how to record and upload a video that can be used to prove who you are.
 pageName: record-video
