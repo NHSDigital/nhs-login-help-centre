@@ -41,10 +41,10 @@ To access your health records or any personal information you will also need to 
 This can be a:
 
 - passport
-- UK driving license (full or provisional)
+- UK driving licence (full or provisional)
 - Biometric Residence Permit (BRP)
 - UK Residence Card, or EEA Biometric Residence Card (BRC) (including temporary pass)
-- European driving license (full)
+- European driving licence (full)
 - European national identity card
 
 If you cannot provide a valid photo ID, you can use your registration details from your GP surgery.
