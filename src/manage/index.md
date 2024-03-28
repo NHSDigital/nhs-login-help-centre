@@ -1,7 +1,7 @@
 ---
-title: How to manage NHS login
+title: Manage NHS login details
 short_title: Manage
-subtitle: Learn how to manage, edit and delete your NHS login.
+subtitle: Learn how to manage, edit and delete your NHS login details.
 pageName: manage
 name: manage
 type: hub

@@ -1,0 +1,434 @@
+    /* ==========================================================================
+         COMPONENTS / #CARD
+         ========================================================================== */
+    /**
+       * 1. Is needed for the :active top positioning, and invisible clickable overlay.
+       * 2. Border is used to create a divider between the white content
+       *    box and an image.
+       * 3. Creates the 'pressed down' effect when clicked.
+       * 4. Removes padding-top from headings directly after the card group.
+       * 5. Includes the border width to achieve the correct left alignment.
+       * 6. Stops the heading from spanning the full width of the card.
+       * 7. Removes padding top for the feature heading positioning.
+       * 8. Default care card colour set to blue (non-urgent care card) -
+       *    using the @mixin care-card tools/_mixins.scss.
+       *    The same mixin is used for each care card, setting the background
+       *    colour,text colour and print border width with the variables.
+       * 9. 'Random number' for the heading triangle.
+       * 10. 'Random number' for the heading triangle positioning.
+       * 11. 'Random number' used for spacing to compensate for the triangle.
+       * 12. Needed to enable the triangle to show correctly in high contrast mode.
+       * 13. Prevent additional padding on headings
+       * 14. Give the action link icon sufficient contrast when used in the emergency variant
+       * 15. Reset the positioning to the default [1] to display heading triangle on a coloured background.
+       * 16. Emergency care card <a> needs to be white because the background colour is black.
+       * 17. Trick IE10 into rendering the invisible clickable area. Without this it does not.
+       */
+    .nhsuk-card {
+        margin-bottom: 40px;
+        background: #ffffff;
+        border: 1px solid #d8dde0;
+        position: relative;
+        /* [1] */
+        width: 100%;
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card {
+            margin-bottom: 48px;
+        }
+    }
+
+    .nhsuk-card__img {
+        border-bottom: 1px solid #f0f4f5;
+        /* [2] */
+        display: block;
+        width: 100%;
+    }
+
+    @media print {
+        .nhsuk-card__img {
+            display: none;
+        }
+    }
+
+    .nhsuk-card__content {
+        padding: 24px;
+    }
+
+    .nhsuk-card__content>*:first-child {
+        margin-top: 0;
+    }
+
+    .nhsuk-card__content>*:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card__content {
+            padding: 32px;
+        }
+    }
+
+    .nhsuk-card__heading,
+    .nhsuk-card__metadata,
+    .nhsuk-card__description {
+        margin-bottom: 16px;
+    }
+
+    /* Clickable card
+        ========================================================================== */
+    .nhsuk-card--clickable {
+        border-bottom-width: 4px;
+    }
+
+    .nhsuk-card--clickable .nhsuk-card__heading a::before,
+    .nhsuk-card--clickable .nhsuk-card__link::before {
+        background-color: rgba(255, 255, 255, 0);
+        /* [17] */
+        bottom: 0;
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .nhsuk-card--clickable:active {
+        border-color: #aeb7bd;
+        bottom: -1px;
+        /* [3] */
+    }
+
+    /* Card group
+        ========================================================================== */
+    /**
+      * Card group allows you to have a row of cards.
+      *
+      * Flexbox is used to make each card in a row the same height.
+      */
+    .nhsuk-card-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+        padding: 0;
+    }
+
+    @media (max-width: 48.0525em) {
+        .nhsuk-card-group {
+            margin-bottom: 40px;
+        }
+    }
+
+    .nhsuk-card-group+h2,
+    .nhsuk-card-group+.nhsuk-heading-l,
+    .nhsuk-card-group+h3,
+    .nhsuk-card-group+.nhsuk-heading-m {
+        padding-top: 0;
+        /* [4] */
+    }
+
+    .nhsuk-card-group__item {
+        display: flex;
+        list-style-type: none;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 48.0525em) {
+        .nhsuk-card-group__item {
+            flex: 0 0 100%;
+        }
+    }
+
+    .nhsuk-card-group__item .nhsuk-card {
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: 48.0525em) {
+        .nhsuk-card-group__item .nhsuk-card {
+            margin-bottom: 16px;
+        }
+
+        .nhsuk-card-group__item:last-child .nhsuk-card {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Card feature
+        ========================================================================== */
+    .nhsuk-card--feature {
+        margin-top: 40px;
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--feature {
+            margin-top: 48px;
+        }
+    }
+
+    .nhsuk-card__heading--feature {
+        background: #005eb8;
+        color: #ffffff;
+        display: inline-block;
+        left: -25px;
+        /* [5] */
+        margin-bottom: 8px;
+        margin-right: -24px;
+        /* [6] */
+        padding: 8px 24px;
+        position: relative;
+        top: -8px;
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card__heading--feature {
+            left: -33px;
+            /* [5] */
+            margin-right: -32px;
+            /* [6] */
+            padding: 8px 32px;
+            top: -16px;
+        }
+    }
+
+    .nhsuk-card__content--feature {
+        padding-top: 0 !important;
+        /* stylelint-disable-line declaration-no-important */
+        /* [7] */
+    }
+
+    /* Care card
+        ========================================================================== */
+    .nhsuk-card--care {
+        margin-top: 40px;
+        /* [8] */
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--care {
+            margin-top: 48px;
+        }
+    }
+
+    .nhsuk-card--care .nhsuk-card--care__heading-container {
+        background-color: #005eb8;
+        color: #ffffff;
+    }
+
+    @media print {
+        .nhsuk-card--care {
+            border: 4px solid #212b32;
+            color: #212b32;
+            page-break-inside: avoid;
+        }
+    }
+
+    .nhsuk-card--care__heading-container {
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 16px;
+        padding-top: 16px;
+        position: relative;
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--care__heading-container {
+            padding-left: 32px;
+        }
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--care__heading-container {
+            padding-right: 32px;
+        }
+    }
+
+    .nhsuk-card--care__heading {
+        font-weight: 600;
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin: 0;
+        padding-top: 0;
+        /* [13] */
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--care__heading {
+            font-size: 24px;
+            font-size: 1.5rem;
+            line-height: 1.33333;
+        }
+    }
+
+    @media print {
+        .nhsuk-card--care__heading {
+            font-size: 18pt;
+            line-height: 1.15;
+        }
+    }
+
+    @media print {
+        .nhsuk-card--care__heading {
+            color: #212b32;
+            fill: #212b32;
+        }
+
+        .nhsuk-card--care__heading:active,
+        .nhsuk-card--care__heading:focus,
+        .nhsuk-card--care__heading:visited {
+            color: #212b32;
+        }
+    }
+
+    .nhsuk-card--care__arrow {
+        bottom: -10px;
+        /* [9] */
+        display: block;
+        height: 20px;
+        /* [9] */
+        left: 30px;
+        /* [10] */
+        overflow: hidden;
+        position: absolute;
+        transform: rotate(45deg);
+        width: 20px;
+        /* [9] */
+    }
+
+    @media print {
+        .nhsuk-card--care__arrow {
+            display: none;
+        }
+    }
+
+    @media (min-width: 40.0625em) {
+        .nhsuk-card--care__arrow {
+            left: 38px;
+            /* [10] */
+        }
+    }
+
+    .nhsuk-card--care__arrow:before,
+    .nhsuk-card--care__arrow:after {
+        border: solid 32px #005eb8;
+        /* [9] */
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        top: 0;
+        transform: rotate(45deg);
+        /* [12] */
+        width: 0;
+    }
+
+    .nhsuk-card--care--urgent .nhsuk-card--care__heading-container {
+        background-color: #d5281b;
+        color: #ffffff;
+    }
+
+    @media print {
+        .nhsuk-card--care--urgent {
+            border: 6px solid #212b32;
+            color: #212b32;
+            page-break-inside: avoid;
+        }
+    }
+
+    .nhsuk-card--care--urgent .nhsuk-card--care__arrow:before,
+    .nhsuk-card--care--urgent .nhsuk-card--care__arrow:after {
+        border-color: #d5281b;
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-card--care__heading-container {
+        background-color: #d5281b;
+        color: #ffffff;
+    }
+
+    @media print {
+        .nhsuk-card--care--emergency {
+            border: 8px solid #212b32;
+            color: #212b32;
+            page-break-inside: avoid;
+        }
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-card--care__arrow:before,
+    .nhsuk-card--care--emergency .nhsuk-card--care__arrow:after {
+        border-color: #d5281b;
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-card__content {
+        background-color: #212b32;
+        border: 0;
+        color: #ffffff;
+        position: static;
+        /* [15] */
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-card__content a {
+        color: #ffffff;
+        /* [16] */
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-card__content a:focus {
+        color: #212b32;
+        /* [16] */
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-details,
+    .nhsuk-card--care--emergency .nhsuk-details__summary {
+        color: #ffffff;
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-details__summary:hover {
+        color: #ffffff;
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-details__summary:focus {
+        color: #212b32;
+    }
+
+    .nhsuk-card--care--emergency .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
+        fill: #ffffff;
+        /* [14] */
+    }
+
+    /* Card primary
+        ========================================================================== */
+    .nhsuk-card__content--primary {
+        padding-right: 75px;
+    }
+
+    @media (min-width: 48.0625em) {
+        .nhsuk-card__content--primary {
+            height: 100%;
+        }
+    }
+
+    .nhsuk-card__content--primary .nhsuk-icon {
+        display: block;
+        fill: #005eb8;
+        margin-top: -nhsuk-spacing(2);
+        position: absolute;
+        right: 24px;
+        top: 50%;
+    }
+
+    /* Card secondary
+        ========================================================================== */
+    .nhsuk-card--secondary {
+        background: transparent;
+        border-bottom: 4px solid #d8dde0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+    }
+
+    .nhsuk-card__content--secondary {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+    }
