@@ -11,9 +11,9 @@ const Fuse = require('fuse.js');
 /* Markdown Overrides */
 const markdownLibrary = markdownIt({
   html: true,
-  breaks: true
+  breaks: true,
 }).use(markdownItAnchor, {
-  permalink: false
+  permalink: false,
 });
 
 module.exports = function (config) {
@@ -24,16 +24,14 @@ module.exports = function (config) {
   config.addPassthroughCopy('./src/js');
 
   config.addCollection('articles', async function (collections) {
-    const articles = collections
-      .getAll()
-      .filter(isArticle)
-      .map(article => addArticleData(article))
+    const allPages = collections.getAll();
+    const articles = allPages.filter(isArticle).map(article => addArticleData(article));
 
     // resolve headings - article.template.inputContent is a Promise in eleventy v2
-    articles.forEach(async x => x.headings = await x.headings)
+    articles.forEach(async x => (x.headings = await x.headings));
 
     return articles
-      .map(article => addBreadcrumbs(articles, article))
+      .map(article => addBreadcrumbs(allPages, article))
       .reduce(collectionToKeyedObject, {});
   });
 
@@ -78,7 +76,7 @@ module.exports = function (config) {
   config.on('afterBuild', () => {
     let data = fs.readFileSync(outputDir + 'js/search_data.json', 'utf-8');
     let docs = JSON.parse(data);
-    const idx = Fuse.createIndex(['id', 'title', 'content'], docs)
+    const idx = Fuse.createIndex(['id', 'title', 'content'], docs);
     fs.writeFileSync(outputDir + 'js/search_index.json', JSON.stringify(idx.toJSON()));
   });
 
@@ -86,12 +84,12 @@ module.exports = function (config) {
     dir: {
       input: 'src/',
       output: '_site',
-      data: '_data/'
+      data: '_data/',
     },
     templateFormats: ['njk', 'md', '11ty.js'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
-    pathPrefix: ''
+    pathPrefix: '',
   };
 };
