@@ -28,11 +28,15 @@ We can accept an expired photo ID if it expired less than 12 months ago.
 
 You can send:
 
-- passport (except Syrian passport)
+- passport
 - UK driving licence (full or provisional)
+- UK biometric residence permit (BRP)
+- UK residence card
+- UK application registration card (ARC)
+- CitizenCard
 - European driving licence (full)
-- European national identity card (except paper Italian ID card or Greek ID card)
-- UK residence card or biometric residence permit (BRP)
+- European national identity card
+- a valid UK entry clearance visa sticker
 
 ---
 
@@ -42,18 +46,14 @@ We do not accept photo ID with any handwritten information other than a signatur
 
 You cannot send:
 
+- paper ID cards
+- UK driver qualification cards (DQC or Driver Card)
 - travel cards
 - bus passes
-- NHS ID cards
-- visa stickers
-- UK citizen ID cards
-- proof of age cards
+- NHS ID Cards
 - university or school ID cards
-- Syrian passports
-- paper Italian ID cards
-- Greek ID cards
-- UK driver qualification cards
 - an image of a printout or screen showing your photo ID
+- any other document with handwritten information
 
 ---
 
@@ -160,7 +160,7 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 
 ## How long does it take to check photo ID?
 
-After you send your photo ID and video, your photo ID will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the ID check has been successful.
+After you send your photo ID and video, we will check it and email you to let you know if the check has been successful.
 
 ---
 
