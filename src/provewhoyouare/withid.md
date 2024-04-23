@@ -160,7 +160,7 @@ Send the photo to your usual device and try uploading it again. Or, you can uplo
 
 ## How long does it take to check photo ID?
 
-After you send your photo ID and video, your photo ID will be carefully checked and should be done within 2 hours. If you send between 9pm and 9am it may take longer. We will let you know by email whether the ID check has been successful.
+After you send your photo ID and video, we will check it and email you to let you know if the check has been successful.
 
 ---
 
