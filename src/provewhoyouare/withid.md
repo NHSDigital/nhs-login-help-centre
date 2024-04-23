@@ -28,11 +28,15 @@ We can accept an expired photo ID if it expired less than 12 months ago.
 
 You can send:
 
-- passport (except Syrian passport)
+- passport
 - UK driving licence (full or provisional)
+- UK biometric residence permit (BRP)
+- UK residence card
+- UK application registration card (ARC)
+- CitizenCard
 - European driving licence (full)
-- European national identity card (except paper Italian ID card or Greek ID card)
-- UK residence card or biometric residence permit (BRP)
+- European national identity card
+- a valid UK entry clearance visa sticker
 
 ---
 
@@ -42,18 +46,14 @@ We do not accept photo ID with any handwritten information other than a signatur
 
 You cannot send:
 
+- paper ID cards
+- UK driver qualification cards (DQC or Driver Card)
 - travel cards
 - bus passes
-- NHS ID cards
-- visa stickers
-- UK citizen ID cards
-- proof of age cards
+- NHS ID Cards
 - university or school ID cards
-- Syrian passports
-- paper Italian ID cards
-- Greek ID cards
-- UK driver qualification cards
 - an image of a printout or screen showing your photo ID
+- any other document with handwritten information
 
 ---
 
