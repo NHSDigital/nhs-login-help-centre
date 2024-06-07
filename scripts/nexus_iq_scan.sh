@@ -15,3 +15,4 @@ if [[ $1 == *"codepipeline/helpcentre-live-develop"* || $1 == *"codepipeline/hel
 else
     echo "Not running Nexus IQ scan as this is not a dev or ptl build."
 fi
+
