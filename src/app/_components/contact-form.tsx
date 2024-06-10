@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 
 export default function ContactForm() {
   const [showOtherClients, setShowOtherClients] = useState(false);
+  const [characterCount, setCharacterCount] = useState(0);
   const errorCode = useSearchParams().get('error') as string;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -159,11 +160,13 @@ export default function ContactForm() {
           id="message-detail"
           name="message-detail"
           rows={6}
+          onChange={(e) => setCharacterCount(e.target.value.length)}
           aria-describedby="message-detail-hint"
           maxLength={1500}
         ></textarea>
         <div className="nhsuk-hint nhsuk-character-count__message" id="message-detail-count">
-          You have <span id="remaining-characters">1500</span> characters remaining
+          You have <span id="remaining-characters">{1500 - characterCount}</span> characters
+          remaining
         </div>
       </div>
       <div className="nhsuk-u-margin-bottom-6 nhsuk-form-group">
