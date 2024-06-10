@@ -73,7 +73,7 @@ export default function SearchResult({ searchData }: Props) {
               ))}
             </ul>
           </>
-        ) : (
+        ) : currentSearchTerm ? (
           <>
             <div className="nhsuk-grid-column-two-thirds">
               <h2>No results found for {currentSearchTerm}</h2>
@@ -85,6 +85,8 @@ export default function SearchResult({ searchData }: Props) {
               </ul>
             </div>
           </>
+        ) : (
+          <></>
         )}
       </div>
     </div>
