@@ -30,7 +30,8 @@ export default function RootLayout({
         <link rel="mask-icon" href="/images/favicons/favicon.svg" color="#005eb8" />
         <link rel="icon" sizes="192x192" href="/images/favicons/favicon-192x192.png" />
       </head>
-      <body>
+      {/* todo apply class properly */}
+      <body className="js-enabled">
         <CookieBanner></CookieBanner>
         {children}
         <Footer></Footer>
