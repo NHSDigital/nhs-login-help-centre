@@ -41,9 +41,6 @@ export default async function Article({ post }: Props) {
           </div>
         </main>
       </div>
-      {/* <script type="text/javascript">
-          window.level = {{ level }}
-      </script> */}
     </>
   );
 }
