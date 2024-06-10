@@ -26,14 +26,14 @@ export function validate({
   } else if (!EMAIL_REGEX.test(email?.trim() || '')) {
     errors.email = INVALID_EMAIL_ERROR;
   }
-  if (!hasValue(messageDetail)) {
-    errors['message-detail'] = MISSING_MESSAGE_ERROR;
+  if (!hasValue(visit) || (visit === 'other' && !hasValue(client))) {
+    errors.visit = MISSING_CLIENT_ERROR;
   }
   if (!hasValue(problem)) {
     errors.problem = MISSING_PROBLEM_ERROR;
   }
-  if (!hasValue(visit) || (visit === 'other' && !hasValue(client))) {
-    errors.visit = MISSING_CLIENT_ERROR;
+  if (!hasValue(messageDetail)) {
+    errors['message-detail'] = MISSING_MESSAGE_ERROR;
   }
   return errors;
 }

@@ -1,6 +1,6 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import { validate } from './validate';
 
 export type ContactFormValues = {
@@ -12,17 +12,28 @@ export type ContactFormValues = {
   visit?: string;
 };
 
+const formIdsForErrorSummary: ContactFormValues = {
+  visit: 'visitNHS',
+  problem: 'dupeAccount',
+};
+
 export default function ContactForm() {
   const [showOtherClients, setShowOtherClients] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
+  const errorSummaryRef = useRef<HTMLDivElement>(null);
   const errorCode = useSearchParams().get('error') as string;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
     const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
-    setErrors(validate(formJson));
+    const errors = validate(formJson);
+    setErrors(errors);
+    if (errors && Object.keys(errors).length && errorSummaryRef && errorSummaryRef.current) {
+      errorSummaryRef.current.focus();
+      errorSummaryRef.current.scrollIntoView();
+    }
   }
 
   return (
@@ -33,14 +44,26 @@ export default function ContactForm() {
     >
       <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
       <div
-        className="nhsuk-error-summary nhsuk-error-summary--hidden"
+        className={
+          'nhsuk-error-summary' +
+          (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
+        }
         aria-labelledby="error-summary-title"
         role="alert"
+        ref={errorSummaryRef}
         tabIndex={-1}
       >
         <h2 className="nhsuk-error-summary__title">There is a problem</h2>
         <div className="nhsuk-error-summary__body">
-          <ul className="nhsuk-list nhsuk-error-summary__list"></ul>
+          <ul className="nhsuk-list nhsuk-error-summary__list">
+            {Object.keys(errors).map((e) => (
+              <li key={e}>
+                <a href={'#' + (formIdsForErrorSummary[e as keyof ContactFormValues] || e)}>
+                  {errors[e as keyof ContactFormValues]}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="nhsuk-inset-text">
