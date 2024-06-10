@@ -2,6 +2,7 @@
 import { useSearchParams } from 'next/navigation';
 import { FormEvent, useRef, useState } from 'react';
 import { validate } from './validate';
+import Cookies from 'js-cookie';
 
 export type ContactFormValues = {
   client?: string;
@@ -23,16 +24,29 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
   const errorCode = useSearchParams().get('error') as string;
+  const desc = useSearchParams().get('desc') as string;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
     const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
     const errors = validate(formJson);
-    setErrors(errors);
-    if (errors && Object.keys(errors).length && errorSummaryRef && errorSummaryRef.current) {
-      errorSummaryRef.current.focus();
-      errorSummaryRef.current.scrollIntoView();
+    if (errors && Object.keys(errors).length) {
+      setErrors(errors);
+      if (errorSummaryRef && errorSummaryRef.current) {
+        errorSummaryRef.current.focus();
+        errorSummaryRef.current.scrollIntoView();
+      }
+    } else {
+      sendToApi(formJson, errorCode, desc)
+        .then((res) => {
+          if (res.ok) {
+            window.location.replace('/contact-sent');
+          } else {
+            window.location.assign('/contact-error');
+          }
+        })
+        .catch(() => window.location.assign('/contact-error'));
     }
   }
 
@@ -251,4 +265,37 @@ function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof Contact
     return 'nhsuk-form-group nhsuk-form-group--error';
   }
   return 'nhsuk-form-group';
+}
+
+function sendToApi(formData: ContactFormValues, errorCode: string, description: string) {
+  const accountId = getAccountId();
+  const body = {
+    user_name: formData.name,
+    user_email: formData.email,
+    user_id: accountId,
+    client: formData.client || formData.visit,
+    error_code: errorCode,
+    error_title: description, // todo get from contact us links?
+    error_description: description,
+    message: (formData.problem || '') + formData['message-detail'], // todo use proper problem text
+    browser: navigator.userAgent,
+  };
+
+  return fetch(process.env.API_URL + '/raise-ticket', {
+    method: 'POST',
+    headers: new Headers({
+      'Content-type': 'application/json',
+    }),
+    body: JSON.stringify(body),
+  });
+}
+
+function getAccountId() {
+  try {
+    const token = Cookies.get('id_token') || '';
+    const { account_id } = JSON.parse(atob(token.split('.')[1]));
+    return account_id;
+  } catch (e) {
+    return null;
+  }
 }
