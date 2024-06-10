@@ -1,17 +1,28 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { FormEvent, useState } from 'react';
+import { validate } from './validate';
+
+export type ContactFormValues = {
+  client?: string;
+  email?: string;
+  'message-detail'?: string;
+  name?: string;
+  problem?: string;
+  visit?: string;
+};
 
 export default function ContactForm() {
   const [showOtherClients, setShowOtherClients] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
+  const [errors, setErrors] = useState<ContactFormValues>({});
   const errorCode = useSearchParams().get('error') as string;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
-    const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
+    const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
+    setErrors(validate(formJson));
   }
 
   return (
@@ -42,11 +53,13 @@ export default function ContactForm() {
         </p>
         <p className="nhsuk-body">Call 999 if it's a life-threatening emergency.</p>
       </div>
-      <div className="nhsuk-form-group" id="name-form-control">
+      <div className={formGroupCssClasses(errors, 'name')} id="name-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="name">
           Full name
         </label>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors.name}
+        </span>
         <input
           className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
           id="name"
@@ -54,12 +67,14 @@ export default function ContactForm() {
           type="text"
         />
       </div>
-      <div className="nhsuk-form-group" id="email-form-control">
+      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
           Email address
         </label>
         <span className="nhsuk-hint">This should be the email address you use for NHS login.</span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors.email}
+        </span>
         <input
           className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
           id="email"
@@ -67,19 +82,19 @@ export default function ContactForm() {
           type="text"
         />
       </div>
-      <div className="nhsuk-form-group" id="client-form-control">
+      <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
             Select the website or app you are trying to visit
           </legend>
-          <span className="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.visit}
+          </span>
           <div
             className="nhsuk-radios nhsuk-radios--conditional"
             id="common-clients"
             onChange={(e: any) => {
-              if (e.target.name === 'visit') {
-                setShowOtherClients(e.target.value === 'other');
-              }
+              if (e.target.name === 'visit') setShowOtherClients(e.target.value === 'other');
             }}
           >
             <RadioItem inputId="visitNHS" name="visit" value="visit_nhs_app">
@@ -105,7 +120,7 @@ export default function ContactForm() {
               }
               id="clients-list"
             >
-              <div className="nhsuk-form-group">
+              <div className={formGroupCssClasses(errors, 'client')}>
                 <select
                   className="nhsuk-select nhsuk-u-width-two-thirds"
                   id="client"
@@ -125,12 +140,14 @@ export default function ContactForm() {
           </div>
         </fieldset>
       </div>
-      <div className="nhsuk-form-group" id="problem-form-control">
+      <div className={formGroupCssClasses(errors, 'problem')} id="problem-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
             Select the problem you are having
           </legend>
-          <span className="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.problem}
+          </span>
           <div className="nhsuk-radios" id="common-problems">
             <RadioItem inputId="dupeAccount" name="problem" value="dupe_account">
               There is already an account linked to my details
@@ -147,14 +164,16 @@ export default function ContactForm() {
           </div>
         </fieldset>
       </div>
-      <div className="nhsuk-form-group" id="message-form-control">
+      <div className={formGroupCssClasses(errors, 'message-detail')} id="message-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="message-detail">
           Describe the problem in more detail
         </label>
         <span className="nhsuk-hint">
           Do not include personal or medical information like your NHS number or medical history.
         </span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error"></span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors['message-detail']}
+        </span>
         <textarea
           className="nhsuk-textarea nhs-help-centre__form-control-input"
           id="message-detail"
@@ -202,4 +221,11 @@ function RadioItem({ inputId, value, name, children }: React.PropsWithChildren<R
       </label>
     </div>
   );
+}
+
+function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof ContactFormValues) {
+  if (!!errors[fieldName]) {
+    return 'nhsuk-form-group nhsuk-form-group--error';
+  }
+  return 'nhsuk-form-group';
 }
