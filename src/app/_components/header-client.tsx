@@ -44,7 +44,7 @@ export default function HeaderWithLinks({ links }: Props) {
               ></path>
               {/* <image src="https://assets.nhs.uk/images/nhs-logo.png" xlink:href=""></image> */}
             </svg>
-            <span className="nhsuk-header__service-name">NHS login help centre</span>
+            <span className="nhsuk-header__service-name">NHS login Help centre</span>
           </a>
         </div>
         <div className="nhsuk-header__content" id="content-header">
