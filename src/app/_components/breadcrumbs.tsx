@@ -1,4 +1,5 @@
 import { MarkdownDocument, getAllArticles } from '@/lib/api';
+import BackLink from './back-link';
 
 export default async function Breadcrumbs({ post }: Props) {
   if (!post.hub) {
@@ -25,9 +26,9 @@ export default async function Breadcrumbs({ post }: Props) {
 
   return (
     <nav
-      className="nhsuk-breadcrumb"
+      className="nhsuk-breadcrumb nhsuk-u-padding-bottom-8"
       aria-label="Breadcrumb"
-      style={{ backgroundColor: '#ffffff00', paddingBottom: '48px' }}
+      style={{ backgroundColor: '#ffffff00' }}
     >
       <ol className="nhsuk-breadcrumb__list">
         {breadcrumbs.map((link) => (
@@ -38,9 +39,7 @@ export default async function Breadcrumbs({ post }: Props) {
           </li>
         ))}
       </ol>
-      <p className="nhsuk-breadcrumb__back">
-        <a className="nhsuk-breadcrumb__backlink"></a>
-      </p>
+      <BackLink></BackLink>
     </nav>
   );
 }

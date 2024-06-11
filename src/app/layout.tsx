@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.scss';
-import Footer from './_components/footer';
-import CookieBanner from './_components/cookie-banner';
+import Footer from '@/app/_components/footer';
+import CookieBanner from '@/app/_components/cookie-banner';
+import ClientSideContent from '@/app/_components/client-side-content';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'NHS login Help Centre',
+  title: 'NHS login Help centre',
   description:
-    'The NHS login help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+    'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
 };
 
 export default function RootLayout({
@@ -32,6 +34,9 @@ export default function RootLayout({
       </head>
       {/* todo apply class properly */}
       <body className="js-enabled">
+        <Suspense>
+          <ClientSideContent></ClientSideContent>
+        </Suspense>
         <CookieBanner></CookieBanner>
         {children}
         <Footer></Footer>
