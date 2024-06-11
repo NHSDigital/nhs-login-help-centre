@@ -1,4 +1,11 @@
 import Header from '@/app/_components/header';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Message sent',
+  description:
+    'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+};
 
 export default async function ContactError() {
   return (
