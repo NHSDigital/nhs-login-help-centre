@@ -1,6 +1,6 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, RefObject, useRef, useState } from 'react';
 import { validate } from './validate';
 import Cookies from 'js-cookie';
 
@@ -23,6 +23,7 @@ export default function ContactForm({ clients }: Props) {
   const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
+  const problemRadioRef = useRef<HTMLDivElement>(null);
   const errorCode = useSearchParams().get('error') as string;
   const desc = useSearchParams().get('desc') as string;
 
@@ -38,7 +39,8 @@ export default function ContactForm({ clients }: Props) {
         errorSummaryRef.current.scrollIntoView();
       }
     } else {
-      sendToApi(formJson, errorCode, desc)
+      const problemText = getProblemText(problemRadioRef, formJson.problem);
+      sendToApi(formJson, errorCode, desc, problemText)
         .then((res) => {
           if (res.ok) {
             window.location.replace('/contact-sent');
@@ -166,7 +168,9 @@ export default function ContactForm({ clients }: Props) {
                 >
                   <option value="">Select an option</option>
                   {clients.map(({ zendeskId, displayName }) => (
-                    <option value={zendeskId}>{displayName}</option>
+                    <option key={zendeskId} value={zendeskId}>
+                      {displayName}
+                    </option>
                   ))}
                   <option value="visit_the_website_or_app_i_am_trying_to_visit_is_not_on_the_list">
                     The website or app I am trying to visit is not on this list
@@ -177,7 +181,11 @@ export default function ContactForm({ clients }: Props) {
           </div>
         </fieldset>
       </div>
-      <div className={formGroupCssClasses(errors, 'problem')} id="problem-form-control">
+      <div
+        className={formGroupCssClasses(errors, 'problem')}
+        id="problem-form-control"
+        ref={problemRadioRef}
+      >
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
             Select the problem you are having
@@ -264,6 +272,15 @@ function RadioItem({ inputId, value, name, children }: React.PropsWithChildren<R
   );
 }
 
+function getProblemText(ref: RefObject<HTMLDivElement>, value?: string) {
+  if (!ref.current || !value || value === 'not_sure') return '';
+
+  const selectedRadio = Array.from(ref.current.querySelectorAll('.nhsuk-radios__item')).find(
+    (radio) => radio && radio.querySelector && radio.querySelector('input')?.value === value
+  );
+  return selectedRadio ? selectedRadio.querySelector('label')?.innerText : '';
+}
+
 function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof ContactFormValues) {
   if (!!errors[fieldName]) {
     return 'nhsuk-form-group nhsuk-form-group--error';
@@ -271,17 +288,26 @@ function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof Contact
   return 'nhsuk-form-group';
 }
 
-function sendToApi(formData: ContactFormValues, errorCode: string, description: string) {
+function sendToApi(
+  formData: ContactFormValues,
+  errorCode: string,
+  description: string,
+  problemText = ''
+) {
   const accountId = getAccountId();
+  const message = problemText
+    ? `${problemText}. ${formData['message-detail']}`
+    : formData['message-detail'];
+
   const body = {
     user_name: formData.name,
     user_email: formData.email,
     user_id: accountId,
     client: formData.client || formData.visit,
     error_code: errorCode,
-    error_title: description, // todo get from contact us links?
+    error_title: description,
     error_description: description,
-    message: (formData.problem || '') + formData['message-detail'], // todo use proper problem text
+    message,
     browser: navigator.userAgent,
   };
 
