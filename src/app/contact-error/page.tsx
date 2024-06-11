@@ -1,5 +1,5 @@
 import Header from '@/app/_components/header';
-import BackLink from '@/app/_components/back-link';
+import BackLink from '@/app/_components/contact-back-link';
 
 export default async function ContactError() {
   return (
