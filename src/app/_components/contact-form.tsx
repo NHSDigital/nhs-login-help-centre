@@ -18,7 +18,7 @@ const formIdsForErrorSummary: ContactFormValues = {
   problem: 'dupeAccount',
 };
 
-export default function ContactForm() {
+export default function ContactForm({ clients }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
@@ -165,9 +165,9 @@ export default function ContactForm() {
                   name="client"
                 >
                   <option value="">Select an option</option>
-                  {/* {%- for value, name in clients.clients -%} */}
-                  {/* <option value="{{value}}">{{name}}</option> */}
-                  {/* {%- endfor -%} */}
+                  {clients.map(({ zendeskId, displayName }) => (
+                    <option value={zendeskId}>{displayName}</option>
+                  ))}
                   <option value="visit_the_website_or_app_i_am_trying_to_visit_is_not_on_the_list">
                     The website or app I am trying to visit is not on this list
                   </option>
@@ -240,6 +240,10 @@ export default function ContactForm() {
     </form>
   );
 }
+
+type Props = {
+  clients: { zendeskId: string; displayName: string }[];
+};
 
 type RadioItemProps = { inputId: string; value: string; name: string };
 
