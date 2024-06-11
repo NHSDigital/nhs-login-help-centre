@@ -27,7 +27,9 @@ export default function useHistoryStack(
     if (!stack || !isValidStack(stack)) {
       stack = [];
     }
-    if (isNotAlreadyInStack(stack, currentPage)) {
+    if (hasGoneBack(stack, currentPage)) {
+      setStack(stack.slice(0, -1));
+    } else if (isNotAlreadyInStack(stack, currentPage)) {
       setStack([...stack, currentPage]);
     } else {
       setStack(stack);
@@ -57,6 +59,11 @@ function isValidStack(stack: HistoryEntry[]) {
 function isNotAlreadyInStack(stack: HistoryEntry[], currentPage: { url: string }) {
   const [lastEntry] = stack.slice(-1);
   return !lastEntry || lastEntry.url !== currentPage.url;
+}
+
+function hasGoneBack(stack: HistoryEntry[], currentPage: { url: string }) {
+  const [secondLastEntry] = stack.slice(-2, -1);
+  return secondLastEntry && secondLastEntry.url === currentPage.url;
 }
 
 function getCurrentPage(): HistoryEntry {
