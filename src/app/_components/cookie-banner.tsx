@@ -1,10 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import useCookie, { acceptAllCookies, cookiePreferencesCookie } from '../_hooks/useCookie';
+import { CookiePreferences, acceptAllCookies } from '../_hooks/useCookie';
 
-export default function CookieBanner() {
-  const [cookiePrefs, setCookiePrefs] = useCookie(cookiePreferencesCookie);
+export default function CookieBanner({
+  cookiePrefs,
+  setCookiePrefs,
+}: {
+  cookiePrefs: CookiePreferences;
+  setCookiePrefs: (prefs: CookiePreferences) => void;
+}) {
   const [hasAccepted, setHasAccepted] = useState(false);
 
   const acceptCookies = () => {

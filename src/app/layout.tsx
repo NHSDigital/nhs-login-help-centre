@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.scss';
 import Footer from '@/app/_components/footer';
-import CookieBanner from '@/app/_components/cookie-banner';
 import ClientSideContent from '@/app/_components/client-side-content';
 import { Suspense } from 'react';
 
@@ -37,7 +36,6 @@ export default function RootLayout({
         <Suspense>
           <ClientSideContent></ClientSideContent>
         </Suspense>
-        <CookieBanner></CookieBanner>
         {children}
         <Footer></Footer>
       </body>

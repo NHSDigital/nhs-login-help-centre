@@ -2,8 +2,9 @@
 import { useSearchParams } from 'next/navigation';
 import useHistoryStack from '@/app/_hooks/useHistoryStack';
 import { useEffect } from 'react';
-import useCookie, { cookiePreferencesCookie } from '../_hooks/useCookie';
+import useCookie, { cookiePreferencesCookie } from '@/app/_hooks/useCookie';
 import Script from 'next/script';
+import CookieBanner from '@/app/_components/cookie-banner';
 
 // for local dev
 // const ADOBE_URL =
@@ -21,16 +22,20 @@ export default function ClientSideContent() {
   const returnLink = useSearchParams().get(RETURN_LINK_KEY) as string;
   useHistoryStack(returnLink ? [{ title: 'App', url: returnLink }] : undefined);
 
-  const [cookiePrefs] = useCookie(cookiePreferencesCookie);
+  const [cookiePrefs, setCookiePrefs] = useCookie(cookiePreferencesCookie);
 
   useEffect(() => {
     document.body.className = 'js-enabled';
   }, []);
 
-  if (cookiePrefs.hasAcceptedOptionalCookies) {
-    return <Script src={ADOBE_URL} strategy="lazyOnload" onLoad={onScriptLoad} />;
-  }
-  return null;
+  return (
+    <>
+      <CookieBanner cookiePrefs={cookiePrefs} setCookiePrefs={setCookiePrefs}></CookieBanner>
+      {cookiePrefs.hasAcceptedOptionalCookies ? (
+        <Script src={ADOBE_URL} strategy="lazyOnload" onLoad={onScriptLoad} />
+      ) : null}
+    </>
+  );
 }
 
 function onScriptLoad() {

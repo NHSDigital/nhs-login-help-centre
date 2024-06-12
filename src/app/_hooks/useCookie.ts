@@ -35,6 +35,7 @@ export default function useCookie<Type>({
   return [value, updateCookie];
 }
 
+export type CookiePreferences = { hasSeenBanner: boolean; hasAcceptedOptionalCookies: boolean };
 export const cookiePreferencesCookie = {
   name: 'cookiePreference',
   initialValue: { hasSeenBanner: true, hasAcceptedOptionalCookies: false },
