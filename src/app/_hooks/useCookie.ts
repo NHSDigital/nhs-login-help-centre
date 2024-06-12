@@ -20,7 +20,10 @@ export default function useCookie<Type>({
     if (cookie) {
       setValue(JSON.parse(cookie));
     } else {
-      Cookies.set(name, JSON.stringify(defaultValue), options);
+      Cookies.set(name, JSON.stringify(defaultValue), {
+        ...options,
+        domain: window.location.hostname.replace('help', ''),
+      });
       setValue(defaultValue);
     }
   }, [name, defaultValue, options]);
@@ -41,6 +44,6 @@ export const cookiePreferencesCookie = {
   name: 'cookiePreference',
   initialValue: { hasSeenBanner: true, hasAcceptedOptionalCookies: false },
   defaultValue: { hasSeenBanner: false, hasAcceptedOptionalCookies: false },
-  options: { expires: 365, domain: window.location.hostname.replace('help', '') },
+  options: { expires: 365 },
 };
 export const acceptAllCookies = { hasSeenBanner: true, hasAcceptedOptionalCookies: true };
