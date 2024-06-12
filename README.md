@@ -6,9 +6,6 @@ The NHS login help centre is where you can find helpful information, guidance, a
 
 Do not change the Zendesk client ID keys in src/\_data/clients.json as it would mess up zendesk reporting.
 
-If you try to test a contact form request with an error code locally with the dev server e.g. http://localhost:8080/contact?error=CID7023
-then if it keeps redirecting you to http://localhost:8080/contact then try accessing it through http://localhost:8080/contact/?error=CID7023.
-
 ## Setup
 
 - `npm install` to install dependencies

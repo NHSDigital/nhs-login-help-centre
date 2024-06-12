@@ -15,8 +15,13 @@ export default async function markdownToHtml(markdown: string) {
     .use(rehypeHeadings)
     .use(rehypeStringify)
     .process(markdown);
-  return { headings: vfile.data.headings, htmlString: vfile.value } as {
+  return {
+    headings: vfile.data.headings,
+    contactLinks: vfile.data.contactLinks,
+    htmlString: vfile.value,
+  } as {
     headings: Array<{ depth: number; value: string; id: string; className: string }>;
+    contactLinks: Array<{ description: string; code: string }>;
     htmlString: string;
   };
 }

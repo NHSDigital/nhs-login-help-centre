@@ -13,19 +13,21 @@ export type ContactFormValues = {
   visit?: string;
 };
 
+type ErrorDescription = { description: string; code: string };
+
 const formIdsForErrorSummary: ContactFormValues = {
   visit: 'visitNHS',
   problem: 'dupeAccount',
 };
 
-export default function ContactForm({ clients }: Props) {
+export default function ContactForm({ clients, contactLinks }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
   const problemRadioRef = useRef<HTMLDivElement>(null);
-  const errorCode = useSearchParams().get('error') as string;
-  const desc = useSearchParams().get('desc') as string;
+  const errorParam = useSearchParams().get('error') as string;
+  const descParam = useSearchParams().get('desc') as string;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,7 +42,8 @@ export default function ContactForm({ clients }: Props) {
       }
     } else {
       const problemText = getProblemText(problemRadioRef, formJson.problem);
-      sendToApi(formJson, errorCode, desc, problemText)
+      const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
+      sendToApi(formJson, errorDescription, problemText)
         .then((res) => {
           if (res.ok) {
             window.location.replace('/contact-sent');
@@ -251,6 +254,7 @@ export default function ContactForm({ clients }: Props) {
 
 type Props = {
   clients: { zendeskId: string; displayName: string }[];
+  contactLinks: ErrorDescription[];
 };
 
 type RadioItemProps = { inputId: string; value: string; name: string };
@@ -288,23 +292,35 @@ function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof Contact
   return 'nhsuk-form-group';
 }
 
+function getErrorDescription(
+  contactLinks: ErrorDescription[],
+  errorParam: string,
+  descParam: string
+): ErrorDescription {
+  const errorCodeRegex = /^CID\d{4,5}$/;
+
+  if (!errorCodeRegex.test(errorParam)) {
+    return { code: 'UNKNOWN', description: 'UNKNOWN' };
+  }
+  const matchingErrorFromLinks = contactLinks.find((x) => x.code === errorParam);
+
+  return matchingErrorFromLinks || { code: errorParam, description: descParam };
+}
+
 function sendToApi(
-  formData: ContactFormValues,
-  errorCode: string,
-  description: string,
+  { name, email, client, visit, 'message-detail': messageDetail }: ContactFormValues,
+  { code, description }: ErrorDescription,
   problemText = ''
 ) {
   const accountId = getAccountId();
-  const message = problemText
-    ? `${problemText}. ${formData['message-detail']}`
-    : formData['message-detail'];
+  const message = problemText ? `${problemText}. ${messageDetail}` : messageDetail;
 
   const body = {
-    user_name: formData.name,
-    user_email: formData.email,
+    user_name: name,
+    user_email: email,
     user_id: accountId,
-    client: formData.client || formData.visit,
-    error_code: errorCode,
+    client: client || visit,
+    error_code: code,
     error_title: description,
     error_description: description,
     message,
