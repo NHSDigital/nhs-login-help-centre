@@ -153,8 +153,7 @@ If you did not receive the confirmation email we sent you, check your spam or ju
    <p>
     You can also read this page on
     <a href="https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU">
-      problems sending and receiving emails in Gmail
-    </a>.
+      problems sending and receiving emails in Gmail</a>.
    </p>
    <p>
     This will only delete your online NHS account and will not affect your medical records.
