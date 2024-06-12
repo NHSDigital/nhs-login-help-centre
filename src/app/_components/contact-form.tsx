@@ -22,6 +22,7 @@ const formIdsForErrorSummary: ContactFormValues = {
 
 export default function ContactForm({ clients, contactLinks }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
+  const [isSubmitted, setSubmitted] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
@@ -43,6 +44,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
     } else {
       const problemText = getProblemText(problemRadioRef, formJson.problem);
       const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
+      setSubmitted(true);
       sendToApi(formJson, errorDescription, problemText)
         .then((res) => {
           if (res.ok) {
@@ -245,7 +247,10 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           <a href="https://access.login.nhs.uk/terms-and-conditions">terms and conditions</a>.
         </p>
       </div>
-      <button className="nhsuk-button submit-button" id="submit-button">
+      <button
+        className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
+        id="submit-button"
+      >
         Send message
       </button>
     </form>

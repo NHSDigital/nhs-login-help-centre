@@ -3,6 +3,8 @@ import Header from '@/app/_components/header';
 import { Suspense } from 'react';
 import clientsJson from '@/_data/clients.json';
 import { Metadata } from 'next';
+import { getAllArticles } from '@/lib/api';
+import markdownToHtml from '@/lib/markdownToHtml';
 
 const clients = clientsJson.clients;
 type ClientsList = typeof clients;
@@ -15,10 +17,19 @@ export const metadata: Metadata = {
 };
 
 export default async function Contact() {
+  const contactLinks = (
+    await Promise.all(
+      getAllArticles()
+        .filter((f) => f.type === 'article')
+        .map((file) => markdownToHtml(file.markdownContent).then((article) => article.contactLinks))
+    )
+  ).flat();
+
   const clientsArray = Object.keys(clients).map((zendeskId) => ({
     zendeskId,
     displayName: clients[zendeskId as keyof ClientsList],
   }));
+
   return (
     <>
       <Header></Header>
@@ -26,7 +37,7 @@ export default async function Contact() {
         <main className="nhsuk-main-wrapper" role="main">
           <div className="nhsuk-grid-row">
             <Suspense>
-              <ContactForm clients={clientsArray}></ContactForm>
+              <ContactForm clients={clientsArray} contactLinks={contactLinks}></ContactForm>
             </Suspense>
           </div>
         </main>
