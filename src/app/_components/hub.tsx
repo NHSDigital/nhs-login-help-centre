@@ -22,7 +22,7 @@ export default async function Hub({ hub, articles }: Props) {
                       key={article.title}
                     >
                       <div className="nhsuk-promo nhsuk-u-margin-bottom-5">
-                        <a className="nhsuk-promo__link-wrapper" href={article.slug}>
+                        <a className="nhsuk-promo__link-wrapper" href={'/' + article.slug}>
                           <div className="nhsuk-promo__content">
                             <h2 className="nhsuk-promo__heading">{article.title}</h2>
                             <p className="nhsuk-promo__description">{article.subtitle}</p>
