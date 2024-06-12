@@ -2,12 +2,17 @@
 import { useState, useCallback, useEffect } from 'react';
 import Cookies from 'js-cookie';
 
-export default function useCookie<Type>(
-  name: string,
-  initialValue: Type,
-  defaultValue: Type,
-  options: Cookies.CookieAttributes
-): [Type, (newValue: Type) => void] {
+export default function useCookie<Type>({
+  name,
+  initialValue,
+  defaultValue,
+  options,
+}: {
+  name: string;
+  initialValue: Type;
+  defaultValue: Type;
+  options: Cookies.CookieAttributes;
+}): [Type, (newValue: Type) => void] {
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
@@ -29,3 +34,11 @@ export default function useCookie<Type>(
 
   return [value, updateCookie];
 }
+
+export const cookiePreferencesCookie = {
+  name: 'cookiePreference',
+  initialValue: { hasSeenBanner: true, hasAcceptedOptionalCookies: false },
+  defaultValue: { hasSeenBanner: false, hasAcceptedOptionalCookies: false },
+  options: { expires: 365 },
+};
+export const acceptAllCookies = { hasSeenBanner: true, hasAcceptedOptionalCookies: true };

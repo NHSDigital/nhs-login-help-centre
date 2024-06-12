@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'NHS login Help centre',
   description:
     'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+  other: { pageName: 'home' },
 };
 
 export default function RootLayout({

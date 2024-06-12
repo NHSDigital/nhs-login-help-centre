@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Unable to send message',
   description:
     'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+  other: { pageName: 'contact-us:error' },
 };
 
 export default async function ContactError() {

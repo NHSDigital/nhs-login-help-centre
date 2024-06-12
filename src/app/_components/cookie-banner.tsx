@@ -1,27 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import useCookie from '../_hooks/useCookie';
-
-const COOKIE_NAME = 'cookiePreference';
-const INITIAL_COOKIE_PREFERENCES = { hasSeenBanner: true, hasAcceptedOptionalCookies: false };
-const DEFAULT_COOKIE_PREFERENCES = { hasSeenBanner: false, hasAcceptedOptionalCookies: false };
-const ACCEPT_ALL_COOKIE_PREFERENCES = { hasSeenBanner: true, hasAcceptedOptionalCookies: true };
-const COOKIE_ATTRIBUTES = { expires: 365 };
+import useCookie, { acceptAllCookies, cookiePreferencesCookie } from '../_hooks/useCookie';
 
 export default function CookieBanner() {
-  const [cookiePrefs, setCookiePrefs] = useCookie(
-    COOKIE_NAME,
-    INITIAL_COOKIE_PREFERENCES,
-    DEFAULT_COOKIE_PREFERENCES,
-    COOKIE_ATTRIBUTES
-  );
+  const [cookiePrefs, setCookiePrefs] = useCookie(cookiePreferencesCookie);
   const [hasAccepted, setHasAccepted] = useState(false);
 
   const acceptCookies = () => {
-    setCookiePrefs(ACCEPT_ALL_COOKIE_PREFERENCES);
+    setCookiePrefs(acceptAllCookies);
     setHasAccepted(true);
-    // analytics start
   };
 
   const chooseCookies = () => {

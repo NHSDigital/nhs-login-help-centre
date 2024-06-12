@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getAllArticles, getAllHubs, getContentOrIndex } from '@/lib/api';
 import Hub from '@/app/_components/hub';
 import Article from '../_components/article';
+import { Metadata } from 'next';
 
 export default async function Page({ params }: Params) {
   const post = getContentOrIndex(params.hub);
@@ -21,7 +22,7 @@ type Params = {
   };
 };
 
-export function generateMetadata({ params }: Params) {
+export function generateMetadata({ params }: Params): Metadata {
   const post = getContentOrIndex(params.hub);
 
   if (!post) {
@@ -30,6 +31,9 @@ export function generateMetadata({ params }: Params) {
 
   return {
     title: post.title || 'NHS login Help centre',
+    description:
+      'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+    other: { pageName: post.pageName },
   };
 }
 

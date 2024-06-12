@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Search',
   description:
     'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+  other: { pageName: 'search' },
 };
 
 export default async function Search() {

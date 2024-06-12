@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Contact us',
   description:
     'The NHS login Help centre is where you can find helpful information, guidance, and support for issues with NHS login.',
+  other: { pageName: 'contact-us' },
 };
 
 export default async function Contact() {
