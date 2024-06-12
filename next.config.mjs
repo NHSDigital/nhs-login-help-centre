@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   distDir: '_site',
+  trailingSlash: true,
   env: {
     API_URL: process.env.EMAIL_API_URL
       ? process.env.EMAIL_API_URL.replace('/send-email', '')

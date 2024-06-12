@@ -12,8 +12,9 @@ then if it keeps redirecting you to http://localhost:8080/contact then try acces
 ## Setup
 
 - `npm install` to install dependencies
-- `npm run dev` to run locally at `localhost:3000`
+- `npm run dev` to run locally with hot reloading at `localhost:3000`
 - `npm run build` to build
+- `npx serve ./_site` to run as static site after build (need to globally install serve package from npm)
 
 ## Deployment
 
