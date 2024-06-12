@@ -2,6 +2,17 @@
 import { useState, useCallback, useEffect } from 'react';
 import Cookies from 'js-cookie';
 
+var cookies = Cookies.withConverter({
+  write: (value: any) => encodeURIComponent(JSON.stringify(value)),
+  read: (value: string) => {
+    try {
+      return JSON.parse(decodeURIComponent(value));
+    } catch {
+      return null;
+    }
+  },
+});
+
 export default function useCookie<Type>({
   name,
   initialValue,
@@ -16,18 +27,18 @@ export default function useCookie<Type>({
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
-    const cookie = Cookies.get(name);
-    if (cookie && unstringified(cookie)) {
-      setValue(unstringified(cookie));
+    const cookie = cookies.get(name);
+    if (cookie) {
+      setValue(cookie);
     } else {
-      Cookies.set(name, stringified(defaultValue), optionsWithDomain(options));
+      cookies.set(name, defaultValue, optionsWithDomain(options));
       setValue(defaultValue);
     }
   }, [name, defaultValue, options]);
 
   const updateCookie = useCallback(
     (newValue: Type) => {
-      Cookies.set(name, stringified(newValue), optionsWithDomain(options));
+      cookies.set(name, newValue, optionsWithDomain(options));
       setValue(newValue);
     },
     [name, options]
@@ -49,12 +60,3 @@ const optionsWithDomain = (options: Cookies.CookieAttributes) => ({
   ...options,
   domain: window.location.hostname.replace('help', ''),
 });
-
-const stringified = (value: any) => encodeURIComponent(JSON.stringify(value));
-function unstringified(value: string) {
-  try {
-    return JSON.parse(decodeURIComponent(value));
-  } catch {
-    return null;
-  }
-}
