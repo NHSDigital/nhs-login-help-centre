@@ -41,6 +41,6 @@ export const cookiePreferencesCookie = {
   name: 'cookiePreference',
   initialValue: { hasSeenBanner: true, hasAcceptedOptionalCookies: false },
   defaultValue: { hasSeenBanner: false, hasAcceptedOptionalCookies: false },
-  options: { expires: 365 },
+  options: { expires: 365, domain: window.location.hostname.replace('help', '') },
 };
 export const acceptAllCookies = { hasSeenBanner: true, hasAcceptedOptionalCookies: true };
