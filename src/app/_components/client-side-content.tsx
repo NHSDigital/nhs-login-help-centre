@@ -31,9 +31,9 @@ export default function ClientSideContent() {
   return (
     <>
       <CookieBanner cookiePrefs={cookiePrefs} setCookiePrefs={setCookiePrefs}></CookieBanner>
-      {cookiePrefs.hasAcceptedOptionalCookies ? (
+      {cookiePrefs.hasAcceptedOptionalCookies && (
         <Script src={ADOBE_URL} strategy="lazyOnload" onLoad={onScriptLoad} />
-      ) : null}
+      )}
     </>
   );
 }

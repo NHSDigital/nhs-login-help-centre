@@ -21,6 +21,7 @@ export default function useCookie<Type>({
       setValue(JSON.parse(cookie));
     } else {
       Cookies.set(name, JSON.stringify(defaultValue), options);
+      setValue(defaultValue);
     }
   }, [name, defaultValue, options]);
 
