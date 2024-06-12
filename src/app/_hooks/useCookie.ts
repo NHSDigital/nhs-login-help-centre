@@ -17,20 +17,17 @@ export default function useCookie<Type>({
 
   useEffect(() => {
     const cookie = Cookies.get(name);
-    if (cookie) {
-      setValue(JSON.parse(cookie));
+    if (cookie && unstringified(cookie)) {
+      setValue(unstringified(cookie));
     } else {
-      Cookies.set(name, JSON.stringify(defaultValue), {
-        ...options,
-        domain: window.location.hostname.replace('help', ''),
-      });
+      Cookies.set(name, stringified(defaultValue), optionsWithDomain(options));
       setValue(defaultValue);
     }
   }, [name, defaultValue, options]);
 
   const updateCookie = useCallback(
     (newValue: Type) => {
-      Cookies.set(name, JSON.stringify(newValue), options);
+      Cookies.set(name, stringified(newValue), optionsWithDomain(options));
       setValue(newValue);
     },
     [name, options]
@@ -47,3 +44,17 @@ export const cookiePreferencesCookie = {
   options: { expires: 365 },
 };
 export const acceptAllCookies = { hasSeenBanner: true, hasAcceptedOptionalCookies: true };
+
+const optionsWithDomain = (options: Cookies.CookieAttributes) => ({
+  ...options,
+  domain: window.location.hostname.replace('help', ''),
+});
+
+const stringified = (value: any) => encodeURIComponent(JSON.stringify(value));
+function unstringified(value: string) {
+  try {
+    return JSON.parse(decodeURIComponent(value));
+  } catch {
+    return null;
+  }
+}
