@@ -25,7 +25,7 @@ export default async function Article({ post }: Props) {
                       .filter(({ depth }) => depth <= level)
                       .filter(
                         ({ className }) =>
-                          !className || className.includes('nhsuk-u-visually-hidden')
+                          !className || !className.includes('nhsuk-u-visually-hidden')
                       )
                       .map(({ id, value }) => ({ id, title: value }))}
                   ></ArticleNavList>
