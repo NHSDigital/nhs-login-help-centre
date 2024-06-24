@@ -28,9 +28,9 @@ const nearestIndex = (
       return startIndex;
     else return endIndex;
   } else {
-    var nextNearest = ~~((startIndex + endIndex) / 2);
-    var a = Math.abs(sectionPositionArray[nextNearest].offsetTop - currentPosition);
-    var b = Math.abs(sectionPositionArray[nextNearest + 1].offsetTop - currentPosition);
+    const nextNearest = ~~((startIndex + endIndex) / 2);
+    const a = Math.abs(sectionPositionArray[nextNearest].offsetTop - currentPosition);
+    const b = Math.abs(sectionPositionArray[nextNearest + 1].offsetTop - currentPosition);
     if (a < b) {
       return nearestIndex(currentPosition, sectionPositionArray, startIndex, nextNearest);
     } else {
