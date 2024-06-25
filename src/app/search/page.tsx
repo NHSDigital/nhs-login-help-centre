@@ -1,7 +1,7 @@
 import { getAllArticles } from '@/lib/api';
 import markdownToHtml from '@/lib/markdownToHtml';
 import SearchResult from '@/app/_components/search';
-import Header from '@/app/_components/header';
+import Header from '@/app/_components/server/header';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 

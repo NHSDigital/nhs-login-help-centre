@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getAllArticles, getContent } from '@/lib/api';
-import Article from '@/app/_components/article';
+import Article from '@/app/_components/server/article';
 
 export default async function Page({ params }: Params) {
   const post = getContent(params.hub + '/' + params.article);

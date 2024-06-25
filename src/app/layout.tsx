@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.scss';
-import Footer from '@/app/_components/footer';
+import Footer from '@/app/_components/server/footer';
 import ClientSideContent from '@/app/_components/client-side-content';
 import { Suspense } from 'react';
 

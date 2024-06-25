@@ -1,5 +1,5 @@
 import { MarkdownDocument, getAllArticles } from '@/lib/api';
-import BackLink from './back-link';
+import BackLink from '../back-link';
 
 export default async function Breadcrumbs({ post }: Props) {
   if (!post.hub) {

@@ -1,5 +1,5 @@
 import ContactForm from '@/app/_components/contact-form';
-import Header from '@/app/_components/header';
+import Header from '@/app/_components/server/header';
 import { Suspense } from 'react';
 import clientsJson from '@/_data/clients.json';
 import { Metadata } from 'next';

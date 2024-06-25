@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getAllArticles, getAllHubs, getContentOrIndex } from '@/lib/api';
-import Hub from '@/app/_components/hub';
-import Article from '../_components/article';
+import Hub from '@/app/_components/server/hub';
+import Article from '../_components/server/article';
 import { Metadata } from 'next';
 
 export default async function Page({ params }: Params) {

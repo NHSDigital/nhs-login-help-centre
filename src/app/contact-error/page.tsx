@@ -1,4 +1,4 @@
-import Header from '@/app/_components/header';
+import Header from '@/app/_components/server/header';
 import BackLink from '@/app/_components/contact-back-link';
 import { Metadata } from 'next';
 
