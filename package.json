@@ -1,50 +1,39 @@
 {
   "name": "nhs-login-help-centre",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "lint": "pretty-quick",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "eleventy",
-    "deploy": "eleventy && gulp hash",
-    "watch": "eleventy --watch",
-    "start": "eleventy --serve"
+   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "deploy": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NHSDigital/nhs-login-help-centre.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NHSDigital/nhs-login-help-centre/issues"
-  },
-  "homepage": "https://github.com/NHSDigital/nhs-login-help-centre",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "cheerio": "^1.0.0-rc.12",
-    "dompurify": "^2.4.3",
-    "fuse.js": "^6.6.2",
-    "gulp": "^5.0.0",
-    "husky": "^8.0.3",
-    "inline-csp-hash": "^1.1.15",
-    "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.6",
-    "prettier": "^2.8.3",
-    "pretty-quick": "^3.1.3"
+    "@vcarl/remark-headings": "^0.1.0",
+    "fuse.js": "^7.0.0",
+    "gray-matter": "^4.0.3",
+    "hast-util-heading": "^3.0.0",
+    "js-cookie": "^3.0.5",
+    "next": "14.2.3",
+    "nhsuk-frontend": "^8.1.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "rehype-raw": "^7.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0"
   },
-  "overrides": {
-    "unset-value": "2.0.1",
-    "glob-parent": "5.1.2",
-    "es5-ext": "0.10.53",
-    "ejs": "1.0.0",
-    "resolve": "1.20.0",
-    "semver": "7.5.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "node ./node_modules/pretty-quick/bin/pretty-quick --staged"
-    }
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/remark-heading-id": "^1.0.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "sass": "^1.77.2",
+    "typescript": "^5"
   }
 }

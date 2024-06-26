@@ -4,20 +4,19 @@ The NHS login help centre is where you can find helpful information, guidance, a
 
 ## Notes
 
-Do not change the Zendesk client ID keys in src/_data/clients.json as it would mess up zendesk reporting.
-
-If you try to test a contact form request with an error code locally with the dev server e.g. http://localhost:8080/contact?error=CID7023
-then if it keeps redirecting you to http://localhost:8080/contact then try accessing it through http://localhost:8080/contact/?error=CID7023.
+Do not change the Zendesk client ID keys in src/\_data/clients.json as it would mess up zendesk reporting.
 
 ## Setup
 
 - `npm install` to install dependencies
-- `npm start` to run locally at `localhost:8080`
-- `npm build` to build
+- `npm run dev` to run locally with hot reloading at `localhost:3000`
+- `npm run build` to build
+- `npx serve ./_site` to run as static site after build (need to globally install serve package from npm)
 
 ## Deployment
 
 There are two pipelines in the NHS login AWS account:
+
 - helpcentre-live-develop runs from develop branch, deploys to [dev](https://help.dev.signin.nhs.uk).
 - helpcentre-live-master runs from master branch, deploys to [qa](https://help.qa.signin.nhs.uk) and afterwards to [production](https://help.login.nhs.uk).
 
@@ -27,22 +26,24 @@ No other environments exist, so we don't do feature branch testing. Testing can 
 
 File structure is as follows:
 
-- `/src/index.njk`: Main hub page, lists all pages with the categories tag
-- `/src/**/index.md`: Category list pages, most of the heavy lifting is done in `/src/_include/layouts/category-index.njk`
-- `/src/**/*.md`: Articles, most of the heavy lifting is done in `/src/_include/layouts/category-page.njk`
-- `/src/images, /src/css, /src/js` asset folders
+- `/src/app/page.tsx`: Home page, with other page.tsx files in subfolders according to routing
+- `/src/lib`: Contains the logic for generating page html from markdown files, see [Static Site Generation](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation)
+- `/src/**/*.md`: Page content for articles and hubs (may contain html where needed)
+- `/src/app/_components`: React components for use in pages
+- `/public/images` asset folders for favicons etc
 
 ### Hub pages
 
 These pages are nested version of the main hub used for navigation.
-They require the following keys and no content to set up the hub pages, the keys can be found in the index files for each hub:
+They require the following keys and no content to set up the hub pages, and are usually in index files. The app structure is based on the metadata, using 'type' and 'parent' fields, not according to the directories, but kept in a sensible directory structure for convenience.
 
 - `title`: Page title
+- `short_title`: Name to be used in the navigation menu
 - `subtitle`: A description of the Hub
 - `pageName`: The page name sent to analytics, minus "nhs:cid:help-centre:", should be all lowercase with dashes
 - `name`: the id of the hub
 - `type`: Always `hub`
-- `layout`: Always `layouts/hub.njk`
+- `layout`: no longer needed, can be removed
 - `hub`: the name of the parent hub page (`home` for the home page)
 - `position`: determines the position on the parent hub page
 
@@ -57,24 +58,12 @@ They require the following keys contained at the top of every article:
 - `type`: Always `article`
 - `hub`: The Hub page that the article page will appear on
 - `position`: The position on the hub page
-- `layout`: Always `layouts/article.njk`
-
-### Article NJK pages
-
-If you're creating new `.njk` article files, the following keys are required at the top of the every article:
-
-- `title`: Page title
-- `pageName`: The page name sent to analytics, same as for regular article pages
-- `type`: Always `article-njk`
-- `errors`: Optional list of objects with a `code` and `description` key. `code` is the error code sent in contact form
-  request, `description` is the error description also sent in the request.
-- `layout`: Always `layouts/base.njk`
+- `layout`: no longer needed, can be removed
 
 ## Useful links
 
-The 11ty documentation is as of writing fairly poor, here are some links to help:
+[Static Site Generation](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation)
 
-- [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html)
-- [example projects](https://www.11ty.dev/docs/starter/)
-- [Useful basic example](https://github.com/philhawksworth/eleventyone)
-- [Global page data refrence](https://www.11ty.dev/docs/data-eleventy-supplied/)
+[Server and Client Components](https://nextjs.org/learn/react-foundations/server-and-client-components)
+
+[Dynamic Routing](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes)

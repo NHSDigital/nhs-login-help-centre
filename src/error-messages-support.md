@@ -68,7 +68,6 @@ If you cannot remember the email you used, check all your email accounts for an 
       <li>Select <strong>Login and security settings</strong>.</li>
       <li>Select <strong>Delete my NHS account</strong>.</li>
     </ol>
-
     <p>This will only delete your online NHS account and will not affect your medical records.</p>
 
   </div>
@@ -91,13 +90,15 @@ If you see reference CID7023, the website or app you are trying to visit cannot 
     </span>
   </summary>
   <div class="nhsuk-details__text">
-
-    We have already used your details to connect you to the website or app you were trying to visit. This can happen if you already have an NHS login with a different email address.
-
-    We can only connect one NHS login to your GP surgery’s system.
-
-    You can change the email address on your NHS login in your **Login and security settings**.
-
+    <p>
+      We have already used your details to connect you to the website or app you were trying to visit. This can happen if you already have an NHS login with a different email address.
+    </p>
+    <p>
+      We can only connect one NHS login to your GP surgery’s system.
+    </p>
+    <p>
+      You can change the email address on your NHS login in your <strong>Login and security settings</strong>.
+    </p>
   </div>
 </details>
 
@@ -108,15 +109,18 @@ If you see reference CID7023, the website or app you are trying to visit cannot 
     </span>
   </summary>
   <div class="nhsuk-details__text">
-
-    The details we use to make the connection are wrong.
-
-    This can happen if:
-    - you have changed GP surgery
-    - your GP surgery has changed systems
-    - you no longer have permission to use your GP surgery’s online services
-
-    If your GP surgery is in England, you can ask your GP for new registration details for their online services.
+    <p>
+      The details we use to make the connection are wrong.
+    </p>
+    <p>
+      This can happen if:</br>
+      - you have changed GP surgery</br>
+      - your GP surgery has changed systems</br>
+      - you no longer have permission to use your GP surgery’s online services
+    </p>
+    <p>
+      If your GP surgery is in England, you can ask your GP for new registration details for their online services.
+    </p>
 
   </div>
 </details>
@@ -142,12 +146,18 @@ If you did not receive the confirmation email we sent you, check your spam or ju
     </span>
   </summary>
   <div class="nhsuk-details__text">
-
+ 
+   <p>
     Make sure emails get to your inbox by adding the email address noreply@login.nhs.uk to your contact list.
-
-    You can also read this page on [problems sending and receiving emails in Gmail](https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU).
-
+   </p>
+   <p>
+    You can also read this page on
+    <a href="https://support.google.com/mail/answer/7015314?sjid=17584974477078910830-EU">
+      problems sending and receiving emails in Gmail</a>.
+   </p>
+   <p>
     This will only delete your online NHS account and will not affect your medical records.
+   </p>
 
   </div>
 </details>
@@ -159,13 +169,15 @@ If you did not receive the confirmation email we sent you, check your spam or ju
     </span>
   </summary>
   <div class="nhsuk-details__text">
-
-    Add the email address noreply@login.nhs.uk to your 'Safe Senders' list.
-
-    Changes to 'Safe Senders' can take 24 hours to update. You should then receive the confirmation email within the next 24 hours.
-
-    You can also read this page on [problems sending and receiving emails in Outlook](https://support.microsoft.com/en-us/office/can-t-send-or-receive-email-in-outlook-com-d39e3341-8d79-4bf1-b3c7-ded602233642?ui=en-us&rs=en-us&ad=us).
-
+    <p>
+      Add the email address noreply@login.nhs.uk to your 'Safe Senders' list.
+    </p>
+    <p>
+      Changes to 'Safe Senders' can take 24 hours to update. You should then receive the confirmation email within the next 24 hours.
+    </p>
+    <p>
+      You can also read this page on <a href="https://support.microsoft.com/en-us/office/can-t-send-or-receive-email-in-outlook-com-d39e3341-8d79-4bf1-b3c7-ded602233642?ui=en-us&rs=en-us&ad=us">problems sending and receiving emails in Outlook</a>.
+    </p>
   </div>
 </details>
 
@@ -223,6 +235,6 @@ The link to cancel the update to your phone number will not work if you have alr
 
 You can check or change your login and security settings in [your NHS account](https://settings.login.nhs.uk/ 'your NHS account').
 
-[Contact us](/contact?error=CID3003 'Contact us') us if you did not mean to change your phone number, or you do not have access to it.
+[Contact us](/contact?error=CID3003 'Contact us') if you did not mean to change your phone number, or you do not have access to it.
 
 ---

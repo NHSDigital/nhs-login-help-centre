@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "none",
-    "target": "es6"
-  },
-  "include": ["src/js/*"]
-}
