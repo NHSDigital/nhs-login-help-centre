@@ -53,7 +53,8 @@ export default function ContactForm({ clients, contactLinks }: Props) {
             window.location.assign('/contact-error');
           }
         })
-        .catch(() => window.location.assign('/contact-error'));
+        .catch(() => window.location.assign('/contact-error'))
+        .finally(() => setSubmitted(false));
     }
   }
 
