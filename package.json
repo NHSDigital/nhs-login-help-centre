@@ -2,7 +2,7 @@
   "name": "nhs-login-help-centre",
   "version": "2.0.0",
   "description": "",
-   "scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "deploy": "next build",
@@ -35,5 +35,8 @@
     "eslint-config-next": "14.2.3",
     "sass": "^1.77.2",
     "typescript": "^5"
+  },
+  "overrides": {
+    "glob": "^9.0.0"
   }
 }
