@@ -37,6 +37,7 @@
     "typescript": "^5"
   },
   "overrides": {
-    "glob": "^9.0.0"
+    "glob": "^9.0.0",
+    "micromatch": "4.0.6"
   }
 }
