@@ -44,7 +44,7 @@ You also need to have Bluetooth enabled on your device. This will allow you to s
         </p>
 </div>
 
-___
+---
 
 ## How to set up a passkey
 
@@ -75,6 +75,7 @@ You can have multiple passkeys set up on different devices.
 </nav>
 
 ### Set up a passkey on the device that you are using
+
 1. Go to **Login and security settings** in your NHS account.
 2. Select **Passkeys**.
 3. Select **Set up a passkey**. A pop up message will ask you to create a passkey.
@@ -157,9 +158,13 @@ Next time you log in on that device, you may see a message asking if you want to
 
 ## If you lose your device
 
-To use a passkey, your device will ask for your fingerprint, face, passcode or pattern to unlock your device. Without doing this, nobody else can use your passkey and it will remain secure on the device.
-
 You can still log in to your account using another device that has your passkey. If you do not have a passkey set up on another device, you can use your password instead.
+
+To keep your account secure, make sure to update your password regularly.
+
+No one else can access your account using the passkey on your lost device. Passkeys need your fingerprint, face, passcode or pattern to verify that it's you trying to access your account.
+
+If you no longer want to use this passkey, you can remove it from your account. Find out [how to remove a passkey.](/manage/passkeys/#how-to-remove-a-passkey 'how to remve a passkey')
 
 ---
 
