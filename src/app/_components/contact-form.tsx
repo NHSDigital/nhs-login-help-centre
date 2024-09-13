@@ -9,6 +9,7 @@ export type ContactFormValues = {
   email?: string;
   'message-detail'?: string;
   name?: string;
+  // phone_number?:internal;
   problem?: string;
   visit?: string;
 };
@@ -98,6 +99,9 @@ export default function ContactForm({ clients, contactLinks }: Props) {
         </p>
         <p className="nhsuk-body">Call 999 if it's a life-threatening emergency.</p>
       </div>
+      <h2>Get help</h2>
+      <p className="nhsuk-body">Telling us as much information as possible will make it easier for us to find your account and quickly solve your problem.</p>
+      <h3>Your details</h3>
       <div className={formGroupCssClasses(errors, 'name')} id="name-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="name">
           Full name
@@ -114,9 +118,9 @@ export default function ContactForm({ clients, contactLinks }: Props) {
       </div>
       <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
-          Email address
+          NHS login email (if known)
         </label>
-        <span className="nhsuk-hint">This should be the email address you use for NHS login.</span>
+        <span className="nhsuk-hint">This is the email you used to create your account.</span>
         <span className="nhsuk-error-message nhs-help-centre__form-control-error">
           {errors.email}
         </span>
@@ -127,6 +131,54 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           type="text"
         />
       </div>
+      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+          Contact email (if different to NHS login email)
+        </label>
+        <span className="nhsuk-hint">This is the email address we will use to contact you about this problem.</span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors.email}
+        </span>
+        <input
+          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+          id="contact_email"
+          name="contact_email"
+          type="text"
+        />
+      </div>
+      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+                  NHS login phone number (optional)
+        </label>
+        <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors.email}
+        </span>
+        <input
+          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+          id="contact_email"
+          name="contact_email"
+          type="text"
+        />
+      </div>
+      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+                  Last 3 digits of your NHS number (optional)
+        </label>
+        <span className="nhsuk-hint">If you know your NHS number.</span>
+        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+          {errors.email}
+        </span>
+        <input
+          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+          id="contact_email"
+          name="contact_email"
+          type="text"
+        />
+      </div>
+
+{/* Split forms here */}
+
       <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
