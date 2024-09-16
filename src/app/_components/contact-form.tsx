@@ -30,6 +30,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
   const problemRadioRef = useRef<HTMLDivElement>(null);
   const errorParam = useSearchParams().get('error') as string;
   const descParam = useSearchParams().get('desc') as string;
+  const [activeIndex, setActiveIndex] = useState(0);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -59,127 +60,104 @@ export default function ContactForm({ clients, contactLinks }: Props) {
     }
   }
 
-  return (
-    <form
-      id="contact-us-form"
-      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
-      onSubmit={onSubmit}
-    >
-      <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
-      <div
-        className={
-          'nhsuk-error-summary' +
-          (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
-        }
-        aria-labelledby="error-summary-title"
-        role="alert"
-        ref={errorSummaryRef}
-        tabIndex={-1}
-      >
-        <h2 className="nhsuk-error-summary__title">There is a problem</h2>
-        <div className="nhsuk-error-summary__body">
-          <ul className="nhsuk-list nhsuk-error-summary__list">
-            {Object.keys(errors).map((e) => (
-              <li key={e}>
-                <a href={'#' + (formIdsForErrorSummary[e as keyof ContactFormValues] || e)}>
-                  {errors[e as keyof ContactFormValues]}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+  function PersonalDetailsForm() {
+    return (
+    <>
       <div className="nhsuk-inset-text">
-        <h2 className="nhsuk-heading-m">We cannot help with medical problems</h2>
-        <p>This form is only for help using NHS login.</p>
-        <p className="nhsuk-body">
-          If you need medical help, go to{' '}
-          <a href="https://www.nhs.uk/contact-us/get-medical-help/">111.nhs.uk</a> or call 111 or
-          your GP.
-        </p>
-        <p className="nhsuk-body">Call 999 if it's a life-threatening emergency.</p>
-      </div>
-      <h2>Get help</h2>
-      <p className="nhsuk-body">Telling us as much information as possible will make it easier for us to find your account and quickly solve your problem.</p>
-      <h3>Your details</h3>
-      <div className={formGroupCssClasses(errors, 'name')} id="name-form-control">
-        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="name">
-          Full name
-        </label>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-          {errors.name}
-        </span>
-        <input
-          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-          id="name"
-          name="name"
-          type="text"
-        />
-      </div>
-      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
-          NHS login email (if known)
-        </label>
-        <span className="nhsuk-hint">This is the email you used to create your account.</span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-          {errors.email}
-        </span>
-        <input
-          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-          id="email"
-          name="email"
-          type="text"
-        />
-      </div>
-      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
-          Contact email (if different to NHS login email)
-        </label>
-        <span className="nhsuk-hint">This is the email address we will use to contact you about this problem.</span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-          {errors.email}
-        </span>
-        <input
-          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-          id="contact_email"
-          name="contact_email"
-          type="text"
-        />
-      </div>
-      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
-                  NHS login phone number (optional)
-        </label>
-        <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-          {errors.email}
-        </span>
-        <input
-          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-          id="contact_email"
-          name="contact_email"
-          type="text"
-        />
-      </div>
-      <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-        <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
-                  Last 3 digits of your NHS number (optional)
-        </label>
-        <span className="nhsuk-hint">If you know your NHS number.</span>
-        <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-          {errors.email}
-        </span>
-        <input
-          className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-          id="contact_email"
-          name="contact_email"
-          type="text"
-        />
-      </div>
+          <h2 className="nhsuk-heading-m">We cannot help with medical problems</h2>
+          <p>This form is only for help using NHS login.</p>
+          <p className="nhsuk-body">
+            If you need medical help, go to{' '}
+            <a href="https://www.nhs.uk/contact-us/get-medical-help/">111.nhs.uk</a> or call 111 or
+            your GP.
+          </p>
+          <p className="nhsuk-body">Call 999 if it's a life-threatening emergency.</p>
+        </div>
+        <h2>Get help</h2>
+        <p className="nhsuk-body">Telling us as much information as possible will make it easier for us to find your account and quickly solve your problem.</p>
+        <h3>Your details</h3>
+        <div className={formGroupCssClasses(errors, 'name')} id="name-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="name">
+            Full name
+          </label>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.name}
+          </span>
+          <input
+            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            id="name"
+            name="name"
+            type="text"
+          />
+        </div>
+        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+            NHS login email (if known)
+          </label>
+          <span className="nhsuk-hint">This is the email you used to create your account.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.email}
+          </span>
+          <input
+            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            id="email"
+            name="email"
+            type="text"
+          />
+        </div>
+        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+            Contact email (if different to NHS login email)
+          </label>
+          <span className="nhsuk-hint">This is the email address we will use to contact you about this problem.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.email}
+          </span>
+          <input
+            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            id="contact_email"
+            name="contact_email"
+            type="text"
+          />
+        </div>
+        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+                    NHS login phone number (optional)
+          </label>
+          <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.email}
+          </span>
+          <input
+            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            id="contact_email"
+            name="contact_email"
+            type="text"
+          />
+        </div>
+        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+                    Last 3 digits of your NHS number (optional)
+          </label>
+          <span className="nhsuk-hint">If you know your NHS number.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.email}
+          </span>
+          <input
+            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            id="contact_email"
+            name="contact_email"
+            type="text"
+          />
+        </div>
+      </>
+    )
+  }
 
-{/* Split forms here */}
-
-      <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
+  function ProblemDetailsForm() {
+    return(
+      <>
+              <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
             Select the website or app you are trying to visit
@@ -300,6 +278,41 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           <a href="https://access.login.nhs.uk/terms-and-conditions">terms and conditions</a>.
         </p>
       </div>
+      </>
+    )
+  }
+
+  return (
+    <form
+      id="contact-us-form"
+      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
+      onSubmit={onSubmit}
+    >
+      <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
+      <div
+        className={
+          'nhsuk-error-summary' +
+          (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
+        }
+        aria-labelledby="error-summary-title"
+        role="alert"
+        ref={errorSummaryRef}
+        tabIndex={-1}
+      >
+        <h2 className="nhsuk-error-summary__title">There is a problem</h2>
+        <div className="nhsuk-error-summary__body">
+          <ul className="nhsuk-list nhsuk-error-summary__list">
+            {Object.keys(errors).map((e) => (
+              <li key={e}>
+                <a href={'#' + (formIdsForErrorSummary[e as keyof ContactFormValues] || e)}>
+                  {errors[e as keyof ContactFormValues]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {activeIndex === 0 ? (<PersonalDetailsForm/>) : (<ProblemDetailsForm/>)}
       <button
         className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
         id="submit-button"
