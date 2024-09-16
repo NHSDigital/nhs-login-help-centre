@@ -8,16 +8,12 @@ const MISSING_PROBLEM_ERROR = 'Select your problem';
 const MISSING_MESSAGE_ERROR = 'Describe your problem in more detail';
 const EMAIL_REGEX = /(^[a-zA-Z0-9_.+'-]+@[a-zA-Z0-9-]+(?!.*?\.\.)(?!.*\.$)\.[a-zA-Z0-9-.]+$)/;
 
-export function validate({
+export function validatePersonalDetails({
   name,
   email,
-  'message-detail': messageDetail,
-  problem,
-  visit,
-  client,
 }: ContactFormValues) {
   const errors: ContactFormValues = {};
-
+  
   if (!hasValue(name)) {
     errors.name = MISSING_NAME_ERROR;
   }
@@ -26,6 +22,16 @@ export function validate({
   } else if (!EMAIL_REGEX.test(email?.trim() || '')) {
     errors.email = INVALID_EMAIL_ERROR;
   }
+  return errors;
+}
+
+export function validateProblemDetails({
+  'message-detail': messageDetail,
+  problem,
+  visit,
+  client,
+}: ContactFormValues) {
+  const errors: ContactFormValues = {};
   if (!hasValue(visit) || (visit === 'other' && !hasValue(client))) {
     errors.visit = MISSING_CLIENT_ERROR;
   }
