@@ -31,7 +31,6 @@ const formIdsForErrorSummary: ContactFormValues = {
 export default function ContactForm({ clients, contactLinks }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
   const [isSubmitted, setSubmitted] = useState(false);
-  const [characterCount, setCharacterCount] = useState(0);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
   const problemRadioRef = useRef<HTMLDivElement>(null);
@@ -300,19 +299,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
         <span className="nhsuk-error-message nhs-help-centre__form-control-error">
           {errors['message-detail']}
         </span>
-        <textarea
-          className="nhsuk-textarea nhs-help-centre__form-control-input"
-          id="message-detail"
-          name="message-detail"
-          rows={6}
-          onChange={(e) => setCharacterCount(e.target.value.length)}
-          aria-describedby="message-detail-hint"
-          maxLength={1500}
-        ></textarea>
-        <div className="nhsuk-hint nhsuk-character-count__message" id="message-detail-count">
-          You have <span id="remaining-characters">{1500 - characterCount}</span> characters
-          remaining
-        </div>
+        <TextBox></TextBox>
       </div>
       <div className="nhsuk-u-margin-bottom-6 nhsuk-form-group">
         <label className="nhsuk-heading-m nhsuk-u-margin-bottom-2">Privacy policy agreement</label>
@@ -456,4 +443,25 @@ function getAccountId() {
   } catch (e) {
     return null;
   }
+}
+
+function TextBox() {
+    const [characterCount, setCharacterCount] = useState(0);
+  return(
+  <div>
+  <textarea
+          className="nhsuk-textarea nhs-help-centre__form-control-input"
+          id="message-detail"
+          name="message-detail"
+          rows={6}
+          onChange={(e) => setCharacterCount(e.target.value.length)}
+          aria-describedby="message-detail-hint"
+          maxLength={1500}
+        ></textarea>
+        <div className="nhsuk-hint nhsuk-character-count__message" id="message-detail-count">
+          You have <span id="remaining-characters">{1500 - characterCount}</span> characters
+          remaining
+        </div>
+        </div>
+        )
 }
