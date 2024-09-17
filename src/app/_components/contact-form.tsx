@@ -1,7 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { FormEvent, RefObject, useRef, useState } from 'react';
-import { validate } from './validate';
+import { validateProblemDetails, validatePersonalDetails } from './validate';
 import Cookies from 'js-cookie';
 
 export type ContactFormValues = {
@@ -9,7 +9,14 @@ export type ContactFormValues = {
   email?: string;
   'message-detail'?: string;
   name?: string;
-  // phone_number?:internal;
+  problem?: string;
+  visit?: string;
+};
+export type PersonalFormValues = {
+  client?: string;
+  email?: string;
+  'message-detail'?: string;
+  name?: string;
   problem?: string;
   visit?: string;
 };
@@ -30,13 +37,14 @@ export default function ContactForm({ clients, contactLinks }: Props) {
   const problemRadioRef = useRef<HTMLDivElement>(null);
   const errorParam = useSearchParams().get('error') as string;
   const descParam = useSearchParams().get('desc') as string;
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isContinue, setContinue] = useState(false);
+  const [personalFormDetails, setPersonalFormDetails] = useState<ContactFormValues>({})
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
     const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
-    const errors = validate(formJson);
+    const errors = validateProblemDetails(formJson);
     if (errors && Object.keys(errors).length) {
       setErrors(errors);
       if (errorSummaryRef && errorSummaryRef.current) {
@@ -46,8 +54,11 @@ export default function ContactForm({ clients, contactLinks }: Props) {
     } else {
       const problemText = getProblemText(problemRadioRef, formJson.problem);
       const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
+      const combinedFormDetails = Object.assign(formJson, personalFormDetails)
       setSubmitted(true);
-      sendToApi(formJson, errorDescription, problemText)
+      alert(formJson)
+      alert(JSON.stringify(combinedFormDetails))
+      sendToApi(combinedFormDetails, errorDescription, problemText)
         .then((res) => {
           if (res.ok) {
             window.location.replace('/contact-sent');
@@ -60,9 +71,33 @@ export default function ContactForm({ clients, contactLinks }: Props) {
     }
   }
 
+  function onContinue(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.target as any);
+    const formJson: PersonalFormValues = Object.fromEntries(formData.entries()) as PersonalFormValues;
+    const errors = validatePersonalDetails(formJson);
+    if (errors && Object.keys(errors).length) {
+      setErrors(errors);
+      if (errorSummaryRef && errorSummaryRef.current) {
+        errorSummaryRef.current.focus();
+        errorSummaryRef.current.scrollIntoView();
+      }
+    } else {
+      const problemText = getProblemText(problemRadioRef, formJson.problem);
+      const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
+      setPersonalFormDetails(formJson)
+      setContinue(true);
+      setErrors({})
+    }
+  }
+
   function PersonalDetailsForm() {
-    return (
-    <>
+    return(
+      <form
+      id="contact-us-form"
+      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
+      onSubmit={onContinue}
+    >
       <div className="nhsuk-inset-text">
           <h2 className="nhsuk-heading-m">We cannot help with medical problems</h2>
           <p>This form is only for help using NHS login.</p>
@@ -150,13 +185,23 @@ export default function ContactForm({ clients, contactLinks }: Props) {
             type="text"
           />
         </div>
-      </>
+        <button
+        className={'nhsuk-button continue-button' + (isContinue ? ' nhsuk-button--disabled' : '')}
+        id="continue-button"
+      >
+        Continue
+      </button>
+      </form>
     )
   }
 
   function ProblemDetailsForm() {
     return(
-      <>
+      <form
+      id="contact-us-form"
+      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
+      onSubmit={onSubmit}
+    >
               <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
@@ -278,18 +323,20 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           <a href="https://access.login.nhs.uk/terms-and-conditions">terms and conditions</a>.
         </p>
       </div>
-      </>
+      <button
+        className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
+        id="submit-button"
+      >
+        Send message
+      </button>
+      </form>
     )
   }
 
   return (
-    <form
-      id="contact-us-form"
-      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
-      onSubmit={onSubmit}
-    >
+    <>
       <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
-      <div
+      {errors && Object.keys(errors).length ? (<div
         className={
           'nhsuk-error-summary' +
           (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
@@ -311,15 +358,9 @@ export default function ContactForm({ clients, contactLinks }: Props) {
             ))}
           </ul>
         </div>
-      </div>
-      {activeIndex === 0 ? (<PersonalDetailsForm/>) : (<ProblemDetailsForm/>)}
-      <button
-        className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
-        id="submit-button"
-      >
-        Send message
-      </button>
-    </form>
+      </div>) : (<></>)}
+      {!isContinue ? (<PersonalDetailsForm/>) : (<ProblemDetailsForm/>)}
+    </>
   );
 }
 
