@@ -1,5 +1,6 @@
 {
   "clients": {
+    "accurx": "Accurx",
     "accurx_patient_portal": "Accurx Patient Portal",
     "activ8rlives__active_me_remote_": "Activ8rlives (Active+me REMOTE)",
     "add_or_correct_your_contact_details": "Add or correct your contact details",
@@ -30,7 +31,6 @@
     "digi.me": "digi.me",
     "visit_doctrin_your_digital_healthcare_service": "Doctrin - Your digital healthcare service",
     "drdoctor": "DrDoctor",
-    "eclipse_app_": "Eclipse App",
     "ekhuft_patient_id ": "EKHUFT Patient ID",
     "visit_engage_consult": "Engage Consult",
     "visit_eredbook": "eRedbook",
@@ -57,6 +57,7 @@
     "my_health_and_wellbeing": "My Health and Wellbeing",
     "visit_mycarecentric_phr": "myCareCentric PHR",
     "my_cohens": "myCohens",
+    "nhs_connect": "NHS Connect",
     "visit_mygp": "myGP",
     "mygp_triage__provided_by_iplato_": "myGP Triage (provided by iPlato)",
     "visit_myway_diabetes": "MyWay Diabetes",
