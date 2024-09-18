@@ -12,14 +12,6 @@ export type ContactFormValues = {
   problem?: string;
   visit?: string;
 };
-export type PersonalFormValues = {
-  client?: string;
-  email?: string;
-  'message-detail'?: string;
-  name?: string;
-  problem?: string;
-  visit?: string;
-};
 
 type ErrorDescription = { description: string; code: string };
 
@@ -30,6 +22,7 @@ const formIdsForErrorSummary: ContactFormValues = {
 
 export default function ContactForm({ clients, contactLinks }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
+  const [showOtherIssues, setShowOtherIssues] = useState(false);
   const [isSubmitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
@@ -55,7 +48,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
       const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
       const combinedFormDetails = Object.assign(formJson, personalFormDetails)
       setSubmitted(true);
-      alert(formJson)
+      // alert(JSON.stringify(formJson))
       alert(JSON.stringify(combinedFormDetails))
       sendToApi(combinedFormDetails, errorDescription, problemText)
         .then((res) => {
@@ -73,7 +66,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
   function onContinue(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
-    const formJson: PersonalFormValues = Object.fromEntries(formData.entries()) as PersonalFormValues;
+    const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
     const errors = validatePersonalDetails(formJson);
     if (errors && Object.keys(errors).length) {
       setErrors(errors);
@@ -82,8 +75,6 @@ export default function ContactForm({ clients, contactLinks }: Props) {
         errorSummaryRef.current.scrollIntoView();
       }
     } else {
-      const problemText = getProblemText(problemRadioRef, formJson.problem);
-      const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
       setPersonalFormDetails(formJson)
       setContinue(true);
       setErrors({})
@@ -159,9 +150,6 @@ export default function ContactForm({ clients, contactLinks }: Props) {
                     NHS login phone number (optional)
           </label>
           <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
-          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.email}
-          </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
             id="contact_email"
@@ -174,9 +162,6 @@ export default function ContactForm({ clients, contactLinks }: Props) {
                     Last 3 digits of your NHS number (optional)
           </label>
           <span className="nhsuk-hint">If you know your NHS number.</span>
-          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.email}
-          </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
             id="contact_email"
@@ -273,10 +258,33 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           <span className="nhsuk-error-message nhs-help-centre__form-control-error">
             {errors.problem}
           </span>
-          <div className="nhsuk-radios" id="common-problems">
-            <RadioItem inputId="dupeAccount" name="problem" value="dupe_account">
+          <div className="nhsuk-radios" id="common-problems" onChange={(e: any) => {
+              if (e.target.value === 'dupe_account') setShowOtherIssues(true);
+              if (['gp_connection_issue', 'change_email', 'not_sure'].includes(e.target.value)) setShowOtherIssues(false);
+            }}>
+            <RadioItem inputId="dupeAccount" name="dupe-problem" value="dupe_account">
               There is already an account linked to my details
             </RadioItem>
+            <div
+              className={
+                'nhsuk-radios__conditional' +
+                (showOtherIssues ? '' : ' nhsuk-radios__conditional--hidden')
+              }
+              id="issues-list"
+            >
+              <RadioItem inputId="FirstLinePasswordReset" name="problem" value="first-line-password-reset">
+              I cannot remember the password I used to set up my account
+            </RadioItem>
+              <RadioItem inputId="FirstLineChangeMobile" name="problem" value="first-line-change-mobile">
+              I cannot access my account as I have changed my mobile number
+            </RadioItem>
+              <RadioItem inputId="SecondLineEmailHint" name="problem" value="second-line-email-hint">
+              I cannot remember the email address I used to set up my account
+            </RadioItem>
+              <RadioItem inputId="SecondLineManualReset" name="problem" value="second-line-manual-reset">
+              I cannot access the email address I used to set up my account
+            </RadioItem>
+            </div>
             <RadioItem inputId="gpConnectionIssue" name="problem" value="gp_connection_issue">
               There is an issue connecting to my GP
             </RadioItem>
