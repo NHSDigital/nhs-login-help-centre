@@ -45,11 +45,9 @@ export default function ContactForm({ clients, contactLinks }: Props) {
       }
     } else {
       const problemText = getProblemText(problemRadioRef, formJson.problem);
-      const errorDescription = getErrorDescription(contactLinks, errorParam, descParam);
+      const errorDescription = getErrorDescription(contactLinks, errorParam, descParam, formJson.problem);
       const combinedFormDetails = Object.assign(formJson, personalFormDetails)
       setSubmitted(true);
-      // alert(JSON.stringify(formJson))
-      alert(JSON.stringify(combinedFormDetails))
       sendToApi(combinedFormDetails, errorDescription, problemText)
         .then((res) => {
           if (res.ok) {
@@ -163,7 +161,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           </label>
           <span className="nhsuk-hint">If you know your NHS number.</span>
           <input
-            className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
+            className="nhsuk-input nhsuk-u-width-one-third nhs-help-centre__form-control-input"
             id="contact_email"
             name="contact_email"
             type="text"
@@ -186,6 +184,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
       className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
       onSubmit={onSubmit}
     >
+      <h2 className="nhsuk-heading-s">Your problem</h2>
               <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
           <legend className="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs nhsuk-u-font-weight-bold">
@@ -272,16 +271,16 @@ export default function ContactForm({ clients, contactLinks }: Props) {
               }
               id="issues-list"
             >
-              <RadioItem inputId="FirstLinePasswordReset" name="problem" value="first-line-password-reset">
+              <RadioItem inputId="FirstLinePasswordReset" name="problem" value="first_line_password_reset">
               I cannot remember the password I used to set up my account
             </RadioItem>
-              <RadioItem inputId="FirstLineChangeMobile" name="problem" value="first-line-change-mobile">
+              <RadioItem inputId="FirstLineChangeMobile" name="problem" value="first_line_change_mobile">
               I cannot access my account as I have changed my mobile number
             </RadioItem>
-              <RadioItem inputId="SecondLineEmailHint" name="problem" value="second-line-email-hint">
+              <RadioItem inputId="SecondLineEmailHint" name="problem" value="second_line_email_hint">
               I cannot remember the email address I used to set up my account
             </RadioItem>
-              <RadioItem inputId="SecondLineManualReset" name="problem" value="second-line-manual-reset">
+              <RadioItem inputId="SecondLineManualReset" name="problem" value="second_line_manual_reset">
               I cannot access the email address I used to set up my account
             </RadioItem>
             </div>
@@ -309,15 +308,9 @@ export default function ContactForm({ clients, contactLinks }: Props) {
         </span>
         <TextBox></TextBox>
       </div>
-      <div className="nhsuk-u-margin-bottom-6 nhsuk-form-group">
-        <label className="nhsuk-heading-m nhsuk-u-margin-bottom-2">Privacy policy agreement</label>
-        <p className="nhsuk-body">We will collect and save your information securely.</p>
         <p className="nhsuk-body">
-          By sending this message you confirm that you agree to our{' '}
-          <a href="https://access.login.nhs.uk/privacy">privacy notice</a> and{' '}
-          <a href="https://access.login.nhs.uk/terms-and-conditions">terms and conditions</a>.
-        </p>
-      </div>
+            View the <a href="../legal/privacy">NHS login privacy policy (opens in a new window)</a> to find out what happens to your personal information.
+          </p>
       <button
         className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
         id="submit-button"
@@ -402,16 +395,31 @@ function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof Contact
 function getErrorDescription(
   contactLinks: ErrorDescription[],
   errorParam: string,
-  descParam: string
+  descParam: string,
+  problem?: string
 ): ErrorDescription {
   const errorCodeRegex = /^CID\d{4,5}$/;
+  const errorDescriptions = [
+    {problemValue: "first_line_password_reset", code: "CID1112", description: "Password needs reseting"},
+    {problemValue: "first_line_change_mobile", code: "CID1113", description: "Mobile needs changing"},
+    {problemValue: "second_line_email_hint", code: "CID1114", description: "Email hint"},
+    {problemValue: "second_line_manual_reset", code: "CID1115", description: "Email needs changing"},
+    {problemValue: "gp_connection_issue", code: "CID1116", description: "GP connection issue"},
+    {problemValue: "change_email", code: "CID1115", description: "Need to change email address for account"},
+  ]
 
-  if (!errorCodeRegex.test(errorParam)) {
-    return { code: 'UNKNOWN', description: 'UNKNOWN' };
+  let errorDescription = errorDescriptions.find(i => i.problemValue === problem) || null;
+  if (errorDescription) {
+    return {code: errorDescription.code, description: errorDescription.description};
   }
-  const matchingErrorFromLinks = contactLinks.find((x) => x.code === errorParam);
+  else {
+    if (!errorCodeRegex.test(errorParam)) {
+      return { code: 'UNKNOWN', description: 'UNKNOWN' };
+    }
+    const matchingErrorFromLinks = contactLinks.find((x) => x.code === errorParam);
 
-  return matchingErrorFromLinks || { code: errorParam, description: descParam };
+    return matchingErrorFromLinks || { code: errorParam, description: descParam };
+}
 }
 
 function sendToApi(
