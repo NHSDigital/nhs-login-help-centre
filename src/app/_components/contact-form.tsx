@@ -7,8 +7,11 @@ import Cookies from 'js-cookie';
 export type ContactFormValues = {
   client?: string;
   email?: string;
+  contact_email?: string;
   'message-detail'?: string;
   name?: string;
+  nhsnumber_3_digits?: string;
+  phone_number?: string;
   problem?: string;
   visit?: string;
 };
@@ -128,13 +131,13 @@ export default function ContactForm({ clients, contactLinks }: Props) {
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+        <div className={formGroupCssClasses(errors, 'contact_email')} id="contact_email-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="contact_email">
             Contact email (if different to NHS login email)
           </label>
           <span className="nhsuk-hint">This is the email address we will use to contact you about this problem.</span>
           <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.email}
+            {errors.contact_email}
           </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
@@ -143,28 +146,35 @@ export default function ContactForm({ clients, contactLinks }: Props) {
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+        <div className={formGroupCssClasses(errors, 'phone_number')} id="phone-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="phone_number">
                     NHS login phone number (optional)
           </label>
           <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.phone_number}
+          </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-            id="contact_email"
-            name="contact_email"
+            id="phone_number"
+            name="phone_number"
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'email')} id="email-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="email">
+        <div className={formGroupCssClasses(errors, 'nhsnumber_3_digits')} id="nhsnumber-3-digits-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="nhsnumber_3_digits">
                     Last 3 digits of your NHS number (optional)
           </label>
           <span className="nhsuk-hint">If you know your NHS number.</span>
+          <span className="nhsuk-error-message nhs-help-centre__form-control-error">
+            {errors.nhsnumber_3_digits}
+          </span>
           <input
             className="nhsuk-input nhsuk-u-width-one-third nhs-help-centre__form-control-input"
-            id="contact_email"
-            name="contact_email"
+            id="nhsnumber_3_digits"
+            name="nhsnumber_3_digits"
             type="text"
+            maxLength={3}
           />
         </div>
         <button
