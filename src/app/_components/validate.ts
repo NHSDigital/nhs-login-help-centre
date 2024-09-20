@@ -1,10 +1,10 @@
 import { ContactFormValues } from './contact-form';
 
 const MISSING_NAME_ERROR = 'Enter your full name';
-const MISSING_EMAIL_ERROR = 'Enter your email address';
-const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
-const INVALID_PHONE_ERROR = 'Enter a phone number in the correct format';
-const INVALID_THREE_DIGITS = 'Enter the last 3 digits of your NHS number';
+const MISSING_EMAIL_ERROR = 'Enter your contact email address';
+const INVALID_EMAIL_ERROR = 'Enter a valid email address';
+const INVALID_PHONE_ERROR = 'Enter a valid mobile phone number';
+const INVALID_THREE_DIGITS = 'Enter three digits';
 const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit';
 const MISSING_PROBLEM_ERROR = 'Select your problem';
 const MISSING_MESSAGE_ERROR = 'Describe your problem in more detail';
@@ -25,7 +25,6 @@ export function validatePersonalDetails({
     errors.name = MISSING_NAME_ERROR;
   }
   if (!hasValue(email) && !hasValue(contact_email)) {
-    errors.email = MISSING_EMAIL_ERROR;
     errors.contact_email = MISSING_EMAIL_ERROR;
   } 
   else if (hasValue(email) && !EMAIL_REGEX.test(email?.trim() || '')) {
