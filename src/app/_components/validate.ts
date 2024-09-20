@@ -9,7 +9,7 @@ const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit'
 const MISSING_PROBLEM_ERROR = 'Select your problem';
 const MISSING_MESSAGE_ERROR = 'Describe your problem in more detail';
 const EMAIL_REGEX = /(^[a-zA-Z0-9_.+'-]+@[a-zA-Z0-9-]+(?!.*?\.\.)(?!.*\.$)\.[a-zA-Z0-9-.]+$)/;
-const PHONE_REGEX = /((0|44|\+44|\+44\s*\(0\)|\+44\s*0)\s*)?7(\s*[0-9]){9}/;
+const PHONE_REGEX = /^(0|\+44)7[0-9]{9}$/;
 const THREE_DIGIT_REGEX = /^[0-9]{3}$/;
 
 export function validatePersonalDetails({
