@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { ContactFormValues } from './contact-form';
+import { ContactFormValues, formGroupCssClasses } from './contact-form';
 import {  validatePersonalDetails } from './validate';
 
   export function PersonalDetailsForm({
@@ -139,10 +139,3 @@ import {  validatePersonalDetails } from './validate';
       </form>
     )
   }
-
-  function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof ContactFormValues) {
-  if (!!errors[fieldName]) {
-    return 'nhsuk-form-group nhsuk-form-group--error';
-  }
-  return 'nhsuk-form-group';
-}
