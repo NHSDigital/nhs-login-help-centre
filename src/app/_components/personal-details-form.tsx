@@ -4,18 +4,16 @@ import {  validatePersonalDetails } from './validate';
 
   export function PersonalDetailsForm({
     errors,
-    isContinue,
     handleSetContinue,
-    handleSetError,
+    setErrors,
     errorSummaryRef,
-    handleSetPersonalForm
+    setPersonalFormDetails
   }: {
   errors: ContactFormValues
-  isContinue: boolean
-  handleSetContinue:VoidFunction
-  handleSetError:Function
+  handleSetContinue:Function
+  setErrors:Function
   errorSummaryRef:any
-  handleSetPersonalForm:Function
+  setPersonalFormDetails:Function
 }) {
 
   function onContinue(e: FormEvent<HTMLFormElement>) {
@@ -24,15 +22,15 @@ import {  validatePersonalDetails } from './validate';
     const formJson: ContactFormValues = Object.fromEntries(formData.entries()) as ContactFormValues;
     const errors = validatePersonalDetails(formJson);
     if (errors && Object.keys(errors).length) {
-      handleSetError(errors);
+      setErrors(errors);
       if (errorSummaryRef && errorSummaryRef.current) {
         errorSummaryRef.current.focus();
         errorSummaryRef.current.scrollIntoView();
       }
     } else {
-      handleSetPersonalForm(formJson)
-      handleSetContinue();
-      handleSetError({})
+      setPersonalFormDetails(formJson)
+      handleSetContinue(true);
+      setErrors({})
     }
   }
 
@@ -84,54 +82,54 @@ import {  validatePersonalDetails } from './validate';
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'contact_email')} id="contact_email-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="contact_email">
+        <div className={formGroupCssClasses(errors, 'contactEmail')} id="contactEmail-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="contactEmail">
             Contact email (if different to NHS login email)
           </label>
           <span className="nhsuk-hint">This is the email address we will use to contact you about this problem.</span>
           <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.contact_email}
+            {errors.contactEmail}
           </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-            id="contact_email"
-            name="contact_email"
+            id="contactEmail"
+            name="contactEmail"
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'phone_number')} id="phone-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="phone_number">
+        <div className={formGroupCssClasses(errors, 'phoneNumber')} id="phone-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="phoneNumber">
                     NHS login phone number (optional)
           </label>
           <span className="nhsuk-hint">This is the phone number you used to create your account.</span>
           <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.phone_number}
+            {errors.phoneNumber}
           </span>
           <input
             className="nhsuk-input nhsuk-u-width-two-thirds nhs-help-centre__form-control-input"
-            id="phone_number"
-            name="phone_number"
+            id="phoneNumber"
+            name="phoneNumber"
             type="text"
           />
         </div>
-        <div className={formGroupCssClasses(errors, 'nhsnumber_3_digits')} id="nhsnumber-3-digits-form-control">
-          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="nhsnumber_3_digits">
+        <div className={formGroupCssClasses(errors, 'nhsNumberLastDigits')} id="nhsnumber-3-digits-form-control">
+          <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="nhsNumberLastDigits">
                     Last 3 digits of your NHS number (optional)
           </label>
           <span className="nhsuk-hint">If you know your NHS number.</span>
           <span className="nhsuk-error-message nhs-help-centre__form-control-error">
-            {errors.nhsnumber_3_digits}
+            {errors.nhsNumberLastDigits}
           </span>
           <input
             className="nhsuk-input nhsuk-u-width-one-third nhs-help-centre__form-control-input"
-            id="nhsnumber_3_digits"
-            name="nhsnumber_3_digits"
+            id="nhsNumberLastDigits"
+            name="nhsNumberLastDigits"
             type="text"
             maxLength={3}
           />
         </div>
         <button
-        className={'nhsuk-button continue-button' + (isContinue ? ' nhsuk-button--disabled' : '')}
+        className={'nhsuk-button continue-button'}
         id="continue-button"
       >
         Continue
