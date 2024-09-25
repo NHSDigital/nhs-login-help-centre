@@ -34,58 +34,65 @@ export default function ContactForm({ clients, contactLinks }: Props) {
   const errorParam = useSearchParams().get('error') as string;
   const descParam = useSearchParams().get('desc') as string;
   const [isContinue, setContinue] = useState(false);
-  const [personalFormDetails, setPersonalFormDetails] = useState<ContactFormValues>({})
+  const [personalFormDetails, setPersonalFormDetails] = useState<ContactFormValues>({});
 
   return (
     <>
       <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
-      {errors && Object.keys(errors).length ? (<div
-        className={
-          'nhsuk-error-summary' +
-          (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
-        }
-        aria-labelledby="error-summary-title"
-        role="alert"
-        ref={errorSummaryRef}
-        tabIndex={-1}
-      >
-        <h2 className="nhsuk-error-summary__title">There is a problem</h2>
-        <div className="nhsuk-error-summary__body">
-          <ul className="nhsuk-list nhsuk-error-summary__list">
-            {Object.keys(errors).map((e) => (
-              <li key={e}>
-                <a href={'#' + (formIdsForErrorSummary[e as keyof ContactFormValues] || e)}>
-                  {errors[e as keyof ContactFormValues]}
-                </a>
-              </li>
-            ))}
-          </ul>
+      {errors && Object.keys(errors).length ? (
+        <div
+          className={
+            'nhsuk-error-summary' +
+            (errors && Object.keys(errors).length ? '' : ' nhsuk-error-summary--hidden')
+          }
+          aria-labelledby="error-summary-title"
+          role="alert"
+          ref={errorSummaryRef}
+          tabIndex={-1}
+        >
+          <h2 className="nhsuk-error-summary__title">There is a problem</h2>
+          <div className="nhsuk-error-summary__body">
+            <ul className="nhsuk-list nhsuk-error-summary__list">
+              {Object.keys(errors).map(e => (
+                <li key={e}>
+                  <a href={'#' + (formIdsForErrorSummary[e as keyof ContactFormValues] || e)}>
+                    {errors[e as keyof ContactFormValues]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>) : (<></>)}
+      ) : (
+        <></>
+      )}
       {!isContinue ? (
-      <PersonalDetailsForm 
-      errors={errors}
-      handleSetContinue = {setContinue}
-      setErrors = {setErrors}
-      setPersonalFormDetails={setPersonalFormDetails}
-      errorSummaryRef={errorSummaryRef}
-      />) : (<ProblemDetailsForm
-      errors={errors}
-      setErrors = {setErrors}
-      errorSummaryRef={errorSummaryRef}
-      setShowOtherClients={setShowOtherClients}
-      setShowOtherIssues={setShowOtherIssues}
-      setSubmitted={setSubmitted}
-      problemRadioRef={problemRadioRef}
-      contactLinks={contactLinks}
-      errorParam={errorParam}
-      descParam={descParam}
-      personalFormDetails={personalFormDetails}
-      showOtherClients={showOtherClients}
-      showOtherIssues={showOtherIssues}
-      isSubmitted={isSubmitted}
-      clients={clients}
-      />)}
+        <PersonalDetailsForm
+          errors={errors}
+          handleSetContinue={setContinue}
+          setErrors={setErrors}
+          setPersonalFormDetails={setPersonalFormDetails}
+          errorSummaryRef={errorSummaryRef}
+        />
+      ) : (
+        <ProblemDetailsForm
+          errors={errors}
+          setErrors={setErrors}
+          errorSummaryRef={errorSummaryRef}
+          setShowOtherClients={setShowOtherClients}
+          setShowOtherIssues={setShowOtherIssues}
+          setSubmitted={setSubmitted}
+          problemRadioRef={problemRadioRef}
+          contactLinks={contactLinks}
+          errorParam={errorParam}
+          descParam={descParam}
+          personalFormDetails={personalFormDetails}
+          showOtherClients={showOtherClients}
+          showOtherIssues={showOtherIssues}
+          isSubmitted={isSubmitted}
+          clients={clients}
+        />
+      )}
     </>
   );
 }

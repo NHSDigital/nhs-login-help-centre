@@ -17,19 +17,18 @@ export function validatePersonalDetails({
   email,
   contactEmail,
   phoneNumber,
-  nhsNumberLastDigits
+  nhsNumberLastDigits,
 }: ContactFormValues) {
   const errors: ContactFormValues = {};
-  
+
   if (!hasValue(name)) {
     errors.name = MISSING_NAME_ERROR;
   }
   if (!hasValue(email) && !hasValue(contactEmail)) {
     errors.contactEmail = MISSING_EMAIL_ERROR;
-  } 
-  else if (hasValue(email) && !EMAIL_REGEX.test(email?.trim() || '')) {
+  } else if (hasValue(email) && !EMAIL_REGEX.test(email?.trim() || '')) {
     errors.email = INVALID_EMAIL_ERROR;
-  } 
+  }
   if (hasValue(contactEmail) && !EMAIL_REGEX.test(contactEmail?.trim() || '')) {
     errors.contactEmail = INVALID_EMAIL_ERROR;
   }
@@ -55,8 +54,7 @@ export function validateProblemDetails({
   }
   if (!hasValue(problem)) {
     errors.problem = MISSING_PROBLEM_ERROR;
-  } 
-  else if (problem === "dupe_account" && !hasValue(subProblem)) {
+  } else if (problem === 'dupe_account' && !hasValue(subProblem)) {
     errors.problem = MISSING_PROBLEM_ERROR;
   }
   if (!hasValue(messageDetail)) {
