@@ -340,9 +340,9 @@ function sendToApi(
   const body = {
     user_name: name,
     user_email: email,
-    contactEmail: contactEmail,
-    last_nhsnumber_digits: nhsNumberLastDigits,
-    phoneNumber: phoneNumber,
+    contact_email: contactEmail,
+    nhsnumber_last_digits: nhsNumberLastDigits,
+    phone_number: phoneNumber,
     user_id: accountId,
     client: client || visit,
     error_code: code,
