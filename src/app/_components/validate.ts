@@ -1,10 +1,10 @@
 import { ContactFormValues } from './contact-form';
 
 const MISSING_NAME_ERROR = 'Enter your full name';
-const MISSING_EMAIL_ERROR = 'Enter your email address';
-const INVALID_EMAIL_ERROR = 'Enter an email address in the correct format, like name@example.com';
-const INVALID_PHONE_ERROR = 'Enter a phone number in the correct format';
-const INVALID_THREE_DIGITS = 'Enter the last 3 digits of your NHS number';
+const MISSING_EMAIL_ERROR = 'Enter your contact email address';
+const INVALID_EMAIL_ERROR = 'Enter a valid email address';
+const INVALID_PHONE_ERROR = 'Enter a valid mobile phone number';
+const INVALID_THREE_DIGITS = 'Enter three digits';
 const MISSING_CLIENT_ERROR = 'Select the website or app you are trying to visit';
 const MISSING_PROBLEM_ERROR = 'Select your problem';
 const MISSING_MESSAGE_ERROR = 'Describe your problem in more detail';
@@ -15,30 +15,28 @@ const THREE_DIGIT_REGEX = /^[0-9]{3}$/;
 export function validatePersonalDetails({
   name,
   email,
-  contact_email,
-  phone_number,
-  nhsnumber_3_digits
+  contactEmail,
+  phoneNumber,
+  nhsNumberLastDigits,
 }: ContactFormValues) {
   const errors: ContactFormValues = {};
-  
+
   if (!hasValue(name)) {
     errors.name = MISSING_NAME_ERROR;
   }
-  if (!hasValue(email) && !hasValue(contact_email)) {
-    errors.email = MISSING_EMAIL_ERROR;
-    errors.contact_email = MISSING_EMAIL_ERROR;
-  } 
-  else if (hasValue(email) && !EMAIL_REGEX.test(email?.trim() || '')) {
+  if (!hasValue(email) && !hasValue(contactEmail)) {
+    errors.contactEmail = MISSING_EMAIL_ERROR;
+  } else if (hasValue(email) && !EMAIL_REGEX.test(email?.trim() || '')) {
     errors.email = INVALID_EMAIL_ERROR;
-  } 
-  if (hasValue(contact_email) && !EMAIL_REGEX.test(contact_email?.trim() || '')) {
-    errors.contact_email = INVALID_EMAIL_ERROR;
   }
-  if (hasValue(phone_number) && !PHONE_REGEX.test(phone_number?.trim() || '')) {
-    errors.phone_number = INVALID_PHONE_ERROR;
+  if (hasValue(contactEmail) && !EMAIL_REGEX.test(contactEmail?.trim() || '')) {
+    errors.contactEmail = INVALID_EMAIL_ERROR;
   }
-  if (hasValue(nhsnumber_3_digits) && !THREE_DIGIT_REGEX.test(nhsnumber_3_digits?.trim() || '')) {
-    errors.nhsnumber_3_digits = INVALID_THREE_DIGITS;
+  if (hasValue(phoneNumber) && !PHONE_REGEX.test(phoneNumber?.trim() || '')) {
+    errors.phoneNumber = INVALID_PHONE_ERROR;
+  }
+  if (hasValue(nhsNumberLastDigits) && !THREE_DIGIT_REGEX.test(nhsNumberLastDigits?.trim() || '')) {
+    errors.nhsNumberLastDigits = INVALID_THREE_DIGITS;
   }
   return errors;
 }
@@ -46,6 +44,7 @@ export function validatePersonalDetails({
 export function validateProblemDetails({
   'message-detail': messageDetail,
   problem,
+  subProblem,
   visit,
   client,
 }: ContactFormValues) {
@@ -54,6 +53,8 @@ export function validateProblemDetails({
     errors.visit = MISSING_CLIENT_ERROR;
   }
   if (!hasValue(problem)) {
+    errors.problem = MISSING_PROBLEM_ERROR;
+  } else if (problem === 'dupe_account' && !hasValue(subProblem)) {
     errors.problem = MISSING_PROBLEM_ERROR;
   }
   if (!hasValue(messageDetail)) {
