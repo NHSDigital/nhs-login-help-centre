@@ -58,9 +58,6 @@ export function ProblemDetailsForm({
       );
       const combinedFormDetails = Object.assign(formJson, personalFormDetails);
       setSubmitted(true);
-      alert(JSON.stringify(combinedFormDetails));
-      alert(JSON.stringify(errorDescription));
-      alert(JSON.stringify(problemText));
       sendToApi(combinedFormDetails, errorDescription, problemText)
         .then(res => {
           if (res.ok) {
@@ -272,7 +269,7 @@ function getErrorDescription(
   contactLinks: ErrorDescription[],
   errorParam: string,
   descParam: string,
-  problem: string,
+  problem?: string,
   subProblem?: string
 ): ErrorDescription {
   const errorCodeRegex = /^CID\d{4,5}$/;
