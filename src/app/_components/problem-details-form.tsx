@@ -9,14 +9,12 @@ export function ProblemDetailsForm({
   errorSummaryRef,
   problemRadioRef,
   setShowOtherClients,
-  setShowOtherIssues,
   setSubmitted,
   contactLinks,
   errorParam,
   descParam,
   personalFormDetails,
   showOtherClients,
-  showOtherIssues,
   isSubmitted,
   clients,
 }: {
@@ -25,17 +23,17 @@ export function ProblemDetailsForm({
   errorSummaryRef: RefObject<HTMLDivElement>;
   problemRadioRef: RefObject<HTMLDivElement>;
   setShowOtherClients: Function;
-  setShowOtherIssues: Function;
   setSubmitted: Function;
   contactLinks: ErrorDescription[];
   errorParam: string;
   descParam: string;
   personalFormDetails: ContactFormValues;
   showOtherClients: boolean;
-  showOtherIssues: boolean;
   isSubmitted: boolean;
   clients: { zendeskId: string; displayName: string }[];
 }) {
+  const [showOtherIssues, setShowOtherIssues] = useState(false);
+
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as any);
@@ -224,8 +222,11 @@ export function ProblemDetailsForm({
         <TextBox></TextBox>
       </div>
       <p className="nhsuk-body">
-        View the <a href="../legal/privacy">NHS login privacy policy (opens in a new window)</a> to
-        find out what happens to your personal information.
+        View the{' '}
+        <a href="https://access.login.nhs.uk/privacy" target="blank">
+          NHS login privacy policy (opens in a new window)
+        </a>{' '}
+        to find out what happens to your personal information.
       </p>
       <button
         className={'nhsuk-button submit-button' + (isSubmitted ? ' nhsuk-button--disabled' : '')}
@@ -290,26 +291,26 @@ function getErrorDescription(
       code: 'CID1115',
       description: 'Cannot access account email address - Reference CID1115',
     },
-    gp_connection_issue: { code: 'CID7023', description: 'Unable to connect to your GP surgery’s system - Reference CID7023' },
+    gp_connection_issue: {
+      code: 'CID7023',
+      description: 'Unable to connect to your GP surgery’s system - Reference CID7023',
+    },
     change_email: {
       code: 'CID3004',
       description: 'Needs to change email address for account - Reference CID3004',
     },
   };
 
-  let problemSelected = problem;
-  if (problem === 'dupe_account') {
-    problemSelected = subProblem!;
-  }
-
-  let errorDescription = problemSelected != null ? errorMappings[problemSelected] : null;
+  const problemSelected = problem === 'dupe_account' ? subProblem : problem;
+  const errorDescription = problemSelected && errorMappings[problemSelected];
   if (errorDescription) {
-    const matchingErrorFromLinks =
-      contactLinks.find(x => x.code === errorDescription!.code) || null;
-    if (matchingErrorFromLinks) {
-      return matchingErrorFromLinks;
-    }
-    return { code: errorDescription.code, description: errorDescription.description };
+    const matchingErrorFromLinks = contactLinks.find(x => x.code === errorDescription.code) || null;
+    return (
+      matchingErrorFromLinks || {
+        code: errorDescription.code,
+        description: errorDescription.description,
+      }
+    );
   } else {
     if (!errorCodeRegex.test(errorParam)) {
       return { code: 'UNKNOWN', description: 'UNKNOWN' };

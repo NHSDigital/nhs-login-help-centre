@@ -26,7 +26,6 @@ const formIdsForErrorSummary: ContactFormValues = {
 
 export default function ContactForm({ clients, contactLinks }: Props) {
   const [showOtherClients, setShowOtherClients] = useState(false);
-  const [showOtherIssues, setShowOtherIssues] = useState(false);
   const [isSubmitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<ContactFormValues>({});
   const errorSummaryRef = useRef<HTMLDivElement>(null);
@@ -76,7 +75,6 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           setErrors={setErrors}
           errorSummaryRef={errorSummaryRef}
           setShowOtherClients={setShowOtherClients}
-          setShowOtherIssues={setShowOtherIssues}
           setSubmitted={setSubmitted}
           problemRadioRef={problemRadioRef}
           contactLinks={contactLinks}
@@ -84,7 +82,6 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           descParam={descParam}
           personalFormDetails={personalFormDetails}
           showOtherClients={showOtherClients}
-          showOtherIssues={showOtherIssues}
           isSubmitted={isSubmitted}
           clients={clients}
         />
