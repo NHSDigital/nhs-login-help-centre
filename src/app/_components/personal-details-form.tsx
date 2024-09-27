@@ -35,7 +35,7 @@ export function PersonalDetailsForm({
 
   return (
     <form
-      id="contact-us-form"
+      id="personal-details-form"
       className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
       onSubmit={onContinue}
     >

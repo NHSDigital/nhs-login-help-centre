@@ -71,7 +71,7 @@ export function ProblemDetailsForm({
 
   return (
     <form
-      id="contact-us-form"
+      id="problem-details-form"
       className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
       onSubmit={onSubmit}
     >
