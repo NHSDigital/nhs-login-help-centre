@@ -99,10 +99,10 @@ export function PersonalDetailsForm({
       </div>
       <div className={formGroupCssClasses(errors, 'phoneNumber')} id="phone-form-control">
         <label className="nhsuk-label nhsuk-u-font-weight-bold" htmlFor="phoneNumber">
-          NHS login phone number (optional)
+          NHS login mobile phone number (optional)
         </label>
         <span className="nhsuk-hint">
-          This is the phone number you used to create your account.
+          This is the mobile phone number you used to create your account.
         </span>
         <span className="nhsuk-error-message nhs-help-centre__form-control-error">
           {errors.phoneNumber}
