@@ -34,11 +34,7 @@ export function PersonalDetailsForm({
   }
 
   return (
-    <form
-      id="personal-details-form"
-      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
-      onSubmit={onContinue}
-    >
+    <form id="personal-details-form" className="nhs-help-centre__form" onSubmit={onContinue}>
       <div className="nhsuk-inset-text">
         <h2 className="nhsuk-heading-m">We cannot help with medical problems</h2>
         <p>This form is only for help using NHS login.</p>

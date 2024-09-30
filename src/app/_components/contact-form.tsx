@@ -36,7 +36,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
   const [personalFormDetails, setPersonalFormDetails] = useState<ContactFormValues>({});
 
   return (
-    <>
+    <div className='nhsuk-grid-column-two-thirds'>
       <h1 className="nhsuk-app-contact-panel__heading">Contact NHS login support</h1>
       <div
         className={
@@ -86,7 +86,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
           clients={clients}
         />
       )}
-    </>
+    </div>
   );
 }
 

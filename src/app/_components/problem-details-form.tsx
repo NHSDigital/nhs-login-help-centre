@@ -70,11 +70,7 @@ export function ProblemDetailsForm({
   }
 
   return (
-    <form
-      id="problem-details-form"
-      className="nhsuk-grid-column-two-thirds nhs-help-centre__form"
-      onSubmit={onSubmit}
-    >
+    <form id="problem-details-form" className="nhs-help-centre__form" onSubmit={onSubmit}>
       <h2 className="nhsuk-heading-s">Your problem</h2>
       <div className={formGroupCssClasses(errors, 'visit')} id="client-form-control">
         <fieldset className="nhsuk-fieldset">
