@@ -236,7 +236,7 @@ export function ProblemDetailsForm({
 
 type RadioItemProps = { inputId: string; value: string; name: string };
 
-function RadioItem({ inputId, value, name, children }: React.PropsWithChildren<RadioItemProps>) {
+export function RadioItem({ inputId, value, name, children }: React.PropsWithChildren<RadioItemProps>) {
   return (
     <div className="nhsuk-radios__item">
       <input
