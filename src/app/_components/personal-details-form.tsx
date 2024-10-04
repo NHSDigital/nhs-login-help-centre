@@ -1,16 +1,17 @@
 import { FormEvent } from 'react';
-import { ContactFormValues, formGroupCssClasses } from './contact-form';
+import { ContactFormValues } from './contact-form';
 import { validatePersonalDetails } from './validate';
+import { formGroupCssClasses } from './contact-form-helper-functions'
 
 export function PersonalDetailsForm({
   errors,
-  handleSetContinue,
+  setContinue,
   setErrors,
   errorSummaryRef,
   setPersonalFormDetails,
 }: {
   errors: ContactFormValues;
-  handleSetContinue: Function;
+  setContinue: Function;
   setErrors: Function;
   errorSummaryRef: any;
   setPersonalFormDetails: Function;
@@ -28,7 +29,7 @@ export function PersonalDetailsForm({
       }
     } else {
       setPersonalFormDetails(formJson);
-      handleSetContinue(true);
+      setContinue(true);
       setErrors({});
     }
   }

@@ -64,7 +64,7 @@ export default function ContactForm({ clients, contactLinks }: Props) {
       {!isContinue ? (
         <PersonalDetailsForm
           errors={errors}
-          handleSetContinue={setContinue}
+          setContinue={setContinue}
           setErrors={setErrors}
           setPersonalFormDetails={setPersonalFormDetails}
           errorSummaryRef={errorSummaryRef}
@@ -95,9 +95,3 @@ type Props = {
   contactLinks: ErrorDescription[];
 };
 
-export function formGroupCssClasses(errors: ContactFormValues, fieldName: keyof ContactFormValues) {
-  if (!!errors[fieldName]) {
-    return 'nhsuk-form-group nhsuk-form-group--error';
-  }
-  return 'nhsuk-form-group';
-}
